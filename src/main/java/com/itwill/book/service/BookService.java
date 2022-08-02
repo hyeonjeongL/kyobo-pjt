@@ -25,9 +25,9 @@ public class BookService {
 	}
 
 	//저자 검색
-	public Book selectByAuthor(String b_author)throws Exception{
-		Book book= bookDao.selectByName(b_author);
-		return book;
+	public List<Book> selectByAuthor(String b_author) throws Exception{
+		List<Book> bookList= bookDao.selectByClass(b_author);
+		return bookList;
 	}
 
 
