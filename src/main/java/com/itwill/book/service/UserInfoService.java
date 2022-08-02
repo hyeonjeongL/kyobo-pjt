@@ -19,7 +19,7 @@ public class UserInfoService {
 		 * 1: 생성
 		 * 2: 아이디중복
 		 */
-		if(userDao.existUserId(user.getU_id()) == null) {
+		if(!(userDao.existUserId(user.getU_id()) == null)) {
 			return 2;
 		}
 		return userDao.insert(user);
