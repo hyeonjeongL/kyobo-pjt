@@ -29,6 +29,21 @@ public class CartDao {
 		dataSource = basicDataSource;
 	}
 	
+		//수량체크
+	public int cartBookCount (Cart cart) throws Exception{
+		Connection con = dataSource.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(CartSQL.BOOK_COUNT_BY_ID_NO);
+		pstmt.setString(1, cart.getU_id());
+		pstmt.setInt(2, cart.getBook().getB_no());
+		
+		ResultSet rs = pstmt.executeQuery();
+		rs.next();
+		int book_count = rs.getInt("book_count");
+		con.close();
+		return book_count;
+	}
+		
+		
 	//cart insert 기존수량0
 	public int cartInsert(Cart newCart) throws Exception {
 		Connection con = dataSource.getConnection();
@@ -57,11 +72,10 @@ public class CartDao {
 
 	
 	//cart deleteByNo 카트 선택삭제
-	public int cartDeleteByNo (Cart newCart) throws Exception{
+	public int cartDeleteByNo (int b_no) throws Exception{
 		Connection con = dataSource.getConnection();
 		PreparedStatement pstmt = con.prepareStatement(CartSQL.CART_DELETE_BY_NO);
-		pstmt.setString(1, newCart.getU_id());
-		pstmt.setInt(2, newCart.getBook().getB_no());
+		pstmt.setInt(1, b_no);
 		
 		int rowCount = pstmt.executeUpdate();
 		return rowCount;
@@ -69,10 +83,10 @@ public class CartDao {
 	
 	
 	//cart deleteAll 카트 전체삭제
-	public int cartDeleteAll (Cart newCart) throws Exception {
+	public int cartDeleteAll (String u_id) throws Exception {
 		Connection con = dataSource.getConnection();
 		PreparedStatement pstmt = con.prepareStatement(CartSQL.CART_DELETE_ALL);
-		pstmt.setString(1, newCart.getU_id());
+		pstmt.setString(1, u_id);
 		int rowCount  = pstmt.executeUpdate();
 		return rowCount;
 	}
@@ -97,9 +111,9 @@ public class CartDao {
 										  rs.getString("b_image"),
 										  rs.getString("b_author"),
 										  rs.getString("b_publisher")));
-								 
+							cartList.add(cart);
 		}
-		
+		con.close();
 		return cartList;
 	}
 	

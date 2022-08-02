@@ -1,42 +1,58 @@
 package com.itwill.book.service;
 
+import java.util.List;
+
 import com.itwill.book.dao.CartDao;
+import com.itwill.book.dao.test.cartDaoTest;
 import com.itwill.book.dto.Book;
 import com.itwill.book.dto.Cart;
 
 public class CartService {
-	
-	
-//	public boolean cartInsert(Cart newCart) throws Exception {
-//		boolean isSuccess = false;
-//
-//		if (cartDao.selectById(newCart.getU_id()) == null) {
-//			int rowCount = cartDao.cartInsert(newCart);
-//			isSuccess = true;
-//
-//		} else {
-//			isSuccess = false;
-//		}
-//
-//		return isSuccess;
-//	}
-	public static void main(String[] args) throws Exception{
-		
-		CartDao cartDao = new CartDao();
-		Cart newCart = new Cart(0,1,"hunjeong", new Book(1,"자기개발서","마시멜로이야기",12000,"달콤한 유혹에서 이겨낼 때 비로소 얻게 된다",	"1_marshmallow","호아킴 데 포사다",	"한국경제신문사"));
-		System.out.println("--------cart add(insert)------");
-		cartDao.cartInsert(newCart);
-		System.out.println(cartDao.cartInsert(newCart));
-		System.out.println("--------cart update------");
-		cartDao.cartUpdateQty(newCart);
-		System.out.println("--------cart deleteByNo------");
-		cartDao.cartDeleteByNo(newCart);
-		System.out.println("--------cart deleteAll------");
-		cartDao.cartDeleteAll(newCart);
-		System.out.println("--------cart selectById------");
-		cartDao.cartList("hunjeong");
-		
-		
+	private CartDao cartDao;
+	public CartService() throws Exception{
+		cartDao = new CartDao();
+
 	}
+	
+	
+	/*
+	 * 카트추가 or 수정
+	 */
+	
+	public int addCart (Cart cart) throws Exception {
+		int book_count = cartDao.cartBookCount(cart);
+		if(book_count == 0) {
+			cartDao.cartInsert(cart);
+		} else if (book_count >=1) {
+			cartDao.cartUpdateQty(cart);
+		}
+		return 0;
+	}
+	
+	
+	/*
+	 * 카트리스트보기
+	 */
+	public List<Cart> getCartList (String u_id) throws Exception{
+		return getCartList(u_id);
+	}
+	
+	
+	
+	/*
+	 * 카트아이템1개삭제
+	 */
+	public int cartDeleteByNo (int b_no) throws Exception{
+		return cartDao.cartDeleteByNo(b_no);
+	}
+	
+	/*
+	 * 카트전체삭제
+	 */
+	public int cartDeleteAll (String u_id) throws Exception{
+		return cartDao.cartDeleteAll(u_id);
+	}
+	
+
 
 }
