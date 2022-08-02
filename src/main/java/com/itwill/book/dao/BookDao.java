@@ -19,7 +19,7 @@ public class BookDao {
 
 	public BookDao() throws Exception {
 		Properties properties = new Properties();
-		properties.load(this.getClass().getResourceAsStream("/jdbc.properties"));
+		properties.load(this.getClass().getResourceAsStream("/com/itwill/book/jdbc.properties"));
 		/*** Apache DataSource ***/
 		BasicDataSource basicDataSource = new BasicDataSource();
 		basicDataSource.setDriverClassName(properties.getProperty("driverClassName"));

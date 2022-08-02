@@ -25,8 +25,9 @@ public class BookDaoTest {
 		
 				
 		//저자 검색
-		System.out.println(bookDao.selectByAuthor("마키타 젠지"));
-		// Book findBookAuthor=bookDao.selectByAuthor("마키타 젠지");
+		//System.out.println(bookDao.selectByAuthor("마키타 젠지"));
+	//	Book findBookAuthor=bookDao.selectByAuthor("마키타 젠지");
+		//System.out.println(findBookAuthor);
 		
 		/*
 		List<Book> bookB=bookDao.selectByAuthor("마키타 젠지");
