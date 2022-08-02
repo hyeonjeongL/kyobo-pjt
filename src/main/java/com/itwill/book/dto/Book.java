@@ -18,7 +18,7 @@ public class Book {
 				+ b_publisher + "]";
 	}
 
-	public Book(int b_no, String b_class, String b_name, int b_price, String b_image, String b_summary, String b_author,String b_publisher) {
+	public Book(int b_no, String b_class, String b_name, int b_price, String b_summary,String b_image, String b_author,String b_publisher) {
 		super();
 		this.b_no = b_no;
 		this.b_class = b_class;

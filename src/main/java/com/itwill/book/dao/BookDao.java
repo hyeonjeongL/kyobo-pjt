@@ -46,7 +46,7 @@ public class BookDao {
 		return book;
 	}
 
-	// 저자 검색1
+	// 저자 검색1 
 /*
 	public List<Book> selectByAuthor(String b_author) throws Exception {
 		List<Book> bookList = new ArrayList<Book>();
