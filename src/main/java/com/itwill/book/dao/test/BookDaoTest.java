@@ -13,21 +13,19 @@ public class BookDaoTest {
 		//전체리스트
 		System.out.println(bookDao.selectAll());
 		
-		/*
-		List<Book> bookA=bookDao.selectAll();
-		for(Book book: bookA) {
-			System.out.println(book);
-		}
-		*/
+		
 		
 		//제목 검색
 		System.out.println(bookDao.selectByName("마시멜로이야기"));
 		
 				
-		//저자 검색
-		System.out.println(bookDao.selectByAuthor("마키타 젠지"));
-		// Book findBookAuthor=bookDao.selectByAuthor("마키타 젠지");
+		//저자 검색1
 		
+		Book findBookAuthor=bookDao.selectByAuthor("마키타 젠지");
+		System.out.println(findBookAuthor);
+		
+		
+		//저자 검색2 (2개 이상)
 		/*
 		List<Book> bookB=bookDao.selectByAuthor("마키타 젠지");
 		for(Book book:bookB) {
@@ -38,13 +36,10 @@ public class BookDaoTest {
 		//카테고리 검색
 		System.out.println(bookDao.selectByClass("요리"));
 		
-		/*
-		List<Book> bookC=bookDao.selectByClass("요리");
-		for(Book book:bookC) {
-			System.out.println(book);
-		}*/
 		
-		/*
+		
+		/* properties.load(this.getClass().getResourceAsStream("/com/itwill/book/jdbc.properties"))> 경로수정
+		 * 
 		 * Exception in thread "main" java.lang.NullPointerException
 			at java.util.Properties$LineReader.readLine(Properties.java:434)
 			at java.util.Properties.load0(Properties.java:353)

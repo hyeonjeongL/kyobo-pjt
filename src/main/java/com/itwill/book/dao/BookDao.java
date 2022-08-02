@@ -19,7 +19,7 @@ public class BookDao {
 
 	public BookDao() throws Exception {
 		Properties properties = new Properties();
-		properties.load(this.getClass().getResourceAsStream("/jdbc.properties"));
+		properties.load(this.getClass().getResourceAsStream("/com/itwill/book/jdbc.properties"));
 		/*** Apache DataSource ***/
 		BasicDataSource basicDataSource = new BasicDataSource();
 		basicDataSource.setDriverClassName(properties.getProperty("driverClassName"));
@@ -46,8 +46,8 @@ public class BookDao {
 		return book;
 	}
 
-	// 저자 검색1 
-/*
+	// 저자 검색1 (2개 이상)
+	/*
 	public List<Book> selectByAuthor(String b_author) throws Exception {
 		List<Book> bookList = new ArrayList<Book>();
 		Connection con = dataSource.getConnection();
@@ -65,7 +65,7 @@ public class BookDao {
 		return bookList;
 	}*/
 
-	// 저자 검색2
+	// 저자 검색2 (1개)
 	
 		public Book selectByAuthor(String b_author) throws Exception{
 			Book book=null;

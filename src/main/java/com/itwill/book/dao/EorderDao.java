@@ -82,10 +82,9 @@ public class EorderDao {
 			Date date_end = rs.getDate("eo_date_end");
 			String u_id = rs.getString("u_id");
 			
-			book=new Book(rs.getInt("b_no"),rs.getString("b_name"),
-					rs.getString("b_class"),rs.getString("b_author"),
-					rs.getString("b_publisher"),rs.getString("b_summary"),
-					rs.getString("b_image"),rs.getInt("b_price"));
+			book=new Book(rs.getInt("b_no"), rs.getString("b_class"), rs.getString("b_name"),
+					rs.getInt("b_price"), rs.getString("b_summary"), rs.getString("b_image"), rs.getString("b_author"),
+					rs.getString("b_publisher"));
 			
 			
 			ebook = new Ebook(rs.getInt("e_no"), rs.getInt("eo_no"), book);
@@ -113,10 +112,9 @@ public class EorderDao {
 			Date date_end = rs.getDate("eo_date_end");
 			String u_id = rs.getString("u_id");
 			
-			book=new Book(rs.getInt("b_no"),rs.getString("b_name"),
-					rs.getString("b_class"),rs.getString("b_author"),
-					rs.getString("b_publisher"),rs.getString("b_summary"),
-					rs.getString("b_image"),rs.getInt("b_price"));
+			book=new Book(rs.getInt("b_no"), rs.getString("b_class"), rs.getString("b_name"),
+					rs.getInt("b_price"), rs.getString("b_summary"), rs.getString("b_image"), rs.getString("b_author"),
+					rs.getString("b_publisher"));
 			
 			
 			ebook = new Ebook(rs.getInt("e_no"), rs.getInt("eo_no"), book);
