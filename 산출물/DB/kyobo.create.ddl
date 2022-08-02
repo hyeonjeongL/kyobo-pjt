@@ -176,7 +176,7 @@ ALTER TABLE orders ADD CONSTRAINT IDX_orders_FK0 FOREIGN KEY (u_id) REFERENCES u
 ALTER TABLE book ADD CONSTRAINT IDX_book_PK PRIMARY KEY (b_no);
 
 ALTER TABLE orderdetail ADD CONSTRAINT IDX_orderdetail_PK PRIMARY KEY (od_no);
-ALTER TABLE orderdetail ADD CONSTRAINT IDX_orderdetail_FK0 FOREIGN KEY (o_no) REFERENCES orders (o_no);
+ALTER TABLE orderdetail ADD CONSTRAINT IDX_orderdetail_FK0 FOREIGN KEY (o_no) REFERENCES orders (o_no) on delete cascade;
 ALTER TABLE orderdetail ADD CONSTRAINT IDX_orderdetail_FK1 FOREIGN KEY (b_no) REFERENCES book (b_no);
 
 ALTER TABLE review ADD CONSTRAINT IDX_review_PK PRIMARY KEY (r_no);
