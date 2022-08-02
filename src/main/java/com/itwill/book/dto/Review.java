@@ -14,7 +14,7 @@ public class Review {
 	 */
 	private int r_no;
 	private String r_title;
-	private Date date;
+	private Date r_date;
 	private int r_grade;
 	private String r_contents;
 	private String u_id;
@@ -28,7 +28,7 @@ public class Review {
 			OrderDetail orderDetail) {
 		this.r_no = r_no;
 		this.r_title = r_title;
-		this.date = date;
+		this.r_date = date;
 		this.r_grade = r_grade;
 		this.r_contents = r_contents;
 		this.u_id = u_id;
@@ -52,11 +52,11 @@ public class Review {
 	}
 
 	public Date getDate() {
-		return date;
+		return r_date;
 	}
 
 	public void setDate(Date date) {
-		this.date = date;
+		this.r_date = date;
 	}
 
 	public int getR_grade() {
@@ -93,7 +93,7 @@ public class Review {
 
 	@Override
 	public String toString() {
-		return "Review [r_no=" + r_no + ", r_title=" + r_title + ", date=" + date + ", r_grade=" + r_grade
+		return "Review [r_no=" + r_no + ", r_title=" + r_title + ", date=" + r_date + ", r_grade=" + r_grade
 				+ ", r_contents=" + r_contents + ", u_id=" + u_id + ", orderDetail=" + orderDetail + "]";
 	}
 	
