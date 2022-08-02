@@ -7,15 +7,6 @@ insert into userinfo values('enbi', '1234', '임은비', '01045678912', '980105'
 insert into userinfo values('jeonghun', '1234', '이정현', '01056789123', '960504', '여', 'jeonghun@gmail.com', '대구');
 insert into userinfo values('hunjeong', '1234', '임현정', '01067891234', '940701', '여', 'hunjeong@gmail.com', '천안');
 
---category(카테고리) insert
-/*
-insert into categorys values(categorys_category_no_seq.nextval, '자기개발서');
-insert into categorys values(categorys_category_no_seq.nextval, '건강');
-insert into categorys values(categorys_category_no_seq.nextval, '요리');
-insert into categorys values(categorys_category_no_seq.nextval, '컴퓨터IT');
-insert into categorys values(categorys_category_no_seq.nextval, '공포');
-*/
-
 --BOOK(책) insert
 
 --1번 자기개발서
