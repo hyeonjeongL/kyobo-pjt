@@ -18,7 +18,7 @@ public class BookService {
 		return bookList;
 	}
 
-	//이름 검색
+	//제목 검색
 	public Book selectByName(String b_name)throws Exception{
 		Book book= bookDao.selectByName(b_name);
 		return book;

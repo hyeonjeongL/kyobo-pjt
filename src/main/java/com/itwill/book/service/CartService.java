@@ -34,7 +34,7 @@ public class CartService {
 	 * 카트리스트보기
 	 */
 	public List<Cart> getCartList (String u_id) throws Exception{
-		return getCartList(u_id);
+		return cartDao.cartList(u_id);
 	}
 	
 	
