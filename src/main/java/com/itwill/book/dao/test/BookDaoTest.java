@@ -19,24 +19,16 @@ public class BookDaoTest {
 		System.out.println(bookDao.selectByName("마시멜로이야기"));
 		
 				
-		//저자 검색1 (1개)
-		Book findBookAuthor=bookDao.selectByAuthor("마키타 젠지");
-		System.out.println(findBookAuthor);
+		//저자 검색(2개 이상)
+		System.out.println(bookDao.selectByAuthor("마키타 젠지"));
 		
 		
-		//저자 검색2 (2개 이상)
-		/*
-		List<Book> bookB=bookDao.selectByAuthor("마키타 젠지");
-		for(Book book:bookB) {
-			System.out.println(book);
-		}
-		*/
 		
 		//카테고리 검색
 		System.out.println(bookDao.selectByClass("요리"));
 		
 		//번호 검색
-		System.out.println(bookDao.selectByNo(1));
+		System.out.println(bookDao.selectByNo(17));
 		
 		
 		/* properties.load(this.getClass().getResourceAsStream("/com/itwill/book/jdbc.properties"))> 경로수정
