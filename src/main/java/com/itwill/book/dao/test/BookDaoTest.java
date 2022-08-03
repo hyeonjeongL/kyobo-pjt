@@ -19,8 +19,7 @@ public class BookDaoTest {
 		System.out.println(bookDao.selectByName("마시멜로이야기"));
 		
 				
-		//저자 검색1
-		
+		//저자 검색1 (1개)
 		Book findBookAuthor=bookDao.selectByAuthor("마키타 젠지");
 		System.out.println(findBookAuthor);
 		
@@ -36,6 +35,8 @@ public class BookDaoTest {
 		//카테고리 검색
 		System.out.println(bookDao.selectByClass("요리"));
 		
+		//번호 검색
+		System.out.println(bookDao.selectByNo(1));
 		
 		
 		/* properties.load(this.getClass().getResourceAsStream("/com/itwill/book/jdbc.properties"))> 경로수정
