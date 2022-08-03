@@ -13,15 +13,14 @@ import com.itwill.book.dto.Orders;
 public class OrderDaoTest {
 
 	public static void main(String[] args) throws Exception{
-		 OrderDao orderDao = null;
-		 CartDao cartDao = null;
-		 BookDao bookDao = null;
-		//주문을 넣어보자 상품 페이지에서 직접 주문
-		// book 번호 1
-		 String b_name = "마시멜로이야기";
-		
-		 List<OrderDetail> orderDetailList = new ArrayList<OrderDetail>();
-		 Book book = bookDao.selectByName(b_name);
+		 OrderDao orderDao = new OrderDao(); 
+		 //List<Orders> orderList = orderDao.List_detail("seongmin");
+		 //System.out.println(orderList);
+		//System.out.println(orderDao.deleteByOrdersNo(1));
+		 System.out.println(orderDao.orderDetail("seongmin", 2));
+	
+		//orderDao.deleteByOrdersNo(1);
+		// orderDao.delete("jihun");
 	}
 
 }

@@ -17,7 +17,7 @@ public class OrderSQL {
 			"delete from orders where u_id = ?";
 	
 	//회원 주문내역 출력
-	public static final String ORDER_SELECT_ALL_BY_USERID =
+	public static final String ORDER_SELECT_ALL_BY_U_ID =
 			"select * from orders where u_id = ?";
 	
 	//회원 주문번호로 주문내역 출력

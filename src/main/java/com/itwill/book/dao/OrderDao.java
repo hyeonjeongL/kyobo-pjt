@@ -65,7 +65,7 @@ public class OrderDao {
 		return 0;
 	}
 	
-	//회원 번호로 주문 전체 삭제. delete
+	//회원 아이디로 주문 전체 삭제. delete
 	public int delete(String sUserId)throws Exception{
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -111,8 +111,50 @@ public class OrderDao {
 	
 		return rowCount;
 	}
-	//회원 주문내역 전체 출력(구현 예정)
-		
+	//회원 주문내역 전체 출력
+		public List<Orders> List_detail(String userId) throws Exception {
+			List<Orders> orderList = new ArrayList<Orders>();
+			
+			Connection con = dataSource.getConnection();
+			PreparedStatement pstmt1 = con.prepareStatement(OrderSQL.ORDER_SELECT_ALL_BY_U_ID);
+			PreparedStatement pstmt2 = con.prepareStatement(OrderSQL.ORDER_SELECT_BY_U_NO);
+			
+			pstmt1.setString(1, userId);
+			ResultSet rs1 = pstmt1.executeQuery();
+			while(rs1.next()) {
+				int temp_o_no = rs1.getInt("o_no");
+				
+				pstmt2.setString(1, userId);
+				pstmt2.setInt(2, temp_o_no);
+				ResultSet rs2 = pstmt2.executeQuery();
+				Orders orders = null;
+				if(rs2.next()) {
+					orders = new Orders(rs2.getInt("o_no"),
+										rs2.getDate("o_date"),
+										rs2.getInt("o_price"),
+										rs2.getString("u_id"),
+										null);
+					
+					List<OrderDetail> orderDetailList = new ArrayList<OrderDetail>();
+					do {
+						orderDetailList.add(new OrderDetail(rs2.getInt("od_no"),
+															rs2.getInt("od_qty"), 
+															rs2.getInt("o_no"),
+															new Book(rs2.getInt("b_no"),
+															rs2.getString("b_class"), 
+															rs2.getString("b_name"), 
+															rs2.getInt("b_price"), 
+															rs2.getString("b_summary"), 
+															rs2.getString("b_image"), 
+															rs2.getString("b_author"), 
+															rs2.getString("b_publisher"))));	
+					}while(rs2.next());
+					orders.setOrderDetailList(orderDetailList);
+				}
+				orderList.add(orders);
+			}
+			return orderList;
+		}
 	
 	// orders select all 회원의 주문 리스트
 	/*
@@ -169,7 +211,7 @@ public class OrderDao {
 																	    rs.getInt("b_price"),
 																	    rs.getString("b_summary"),
 																	    rs.getString("b_image"),
-																	    rs.getString("author"),
+																	    rs.getString("b_author"),
 																	    rs.getString("b_publisher"))));
 			}while(rs.next());
 		}
