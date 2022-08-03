@@ -25,16 +25,29 @@ public class BookService {
 	}
 
 	//저자 검색
-	public List<Book> selectByAuthor(String b_author) throws Exception{
-		List<Book> bookList= bookDao.selectByClass(b_author);
-		return bookList;
+	public Book selectByAuthor(String b_author)throws Exception{
+		Book book= bookDao.selectByAuthor(b_author);
+		return book;
 	}
+	
+	//저자 검색(2개 이상)
+	/*
+	public List<Book> selectByAuthor(String b_author) throws Exception{
+		List<Book> bookList= bookDao.selectByAuthor(b_author);
+		return bookList;
+	}*/
 
 
 	//카테고리 검색
 	public List<Book> selectByClass(String b_class) throws Exception{
 		List<Book> bookList= bookDao.selectByClass(b_class);
 		return bookList;
+	}
+	
+	//번호검색
+	public Book selectByNo(int b_no)throws Exception{
+		Book book= bookDao.selectByNo(b_no);
+		return book;
 	}
 
 }

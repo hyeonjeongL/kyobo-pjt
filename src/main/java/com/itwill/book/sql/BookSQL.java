@@ -16,4 +16,9 @@ public class BookSQL {
 		//도서 리스트
 		public static final String BOOK_LIST
 		= "select * from book";
+		
+		//번호 검색
+		public static final String BOOK_SELECT_BY_NO
+		="select * from book where b_no=?";
+		
 }
