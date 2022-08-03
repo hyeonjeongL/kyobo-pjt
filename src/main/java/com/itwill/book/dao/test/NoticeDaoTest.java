@@ -11,7 +11,7 @@ public class NoticeDaoTest {
 	public static void main(String[] args) throws Exception{
 		NoticeDao noticeDao = new NoticeDao();
 		List<Notice> noticeList = new ArrayList<Notice>();
-		System.out.println(noticeDao.selectByNo(4));
+		System.out.println(noticeDao.selectByNo(1));
 		noticeList = noticeDao.NoticeSelectAll();
 		System.out.println(noticeList);
 		
