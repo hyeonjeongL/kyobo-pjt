@@ -2,7 +2,7 @@
 <%@page import="com.itwill.book.service.BookService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%--<%@include file="login_check.jspf"%>--%>
+<%-- <%@include file="login_check.jspf"%>--%>
 <%
 String b_noStr=request.getParameter("b_no");
 if(b_noStr==null||b_noStr.equals("")){
@@ -28,7 +28,7 @@ if(book==null){
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-</head>
+</head> 
 <body>
 <table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
@@ -76,7 +76,7 @@ if(book==null){
 										</form>
 									</td>
 									<td width=40% height=200 align=center>
-									<img border=0 src='image/book/<%=book.getB_image()%>' width=120 height=200></td>
+									<img border=0 src='image/<%=book.getB_image()%>.jpg' width=120 height=200></td>
 									<td width=40% height=200 class=t1>
 										<ol type="disc">
 											<li>제&nbsp;&nbsp;&nbsp;목 : <%=book.getB_name()%>&nbsp;&nbsp;&nbsp;</li>

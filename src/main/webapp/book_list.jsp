@@ -4,7 +4,7 @@
 <%@page import="com.itwill.book.service.BookService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%--<%@include file="login_check.jspf"%> --%>
+<%-- <%@include file="login_check.jspf"%>--%>
 <%
 BookService bookService =new BookService();
 List<Book> bookList= bookService.selectAll();
@@ -32,11 +32,12 @@ for(int i=0;i<bookList.size();i++){
 if(i%book_column_size==0){
 %>
 <tr>
-<%}%>
+<%}%> 
 
 <td align="center" width="25%"  bgcolor="ffffff">
 <a href="book_detail.jsp?b_no=<%=book.getB_no()%>">
-<img width="60px" height="60px" src="image/<%=book.getB_image()%>.jpg" border="0"></a><br />
+<img width="60px" height="80px" src='image/<%=book.getB_image()%>.jpg' border="0"></a><br />
+											<br /> <b>[<%=book.getB_class()%>]</b><br> 
 											<br /> <b><%=book.getB_name()%></b><br> 
 <font color="#FF0000"><%=new DecimalFormat("#,##0").format(book.getB_price())%>원
 </font></td>
