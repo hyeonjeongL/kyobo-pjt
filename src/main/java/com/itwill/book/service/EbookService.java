@@ -16,7 +16,7 @@ public class EbookService {
 	
 	public long create(int e_no, String id)throws Exception {
 		if(eorderDao.selectByIdNo(id, e_no) == null) {
-			int rowCount = eorderDao.insert(e_no, id);
+			long rowCount = eorderDao.insert(e_no, id);
 			rowCount = rowCount*60*60*24*90;
 			return rowCount;
 		}
