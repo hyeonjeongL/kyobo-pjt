@@ -112,6 +112,7 @@ public class OrderDao {
 	}
 	
 	// orders select all 회원의 주문 리스트
+	/*
 	public ArrayList<Orders> ordersList(String sUserId) throws Exception{
 		ArrayList<Orders> ordersList = new ArrayList<Orders>();
 		Connection con = null;
@@ -135,6 +136,7 @@ public class OrderDao {
 		}
 		return ordersList;
 	}
+	*/
 	// orderdetail select 주문 1개 상세보기
 	public Orders orderDetail(String sUserId, int o_no) throws Exception{
 		Orders order = null;
