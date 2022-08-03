@@ -146,7 +146,7 @@ public class ReviewDao {
 					rs.getString("r_title"), rs.getDate("r_date"), rs.getInt("r_grade"), 
 					rs.getString("r_contents"), rs.getString("u_id"),
 					new OrderDetail(rs.getInt("od_no"), 0, 0, 
-							new Book(rs.getInt("b_no"), null, null, 0, null, null, null, null)), 
+							new Book(0, null, null, 0, null, null, null, null)), 
 					rs.getInt("r_groupno"), rs.getInt("r_step"), rs.getInt("r_depth"));
 		}
 		rs.close();
@@ -164,10 +164,44 @@ public class ReviewDao {
 		pstmt.setInt(1, review.getOrderDetail().getBook().getB_price());
 		ResultSet rs = pstmt.executeQuery();
 		while(rs.next()) {
-			
+			reviewBookList.add(new Review(
+					rs.getInt("r_no"), rs.getString("r_title"), rs.getDate("r_date"), 
+					rs.getInt("r_grade"), rs.getString("r_contents"), rs.getString("u_id"),
+					new OrderDetail(rs.getInt("od_no"), 0, 0, 
+							new Book(rs.getInt("b_no"), null, null, 0, null, null, null, null)), 
+					rs.getInt("r_groupno"), 
+					rs.getInt("r_step"), 
+					rs.getInt("r_depth")));
 		}
+		rs.close();
+		pstmt.close();
+		con.close();
 		
-		return null;
+		return reviewBookList;
+	}
+	
+	//회원 아이디로 리뷰조회
+	public List<Review> reviewSelectByUserId(String u_id) throws Exception{
+		List<Review> reviewIdList = new ArrayList<Review>();
+		Connection con = dataSource.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(ReviewSQL.SELECT_REVIEW_U_ID);
+		pstmt.setString(1, u_id);
+		ResultSet rs = pstmt.executeQuery();
+		while(rs.next()) {
+			reviewIdList.add(new Review(
+					rs.getInt("r_no"), rs.getString("r_title"), rs.getDate("r_date"), 
+					rs.getInt("r_grade"), rs.getString("r_contents"), rs.getString("u_id"),
+					new OrderDetail(rs.getInt("od_no"), 0, 0, 
+							new Book(0, null, null, 0, null, null, null, null)), 
+					rs.getInt("r_groupno"), 
+					rs.getInt("r_step"), 
+					rs.getInt("r_depth")));
+		}
+		rs.close();
+		pstmt.close();
+		con.close();
+		
+		return reviewIdList;
 	}
 		
 	
