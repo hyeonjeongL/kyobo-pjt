@@ -32,7 +32,7 @@ for(int i=0;i<bookList.size();i++){
 if(i%book_column_size==0){
 %>
 <tr>
-<%}%>
+<%}%> 
 
 <td align="center" width="25%"  bgcolor="ffffff">
 <a href="book_detail.jsp?b_no=<%=book.getB_no()%>">

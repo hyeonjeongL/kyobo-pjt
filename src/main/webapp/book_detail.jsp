@@ -28,7 +28,7 @@ if(book==null){
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-</head>
+</head> 
 <body>
 <table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
