@@ -30,9 +30,68 @@ if(book==null){
 <title>Insert title here</title>
 </head>
 <body>
-<form>
-<h3></h3>
-</form>
+<table style="padding-left: 10px" border=0 cellpadding=0
+								cellspacing=0>
+								<tr>
+									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>상품상세보기</b></td>
+								</tr>
+							</table> <!-- 
+							<form name="f" method="post">
+							-->
+							<table style="margin-left: 10px" border=0 width=80% height=376
+								align=center>
+								<tr valign=bottom>
+									<td width=30% align=center class=t1><font size=2
+										color=#0000FF><b>주문 권수</b></font></td>
+									<td width=40% align=center class=t1><font size=2
+										color=#0000FF><b>도서 사진</b></font></td>
+									<td width=30% align=center class=t1><font size=2
+										color=#0000FF><b>도서 정보</b></font></td>
+								</tr>
+								<tr width=100%>
+									<td colspan=3 height=5><hr color=#556b2f></td>
+								</tr>
+								<tr width=100%>
+									<td width=30% height=200 align=center class=t1>
+										<form name="add_cart_form" method="post" action="cart_add_action.jsp">
+											수량 :
+											<!-- 
+											 <input type=text name="cart_qty" value=1 size=4 class=TXTFLD>  
+											-->
+											<select name="cart_qty">
+												<option value="1">1
+												<option value="2">2
+												<option value="3">3
+												<option value="4">4
+												<option value="5">5
+												<option value="6">6
+												<option value="7">7 
+												<option value="8">8
+												<option value="9">9
+												<option value="10">10
+											</select> 권<br><br> 
+												<input type=submit value="장바구니에담기[장바구니보여주기]" /><br><br> 
+												<input type=button onclick="add_cart_popup_window();" value="장바구니에담기[계속쇼핑팝업]" />
+												<input type="hidden" name=b_no value="<%=book.getB_no()%>">
+										</form>
+									</td>
+									<td width=40% height=200 align=center>
+									<img border=0 src='image/book/<%=book.getB_image()%>' width=120 height=200></td>
+									<td width=40% height=200 class=t1>
+										<ol type="disc">
+											<li>제&nbsp;&nbsp;&nbsp;목 : <%=book.getB_name()%>&nbsp;&nbsp;&nbsp;</li>
+											<li>가&nbsp;&nbsp;&nbsp;격 : <%=book.getB_price()%>&nbsp;&nbsp;&nbsp;</li>
+											<li>분&nbsp;&nbsp;&nbsp;야 : <%=book.getB_class()%>&nbsp;&nbsp;&nbsp;</li>
+											<li>저&nbsp;&nbsp;&nbsp;자 : <%=book.getB_author()%>&nbsp;&nbsp;&nbsp;</li>
+											<li>출판사 : <%=book.getB_publisher()%>&nbsp;&nbsp;&nbsp;</li>
+											<li>소&nbsp;&nbsp;&nbsp;개 : <%=book.getB_summary()%>&nbsp;&nbsp;&nbsp;</li>
+										</ol>
+									</td>
+								</tr>
+								<tr>
+									<td colSpan=3 height=21><hr color=#556b2f></td>
+								</tr>
+							</table>
 
 </body>
 </html>
