@@ -36,7 +36,7 @@ if(i%book_column_size==0){
 
 <td align="center" width="25%"  bgcolor="ffffff">
 <a href="book_detail.jsp?b_no=<%=book.getB_no()%>">
-<img width="60px" height="60px" src="image/book/<%=book.getB_image()%>" border="0"></a><br />
+<img width="60px" height="60px" src="image/<%=book.getB_image()%>.jpg" border="0"></a><br />
 											<br /> <b><%=book.getB_name()%></b><br> 
 <font color="#FF0000"><%=new DecimalFormat("#,##0").format(book.getB_price())%>원
 </font></td>
