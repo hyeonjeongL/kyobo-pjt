@@ -3,9 +3,8 @@
     pageEncoding="UTF-8"%>
 <%
 	String sUserId=(String)session.getAttribute("sUserId");
-	UserInfo sUser=(UserInfo)session.getAttribute("sUser");
 	if(sUserId==null){
-		response.sendRedirect("shop_main.jsp");
+		//response.sendRedirect("kyobo_main.jsp");
 		return;
 	}
 %>  
