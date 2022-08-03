@@ -24,7 +24,7 @@ public class ReviewSQL {
 	public static final String SELECT_REVIEW_NO = "select * from review where r_no=?";
 	
 	//책 번호로 리뷰조회
-	public static final String SELECT_REVIEW_B_NO = "select * from review join orderdetail od on r.od_no = od.od_no where od.b_no=?";
+	public static final String SELECT_REVIEW_B_NO = "select * from review r join orderdetail od on r.od_no = od.od_no where od.b_no=?";
 	
 	//회원 아이디로 리뷰조회
 	public static final String SELECT_REVIEW_U_ID = "select * from review where u_id=?";

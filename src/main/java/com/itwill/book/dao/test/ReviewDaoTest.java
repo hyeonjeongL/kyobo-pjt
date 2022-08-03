@@ -67,7 +67,7 @@ public class ReviewDaoTest {
 		//리뷰 번호로 리뷰 조회
 		System.out.println("selectReviewR_no : "+ reviewDao.reviewSelectNo(7));
 		
-/*		
+		
 		//책 번호로 리뷰 조회
 		List<Review> reviewBookList = new ArrayList<Review>();
 		Review findReview = new Review(0, null, null, 0, null, null, 
@@ -77,7 +77,7 @@ public class ReviewDaoTest {
 		for (Review review : reviewBookList) {
 			System.out.println(review);
 		}
-*/
+
 		
 		//회원 아이디로 리뷰 조회
 		List<Review> reviewIdList = reviewDao.reviewSelectByUserId("jihun");
