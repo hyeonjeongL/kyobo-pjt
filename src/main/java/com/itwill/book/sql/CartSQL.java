@@ -12,9 +12,9 @@ public class CartSQL {
 //	public static final String CART_INSERT_UPDATE
 //	= "update cart set c_no=?, c_qty=?, u_id=?, b_no=?";
 
-	//카트 수량변경 보류
+	//카트 수량변경
 	public static final String CART_UPDATE_QTY
-	= "update cart set cart_c_no_seq.currval,c_qty=c_qty+? where u_id=? and b_no=?";
+	= "update cart set c_qty=c_qty+? where u_id=? and b_no=?";
 	//카트 선택 삭제
 	public static final String CART_DELETE_BY_NO
 	= "delete from cart where b_no=?";

@@ -57,12 +57,12 @@ public class CartDao {
 
 		
 	}
-	//cart update_qty 카트수량변경 
+	//cart update_qty 카트수량변경 (장바구니 추가할때마다 카드 번호가 바뀌는게 맞는걸까?? 고정되야하는건 아닐까)
 	public int cartUpdateQty(Cart newCart) throws Exception{
 		Connection con = dataSource.getConnection();
 		PreparedStatement pstmt = con.prepareStatement(CartSQL.CART_UPDATE_QTY);
 		
-		pstmt.setInt(1, newCart.getC_qty());
+		pstmt.setInt(1, newCart.getC_qty() );
 		pstmt.setString(2, newCart.getU_id());
 		pstmt.setInt(3, newCart.getBook().getB_no());
 		
