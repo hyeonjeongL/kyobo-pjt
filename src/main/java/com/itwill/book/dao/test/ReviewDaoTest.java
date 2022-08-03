@@ -1,5 +1,6 @@
 package com.itwill.book.dao.test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.itwill.book.dao.ReviewDao;
@@ -39,11 +40,24 @@ public class ReviewDaoTest {
 		//<< select r_no >>
 		System.out.println(reviewDao.reviewSelectNo(11));
 		
+/*		
 		//<< select b_no >>
-		List<Review> selectReviewB_no = reviewDao.reviewSelectB_no(1);
-		for (Review review : selectReviewB_no) {
+		List<Review> selectReviewB_no = reviewDao.reviewSelectB_no(
+				new Review(0, null, null, 0, null, null,
+				new OrderDetail(0, 0, 0, 
+						new Book(1, null, null, 0, null, null, null, null))));
+		for(Review review : selectReviewB_no) {
 			System.out.println(review);
 		}
+*/		
+		
+		Review reviewfind = new Review(0, null, null, 0, null, null, new OrderDetail(0, 0, 0, new Book(1, null, null, 0, null, null, null, null)));
+		List<Review> reviewList = new ArrayList<Review>();
+		reviewList = reviewDao.reviewSelectB_no(reviewfind);
+		for (Review review : reviewList) {
+			System.out.println(review);
+		}
+		
 		
 		
 		//<< select u_id >>

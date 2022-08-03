@@ -112,7 +112,7 @@ public class ReviewDao {
 										rs.getInt("r_grade"),
 										rs.getString("r_contents"),
 										rs.getString("u_id"),
-										new OrderDetail(0, 0, 0,
+										new OrderDetail(rs.getInt("od_no"), 0, 0,
 										new Book(0, null, null, 0, null, null, null, null)));
 			/*
 			 new OrderDetail(0, 0, rs.getInt("o_no"),
@@ -126,7 +126,8 @@ public class ReviewDao {
 		
 		return findReviewR_no;
 	}
-	
+
+/*	
 	//책 번호로 리뷰조회
 	public List<Review> reviewSelectB_no(int b_no) throws Exception{
 		List<Review> reviewBookList = new ArrayList<Review>();
@@ -151,6 +152,33 @@ public class ReviewDao {
 		
 		return reviewBookList;
 	}
+*/
+	
+	public List<Review> reviewSelectB_no(Review review) throws Exception{
+		List<Review> reviewBookList = new ArrayList<Review>();
+		Connection con = dataSource.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(ReviewSQL.REVIEW_SELECT_BY_B_NO);
+		pstmt.setInt(1, review.getOrderDetail().getBook().getB_no());
+		ResultSet rs = pstmt.executeQuery();
+		while(rs.next()) {
+			reviewBookList.add(new Review(rs.getInt("r_no"), 
+					rs.getString("r_title"), 
+					rs.getDate("r_date"), 
+					rs.getInt("r_grade"),
+					rs.getString("r_contents"),
+					rs.getString("u_id"),
+					new OrderDetail(rs.getInt("od_no"), 0, 0,
+					new Book(rs.getInt("b_no"), null, null, 0, null, null, null, null))));
+		}
+		rs.close();
+		pstmt.close();
+		con.close();
+		
+		
+		return reviewBookList;
+	}
+	
+	
 	
 	//아이디로 리뷰 조회
 	public List<Review> reviewSelectU_id(String u_id) throws Exception{
@@ -166,8 +194,8 @@ public class ReviewDao {
 					rs.getInt("r_grade"),
 					rs.getString("r_contents"),
 					rs.getString("u_id"),
-					new OrderDetail(0, 0, rs.getInt("o_no"),
-					new Book(rs.getInt("b_no"), null, null, 0, null, null, null, null))));
+					new OrderDetail(rs.getInt("od_no"), 0, 0,
+					new Book(0, null, null, 0, null, null, null, null))));
 		}
 		rs.close();
 		pstmt.close();
