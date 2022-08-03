@@ -5,7 +5,7 @@ public class OrderDetail {
 	private int od_no;
 	private int od_qty;
 	private int o_no;
-	Book book;
+	private Book book;
 	
 	public OrderDetail() {
 

@@ -16,9 +16,26 @@ public class Orders {
 	private Date o_date;
 	private int o_price;
 	private String u_id;
-	private ArrayList<OrderDetail> ordersList = new ArrayList<OrderDetail>();
-	public Orders() {
+	private ArrayList<OrderDetail> orderDetailList = new ArrayList<OrderDetail>();
 	
+	public Orders() {
+		
+	}
+	
+	public Orders(int o_no, Date o_date, int o_price, String u_id) {
+		super();
+		this.o_no = o_no;
+		this.o_date = o_date;
+		this.o_price = o_price;
+		this.u_id = u_id;
+	}
+	public Orders(int o_no, Date o_date, int o_price, String u_id, ArrayList<OrderDetail> orderDetailList) {
+		super();
+		this.o_no = o_no;
+		this.o_date = o_date;
+		this.o_price = o_price;
+		this.u_id = u_id;
+		this.orderDetailList = orderDetailList;
 	}
 	public int getO_no() {
 		return o_no;
@@ -44,18 +61,18 @@ public class Orders {
 	public void setU_id(String u_id) {
 		this.u_id = u_id;
 	}
-	public ArrayList<OrderDetail> getOrdersList() {
-		return ordersList;
+	public ArrayList<OrderDetail> getOrderDetailList() {
+		return orderDetailList;
 	}
-	public void setOrdersList(ArrayList<OrderDetail> ordersList) {
-		this.ordersList = ordersList;
+	public void setOrderDetailList(ArrayList<OrderDetail> orderDetailList) {
+		this.orderDetailList = orderDetailList;
 	}
+	
 	@Override
 	public String toString() {
 		return "Orders [o_no=" + o_no + ", o_date=" + o_date + ", o_price=" + o_price + ", u_id=" + u_id
-				+ ", ordersList=" + ordersList + "]";
+				+ ", orderDetailList=" + orderDetailList + "]";
 	}
-	
 	
 }
 	

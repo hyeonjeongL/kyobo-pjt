@@ -58,6 +58,7 @@ CREATE SEQUENCE QNA_q_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
 
 
+
 CREATE TABLE orders(
 		o_no                          		NUMBER(10)		 NULL ,
 		o_date                        		DATE		 DEFAULT sysdate		 NULL ,
@@ -111,12 +112,16 @@ CREATE TABLE review(
 		r_grade                       		NUMBER(10)		 NULL ,
 		r_contents                    		VARCHAR2(2000)		 NULL ,
 		u_id                          		VARCHAR2(50)		 NULL ,
-		od_no                         		NUMBER(10)		 NULL 
+		od_no                         		NUMBER(10)		 NULL ,
+		r_groupno                     		NUMBER(10)		 NULL ,
+		r_step                        		NUMBER(10)		 NULL ,
+		r_depth                       		NUMBER(10)		 NULL 
 );
 
 DROP SEQUENCE review_r_no_SEQ;
 
 CREATE SEQUENCE review_r_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
+
 
 
 
@@ -163,6 +168,7 @@ CREATE SEQUENCE eorder_eo_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
 
 
+
 ALTER TABLE userinfo ADD CONSTRAINT IDX_userinfo_PK PRIMARY KEY (u_id);
 
 ALTER TABLE notice ADD CONSTRAINT IDX_notice_PK PRIMARY KEY (n_no);
@@ -176,7 +182,7 @@ ALTER TABLE orders ADD CONSTRAINT IDX_orders_FK0 FOREIGN KEY (u_id) REFERENCES u
 ALTER TABLE book ADD CONSTRAINT IDX_book_PK PRIMARY KEY (b_no);
 
 ALTER TABLE orderdetail ADD CONSTRAINT IDX_orderdetail_PK PRIMARY KEY (od_no);
-ALTER TABLE orderdetail ADD CONSTRAINT IDX_orderdetail_FK0 FOREIGN KEY (o_no) REFERENCES orders (o_no) on delete cascade;
+ALTER TABLE orderdetail ADD CONSTRAINT IDX_orderdetail_FK0 FOREIGN KEY (o_no) REFERENCES orders (o_no);
 ALTER TABLE orderdetail ADD CONSTRAINT IDX_orderdetail_FK1 FOREIGN KEY (b_no) REFERENCES book (b_no);
 
 ALTER TABLE review ADD CONSTRAINT IDX_review_PK PRIMARY KEY (r_no);

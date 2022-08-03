@@ -1,4 +1,5 @@
---USERINFO(회원) insert 
+--모든 테이블 insert
+--USERINFO(회원) insert
 
 insert into userinfo values('seongmin', '1234', '정성민', '01012345678', '970902', '남', 'seongmin@gmail.com', '경기도');
 insert into userinfo values('bongkune', '1234', '김봉균', '01023456789', '940603', '남', 'bongkune@gmail.com', '서울');
@@ -8,8 +9,8 @@ insert into userinfo values('jeonghun', '1234', '이정현', '01056789123', '960
 insert into userinfo values('hunjeong', '1234', '임현정', '01067891234', '940701', '여', 'hunjeong@gmail.com', '천안');
 
 --BOOK(책) insert
-
 --1번 자기개발서
+
 insert into book values(book_b_no_seq.nextval, '자기개발서', '마시멜로이야기', 12000, '달콤한 유혹에서 이겨낼 때, 비로소 얻게 된다', '1_marshmallow', '호아킴 데 포사다', '한국경제신문사');
 insert into book values(book_b_no_seq.nextval, '자기개발서', '누가 내 치즈를 옮겼을까?', 13500, '인생에서 부딪힐 변화를 대처할 수 있는 지혜', '1_who', '스펜서 존슨', '진명출판사');
 insert into book values(book_b_no_seq.nextval, '자기개발서', '미움받을 용기', 14900, '자유롭고 행복한 삶을 위한 가르침', '1_courage', '기시미 이치로', '진명출판사');
@@ -40,8 +41,7 @@ insert into book values(book_b_no_seq.nextval, '공포', '신비아파트 오싹
 insert into book values(book_b_no_seq.nextval, '공포', '오싹오싹 OK 공포 만화', 5500, '심장이 쫄깃! 머리카락이 쭈뼛!', '5_ok', '백철,계건일', '효리원');
 insert into book values(book_b_no_seq.nextval, '공포', '악몽', 15000, '너무 무서워서 줄거리가 없습니다.', '5_dream', '조이스 캐럴 오츠', '포레');
 
-
--- USERINFO QNA insert
+-- QNA insert
 
 insert into qna values(QNA_q_no_SEQ.nextval, '1:1문의', '책 배송이 언제오나요?', sysdate, '제가 주문한 책 배송이 언제오나요?', 'seongmin');
 insert into qna values(QNA_q_no_SEQ.nextval, '1:1문의', '책이 잘못왔어요', sysdate, '책이 잘못왔어요', 'enbi');
@@ -49,3 +49,57 @@ insert into qna values(QNA_q_no_SEQ.nextval, '1:1문의', '상품 언제 들어�
 insert into qna values(QNA_q_no_SEQ.nextval, '1:1문의', '주문이 누락됐습니다', sysdate, '주문이 누락됐습니다 주문이 누락됐습니다', 'hunjeong');
 insert into qna values(QNA_q_no_SEQ.nextval, '1:1문의', '주문 취소하고싶어요', sysdate, '주문 취소하고싶어요', 'jihun');
 insert into qna values(QNA_q_no_SEQ.nextval, '1:1문의', '배고파요', sysdate, '배고파요', 'bongkune');
+
+--Orders insert 
+--orderdetail insert
+
+-- 회원 u_id
+insert into orders(o_no, o_date, o_price, u_id) values(orders_o_no_seq.nextval, sysdate, 17000, 'jihun');
+insert into orderdetail(od_no, od_qty, o_no, b_no) values(orderdetail_od_no_seq.nextval, 3, orders_o_no_seq.currval, 4);
+
+--notice insert
+-- 공지사항
+
+--1. 광복절 및 택배 없는 날 배송일정 안내
+insert into notice 
+values(notice_n_no_seq.nextval, '공지사항', '광복절 및 택배 없는 날 배송일정 안내', '2022-08-01', 
+'안녕하세요. 꿈을 키우는 세상 교보문고입니다.
+언제나 교보문고를 사랑해주시는 고객님께 진심으로 감사의 말씀드립니다.
+8월 13일 택배 없는 날, 8월 15일 광복절 휴무로 인해 변경되는 배송일정을 안내드립니다.', 1);
+--2. 서비스 종료 및 변경 안내
+insert into notice
+values(notice_n_no_seq.nextval, '공지사항', '서비스 종료 및 변경 안내', '2022-07-08', 
+'안녕하세요. 꿈을 키우는 세상 교보문고입니다.
+교보문고 서비스를 이용해 주시는 고객님께 감사드립니다.
+보다 나은 서비스 제공을 위해 아래와 같은 변동이 예정되어 있으니 이용 시 참고하여 주시기 바랍니다.', 1);
+--3. 해외배송(FedEx) 배송료 인상 안내 (5/1
+insert into notice
+values(notice_n_no_seq.nextval, '공지사항', '해외배송(FedEx) 배송료 인상 안내 (5/1)', '2022-03-01',
+'최근 코로나 19로 인한 해외 배송에 필요한 항공운송료가 급격히 증가함에 따라, 동 서비스의 지속적이고 안정적인 제공을 위한 필요 최소 수준의 요금 조정이 불가피한 실정입니다.
+이에, ’22. 5. 1. 자 FedEx의 해외 배송 서비스의 요금이 인상될 예정 이오니, 고객님의 너른 양해를 부탁드리며 조정내용을 사전 공지하오니 서비스 이용에 참조하시기 바랍니다.', 1);
+
+--ebook insert
+
+insert into ebook values(ebook_e_no_seq.nextval, sysdate, 12000, 1);
+insert into ebook values(ebook_e_no_seq.nextval, sysdate, 13500, 2);
+insert into ebook values(ebook_e_no_seq.nextval, sysdate, 14900, 3);
+insert into ebook values(ebook_e_no_seq.nextval, sysdate, 17000, 4);
+insert into ebook values(ebook_e_no_seq.nextval, sysdate, 16000, 5);
+
+--eorder insert
+
+insert into eorder values(eorder_eo_no_seq.nextval, sysdate, sysdate+10, 1, 'seongmin');
+insert into eorder values(eorder_eo_no_seq.nextval, sysdate, sysdate+10, 2, 'bongkune');
+insert into eorder values(eorder_eo_no_seq.nextval, sysdate, sysdate+10, 3, 'jihun');
+
+--review insert
+
+insert into review values(review_r_no_seq.nextval, '책이 재밌어요', sysdate, 5, '책 처음 사봤는데 이 책이 제일 재밌네요.', 'seongmin', 1 ,review_r_no_seq.currval, 1, 0);
+insert into review values(review_r_no_seq.nextval, '오늘 책이 베스트', sysdate, 5, '베스트셀러라서 사봤는데 괜찮은듯', 'bongkune', 1, review_r_no_seq.currval, 1, 0);
+insert into review values(review_r_no_seq.nextval, '아이가 좋아해요', sysdate, 5, '아이가 이 책을 읽더니 일기를 써요.', 'jihun', 1, review_r_no_seq.currval, 1, 0);
+
+--cart insert
+
+insert into cart values(cart_c_no_seq.nextval, 2, 'seongmin', 1);
+insert into cart values(cart_c_no_seq.nextval, 4, 'bongkune', 2);
+insert into cart values(cart_c_no_seq.nextval, 5, 'jihun', 3);
