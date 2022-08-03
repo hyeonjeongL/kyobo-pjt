@@ -45,13 +45,29 @@ public class BookDao {
 		}
 		return book;
 	}
+ 
+	//번호검색
+	public Book selectByNo(int b_no) throws Exception {
+		Book book = null;
+		Connection con = dataSource.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(BookSQL.BOOK_SELECT_BY_NO);
+		pstmt.setInt(1, b_no);
+		ResultSet rs = pstmt.executeQuery();
+		if (rs.next()) {
+			book = new Book(rs.getInt("b_no"), rs.getString("b_class"), rs.getString("b_name"), rs.getInt("b_price"),
+					rs.getString("b_summary"), rs.getString("b_image"), rs.getString("b_author"),
+					rs.getString("b_publisher")
 
-	// 저자 검색1 (2개 이상)
-	/*
+			);
+		}
+		return book;
+	}
+
+	// 저자 검색 (2개 이상)
 	public List<Book> selectByAuthor(String b_author) throws Exception {
 		List<Book> bookList = new ArrayList<Book>();
 		Connection con = dataSource.getConnection();
-		PreparedStatement pstmt = con.prepareStatement(BookSQL.BOOK_SELECT_BY_B_CLASS);
+		PreparedStatement pstmt = con.prepareStatement(BookSQL.BOOK_SELECT_BY_AUTHOR);
 		pstmt.setString(1, b_author);
 		ResultSet rs = pstmt.executeQuery();
 		while (rs.next()) {
@@ -63,25 +79,9 @@ public class BookDao {
 			bookList.add(book);
 		}
 		return bookList;
-	}*/
+	}
 
-	// 저자 검색2 (1개)
 	
-		public Book selectByAuthor(String b_author) throws Exception{
-			Book book=null;
-			Connection con = dataSource.getConnection();
-			PreparedStatement pstmt = con.prepareStatement(BookSQL.BOOK_SELECT_BY_AUTHOR);
-			pstmt.setString(1, b_author);
-			ResultSet rs = pstmt.executeQuery();
-			if (rs.next()) {
-				book = new Book(rs.getInt("b_no"), rs.getString("b_class"), rs.getString("b_name"),
-						rs.getInt("b_price"), rs.getString("b_summary"), rs.getString("b_image"), rs.getString("b_author"),
-						rs.getString("b_publisher"));
-			}
-			return book;
-		}
-	
-
 	// 카테고리 검색
 	public List<Book> selectByClass(String b_class) throws Exception {
 		List<Book> bookList = new ArrayList<Book>();

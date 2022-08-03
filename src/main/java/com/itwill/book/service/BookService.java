@@ -24,9 +24,12 @@ public class BookService {
 		return book;
 	}
 
-	//저자 검색
+	
+	
+	//저자 검색(2개 이상)
+	
 	public List<Book> selectByAuthor(String b_author) throws Exception{
-		List<Book> bookList= bookDao.selectByClass(b_author);
+		List<Book> bookList= bookDao.selectByAuthor(b_author);
 		return bookList;
 	}
 
@@ -35,6 +38,12 @@ public class BookService {
 	public List<Book> selectByClass(String b_class) throws Exception{
 		List<Book> bookList= bookDao.selectByClass(b_class);
 		return bookList;
+	}
+	
+	//번호검색
+	public Book selectByNo(int b_no)throws Exception{
+		Book book= bookDao.selectByNo(b_no);
+		return book;
 	}
 
 }
