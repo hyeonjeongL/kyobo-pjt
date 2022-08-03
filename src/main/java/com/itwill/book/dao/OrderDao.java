@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import javax.sql.DataSource;
@@ -110,6 +111,8 @@ public class OrderDao {
 	
 		return rowCount;
 	}
+	//회원 주문내역 전체 출력(구현 예정)
+		
 	
 	// orders select all 회원의 주문 리스트
 	/*
