@@ -2,7 +2,7 @@
 <%@page import="com.itwill.book.service.BookService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@include file="login_check.jspf"%> 
+    <%--<%@include file="login_check.jspf"%>--%>
 <%
 String b_noStr=request.getParameter("b_no");
 if(b_noStr==null||b_noStr.equals("")){
@@ -27,10 +27,12 @@ if(book==null){
 <html>
 <head>
 <meta charset="UTF-8">
-<title>도서 정보</title>
+<title>Insert title here</title>
 </head>
 <body>
-
+<form>
+<h3></h3>
+</form>
 
 </body>
 </html>
