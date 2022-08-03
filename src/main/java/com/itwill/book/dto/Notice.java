@@ -13,6 +13,8 @@ public class Notice {
 	public Notice() {
 		
 	}
+	
+	
 	public Notice(int n_no, String n_class, String n_title, Date n_date, String n_contents, int n_views) {
 		super();
 		this.n_no = n_no;
