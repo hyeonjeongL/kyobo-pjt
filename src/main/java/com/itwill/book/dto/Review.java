@@ -22,7 +22,7 @@ public class Review {
 	private int r_grade;
 	private String r_contents;
 	private String u_id;
-	private int od_no;
+	private OrderDetail orderDetail;
 	private int r_groupno;
 	private int r_step;
 	private int r_depth;
@@ -31,8 +31,8 @@ public class Review {
 		
 	}
 
-	public Review(int r_no, String r_title, Date r_date, int r_grade, String r_contents, String u_id, int od_no,
-			int r_groupno, int r_step, int r_depth) {
+	public Review(int r_no, String r_title, Date r_date, int r_grade, String r_contents, String u_id,
+			OrderDetail orderDetail, int r_groupno, int r_step, int r_depth) {
 		super();
 		this.r_no = r_no;
 		this.r_title = r_title;
@@ -40,7 +40,7 @@ public class Review {
 		this.r_grade = r_grade;
 		this.r_contents = r_contents;
 		this.u_id = u_id;
-		this.od_no = od_no;
+		this.orderDetail = orderDetail;
 		this.r_groupno = r_groupno;
 		this.r_step = r_step;
 		this.r_depth = r_depth;
@@ -94,12 +94,12 @@ public class Review {
 		this.u_id = u_id;
 	}
 
-	public int getOd_no() {
-		return od_no;
+	public OrderDetail getOrderDetail() {
+		return orderDetail;
 	}
 
-	public void setOd_no(int od_no) {
-		this.od_no = od_no;
+	public void setOrderDetail(OrderDetail orderDetail) {
+		this.orderDetail = orderDetail;
 	}
 
 	public int getR_groupno() {
@@ -129,8 +129,11 @@ public class Review {
 	@Override
 	public String toString() {
 		return "Review [r_no=" + r_no + ", r_title=" + r_title + ", r_date=" + r_date + ", r_grade=" + r_grade
-				+ ", r_contents=" + r_contents + ", u_id=" + u_id + ", od_no=" + od_no + ", r_groupno=" + r_groupno
-				+ ", r_step=" + r_step + ", r_depth=" + r_depth + "]";
+				+ ", r_contents=" + r_contents + ", u_id=" + u_id + ", orderDetail=" + orderDetail + ", r_groupno="
+				+ r_groupno + ", r_step=" + r_step + ", r_depth=" + r_depth + "]";
 	}
+
+	
+	
 	
 }

@@ -33,6 +33,146 @@ public class ReviewDao {
 		  
 	}
 	
+	//리뷰작성
+	public int create(Review review) throws Exception{
+		Connection con = dataSource.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(ReviewSQL.INSERT_REVIEW_NEW);
+		//r_no,r_title,r_contents,r_date,r_grade,u_id,od_no,r_groupno,r_step,r_depth
+		pstmt.setString(1, review.getR_title());
+		pstmt.setString(2, review.getR_contents());
+		pstmt.setInt(3, review.getR_grade());
+		pstmt.setString(4, review.getU_id());
+		pstmt.setInt(5, review.getOrderDetail().getOd_no());
+		int rowCount = pstmt.executeUpdate();
+
+		pstmt.close();
+		con.close();
+	
+		return rowCount;
+	}
+	
+	//댓글작성
+	public int createReply(Review review)throws Exception{
+		Connection con = dataSource.getConnection();
+		
+		//댓글의 원글 조회
+		Review temp = this.reviewSelectNo(review.getR_no());
+		
+		//댓글 추가 전 리뷰 정렬
+		PreparedStatement pstmt = con.prepareStatement(ReviewSQL.UPDATE_REVIEW_REPLY_ORDER_NO);
+		pstmt.setInt(1, temp.getR_step());
+		pstmt.setInt(2, temp.getR_groupno());
+		pstmt.executeUpdate();
+		pstmt.close();
+		
+		//댓글 작성
+		pstmt = con.prepareStatement(ReviewSQL.INSERT_REVIEW_REPLY);
+			//r_no,r_title,r_contents,r_date,u_id,r_groupno,r_step,r_depth
+		pstmt.setString(1, review.getR_title());
+		pstmt.setString(2, review.getR_contents());
+		pstmt.setString(3, review.getU_id());
+		pstmt.setInt(4, temp.getR_groupno());
+		pstmt.setInt(5, temp.getR_step()+1);
+		pstmt.setInt(6, temp.getR_depth()+1);
+		int rowCount = pstmt.executeUpdate();
+		pstmt.close();
+		con.close();
+		
+		return rowCount;
+	}
+	
+	/*
+	R_NO	NUMBER(10,0)
+	R_TITLE	VARCHAR2(100 BYTE)
+	R_DATE	DATE
+	R_GRADE	NUMBER(10,0)
+	R_CONTENTS	VARCHAR2(2000 BYTE)
+	U_ID	VARCHAR2(50 BYTE)
+	OD_NO	NUMBER(10,0)
+	R_GROUPNO	NUMBER(10,0)
+	R_STEP	NUMBER(10,0)
+	R_DEPTH	NUMBER(10,0)
+	 */
+	
+	//리뷰 번호로 리뷰 수정
+	public int reviewUpdateByNo(Review review) throws Exception{
+		Connection con = dataSource.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(ReviewSQL.UPDATE_REVIEW);
+			//r_title=?,r_contents=?,r_grade=? where r_no=?
+		pstmt.setString(1, review.getR_title());
+		pstmt.setString(2, review.getR_contents());
+		pstmt.setInt(3, review.getR_grade());
+		pstmt.setInt(4, review.getR_no());
+		int rowCount = pstmt.executeUpdate();
+		pstmt.close();
+		con.close();
+		
+		return rowCount;
+	}
+	
+	//리뷰 번호로 리뷰삭제
+	public int reviewDeleteByNo(int r_no) throws Exception{
+		Connection con = dataSource.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(ReviewSQL.DELETE_REVIEW_NO);
+		pstmt.setInt(1, r_no);
+		int rowCount = pstmt.executeUpdate();
+		pstmt.close();
+		con.close();
+		
+		return rowCount;
+	}
+	
+	//리뷰 원글을 삭제하면 댓글까지 모두 삭제
+	public int reviewDeleteByNoAll (int r_groupno) throws Exception{
+		Connection con = dataSource.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(ReviewSQL.DELETE_REVIEW_NO_ALL);
+		pstmt.setInt(1, r_groupno);
+		int rowCount = pstmt.executeUpdate();
+		pstmt.close();
+		con.close();
+		
+		return rowCount;
+	}
+	
+	//리뷰번호로 리뷰조회
+	public Review reviewSelectNo(int r_no) throws Exception{
+		Review findReview = null;
+		Connection con = dataSource.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(ReviewSQL.SELECT_REVIEW_NO);
+		pstmt.setInt(1, r_no);
+		ResultSet rs = pstmt.executeQuery();
+		if(rs.next()) {
+			findReview = new Review(rs.getInt("r_no"),
+					rs.getString("r_title"), rs.getDate("r_date"), rs.getInt("r_grade"), 
+					rs.getString("r_contents"), rs.getString("u_id"),
+					new OrderDetail(rs.getInt("od_no"), 0, 0, 
+							new Book(rs.getInt("b_no"), null, null, 0, null, null, null, null)), 
+					rs.getInt("r_groupno"), rs.getInt("r_step"), rs.getInt("r_depth"));
+		}
+		rs.close();
+		pstmt.close();
+		con.close();
+		
+		return findReview;
+	}
+	
+	//책 번호로 리뷰조회
+	public List<Review> reviewSelectByBookNo(Review review) throws Exception{
+		List<Review> reviewBookList = new ArrayList<Review>();
+		Connection con = dataSource.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(ReviewSQL.SELECT_REVIEW_B_NO);
+		pstmt.setInt(1, review.getOrderDetail().getBook().getB_price());
+		ResultSet rs = pstmt.executeQuery();
+		while(rs.next()) {
+			
+		}
+		
+		return null;
+	}
+		
+	
+	
+
 	
 	
 	

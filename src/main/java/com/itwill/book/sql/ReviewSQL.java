@@ -3,10 +3,10 @@ package com.itwill.book.sql;
 public class ReviewSQL {
 	
 	//새로운 리뷰 작성
-	public static final String INSERT_REVIEW_NEW = "insert into review (r_no,r_title,r_contents,r_date,r_grade,u_id,od_no,r_groupno,r_step,r_depth) values(REVIEW_R_NO_SEQ.nextval, ?,?,sysdate,?,?,?, REVIEW_R_NO_SEQ.nextval,?,?)";
+	public static final String INSERT_REVIEW_NEW = "insert into review (r_no,r_title,r_contents,r_date,r_grade,u_id,od_no,r_groupno,r_step,r_depth) values(REVIEW_R_NO_SEQ.nextval, ?,?,sysdate,?,?,?, REVIEW_R_NO_SEQ.nextval,1,0)";
 	
 	//댓글 작성 전 리뷰댓글 STEP 수정
-	public static final String UPDATE_REVIEW_REPLY_ORDER_NO = "update review set r_step = r_step+1 where r_step > 1 and r_groupno = ?";
+	public static final String UPDATE_REVIEW_REPLY_ORDER_NO = "update review set r_step = r_step+1 where r_step > ? and r_groupno = ?";
 	
 	//리뷰 댓글 작성
 	public static final String INSERT_REVIEW_REPLY = "insert into review(r_no,r_title,r_contents,r_date,u_id,r_groupno,r_step,r_depth) values(REVIEW_R_NO_SEQ.nextval,?,?,sysdate,?,?,?,?)";
