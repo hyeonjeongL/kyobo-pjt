@@ -28,14 +28,15 @@ public class OrderDaoTest {
 		  *  4. 만든 객체로 insert 해본다.
 		  */
 		 //상품에서 주문 1번 책 3개
+		 /*
 		 List<OrderDetail> orderDetailList = new ArrayList<OrderDetail>(); 
 		 Book bookByNo = bookDao.selectByNo(1); // 책번호 1번
 		 orderDetailList.add(new OrderDetail(0, 3, 0, bookByNo)); // 책 수량 3개
 		 
 		 Orders order = new Orders(0, //주문번호
 				 					null, // 날짜
-				 					bookByNo.getB_price(), // 책가격
-				 					"jihun", // 유저 이름
+				 					bookByNo.getB_price()*3, // 책가격
+				 					"enbi", // 유저 이름
 				 					orderDetailList); //주문상세 배열객체
 		 int rowCount = orderDao.create(order);
 		 System.out.println(rowCount); //이거 해도 의미없음 어짜피 0 반환 주문 들어가요.
@@ -52,9 +53,17 @@ public class OrderDaoTest {
 		 order = new Orders(0, null, order_price, "jihun", orderDetailList);
 		 int rowCount1 = orderDao.create(order);
 		 System.out.println(rowCount1);
+		 // cartDao.cartDeleteAll("jihun"); 이건 카트에 담은거 주문 했으면 카트 비우는거임.
+		 */
+		 //o_no로 주문(개별) 삭제
+		//System.out.println(orderDao.deleteByOrdersNo(3));
+		 //u_id로 주문 전체 삭제
+		//System.out.println(orderDao.delete("enbi"));
+		
 		 
-		// cartDao.cartDeleteAll("jihun"); 이건 카트에 담은거 주문 했으면 카트 비우는거임.
-		 
+		 List<Orders> orderList1 = orderDao.List_detail("jihun");
+		 System.out.println(orderList1);
+		 orderDao.orderDetail("jihun", 1);
 		 
 	}
 
