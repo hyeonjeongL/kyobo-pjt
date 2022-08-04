@@ -112,33 +112,39 @@
 					
 					        <tr>
 					            <td class='book-list-img' rowspan="4">
-					                <a href='book_detail.jsp?b_no=<%=book.getB_no()%>'><img alt='bookcover' src='image/<%=book.getB_image()%>.jpg' width="60px" height="80px"></a>
+					                <a href='book_detail.jsp?b_no=<%=book.getB_no()%>'>
+					                <img alt='bookcover' src='image/<%=book.getB_image()%>.jpg' width="60px" height="80px"></a>
 					                <input type="hidden" name="bookNo" value="<%=book.getB_no()%>">
 					            </td>
-					            <td class='book-td'><span class='bookcategory'><%=book.getB_class()%></span>&nbsp;&nbsp;&nbsp;<a href='book_detail.jsp?b_no=<%=book.getB_no()%>'><strong><%=book.getB_name()%></strong>
+					            <td class='book-td'><span class='bookcategory'>[<%=book.getB_class()%>]</span>&nbsp;&nbsp;&nbsp;<a href='book_detail.jsp?b_no=<%=book.getB_no()%>'><strong><%=book.getB_name()%></strong>
 					            </a></td>
 					        </tr>
 					        <tr>
-					            <td class='book-td'><strong>저자:</strong><%=book.getB_author()%>&nbsp;&nbsp; <strong>출판사:</strong><%=book.getB_publisher()%>
-					            </td>
+					            <td class='book-td'><strong>저자&nbsp;:&nbsp;</strong><%=book.getB_author()%>&nbsp;&nbsp; </td>
 					        </tr>
 					        <tr>
-					        <td class='book-td'><strong>가격:</strong><%=book.getB_price()%>&nbsp;&nbsp; </td>
+					        <td class='book-td'><strong>출판사&nbsp;:&nbsp;</strong><%=book.getB_publisher()%>&nbsp;&nbsp; </td>
+					        </tr>
+					        <tr>
+					        <td class='book-td'><strong>가격&nbsp;:&nbsp;</strong><%=book.getB_price()%>&nbsp;&nbsp; </td>
 					        </tr>
 					        <tr>
 			<%}
 					        }%>		            <td class='book-td'>
 </div>
-			<!-- include_content.jsp end-->
-			<!-- content end -->
-		</div>
-		<!--wrapper end-->
-		<div id="footer">
-			<!-- include_common_bottom.jsp start-->
-			<jsp:include page="include_common_bottom.jsp" />
-			<!-- include_common_bottom.jsp end-->
-		</div>
+	</div>
+	<!-- include_content.jsp end-->
+	<!-- content end -->
+	</div>
+	<!--wrapper end-->
+	<div id="footer">
+		<!-- include_common_bottom.jsp start-->
+		<jsp:include page="include_common_bottom.jsp" />
+		<!-- include_common_bottom.jsp end-->
+	</div>
 	</div>
 	<!--container end-->
+
+
 </body>
 </html>

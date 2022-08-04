@@ -13,8 +13,8 @@ public class BookDaoTest {
 
 		
 		//전체리스트
-	//System.out.println("1.리스트");
-		//System.out.println(bookDao.selectList());
+		System.out.println("1.리스트");
+		System.out.println(bookDao.selectList());
 		/* 전체 리스트
 		 * ArrayList<Book> totBookList = bookDao.getBookList(); for (Book book :
 		 * totBookList) { System.out.println(book); }
@@ -36,7 +36,7 @@ public class BookDaoTest {
 		
 		//제목 검색
 		System.out.println("4.제목 검색");
-		bookList = bookDao.selectByName("기"); 
+		bookList = bookDao.selectByName("마"); 
 		for (Book book2 : bookList) {
 			System.out.println(book2); }
 		

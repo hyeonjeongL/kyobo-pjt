@@ -11,19 +11,19 @@ import com.itwill.book.dto.PageMakerDto;
 
 public class BookService {
 	private BookDao bookDao;
-	private static BookService _instance;
+	//private static BookService _instance;
 
 	public BookService() throws Exception{
 		bookDao=new BookDao();
 	}
-	
+	/*
 	public static BookService getInstance() throws Exception{
 		if(_instance==null) {
 			_instance=new BookService();
 		}
 		return _instance;
 	}
-	
+	*/
 	//리스트
 	/*
 	public PageMakerDto<Book> getBookList(int currentPage) throws Exception {
@@ -61,9 +61,10 @@ public class BookService {
 	public PageMakerDto<Book> selectByName(String keyword, int currentPage) throws Exception {
 		int totRecordCount = bookDao.selectByName(keyword).size();
 		PageMaker pageMaker = new PageMaker(totRecordCount, currentPage, 3, 5);
-		List<Book> bookList = bookDao.selectByName(keyword, pageMaker.getPageBegin(), pageMaker.getPageEnd());		
+		List<Book> bookList = bookDao.selectByName(keyword, pageMaker.getPageBegin(), pageMaker.getPageEnd());
+		System.out.println(bookList);
 		PageMakerDto<Book> pageMakerBookList = new PageMakerDto<Book>(bookList, pageMaker, totRecordCount);
-		
+		System.out.println(pageMakerBookList.itemList);
 		return pageMakerBookList;
 	}
 	
