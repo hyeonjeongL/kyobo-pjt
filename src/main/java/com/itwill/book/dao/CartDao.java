@@ -44,7 +44,7 @@ public class CartDao {
 	}
 		
 		
-	//cart insert 기존수량0
+	//cart insert 기존수량
 	public int cartInsert(Cart newCart) throws Exception {
 		Connection con = dataSource.getConnection();
 		PreparedStatement pstmt = con.prepareStatement(CartSQL.CART_INSERT);
@@ -52,8 +52,8 @@ public class CartDao {
 		pstmt.setString(2, newCart.getU_id() );
 		pstmt.setInt(3, newCart.getBook().getB_no());
 		
-		int rowCount = pstmt.executeUpdate();
-		return rowCount;
+		int insertCount = pstmt.executeUpdate();
+		return insertCount;
 
 		
 	}
@@ -66,8 +66,8 @@ public class CartDao {
 		pstmt.setString(2, newCart.getU_id());
 		pstmt.setInt(3, newCart.getBook().getB_no());
 		
-		int rowCount = pstmt.executeUpdate();
-		return rowCount;
+		int updateQtyCount = pstmt.executeUpdate();
+		return updateQtyCount;
 	}
 
 	
@@ -77,8 +77,8 @@ public class CartDao {
 		PreparedStatement pstmt = con.prepareStatement(CartSQL.CART_DELETE_BY_NO);
 		pstmt.setInt(1, b_no);
 		
-		int rowCount = pstmt.executeUpdate();
-		return rowCount;
+		int deleteNoCount = pstmt.executeUpdate();
+		return deleteNoCount;
 	}
 	
 	
@@ -87,8 +87,8 @@ public class CartDao {
 		Connection con = dataSource.getConnection();
 		PreparedStatement pstmt = con.prepareStatement(CartSQL.CART_DELETE_ALL);
 		pstmt.setString(1, u_id);
-		int rowCount  = pstmt.executeUpdate();
-		return rowCount;
+		int deleteAllCount  = pstmt.executeUpdate();
+		return deleteAllCount;
 	}
 	
 	
