@@ -1,3 +1,5 @@
+<%@page import="com.itwill.book.dto.Ebook"%>
+<%@page import="com.itwill.book.service.EbookService"%>
 <%@page import="com.itwill.book.dto.Book"%>
 <%@page import="com.itwill.book.service.BookService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -22,6 +24,8 @@ if(book==null){
 	out.println("</script>");
 	return;
 }
+EbookService ebookService = new EbookService();
+Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 %>
 <!DOCTYPE html>
 <html>
@@ -35,6 +39,7 @@ if(book==null){
 
 <style type="text/css" media="screen">
 </style>
+<script type="text/javascript" src=js/ebook.js></script>
 <script type="text/javascript">
 	function add_cart_popup_window(){
 		if (<%=!isLogin%>) {
@@ -154,6 +159,7 @@ if(book==null){
 											<li>저&nbsp;&nbsp;&nbsp;자 : <%=book.getB_author()%>&nbsp;</li>
 											<li>출판사 : <%=book.getB_publisher()%>&nbsp;</li>
 											<li>소&nbsp;&nbsp;&nbsp;개 : <%=book.getB_summary()%>&nbsp;</li>
+											<li>대여료 : <%=ebook.getE_price()%>&nbsp;</li>
 										</ol>
 									</td>
 								</tr>
@@ -165,7 +171,8 @@ if(book==null){
 								<tr>
 									<td align=center><input type="button" value="주문하기[주문폼]"
 										onClick="order_create_form();"> &nbsp; <input
-										type="button" value="상품리스트" onClick="bookList();"></td>
+										type="button" value="상품리스트" onClick="bookList();">&nbsp; <input
+										type="button" value="ebook 90일 대여하기" onClick="ebookBuy()"></td>
 								</tr>
 							</table></td>
 					</tr>
