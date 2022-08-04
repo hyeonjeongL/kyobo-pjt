@@ -61,7 +61,7 @@ div#header #menu {
 	opacity: 1;
 }
 #menu li#cart {
-	width: 40px;
+	width: 20px;
 	background: url('../image/cart.png');
 	background-position: center;
 	background-size: 60%;
@@ -72,7 +72,7 @@ div#header #menu {
 	opacity: 1;
 }
  #menu li#mypage {
-	width: 40px;
+	width: 20px;
 	background: url('../image/mypage.png');
 	background-position: bottom;
 	background-size: 60%;

@@ -1,5 +1,17 @@
+<%@page import="com.itwill.book.service.NoticeService"%>
+<%@page import="com.itwill.book.dto.Notice"%>
+<%@page import="com.itwill.book.dto.PageMakerDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+String pageno=request.getParameter("pageno");
+if(pageno==null||pageno.equals("")){
+	pageno="1";
+}
+PageMakerDto<Notice> noticeListPage = new NoticeService().getNoticeList(Integer.parseInt(pageno));
+%>
+
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -35,18 +47,8 @@
 			<!-- content start -->
 			<!-- include_content.jsp start-->
 			<div id="content">
-				<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
-					codebase="http://active.macromedia.com/flash4/cabs/swflash.cab#version=4,0,0,0"
-					width="540px" height="350px">
-					<param name="movie" value="image/kyoboimage.jpg">
-					<param name="play" value="true">
-					<param name="loop" value="true">
-					<param name="quality" value="high">
-					<embed src="image/kyoboimage.jpg" scale="exactfit" play="true"
-						loop="true" quality="high" style="margin: 10px;"
-						pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"
-						width="540px" height="350px"></embed>
-				</object>
+
+				
 			</div>
 			<!-- include_content.jsp end-->
 			<!-- content end -->
