@@ -5,7 +5,7 @@
     pageEncoding="UTF-8"%>
 <%
 BookService bookService = new BookService();
-List<Book> books = bookService.selectAll();
+List<Book> books = bookService.selectList();
 
 
 

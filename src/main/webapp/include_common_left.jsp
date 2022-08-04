@@ -22,7 +22,8 @@
 	    <li><a href="userinfo_login_form.jsp">로그인</a></li>
 		<li><a href="userinfo_insert_form.jsp">회원가입</a></li>
 		<li><a href=""></a></li>
-		<li><a href="book_list.jsp">책목록</a></li>
+		<li><a href="book_search_form.jsp">도서 검색</a></li>
+		<li><a href="book_list.jsp">도서 목록</a></li>
 		<li><a href=""></a></li>
 		<li><a href=""></a></li>
 		<li><a href="notice_list.jsp">공지사항</a></li>
@@ -32,7 +33,8 @@
 		<li><a href="userinfo_view.jsp"><%=sUserId%> 님</a></li>
 		<li><a href="userinfo_logout_action.jsp">로그아웃</a></li>
 		<li><a href=""></a></li>
-		<li><a href="book_list.jsp">책목록</a></li>
+		<li><a href="book_search_form.jsp">도서 검색</a></li>
+		<li><a href="book_list.jsp">도서 목록</a></li>
 		<li><a href="cart_view.jsp">장바구니<span class="w3-badge w3-badge-menu w3-green cart_item_count"></span></a></li>
 		<li><a href="order_list.jsp">주문목록</a></li>
 		<li><a href=""></a></li>
