@@ -26,35 +26,56 @@ function userCreateForm() {
 		document.f.submit();
 	}
 	
-	function userModify() {
-		if (document.f.password.value == "") {
-			alert("비밀번호를 입력하십시요.");
+	function userModifyAction() {
+		
+		if (document.f.u_password.value == "") {
+			alert("비밀번호를 입력하세요.");
 			document.f.password.focus();
-			return false;
+			return;
 		}
 		if (document.f.password2.value == "") {
-			alert("비밀번호확인을 입력하십시요.");
-			document.f.password2.focus();
-			return false;
+			alert("비밀번호확인을 입력하세요.");
+			f.password2.focus();
+			return;
 		}
-		if (document.f.name.value == "") {
-			alert("이름을 입력하십시요.");
-			document.f.name.focus();
-			return false;
+		if (document.f.u_name.value == "") {
+			alert("이름을 입력하세요.");
+			f.name.focus();
+			return;
 		}
-		if (document.f.email.value == "") {
-			alert("이메일 주소를 입력하십시요.");
-			document.f.email.focus();
-			return false;
+		if (document.f.u_email.value == "") {
+			alert("이메일 주소를 입력하세요.");
+			f.email.focus();
+			return;
 		}
-		if (document.f.password.value != f.password2.value) {
+		if (document.f.u_phone.value == "") {
+			alert("핸드폰 번호를 입력하세요.");
+			f.email.focus();
+			return;
+		}
+		if (document.f.u_birth.value == "") {
+			alert("생일을 입력하세요.");
+			f.email.focus();
+			return;
+		}
+		if (document.f.u_gender.value == "") {
+			alert("성별을 입력하세요.");
+			f.email.focus();
+			return;
+		}
+		if (document.f.u_address.value == "") {
+			alert("주소를 입력하세요.");
+			f.email.focus();
+			return;
+		}
+		if (document.f.u_password.value != f.password2.value) {
 			alert("비밀번호와 비밀번호확인은 일치하여야합니다.");
-			document.f.password.focus();
-			document.f.password.select();
-			return false;
+			f.password.focus();
+			f.password.select();
+			return;
 		}
-
-		document.f.action = "user_modify_action.jsp";
+		document.f.action = "userinfo_update_action.jsp";
+		document.f.method = "POST"
 		document.f.submit();
 	}
 	
@@ -138,14 +159,21 @@ function userCreateForm() {
 	
 	
 	function userModify() {
-		document.f.action = "user_modify_form.jsp";
+		document.f.action = "userinfo_update_form.jsp";
 		document.f.method = "POST";
 		document.f.submit();
 	}
 	function userRemove() {
 		if (confirm("정말 삭제하시겠습니까?")) {
-			document.f.action = "user_remove_action.jsp";
+			document.f.action = "userinfo_delete_action.jsp";
 			document.f.method='POST';
 			document.f.submit();
 		}
 	}
+	
+	function reviewGo(){
+			document.f.action = "review_Id_list.jsp";
+			document.f.method='POST';
+			document.f.submit();
+	}
+	

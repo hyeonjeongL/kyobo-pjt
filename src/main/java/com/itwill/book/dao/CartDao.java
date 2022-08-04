@@ -44,7 +44,7 @@ public class CartDao {
 	}
 		
 		
-	//cart insert 기존수량
+	//cart insert 새로운 상품 추가
 	public int cartInsert(Cart newCart) throws Exception {
 		Connection con = dataSource.getConnection();
 		PreparedStatement pstmt = con.prepareStatement(CartSQL.CART_INSERT);
@@ -57,14 +57,26 @@ public class CartDao {
 
 		
 	}
-	//cart update_qty 카트수량변경 (장바구니 추가할때마다 카드 번호가 바뀌는게 맞는걸까?? 고정되야하는건 아닐까)
-	public int cartUpdateQty(Cart newCart) throws Exception{
+	//cart update_qty 카트수량변경 상품에서
+	public int cartAddQty(Cart newCart) throws Exception{
+		Connection con = dataSource.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(CartSQL.CART_ADD);
+		
+		pstmt.setInt(1, newCart.getC_qty());
+		pstmt.setString(2, newCart.getU_id());
+		pstmt.setInt(3, newCart.getBook().getB_no());
+		
+		int addQtyCount = pstmt.executeUpdate();
+		return addQtyCount;
+	}
+	
+	//cart update_qty 카트수량변경 장바구니에서에서
+	public int cartUpdateQty(int c_qty, int c_no) throws Exception{
 		Connection con = dataSource.getConnection();
 		PreparedStatement pstmt = con.prepareStatement(CartSQL.CART_UPDATE_QTY);
 		
-		pstmt.setInt(1, newCart.getC_qty() );
-		pstmt.setString(2, newCart.getU_id());
-		pstmt.setInt(3, newCart.getBook().getB_no());
+		pstmt.setInt(1, c_qty);
+		pstmt.setInt(2, c_no);
 		
 		int updateQtyCount = pstmt.executeUpdate();
 		return updateQtyCount;

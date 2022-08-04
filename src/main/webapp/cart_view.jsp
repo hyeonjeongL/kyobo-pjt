@@ -43,7 +43,7 @@ List<Cart> cartList = cartService.getCartList("hunjeong");
 		}
 
 		form.method = 'POST';
-		form.action = 'cart_update_item_action.jsp';
+		form.action = 'cart_update_action.jsp';
 		form.submit();
 	}
 	/*
@@ -179,15 +179,15 @@ List<Cart> cartList = cartService.getCartList("hunjeong");
 								<table align=center width=80% border="0" cellpadding="0"
 									cellspacing="1" bgcolor="BBBBBB">
 									<tr>
-										<td width=60 height=25 align="center" bgcolor="FF9999"
+										<td width=50 height=25 align="center" bgcolor="FF9999"
 											class=t1><input type="checkbox" id="all_select_checkbox" checked="checked" onchange="cart_item_all_select(event);cart_item_select_count();"></td>
-										<td width=40 height=25 align="center" bgcolor="FF9999"
+										<td width=60 height=25 align="center" bgcolor="FF9999"
 											class=t1><font>이미지</font></td>
-										<td width=210 height=25 align="center" bgcolor="FF9999"
+										<td width=220 height=25 align="center" bgcolor="FF9999"
 											class=t1><font>책 제목</font></td>
 										<td width=112 height=25 align="center" bgcolor="FF9999"
 											class=t1><font>수 량</font></td>
-										<td width=130 height=25 align="center" bgcolor="FF9999"
+										<td width=120 height=25 align="center" bgcolor="FF9999"
 											class=t1><font>판매가</font></td>
 										<td width=70 height=25 align="center" bgcolor="FF9999"
 											class=t1><font>선택삭제</font></td>
@@ -217,7 +217,7 @@ List<Cart> cartList = cartService.getCartList("hunjeong");
 													type="button" value="-"
 													onclick="changeNumber('-','cart_update_form_<%=cart.getC_no()%>');"/>
 												<input type="text" readonly="readonly" size="2"
-													style="text-align: center; width: 15%" name="cart_qty"
+													style="text-align: center; width: 15%" name="c_qty"
 													value="<%=cart.getC_qty()%>"> <input
 													type="button" value="+"
 													onclick="changeNumber('+','cart_update_form_<%=cart.getC_no()%>');"/>
@@ -235,7 +235,7 @@ List<Cart> cartList = cartService.getCartList("hunjeong");
 											</form>
 											 --%>
 											<form id="cart_delete_item_form_<%=cart.getC_no()%>">
-												<input type="hidden" name="cart_no"
+												<input type="hidden" name="c_no"
 													value="<%=cart.getC_no()%>"> <a
 													href="javascript:cart_delete_item_action('cart_delete_item_form_<%=cart.getC_no()%>');">
 													<svg xmlns="http://www.w3.org/2000/svg" width="14"

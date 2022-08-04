@@ -102,7 +102,7 @@ if(book==null){
 <table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
-									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>상품상세보기</b></td>
+									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>상세 정보</b></td>
 								</tr>
 							</table> <!-- 
 							<form name="f" method="post">
@@ -110,11 +110,11 @@ if(book==null){
 							<table style="margin-left: 10px" border=0 width=80% height=376
 								align=center>
 								<tr valign=bottom>
-									<td width=30% align=center class=t1><font size=2
+									<td width=10% align=center class=t1><font size=2
 										color=#0000FF><b>주문 권수</b></font></td>
-									<td width=40% align=center class=t1><font size=2
-										color=#0000FF><b>&nbsp;&nbsp;&nbsp;&nbsp;</b></font></td>
 									<td width=30% align=center class=t1><font size=2
+										color=#0000FF><b>&nbsp;&nbsp;&nbsp;&nbsp;</b></font></td>
+									<td width=60% align=center class=t1><font size=2
 										color=#0000FF><b>도서 정보</b></font></td>
 								</tr>
 								<tr width=100%>
@@ -139,8 +139,8 @@ if(book==null){
 												<option value="9">9
 												<option value="10">10
 											</select> 권<br><br> 
-												<input type=submit value="장바구니 담기[장바구니보여주기]" /><br><br> 
-												<input type=button onclick="add_cart_popup_window();" value="장바구니에담기[계속쇼핑팝업]" />
+												<input type=submit value="장바구니 이동" /><br><br> 
+												<input type=button onclick="add_cart_popup_window();" value="[계속쇼핑팝업]" />
 												<input type="hidden" name=b_no value="<%=book.getB_no()%>">
 										</form>
 									</td>
@@ -148,12 +148,12 @@ if(book==null){
 									<img border=0 src='image/<%=book.getB_image()%>.jpg' width=120 height=200></td>
 									<td width=100 height=200 class=t1>
 										<ol type="disc">
-											<li>제&nbsp;&nbsp;&nbsp;목 : <%=book.getB_name()%>&nbsp;&nbsp;&nbsp;</li>
-											<li>가&nbsp;&nbsp;&nbsp;격 : <%=book.getB_price()%>&nbsp;&nbsp;&nbsp;</li>
-											<li>분&nbsp;&nbsp;&nbsp;야 : <%=book.getB_class()%>&nbsp;&nbsp;&nbsp;</li>
-											<li>저&nbsp;&nbsp;&nbsp;자 : <%=book.getB_author()%>&nbsp;&nbsp;&nbsp;</li>
-											<li>출판사 : <%=book.getB_publisher()%>&nbsp;&nbsp;&nbsp;</li>
-											<li>소&nbsp;&nbsp;&nbsp;개 : <%=book.getB_summary()%>&nbsp;&nbsp;&nbsp;</li>
+											<li>제&nbsp;&nbsp;&nbsp;목 : <%=book.getB_name()%>&nbsp;</li>
+											<li>가&nbsp;&nbsp;&nbsp;격 : <%=book.getB_price()%>&nbsp;</li>
+											<li>분&nbsp;&nbsp;&nbsp;야 : <%=book.getB_class()%>&nbsp;</li>
+											<li>저&nbsp;&nbsp;&nbsp;자 : <%=book.getB_author()%>&nbsp;</li>
+											<li>출판사 : <%=book.getB_publisher()%>&nbsp;</li>
+											<li>소&nbsp;&nbsp;&nbsp;개 : <%=book.getB_summary()%>&nbsp;</li>
 										</ol>
 									</td>
 								</tr>

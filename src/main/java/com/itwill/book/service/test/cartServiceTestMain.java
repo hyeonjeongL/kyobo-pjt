@@ -16,7 +16,8 @@ public class cartServiceTestMain {
 		
 		System.out.println(book_count);
 		
-		int deleteNoCount = cartService.cartDeleteByNo(1);
+		int deleteNoCount = cartService.cartDeleteByCNo(1);
+		System.out.println(deleteNoCount);
 		
 		int deleteAll = cartService.cartDeleteAll("hunjeong");
 		System.out.println(deleteAll);
@@ -25,6 +26,8 @@ public class cartServiceTestMain {
 		List<Cart> cartList = cartService.getCartList("jihun");
 		System.out.println(cartList);
 		
+		int cartUpdateQty = cartService.cartUpdateQty(9,3);
+		System.out.println(cartUpdateQty);
 		
 
 	}

@@ -25,10 +25,16 @@ public class CartService {
 		if(book_count == 0) {
 			cartDao.cartInsert(newCart);
 		} else if (book_count >=1) {
-			cartDao.cartUpdateQty(newCart);
+			cartDao.cartAddQty(newCart);
 		}
 		
 		return book_count;
+	}
+	
+	//카트 수량변경
+	public int cartUpdateQty (int c_qty, int c_no) throws Exception{
+		
+		return cartDao.cartUpdateQty(c_qty,c_no);
 	}
 	
 	 
@@ -44,8 +50,8 @@ public class CartService {
 	/*
 	 * 카트아이템1개삭제
 	 */
-	public int cartDeleteByNo (int b_no) throws Exception{
-		return cartDao.cartDeleteByNo(b_no);
+	public int cartDeleteByCNo (int c_no) throws Exception{
+		return cartDao.cartDeleteByNo(c_no);
 	}
 	
 	/*

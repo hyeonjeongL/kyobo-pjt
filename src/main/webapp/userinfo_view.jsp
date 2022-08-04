@@ -57,23 +57,44 @@ UserInfo user = userInfoService.selectById(u_id);
 								<table border="0" cellpadding="0" cellspacing="1" width="590"
 									bgcolor="BBBBBB">
 									<tr>
-										<td width=100 align=center bgcolor="E6ECDE" height="22">사용자
+										<td width=100 align=center bgcolor="E5F0FA" height="40">사용자
 											아이디</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10">
 											<%=user.getU_id()%>
 										</td>
 									</tr>
 									<tr>
-										<td width=100 align=center bgcolor="E6ECDE" height="22">이름</td>
+										<td width=100 align=center bgcolor="E5F0FA" height="40">이름</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10">
 											<%=user.getU_name()%>
 										</td>
 									</tr>
 									<tr>
-										<td width=100 align=center bgcolor="E6ECDE" height="22">이메일
-											주소</td>
+										<td width=100 align=center bgcolor="E5F0FA" height="40">생일
+											</td>
+										<td width=490 bgcolor="ffffff" style="padding-left: 10">
+											<%=user.getU_birth()%>
+										</td>
+									</tr>
+									<tr>
+										<td width=100 align=center bgcolor="E5F0FA" height="40">핸드폰번호
+											</td>
+										<td width=490 bgcolor="ffffff" style="padding-left: 10">
+											<%=user.getU_phone()%>
+										</td>
+									</tr>
+									<tr>
+										<td width=100 align=center bgcolor="E5F0FA" height="40">이메일
+											</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10">
 											<%=user.getU_email()%>
+										</td>
+									</tr>
+									<tr>
+										<td width=100 align=center bgcolor="E5F0FA" height="40">주소
+											</td>
+										<td width=490 bgcolor="ffffff" style="padding-left: 10">
+											<%=user.getU_address()%>
 										</td>
 									</tr>
 								</table>
@@ -82,7 +103,8 @@ UserInfo user = userInfoService.selectById(u_id);
 								<tr>
 									<td align=center><input type="button" value="내정보수정"
 										onClick="userModify()">&nbsp; <input type="button"
-										value="탈퇴" onClick="userRemove()">&nbsp;</td>
+										value="탈퇴" onClick="userRemove()">&nbsp; <input type="button"
+										value="리뷰보기" onClick="reviewGo()"></td>
 								</tr>
 							</table>
 						</td>
