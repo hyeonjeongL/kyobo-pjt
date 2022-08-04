@@ -2,16 +2,20 @@ package com.itwill.book.service;
 
 import java.util.List;
 
+import com.itwill.book.dao.EbookDao;
 import com.itwill.book.dao.EorderDao;
+import com.itwill.book.dto.Ebook;
 import com.itwill.book.dto.Eorder;
 
 
 
 public class EbookService {
 	private EorderDao eorderDao;
+	private EbookDao ebookDao;
 	
 	public EbookService() throws Exception{
 		eorderDao = new EorderDao();
+		ebookDao = new EbookDao();
 	}
 	
 	public long create(int e_no, String id)throws Exception {
@@ -42,5 +46,8 @@ public class EbookService {
 	
 	public long remaintime(String id, int no) throws Exception{
 		return eorderDao.remaintime(id, no);
+	}
+	public Ebook selectByNo(int no) throws Exception{
+		return ebookDao.selectByNo(no);
 	}
 }
