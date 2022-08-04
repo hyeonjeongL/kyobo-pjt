@@ -19,17 +19,19 @@ public class CartService {
 	 * 카트추가 or 수정
 	 */
 	
-	public int addCart (Cart cart) throws Exception {
-		int book_count = cartDao.cartBookCount(cart);
+	public int addCart (Cart newCart) throws Exception {
+		 	
+		int book_count = cartDao.cartBookCount(newCart);
 		if(book_count == 0) {
-			cartDao.cartInsert(cart);
+			cartDao.cartInsert(newCart);
 		} else if (book_count >=1) {
-			cartDao.cartUpdateQty(cart);
+			cartDao.cartUpdateQty(newCart);
 		}
-		return 0;
+		
+		return book_count;
 	}
 	
-	
+	 
 	/*
 	 * 카트리스트보기
 	 */
