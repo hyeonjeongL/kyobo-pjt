@@ -112,19 +112,19 @@ public class OrderDao {
 		return rowCount;
 	}
 	//회원 주문내역 전체 출력 clear
-		public List<Orders> List_detail(String userId) throws Exception {
+		public List<Orders> List_detail(String sUserId) throws Exception {
 			List<Orders> orderList = new ArrayList<Orders>();
 			
 			Connection con = dataSource.getConnection();
 			PreparedStatement pstmt1 = con.prepareStatement(OrderSQL.ORDER_SELECT_ALL_BY_U_ID);
 			PreparedStatement pstmt2 = con.prepareStatement(OrderSQL.ORDER_SELECT_BY_U_NO);
 			
-			pstmt1.setString(1, userId);
+			pstmt1.setString(1, sUserId);
 			ResultSet rs1 = pstmt1.executeQuery();
 			while(rs1.next()) {
 				int temp_o_no = rs1.getInt("o_no");
 				
-				pstmt2.setString(1, userId);
+				pstmt2.setString(1, sUserId);
 				pstmt2.setInt(2, temp_o_no);
 				ResultSet rs2 = pstmt2.executeQuery();
 				Orders orders = null;
@@ -182,7 +182,7 @@ public class OrderDao {
 		return ordersList;
 	}
 	*/
-	// orderdetail select 주문 1개 상세보기 x
+	// orderdetail select 주문 1개 상세보기 clear
 	public Orders orderDetail(String sUserId, int o_no) throws Exception{
 		Orders order = null;
 		Connection con = null;

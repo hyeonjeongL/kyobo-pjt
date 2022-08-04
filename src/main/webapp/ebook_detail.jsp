@@ -6,7 +6,7 @@
 	String e_no = request.getParameter("e_no");
 	String cookieId = e_no + id;
 	Cookie[] cookies = request.getCookies();
-	
+	Cookie c = null;
 	int a = 0;
 	for (Cookie cookie : cookies) {
 		if (cookie.getName().equals(e_no)) {
@@ -16,12 +16,18 @@
 				out.println("alert('쿠키존재')");
 				out.println("</script>");
 				a = 1;
-				a = cookie.getMaxAge();
+				c = cookie;
 			}
 	
 		}
 	}
 	
+	if(c == null){
+		out.println("<script>");
+		out.println("alert('읽을 수 있는 권한이 없습니다.')");
+		out.println("location.href=('ebook_test.jsp')");
+		out.println("</script>");
+	}
 %>
 <!DOCTYPE html>
 <html>
@@ -32,5 +38,6 @@
 <body>
 	<%=e_no%>에 해당하는 책 내용
 	<%=a%>
+	
 </body>
 </html>

@@ -5,7 +5,7 @@
     pageEncoding="UTF-8"%>
 <%
 BookService bookService = new BookService();
-List<Book> books = bookService.selectAll();
+List<Book> books = bookService.selectList();
 
 
 
@@ -17,6 +17,8 @@ List<Book> books = bookService.selectAll();
 <title>Insert title here</title>
 </head>
 <body>
+<a href="userinfo_login_from.jsp">로그인창으로</a><br><br><br>
+
 <%for(Book book : books){ %>
 	<a href="ebook_insert_action.jsp?e_no=<%=book.getB_no()%>"><%=book.getB_name() %></a>, <%=book.getB_price()%> // <a href="ebook_delete_action.jsp?e_no=<%=book.getB_no()%>">삭제</a><br>
 

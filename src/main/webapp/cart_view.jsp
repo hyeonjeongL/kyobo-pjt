@@ -63,8 +63,9 @@ List<Cart> cartList = cartService.getCartList("hunjeong");
 	 */
 	function cart_delete() {
 		document.cart_view_form.method = 'POST';
-		document.cart_view_form.action = 'cart_delete_action.jsp';
+		document.cart_view_form.action = 'cart_delete_all_action.jsp';
 		document.cart_view_form.submit();
+		
 	}
 	function cart_view_form_submit() {
 		document.cart_view_form.method = 'POST';
@@ -186,10 +187,10 @@ List<Cart> cartList = cartService.getCartList("hunjeong");
 											class=t1><font>책 제목</font></td>
 										<td width=112 height=25 align="center" bgcolor="FF9999"
 											class=t1><font>수 량</font></td>
-										<td width=146 height=25 align="center" bgcolor="FF9999"
-											class=t1><font>가 격</font></td>
-										<td width=50 height=25 align="center" bgcolor="FF9999"
-											class=t1><font>비 고</font></td>
+										<td width=130 height=25 align="center" bgcolor="FF9999"
+											class=t1><font>판매가</font></td>
+										<td width=70 height=25 align="center" bgcolor="FF9999"
+											class=t1><font>선택삭제</font></td>
 									</tr>
 									<!-- cart item start -->
 									<%

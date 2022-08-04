@@ -72,10 +72,10 @@ public class CartDao {
 
 	
 	//cart deleteByNo 카트 선택삭제
-	public int cartDeleteByNo (int b_no) throws Exception{
+	public int cartDeleteByNo (int c_no) throws Exception{
 		Connection con = dataSource.getConnection();
 		PreparedStatement pstmt = con.prepareStatement(CartSQL.CART_DELETE_BY_CNO);
-		pstmt.setInt(1, b_no);
+		pstmt.setInt(1, c_no);
 		
 		int deleteNoCount = pstmt.executeUpdate();
 		return deleteNoCount;
@@ -118,12 +118,11 @@ public class CartDao {
 	}
 	
 	//카트리스트(카트넘버) 주문용
-	public List<Cart> cartListOder(String c_no) throws Exception{
-		
-		List<Cart> cartListOrder = new ArrayList<Cart>();
+	public Cart cartListOrder(int c_no) throws Exception{
+		Cart cartListOrder = null;
 		Connection con = dataSource.getConnection();
 		PreparedStatement pstmt = con.prepareStatement(CartSQL.CART_SELECT_BY_CNO);
-		pstmt.setString(1, c_no);
+		pstmt.setInt(1, c_no);
 		ResultSet rs = pstmt.executeQuery(); 
 		while(rs.next()) {
 			Cart cart = new Cart(rs.getInt("c_no"),
@@ -137,7 +136,7 @@ public class CartDao {
 										  rs.getString("b_image"),
 										  rs.getString("b_author"),
 										  rs.getString("b_publisher")));
-							cartListOrder.add(cart);
+							
 		}
 		con.close();
 		return cartListOrder;
