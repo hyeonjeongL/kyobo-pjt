@@ -52,21 +52,22 @@ if(msg2 == null) msg2 = "";
 											- 로그인</b></td>
 								</tr>
 							</table> <!-- login Form  -->
+							<br><br><br>
 							<form name="f" >
 								<table border="0" cellpadding="0" cellspacing="1"
 									bgcolor="BBBBBB">
 									<tr>
-										<td width=100 align=center bgcolor="E6ECDE" height="22">사용자
+										<td width=100 align=center bgcolor="E5F0FA" height="40">사용자
 											아이디</td>
 										<td width=490 align="left" bgcolor="ffffff"
 											style="padding-left: 10px"><input type="text"
-											style="width: 150" name="userId" value="<%=loginId%>">&nbsp;&nbsp;<font color="red"><%=msg1%></font></td>
+											style="width: 150px; height:15px; font-size: 18px;"  name="userId" value="<%=loginId%>">&nbsp;&nbsp;<font color="red"><%=msg1%></font></td>
 									</tr>
 									<tr>
-										<td width=100 align=center bgcolor="E6ECDE" height="22">비밀번호</td>
+										<td width=100 align=center bgcolor="E5F0FA" height="40">비밀번호</td>
 										<td width=490 align="left" bgcolor="ffffff"
 											style="padding-left: 10px"><input type="password"
-											style="width: 150" name="password" value="">&nbsp;&nbsp;<font color="red"><%=msg2%></font></td>
+											style="width: 150px; height:15px; font-size: 18px" name="password" value="">&nbsp;&nbsp;<font color="red"><%=msg2%></font></td>
 									</tr>
 								</table>
 							</form> <br />
