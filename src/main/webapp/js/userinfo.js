@@ -138,13 +138,13 @@ function userCreateForm() {
 	
 	
 	function userModify() {
-		document.f.action = "user_modify_form.jsp";
+		document.f.action = "userinfo_update_form.jsp";
 		document.f.method = "POST";
 		document.f.submit();
 	}
 	function userRemove() {
 		if (confirm("정말 삭제하시겠습니까?")) {
-			document.f.action = "user_remove_action.jsp";
+			document.f.action = "userinfo_delete_action.jsp";
 			document.f.method='POST';
 			document.f.submit();
 		}

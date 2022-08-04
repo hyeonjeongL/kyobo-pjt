@@ -3,27 +3,7 @@
     pageEncoding="UTF-8"%>
 
 <%
-  /*************case2 redirection******************
-	String msg = request.getParameter("msg");
-	String userId = request.getParameter("userId");
-	String password = request.getParameter("password");
-	String name = request.getParameter("name");
-	String email = request.getParameter("email");
-	if(msg == null) msg="";
-	if(userId == null) userId="";
-	if(password == null) password="";
-	if(name == null) name="";
-	if(email == null) email="";
- 	User fuser = new User(userId, password, name, email);
- 	private String u_id;
-	private String u_password;
-	private String u_name;
-	private String u_phone;
-	private String u_birth;
-	private String u_gender;
-	private String u_email;
-	private String u_address;
-  *************************************************/
+
   
   UserInfo fuser = (UserInfo)request.getAttribute("fuser");
   String msg = (String)request.getAttribute("msg");
@@ -45,31 +25,19 @@
 </head>
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
 	marginwidth=0 marginheight=0>
-	<!-- container start-->
 	<div id="container">
-		<!-- header start -->
 		<div id="header">
-			<!-- include_common_top.jsp start-->
 			<jsp:include page="include_common_top.jsp"/>
-			<!-- include_common_top.jsp end-->
 		</div>
-		<!-- header end -->
-		<!-- navigation start-->
 		<div id="navigation">
-			<!-- include_common_left.jsp start-->
 			<jsp:include page="include_common_left.jsp"/>
-			<!-- include_common_left.jsp end-->
 		</div>
-		<!-- navigation end-->
-		<!-- wrapper start -->
 		<div id="wrapper">
-			<!-- content start -->
-			<!-- include_content.jsp start-->
 			<div id="content">
 				<table width=0 border=0 cellpadding=0 cellspacing=0>
 					<tr>
 						<td>
-							<!--contents--> <br />
+							<br />
 							<table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
@@ -77,7 +45,6 @@
 											- 회원 가입</b></td>
 								</tr>
 							</table> 
-							<!-- write Form  -->
 							<form name="f">
 								<table border="0" cellpadding="0" cellspacing="1" width="590"
 									bgcolor="BBBBBB">
@@ -167,39 +134,10 @@
 					</tr>
 				</table>
 			</div>
-			<!-- include_content.jsp end-->
-			<!-- content end -->
 		</div>
-		<!--wrapper end-->
 		<div id="footer">
-			<!-- include_common_bottom.jsp start-->
 			<jsp:include page="include_common_bottom.jsp"/>
-			<!-- include_common_bottom.jsp end-->
 		</div>
 	</div>
-	<!--container end-->
 </body>
 </html>
-<!--
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-<form method="post" action="userinfo_insert_action.jsp">
-<input type="text" name="u_id" value="test1"><br>
-<input type="text" name="u_password" value="1234"><br>
-<input type="text" name="u_name" value="김테스터"><br>
-<input type="text" name="u_phone" value="01012345678"><br>
-<input type="text" name="u_birth" value="970902"><br>
-<input type="text" name="u_gender" value="남"><br>
-<input type="text" name="u_email" value="test@gmail.com"><br>
-<input type="text" name="u_address" value="경기도"><br>
-<input type="submit" name="가입"><br>
-</form>
-
-</body>
-</html>
-  -->
