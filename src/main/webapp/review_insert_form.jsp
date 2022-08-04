@@ -1,7 +1,15 @@
+<%@page import="com.itwill.book.dto.Review"%>
+<%@page import="com.itwill.book.service.ReviewService"%>
+<%@page import="com.itwill.book.dto.UserInfo"%>
+<%@page import="com.itwill.book.service.UserInfoService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	
+String u_id="enbi";
+
+ReviewService reviewService = new ReviewService();
+
+
 %> 
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -50,32 +58,52 @@
 								</tr>
 							</table> 
 							<!-- write Form  -->
-							<form name="f">
+							<form name="f" method="post">
 								<table border="0" cellpadding="0" cellspacing="1" width="590"
 									bgcolor="BBBBBB">
 									<tr>
-										<td width=100 align=center bgcolor="E5F0FA" height="33">
-											리뷰제목</td>
-										<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
-											<input type="text" style="width: 150px; height:15px; font-size: 18px;" name="u_id"
-											value="<%=fuser.getU_id()%>">&nbsp;&nbsp;<font color="red"><%=msg%></font>
-										</td>
+										<td width=100 align=center bgcolor="E6ECDE" height="22">리뷰제목</td>
+										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
+											align="left"><input type="text" style="width: 150px"
+											name="r_title"></td>
 									</tr>
 									<tr>
-										<td width=100 align=center bgcolor="E5F0FA" height="33">비밀번호</td>
-										<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
-											<input type="password" style="width: 150px; height:15px; font-size: 18px;" name="u_password"
-											value="<%=fuser.getU_password()%>">
-										</td>
-									
-									
+										<td width=100 align=center bgcolor="E6ECDE" height="22">작성날짜</td>
+										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
+											align="left"><input type="text" style="width: 150px"
+											name="r_date"></td>
+									</tr>
+									<tr>
+										<td width=100 align=center bgcolor="E6ECDE" height="22">아이디</td>
+										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
+											align="left"><input type="text" style="width: 150px"
+											name="u_id"></td>
+									</tr>
+									<tr>
+										<td width=100 align=center bgcolor="E6ECDE" height="22">주문번호</td>
+										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
+											align="left"><input type="text" style="width: 150px"
+											name="od_no"></td>
+									</tr>
+									<tr>
+										<td width=100 align=center bgcolor="E6ECDE" height="22">평점</td>
+										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
+											align="left"><input type="text" style="width: 150px"
+											name="r_grade"></td>
+									</tr>
+									<tr>
+										<td width=100 align=center bgcolor="E6ECDE">리뷰내용</td>
+										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
+											align="left"><textarea name="r_contents" class="textarea"
+												style="width: 350px" rows="10"></textarea></td>
+									</tr>
 								</table>
-							</form> <br />
+							</form> <br>
 
 							<table border=0 cellpadding=0 cellspacing=1 style="align: center;">
 								<tr>
 									<td align=center>
-									<input type="button" value="회원 가입" onclick="userCreate();"> &nbsp; 
+									<input type="button" value="등록" onclick="userCreate();"> &nbsp; 
 									<input type="button" value="메인" onClick="userMain()">
 									</td>
 								</tr>
