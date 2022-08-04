@@ -43,12 +43,12 @@ insert into book values(book_b_no_seq.nextval, '공포', '악몽', 15000, '너�
 
 -- QNA insert
 
-insert into qna values(QNA_q_no_SEQ.nextval, '1:1문의', '책 배송이 언제오나요?', sysdate, '제가 주문한 책 배송이 언제오나요?', 'seongmin');
-insert into qna values(QNA_q_no_SEQ.nextval, '1:1문의', '책이 잘못왔어요', sysdate, '책이 잘못왔어요', 'enbi');
-insert into qna values(QNA_q_no_SEQ.nextval, '1:1문의', '상품 언제 들어올까요?', sysdate, '상품 언제 들어올까요?', 'jeonghun');
-insert into qna values(QNA_q_no_SEQ.nextval, '1:1문의', '주문이 누락됐습니다', sysdate, '주문이 누락됐습니다 주문이 누락됐습니다', 'hunjeong');
-insert into qna values(QNA_q_no_SEQ.nextval, '1:1문의', '주문 취소하고싶어요', sysdate, '주문 취소하고싶어요', 'jihun');
-insert into qna values(QNA_q_no_SEQ.nextval, '1:1문의', '배고파요', sysdate, '배고파요', 'bongkune');
+insert into qna values(QNA_q_no_SEQ.nextval, '1:1문의', '책 배송이 언제오나요?', sysdate, '제가 주문한 책 배송이 언제오나요?', 'seongmin', QNA_Q_NO_SEQ.currval, 1, 0);
+insert into qna values(QNA_q_no_SEQ.nextval, '1:1문의', '책이 잘못왔어요', sysdate, '책이 잘못왔어요', 'enbi', QNA_Q_NO_SEQ.currval, 1, 0);
+insert into qna values(QNA_q_no_SEQ.nextval, '1:1문의', '상품 언제 들어올까요?', sysdate, '상품 언제 들어올까요?', 'jeonghun', QNA_Q_NO_SEQ.currval, 1, 0);
+insert into qna values(QNA_q_no_SEQ.nextval, '1:1문의', '주문이 누락됐습니다', sysdate, '주문이 누락됐습니다 주문이 누락됐습니다', 'hunjeong', QNA_Q_NO_SEQ.currval, 1, 0);
+insert into qna values(QNA_q_no_SEQ.nextval, '1:1문의', '주문 취소하고싶어요', sysdate, '주문 취소하고싶어요', 'jihun', QNA_Q_NO_SEQ.currval, 1, 0);
+insert into qna values(QNA_q_no_SEQ.nextval, '1:1문의', '배고파요', sysdate, '배고파요', 'bongkune', QNA_Q_NO_SEQ.currval, 1, 0);
 
 --Orders insert 
 --orderdetail insert
@@ -65,22 +65,22 @@ insert into notice
 values(notice_n_no_seq.nextval, '공지사항', '광복절 및 택배 없는 날 배송일정 안내', '2022-08-01', 
 '안녕하세요. 꿈을 키우는 세상 교보문고입니다.
 언제나 교보문고를 사랑해주시는 고객님께 진심으로 감사의 말씀드립니다.
-8월 13일 택배 없는 날, 8월 15일 광복절 휴무로 인해 변경되는 배송일정을 안내드립니다.', 1);
+8월 13일 택배 없는 날, 8월 15일 광복절 휴무로 인해 변경되는 배송일정을 안내드립니다.', 1,'humu.gif' ,notice_n_no_seq.currval, 1, 0);
 --2. 서비스 종료 및 변경 안내
 insert into notice
 values(notice_n_no_seq.nextval, '공지사항', '서비스 종료 및 변경 안내', '2022-07-08', 
 '안녕하세요. 꿈을 키우는 세상 교보문고입니다.
 교보문고 서비스를 이용해 주시는 고객님께 감사드립니다.
-보다 나은 서비스 제공을 위해 아래와 같은 변동이 예정되어 있으니 이용 시 참고하여 주시기 바랍니다.', 1);
+보다 나은 서비스 제공을 위해 아래와 같은 변동이 예정되어 있으니 이용 시 참고하여 주시기 바랍니다.','money.gif' ,1, notice_n_no_seq.currval, 1, 0);
 --3. 해외배송(FedEx) 배송료 인상 안내 (5/1
 insert into notice
 values(notice_n_no_seq.nextval, '공지사항', '해외배송(FedEx) 배송료 인상 안내 (5/1)', '2022-03-01',
 '최근 코로나 19로 인한 해외 배송에 필요한 항공운송료가 급격히 증가함에 따라, 동 서비스의 지속적이고 안정적인 제공을 위한 필요 최소 수준의 요금 조정이 불가피한 실정입니다.
-이에, ’22. 5. 1. 자 FedEx의 해외 배송 서비스의 요금이 인상될 예정 이오니, 고객님의 너른 양해를 부탁드리며 조정내용을 사전 공지하오니 서비스 이용에 참조하시기 바랍니다.', 1);
+이에, ’22. 5. 1. 자 FedEx의 해외 배송 서비스의 요금이 인상될 예정 이오니, 고객님의 너른 양해를 부탁드리며 조정내용을 사전 공지하오니 서비스 이용에 참조하시기 바랍니다.', 1,'service.gif' ,notice_n_no_seq.currval, 1, 0);
 
 --ebook insert
 
-<<<<<<< HEAD
+
 insert into ebook values(ebook_e_no_seq.nextval, 7000, 1);
 insert into ebook values(ebook_e_no_seq.nextval, 8000, 2);
 insert into ebook values(ebook_e_no_seq.nextval, 9000, 3);
@@ -110,13 +110,7 @@ insert into ebook values(ebook_e_no_seq.nextval, 10000, 22);
 insert into ebook values(ebook_e_no_seq.nextval, 7000, 23);
 insert into ebook values(ebook_e_no_seq.nextval, 3000, 24);
 insert into ebook values(ebook_e_no_seq.nextval, 7000, 25);
-=======
-insert into ebook values(ebook_e_no_seq.nextval, 12000, 1);
-insert into ebook values(ebook_e_no_seq.nextval, 13500, 2);
-insert into ebook values(ebook_e_no_seq.nextval, 14900, 3);
-insert into ebook values(ebook_e_no_seq.nextval, 17000, 4);
-insert into ebook values(ebook_e_no_seq.nextval, 16000, 5);
->>>>>>> branch 'master' of https://github.com/2022-05-JAVA-DEVELOPER/web-project-team2-kyobo.git
+
 
 --eorder insert
 
