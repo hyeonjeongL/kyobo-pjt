@@ -27,12 +27,12 @@ public class EbookDao {
 		dataSource = basicDataSource;
 	}
 
-	public Ebook selectByNo(int no) throws Exception {
+	public Ebook selectByNo(int e_no) throws Exception {
 		Ebook ebook = null;
 		Book book = null;
 		Connection con = dataSource.getConnection();
 		PreparedStatement pstmt = con.prepareStatement("select * from ebook e join book b on e.b_no = b.b_no where e_no=?");
-		pstmt.setInt(1, no);
+		pstmt.setInt(1, e_no);
 		ResultSet rs = pstmt.executeQuery();
 		if (rs.next()) {
 			int e_price = rs.getInt("e_price");
@@ -40,7 +40,7 @@ public class EbookDao {
 					rs.getInt("b_price"), rs.getString("b_summary"), rs.getString("b_image"), rs.getString("b_author"),
 					rs.getString("b_publisher"));
 					
-			ebook = new Ebook(no, e_price, book);
+			ebook = new Ebook(e_no, e_price, book);
 		}
 
 		return ebook;
