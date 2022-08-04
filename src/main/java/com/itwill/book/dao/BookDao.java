@@ -222,7 +222,8 @@ public class BookDao {
 	}
 	
 	// 전체 검색
-		public List<Book> selectList() throws Exception {
+	
+	public List<Book> selectList() throws Exception {
 			List<Book> bookList = new ArrayList<Book>();
 
 			Connection con = dataSource.getConnection();
@@ -291,8 +292,8 @@ public class BookDao {
 		}
 		
 		return bookList;
-	}
-	*/
+	}*/
+	
 	//통합 검색(제목, 저자, 분야)
 	public ArrayList<Book> selectByAll(String keyword) throws Exception {
 		ArrayList<Book> bookList = new ArrayList<Book>();
