@@ -1,75 +1,75 @@
---ëª¨ë“  í…Œì´ë¸” insert
---USERINFO(íšŒì›) insert
+--¸ğµç Å×ÀÌºí insert
+--USERINFO(È¸¿ø) insert
 
-insert into userinfo values('seongmin', '1234', 'ì •ì„±ë¯¼', '01012345678', '970902', 'ë‚¨', 'seongmin@gmail.com', 'ê²½ê¸°ë„');
-insert into userinfo values('bongkyoun', '1234', 'ê¹€ë´‰ê· ', '01023456789', '940603', 'ë‚¨', 'bongkune@gmail.com', 'ì„œìš¸');
-insert into userinfo values('jihun', '1234', 'ìœ ì§€í›ˆ', '01034567891', '961010', 'ë‚¨', 'jihun@gmail.com', 'ë¶€ì‚°');
-insert into userinfo values('enbi', '1234', 'ì„ì€ë¹„', '01045678912', '980105', 'ì—¬', 'enbi@gmail.com', 'ê´‘ì£¼');
-insert into userinfo values('jeonghun', '1234', 'ì´ì •í˜„', '01056789123', '960504', 'ì—¬', 'jeonghun@gmail.com', 'ëŒ€êµ¬');
-insert into userinfo values('hunjeong', '1234', 'ì„í˜„ì •', '01067891234', '940701', 'ì—¬', 'hunjeong@gmail.com', 'ì²œì•ˆ');
+insert into userinfo values('seongmin', '1234', 'Á¤¼º¹Î', '01012345678', '970902', '³²', 'seongmin@gmail.com', '°æ±âµµ');
+insert into userinfo values('bongkyoun', '1234', '±èºÀ±Õ', '01023456789', '940603', '³²', 'bongkune@gmail.com', '¼­¿ï');
+insert into userinfo values('jihun', '1234', 'À¯ÁöÈÆ', '01034567891', '961010', '³²', 'jihun@gmail.com', 'ºÎ»ê');
+insert into userinfo values('enbi', '1234', 'ÀÓÀººñ', '01045678912', '980105', '¿©', 'enbi@gmail.com', '±¤ÁÖ');
+insert into userinfo values('jeonghun', '1234', 'ÀÌÁ¤Çö', '01056789123', '960504', '¿©', 'jeonghun@gmail.com', '´ë±¸');
+insert into userinfo values('hyunjeong', '1234', 'ÀÓÇöÁ¤', '01067891234', '940701', '¿©', 'hunjeong@gmail.com', 'Ãµ¾È');
 
---BOOK(ì±…) insert
---1ë²ˆ ìê¸°ê°œë°œì„œ
+--BOOK(Ã¥) insert
+--1¹ø ÀÚ±â°³¹ß¼­
 
-insert into book values(book_b_no_seq.nextval, 'ìê¸°ê°œë°œì„œ', 'ë§ˆì‹œë©œë¡œì´ì•¼ê¸°', 12000, 'ë‹¬ì½¤í•œ ìœ í˜¹ì—ì„œ ì´ê²¨ë‚¼ ë•Œ, ë¹„ë¡œì†Œ ì–»ê²Œ ëœë‹¤', '1_marshmallow', 'í˜¸ì•„í‚´ ë° í¬ì‚¬ë‹¤', 'í•œêµ­ê²½ì œì‹ ë¬¸ì‚¬');
-insert into book values(book_b_no_seq.nextval, 'ìê¸°ê°œë°œì„œ', 'ëˆ„ê°€ ë‚´ ì¹˜ì¦ˆë¥¼ ì˜®ê²¼ì„ê¹Œ?', 13500, 'ì¸ìƒì—ì„œ ë¶€ë”ªí ë³€í™”ë¥¼ ëŒ€ì²˜í•  ìˆ˜ ìˆëŠ” ì§€í˜œ', '1_who', 'ìŠ¤íœì„œ ì¡´ìŠ¨', 'ì§„ëª…ì¶œíŒì‚¬');
-insert into book values(book_b_no_seq.nextval, 'ìê¸°ê°œë°œì„œ', 'ë¯¸ì›€ë°›ì„ ìš©ê¸°', 14900, 'ììœ ë¡­ê³  í–‰ë³µí•œ ì‚¶ì„ ìœ„í•œ ê°€ë¥´ì¹¨', '1_courage', 'ê¸°ì‹œë¯¸ ì´ì¹˜ë¡œ', 'ì§„ëª…ì¶œíŒì‚¬');
-insert into book values(book_b_no_seq.nextval, 'ìê¸°ê°œë°œì„œ', 'ìµœê°•ì˜ ë©˜íƒˆê´€ë¦¬', 17000, 'ì„¸ê³„ ë¦¬ë”ë“¤ì˜ ì§€ë„ì ë©˜íƒˆ ì½”ì¹­', '1_reader', 'í‚´ë²Œë¦¬ í˜ì´ìŠ¤', 'í¬ë¥´ì²´');
-insert into book values(book_b_no_seq.nextval, 'ìê¸°ê°œë°œì„œ', 'ë‚˜ë¥¼ ì°¾ëŠ” ì‹œê°„', 16000, 'ë‚˜ì´ ë“ ë‹¤ëŠ” ê²ƒì€ ìƒê°ë§Œí¼ ìŠ¬í”„ì§€ ì•Šë‹¤', '1_time', 'ìœ ì°½ì„ ', 'ìƒˆë¹›');
---2ë²ˆ ê±´ê°•
-insert into book values(book_b_no_seq.nextval, 'ê±´ê°•', 'ì‹ì‚¬ë§Œ ë°”ê¿”ë„ ì Šì–´ì§‘ë‹ˆë‹¤', 16500, 'í•­ë…¸í™” ì „ë¬¸ì˜ê°€ ì•Œë ¤ì£¼ëŠ” ëŠ™ì§€ ì•ŠëŠ” ì‹ì‚¬ë²•', '2_food', 'ë§ˆí‚¤íƒ€ ì  ì§€', 'ë¶ë“œë¦¼');
-insert into book values(book_b_no_seq.nextval, 'ê±´ê°•', 'ë‹¹ì§ˆ ì¤‘ë…', 14000, 'ì˜¬ë°”ë¥¸ íƒ„ìˆ˜í™”ë¬¼ ì¡°ì ˆë¡œ ë‚´ ëª¸ ë¦¬ì…‹', '2_party', 'ë§ˆí‚¤íƒ€ ì  ì§€', 'ë¬¸ì˜ˆì¶˜ì¶”ì‚¬');
-insert into book values(book_b_no_seq.nextval, 'ê±´ê°•', 'í”¼ê³¤í•´ì§€ì§€ ì•ŠëŠ” ì˜¬ë°”ë¥¸ ìì„¸ ë„ê° 100', 15000, 'ì˜¬ë°”ë¥¸ ìì„¸ë¥¼ ìœ„í•œ ë°©ë²•', '2_posture', 'ë‚˜ì¸ ì‹œë§ˆ ë‹¤ì¹´ì‹œ', 'ì¦ê±°ìš´ìƒìƒ');
-insert into book values(book_b_no_seq.nextval, 'ê±´ê°•', 'ì ˆëŒ€ ì§€ì¹˜ì§€ ì•ŠëŠ” ëª¸', 15000, 'ê³¼í•™ì  ì›ë¦¬ë¥¼ í†µí•´ ë°°ìš°ëŠ” ìµœê°•ì˜ í”¼ë¡œ í•´ì†Œë²•', '2_body', 'ë‚˜ì¹´ë…¸ ì œì„ìŠ¤ ìŠˆì´ì¹˜', 'ë¹„íƒ€ë¶ìŠ¤');
-insert into book values(book_b_no_seq.nextval, 'ê±´ê°•', 'ê¸€ë£¨ì½”ìŠ¤ í˜ëª…', 18000, 'ì¢‹ì•„í•˜ëŠ” ìŒì‹ì„ ì¦ê¸°ë©´ì„œ ê³¼í•™ì ìœ¼ë¡œ ì²´ì¤‘ì„ ì¤„ì´ëŠ” 10ê°€ì§€ ë°©ë²•', '2_superfood', 'ì œì‹œ ì¸ì°¨ìš°ìŠ¤í˜', 'ì•„ì¹¨ì‚¬ê³¼');
---3ë²ˆ ìš”ë¦¬
-insert into book values(book_b_no_seq.nextval, 'ìš”ë¦¬', 'ì‚ë½€ì‚ë½€ 119 ì´ìœ ì‹', 18900, 'ì†Œì•„ì²­ì†Œë…„ê³¼ ì „ë¬¸ì˜ í•˜ì •í›ˆì´ ì „í•˜ëŠ” ê±´ê°•í•œ ì•„ê°€ ë°¥ìƒ', '3_babyfood', 'í•˜ì •í›ˆ', 'ìœ ë‹ˆì±…ë°©');
-insert into book values(book_b_no_seq.nextval, 'ìš”ë¦¬', 'ìš°ë¦¬ìˆ  ìµìŠ¤í”„ë ˆìŠ¤', 16500, 'ì™€ì¸, ìœ„ìŠ¤í‚¤, ì‚¬ì¼€ ëª»ì§€ì•Šì€ K-ìˆ ì˜ ë§¤ë ¥', '3_drink', 'íƒì¬í˜•', 'EBS BOOKS');
-insert into book values(book_b_no_seq.nextval, 'ìš”ë¦¬', 'êµ¬ì›€ê³¼ì í´ë˜ìŠ¤', 17000, 'ìŠ¬í”ˆí•˜í’ˆì˜ ë”°ëœ»í•œ í™ˆë² ì´í‚¹', '3_brade', 'ì´ì§€í˜œ', 'ì‹œëŒ€ì¸');
-insert into book values(book_b_no_seq.nextval, 'ìš”ë¦¬', 'ë§›ìˆë‹¤ ì£½', 16000, 'ê±´ê°•ì„ ë‹´ì€ í•œ ê·¸ë¦‡', '3_porridge', 'í•œë³µì„ ', 'ë¦¬ìŠ¤ì»´');
-insert into book values(book_b_no_seq.nextval, 'ìš”ë¦¬', 'ì˜¤ëŠ˜ë„ ë‹¬ê±€', 14000, 'ë§Œì•½ì— ë‹¬ê±€ì´ ì—†ì—ˆë”ë¼ë©´ ë¬´ì—‡ìœ¼ë¡œ ì‹íƒì„ ì°¨ë¦´ê¹Œ', '3_egg', 'ì†ì„±í¬', 'ë¦¬ìŠ¤ì»´');
---4ë²ˆ ì»´í“¨í„°IT
-insert into book values(book_b_no_seq.nextval, 'ì»´í“¨í„°IT', 'clean code', 33000, 'ì• ìì¼ ì†Œí”„íŠ¸ì›¨ì–´ ì¥ì¸ ì •ì‹ ', '4_code', 'ë¡œë²„íŠ¸ C. ë§ˆí‹´', 'ì¸ì‚¬ì´íŠ¸');
-insert into book values(book_b_no_seq.nextval, 'ì»´í“¨í„°IT', 'í´ë¦° ì•„í‚¤í…ì²˜', 29000, 'ëª¨ë“  í”„ë¡œê·¸ë˜ë¨¸ê°€ ì½ì–´ì•¼ í•˜ëŠ” í•„ë…ì„œ!', '4_cleancode', 'ë¡œë²„íŠ¸ C. ë§ˆí‹´', 'ì¸ì‚¬ì´íŠ¸');
-insert into book values(book_b_no_seq.nextval, 'ì»´í“¨í„°IT', 'ë¦¬íŒ©í„°ë§', 35000, 'ì½”ë“œ êµ¬ì¡°ë¥¼ ì²´ê³„ì ìœ¼ë¡œ ê°œì„ í•˜ì—¬ íš¨ìœ¨ì ì¸ ë¦¬íŒ©í„°ë§ êµ¬í˜„í•˜ê¸°', '4_repack', 'ë§ˆí‹´ íŒŒìš¸ëŸ¬', 'í•œë¹›ë¯¸ë””ì–´');
-insert into book values(book_b_no_seq.nextval, 'ì»´í“¨í„°IT', 'ê°ì²´ì§€í–¥ì˜ ì‚¬ì‹¤ê³¼ ì˜¤í•´', 20000, 'ì—­í• , ì±…ì„, í˜‘ë ¥ ê´€ì ì—ì„œ ë³¸ ê°ì²´ì§€í–¥', '4_fact', 'ì¡°ì˜í˜¸', 'ìœ„í‚¤ë¶ìŠ¤');
-insert into book values(book_b_no_seq.nextval, 'ì»´í“¨í„°IT', 'ì¸ìŠ¤íŒŒì´ì–´ë“œ', 24000, 'ê°ë™ì„ ì „í•˜ëŠ” IT ì œí’ˆì€ ì–´ë–»ê²Œ ë§Œë“¤ì–´ì§€ëŠ”ê°€?', '4_inspired', 'ë§ˆí‹° ì¼€ì´ê±´', 'ì œì´í');
---5ë²ˆ ê³µí¬
-insert into book values(book_b_no_seq.nextval, 'ê³µí¬', 'ê·¸ë¦¬ê³  ì•„ë¬´ë„ ì—†ì—ˆë‹¤', 12000, 'ë‹¤ë“¤ ì–´ë””ê°„ê±°ì•¼?', '5_nomore', 'ì• ê±°ì„œ í¬ë¦¬ìŠ¤í‹°', 'í•´ë¬¸ì¶œíŒì‚¬');
-insert into book values(book_b_no_seq.nextval, 'ê³µí¬', 'Rì˜ ê³µí¬ê°€ ì˜¨ë‹¤', 20000, 'ê¸°íšŒë¥¼ ë™ë°˜í•œ ë˜ ë‹¤ë¥¸ ê²½ì œìœ„ê¸°ì˜ ì‹œì‘', '5_R', 'ê¹€íš¨ì‹ ', 'íŠ¸ëŸ¬ìŠ¤íŠ¸ë¶ìŠ¤');
-insert into book values(book_b_no_seq.nextval, 'ê³µí¬', 'ì‹ ë¹„ì•„íŒŒíŠ¸ ì˜¤ì‹¹ì˜¤ì‹¹ ë¬´ì„œìš´ ì´ì•¼ê¸°', 15000, 'ë¬´ì„œìš´ ì‹ ë¹„ì•„íŒŒíŠ¸ì—ì„œ íƒˆì¶œí•˜ì', '5_apart', 'ì•¨ë¦¬ìŠ¤,ìœ¤í¬ì •', 'ì„œìš¸ë¬¸í™”ì‚¬');
-insert into book values(book_b_no_seq.nextval, 'ê³µí¬', 'ì˜¤ì‹¹ì˜¤ì‹¹ OK ê³µí¬ ë§Œí™”', 5500, 'ì‹¬ì¥ì´ ì«„ê¹ƒ! ë¨¸ë¦¬ì¹´ë½ì´ ì­ˆë¼›!', '5_ok', 'ë°±ì² ,ê³„ê±´ì¼', 'íš¨ë¦¬ì›');
-insert into book values(book_b_no_seq.nextval, 'ê³µí¬', 'ì•…ëª½', 15000, 'ë„ˆë¬´ ë¬´ì„œì›Œì„œ ì¤„ê±°ë¦¬ê°€ ì—†ìŠµë‹ˆë‹¤.', '5_dream', 'ì¡°ì´ìŠ¤ ìºëŸ´ ì˜¤ì¸ ', 'í¬ë ˆ');
+insert into book values(book_b_no_seq.nextval, 'ÀÚ±â°³¹ß¼­', '¸¶½Ã¸á·ÎÀÌ¾ß±â', 12000, '´ŞÄŞÇÑ À¯È¤¿¡¼­ ÀÌ°Ü³¾ ¶§, ºñ·Î¼Ò ¾ò°Ô µÈ´Ù', '1_marshmallow', 'È£¾ÆÅ´ µ¥ Æ÷»ç´Ù', 'ÇÑ±¹°æÁ¦½Å¹®»ç');
+insert into book values(book_b_no_seq.nextval, 'ÀÚ±â°³¹ß¼­', '´©°¡ ³» Ä¡Áî¸¦ ¿Å°åÀ»±î?', 13500, 'ÀÎ»ı¿¡¼­ ºÎµúÈú º¯È­¸¦ ´ëÃ³ÇÒ ¼ö ÀÖ´Â ÁöÇı', '1_who', '½ºÆæ¼­ Á¸½¼', 'Áø¸íÃâÆÇ»ç');
+insert into book values(book_b_no_seq.nextval, 'ÀÚ±â°³¹ß¼­', '¹Ì¿ò¹ŞÀ» ¿ë±â', 14900, 'ÀÚÀ¯·Ó°í Çàº¹ÇÑ »îÀ» À§ÇÑ °¡¸£Ä§', '1_courage', '±â½Ã¹Ì ÀÌÄ¡·Î', 'Áø¸íÃâÆÇ»ç');
+insert into book values(book_b_no_seq.nextval, 'ÀÚ±â°³¹ß¼­', 'ÃÖ°­ÀÇ ¸àÅ»°ü¸®', 17000, '¼¼°è ¸®´õµéÀÇ ÁöµµÀÚ ¸àÅ» ÄÚÄª', '1_reader', 'Å´¹ú¸® ÆäÀÌ½º', 'Æ÷¸£Ã¼');
+insert into book values(book_b_no_seq.nextval, 'ÀÚ±â°³¹ß¼­', '³ª¸¦ Ã£´Â ½Ã°£', 16000, '³ªÀÌ µç´Ù´Â °ÍÀº »ı°¢¸¸Å­ ½½ÇÁÁö ¾Ê´Ù', '1_time', 'À¯Ã¢¼±', '»õºû');
+--2¹ø °Ç°­
+insert into book values(book_b_no_seq.nextval, '°Ç°­', '½Ä»ç¸¸ ¹Ù²ãµµ Àş¾îÁı´Ï´Ù', 16500, 'Ç×³ëÈ­ Àü¹®ÀÇ°¡ ¾Ë·ÁÁÖ´Â ´ÄÁö ¾Ê´Â ½Ä»ç¹ı', '2_food', '¸¶Å°Å¸ Á¨Áö', 'ºÏµå¸²');
+insert into book values(book_b_no_seq.nextval, '°Ç°­', '´çÁú Áßµ¶', 14000, '¿Ã¹Ù¸¥ Åº¼öÈ­¹° Á¶Àı·Î ³» ¸ö ¸®¼Â', '2_party', '¸¶Å°Å¸ Á¨Áö', '¹®¿¹ÃáÃß»ç');
+insert into book values(book_b_no_seq.nextval, '°Ç°­', 'ÇÇ°ïÇØÁöÁö ¾Ê´Â ¿Ã¹Ù¸¥ ÀÚ¼¼ µµ°¨ 100', 15000, '¿Ã¹Ù¸¥ ÀÚ¼¼¸¦ À§ÇÑ ¹æ¹ı', '2_posture', '³ªÃ÷½Ã¸¶ ´ÙÄ«½Ã', 'Áñ°Å¿î»ó»ó');
+insert into book values(book_b_no_seq.nextval, '°Ç°­', 'Àı´ë ÁöÄ¡Áö ¾Ê´Â ¸ö', 15000, '°úÇĞÀû ¿ø¸®¸¦ ÅëÇØ ¹è¿ì´Â ÃÖ°­ÀÇ ÇÇ·Î ÇØ¼Ò¹ı', '2_body', '³ªÄ«³ë Á¦ÀÓ½º ½´ÀÌÄ¡', 'ºñÅ¸ºÏ½º');
+insert into book values(book_b_no_seq.nextval, '°Ç°­', '±Û·çÄÚ½º Çõ¸í', 18000, 'ÁÁ¾ÆÇÏ´Â À½½ÄÀ» Áñ±â¸é¼­ °úÇĞÀûÀ¸·Î Ã¼ÁßÀ» ÁÙÀÌ´Â 10°¡Áö ¹æ¹ı', '2_superfood', 'Á¦½Ã ÀÎÂ÷¿ì½ºÆä', '¾ÆÄ§»ç°ú');
+--3¹ø ¿ä¸®
+insert into book values(book_b_no_seq.nextval, '¿ä¸®', '»ß»Ç»ß»Ç 119 ÀÌÀ¯½Ä', 18900, '¼Ò¾ÆÃ»¼Ò³â°ú Àü¹®ÀÇ ÇÏÁ¤ÈÆÀÌ ÀüÇÏ´Â °Ç°­ÇÑ ¾Æ°¡ ¹ä»ó', '3_babyfood', 'ÇÏÁ¤ÈÆ', 'À¯´ÏÃ¥¹æ');
+insert into book values(book_b_no_seq.nextval, '¿ä¸®', '¿ì¸®¼ú ÀÍ½ºÇÁ·¹½º', 16500, '¿ÍÀÎ, À§½ºÅ°, »çÄÉ ¸øÁö¾ÊÀº K-¼úÀÇ ¸Å·Â', '3_drink', 'Å¹ÀçÇü', 'EBS BOOKS');
+insert into book values(book_b_no_seq.nextval, '¿ä¸®', '±¸¿ò°úÀÚ Å¬·¡½º', 17000, '½½ÇÂÇÏÇ°ÀÇ µû¶æÇÑ È¨º£ÀÌÅ·', '3_brade', 'ÀÌÁöÇı', '½Ã´ëÀÎ');
+insert into book values(book_b_no_seq.nextval, '¿ä¸®', '¸ÀÀÖ´Ù Á×', 16000, '°Ç°­À» ´ãÀº ÇÑ ±×¸©', '3_porridge', 'ÇÑº¹¼±', '¸®½ºÄÄ');
+insert into book values(book_b_no_seq.nextval, '¿ä¸®', '¿À´Ãµµ ´Ş°¿', 14000, '¸¸¾à¿¡ ´Ş°¿ÀÌ ¾ø¾ú´õ¶ó¸é ¹«¾ùÀ¸·Î ½ÄÅ¹À» Â÷¸±±î', '3_egg', '¼Õ¼ºÈñ', '¸®½ºÄÄ');
+--4¹ø ÄÄÇ»ÅÍIT
+insert into book values(book_b_no_seq.nextval, 'ÄÄÇ»ÅÍIT', 'clean code', 33000, '¾ÖÀÚÀÏ ¼ÒÇÁÆ®¿ş¾î ÀåÀÎ Á¤½Å', '4_code', '·Î¹öÆ® C. ¸¶Æ¾', 'ÀÎ»çÀÌÆ®');
+insert into book values(book_b_no_seq.nextval, 'ÄÄÇ»ÅÍIT', 'Å¬¸° ¾ÆÅ°ÅØÃ³', 29000, '¸ğµç ÇÁ·Î±×·¡¸Ó°¡ ÀĞ¾î¾ß ÇÏ´Â ÇÊµ¶¼­!', '4_cleancode', '·Î¹öÆ® C. ¸¶Æ¾', 'ÀÎ»çÀÌÆ®');
+insert into book values(book_b_no_seq.nextval, 'ÄÄÇ»ÅÍIT', '¸®ÆÑÅÍ¸µ', 35000, 'ÄÚµå ±¸Á¶¸¦ Ã¼°èÀûÀ¸·Î °³¼±ÇÏ¿© È¿À²ÀûÀÎ ¸®ÆÑÅÍ¸µ ±¸ÇöÇÏ±â', '4_repack', '¸¶Æ¾ ÆÄ¿ï·¯', 'ÇÑºû¹Ìµğ¾î');
+insert into book values(book_b_no_seq.nextval, 'ÄÄÇ»ÅÍIT', '°´Ã¼ÁöÇâÀÇ »ç½Ç°ú ¿ÀÇØ', 20000, '¿ªÇÒ, Ã¥ÀÓ, Çù·Â °üÁ¡¿¡¼­ º» °´Ã¼ÁöÇâ', '4_fact', 'Á¶¿µÈ£', 'À§Å°ºÏ½º');
+insert into book values(book_b_no_seq.nextval, 'ÄÄÇ»ÅÍIT', 'ÀÎ½ºÆÄÀÌ¾îµå', 24000, '°¨µ¿À» ÀüÇÏ´Â IT Á¦Ç°Àº ¾î¶»°Ô ¸¸µé¾îÁö´Â°¡?', '4_inspired', '¸¶Æ¼ ÄÉÀÌ°Ç', 'Á¦ÀÌÆà');
+--5¹ø °øÆ÷
+insert into book values(book_b_no_seq.nextval, '°øÆ÷', '±×¸®°í ¾Æ¹«µµ ¾ø¾ú´Ù', 12000, '´Ùµé ¾îµğ°£°Å¾ß?', '5_nomore', '¾Ö°Å¼­ Å©¸®½ºÆ¼', 'ÇØ¹®ÃâÆÇ»ç');
+insert into book values(book_b_no_seq.nextval, '°øÆ÷', 'RÀÇ °øÆ÷°¡ ¿Â´Ù', 20000, '±âÈ¸¸¦ µ¿¹İÇÑ ¶Ç ´Ù¸¥ °æÁ¦À§±âÀÇ ½ÃÀÛ', '5_R', '±èÈ¿½Å', 'Æ®·¯½ºÆ®ºÏ½º');
+insert into book values(book_b_no_seq.nextval, '°øÆ÷', '½Åºñ¾ÆÆÄÆ® ¿À½Ï¿À½Ï ¹«¼­¿î ÀÌ¾ß±â', 15000, '¹«¼­¿î ½Åºñ¾ÆÆÄÆ®¿¡¼­ Å»ÃâÇÏÀÚ', '5_apart', '¾Ù¸®½º,À±ÈñÁ¤', '¼­¿ï¹®È­»ç');
+insert into book values(book_b_no_seq.nextval, '°øÆ÷', '¿À½Ï¿À½Ï OK °øÆ÷ ¸¸È­', 5500, '½ÉÀåÀÌ ÂÌ±ê! ¸Ó¸®Ä«¶ôÀÌ ÂŞ»Ä!', '5_ok', '¹éÃ¶,°è°ÇÀÏ', 'È¿¸®¿ø');
+insert into book values(book_b_no_seq.nextval, '°øÆ÷', '¾Ç¸ù', 15000, '³Ê¹« ¹«¼­¿ö¼­ ÁÙ°Å¸®°¡ ¾ø½À´Ï´Ù.', '5_dream', 'Á¶ÀÌ½º Ä³·² ¿ÀÃ÷', 'Æ÷·¹');
 
 -- QNA insert
 
-insert into qna values(QNA_q_no_SEQ.nextval, '1:1ë¬¸ì˜', 'ì±… ë°°ì†¡ì´ ì–¸ì œì˜¤ë‚˜ìš”?', sysdate, 'ì œê°€ ì£¼ë¬¸í•œ ì±… ë°°ì†¡ì´ ì–¸ì œì˜¤ë‚˜ìš”?', 'seongmin', QNA_Q_NO_SEQ.currval, 1, 0);
-insert into qna values(QNA_q_no_SEQ.nextval, '1:1ë¬¸ì˜', 'ì±…ì´ ì˜ëª»ì™”ì–´ìš”', sysdate, 'ì±…ì´ ì˜ëª»ì™”ì–´ìš”', 'enbi', QNA_Q_NO_SEQ.currval, 1, 0);
-insert into qna values(QNA_q_no_SEQ.nextval, '1:1ë¬¸ì˜', 'ìƒí’ˆ ì–¸ì œ ë“¤ì–´ì˜¬ê¹Œìš”?', sysdate, 'ìƒí’ˆ ì–¸ì œ ë“¤ì–´ì˜¬ê¹Œìš”?', 'jeonghun', QNA_Q_NO_SEQ.currval, 1, 0);
-insert into qna values(QNA_q_no_SEQ.nextval, '1:1ë¬¸ì˜', 'ì£¼ë¬¸ì´ ëˆ„ë½ëìŠµë‹ˆë‹¤', sysdate, 'ì£¼ë¬¸ì´ ëˆ„ë½ëìŠµë‹ˆë‹¤ ì£¼ë¬¸ì´ ëˆ„ë½ëìŠµë‹ˆë‹¤', 'hunjeong', QNA_Q_NO_SEQ.currval, 1, 0);
-insert into qna values(QNA_q_no_SEQ.nextval, '1:1ë¬¸ì˜', 'ì£¼ë¬¸ ì·¨ì†Œí•˜ê³ ì‹¶ì–´ìš”', sysdate, 'ì£¼ë¬¸ ì·¨ì†Œí•˜ê³ ì‹¶ì–´ìš”', 'jihun', QNA_Q_NO_SEQ.currval, 1, 0);
-insert into qna values(QNA_q_no_SEQ.nextval, '1:1ë¬¸ì˜', 'ë°°ê³ íŒŒìš”', sysdate, 'ë°°ê³ íŒŒìš”', 'bongkyoun', QNA_Q_NO_SEQ.currval, 1, 0);
+insert into qna values(QNA_q_no_SEQ.nextval, '1:1¹®ÀÇ', 'Ã¥ ¹è¼ÛÀÌ ¾ğÁ¦¿À³ª¿ä?', sysdate, 'Á¦°¡ ÁÖ¹®ÇÑ Ã¥ ¹è¼ÛÀÌ ¾ğÁ¦¿À³ª¿ä?', 'seongmin', QNA_Q_NO_SEQ.currval, 1, 0);
+insert into qna values(QNA_q_no_SEQ.nextval, '1:1¹®ÀÇ', 'Ã¥ÀÌ Àß¸ø¿Ô¾î¿ä', sysdate, 'Ã¥ÀÌ Àß¸ø¿Ô¾î¿ä', 'enbi', QNA_Q_NO_SEQ.currval, 1, 0);
+insert into qna values(QNA_q_no_SEQ.nextval, '1:1¹®ÀÇ', '»óÇ° ¾ğÁ¦ µé¾î¿Ã±î¿ä?', sysdate, '»óÇ° ¾ğÁ¦ µé¾î¿Ã±î¿ä?', 'jeonghun', QNA_Q_NO_SEQ.currval, 1, 0);
+insert into qna values(QNA_q_no_SEQ.nextval, '1:1¹®ÀÇ', 'ÁÖ¹®ÀÌ ´©¶ôµÆ½À´Ï´Ù', sysdate, 'ÁÖ¹®ÀÌ ´©¶ôµÆ½À´Ï´Ù ÁÖ¹®ÀÌ ´©¶ôµÆ½À´Ï´Ù', 'hunjeong', QNA_Q_NO_SEQ.currval, 1, 0);
+insert into qna values(QNA_q_no_SEQ.nextval, '1:1¹®ÀÇ', 'ÁÖ¹® Ãë¼ÒÇÏ°í½Í¾î¿ä', sysdate, 'ÁÖ¹® Ãë¼ÒÇÏ°í½Í¾î¿ä', 'jihun', QNA_Q_NO_SEQ.currval, 1, 0);
+insert into qna values(QNA_q_no_SEQ.nextval, '1:1¹®ÀÇ', '¹è°íÆÄ¿ä', sysdate, '¹è°íÆÄ¿ä', 'bongkyoun', QNA_Q_NO_SEQ.currval, 1, 0);
 
 --notice insert
--- ê³µì§€ì‚¬í•­
+-- °øÁö»çÇ×
 
---1. ê´‘ë³µì ˆ ë° íƒë°° ì—†ëŠ” ë‚  ë°°ì†¡ì¼ì • ì•ˆë‚´
+--1. ±¤º¹Àı ¹× ÅÃ¹è ¾ø´Â ³¯ ¹è¼ÛÀÏÁ¤ ¾È³»
 insert into notice 
-values(notice_n_no_seq.nextval, 'ê³µì§€ì‚¬í•­', 'ê´‘ë³µì ˆ ë° íƒë°° ì—†ëŠ” ë‚  ë°°ì†¡ì¼ì • ì•ˆë‚´', '2022-08-01', 
-'ì•ˆë…•í•˜ì„¸ìš”. ê¿ˆì„ í‚¤ìš°ëŠ” ì„¸ìƒ êµë³´ë¬¸ê³ ì…ë‹ˆë‹¤.
-ì–¸ì œë‚˜ êµë³´ë¬¸ê³ ë¥¼ ì‚¬ë‘í•´ì£¼ì‹œëŠ” ê³ ê°ë‹˜ê»˜ ì§„ì‹¬ìœ¼ë¡œ ê°ì‚¬ì˜ ë§ì”€ë“œë¦½ë‹ˆë‹¤.
-8ì›” 13ì¼ íƒë°° ì—†ëŠ” ë‚ , 8ì›” 15ì¼ ê´‘ë³µì ˆ íœ´ë¬´ë¡œ ì¸í•´ ë³€ê²½ë˜ëŠ” ë°°ì†¡ì¼ì •ì„ ì•ˆë‚´ë“œë¦½ë‹ˆë‹¤.', 1,'humu.gif' ,notice_n_no_seq.currval, 1, 0);
---2. ì„œë¹„ìŠ¤ ì¢…ë£Œ ë° ë³€ê²½ ì•ˆë‚´
+values(notice_n_no_seq.nextval, '°øÁö»çÇ×', '±¤º¹Àı ¹× ÅÃ¹è ¾ø´Â ³¯ ¹è¼ÛÀÏÁ¤ ¾È³»', '2022-08-01', 
+'¾È³çÇÏ¼¼¿ä. ²ŞÀ» Å°¿ì´Â ¼¼»ó ±³º¸¹®°íÀÔ´Ï´Ù.
+¾ğÁ¦³ª ±³º¸¹®°í¸¦ »ç¶ûÇØÁÖ½Ã´Â °í°´´Ô²² Áø½ÉÀ¸·Î °¨»çÀÇ ¸»¾¸µå¸³´Ï´Ù.
+8¿ù 13ÀÏ ÅÃ¹è ¾ø´Â ³¯, 8¿ù 15ÀÏ ±¤º¹Àı ÈŞ¹«·Î ÀÎÇØ º¯°æµÇ´Â ¹è¼ÛÀÏÁ¤À» ¾È³»µå¸³´Ï´Ù.', 1,'humu.gif' ,notice_n_no_seq.currval, 1, 0);
+--2. ¼­ºñ½º Á¾·á ¹× º¯°æ ¾È³»
 insert into notice
-values(notice_n_no_seq.nextval, 'ê³µì§€ì‚¬í•­', 'ì„œë¹„ìŠ¤ ì¢…ë£Œ ë° ë³€ê²½ ì•ˆë‚´', '2022-07-08', 
-'ì•ˆë…•í•˜ì„¸ìš”. ê¿ˆì„ í‚¤ìš°ëŠ” ì„¸ìƒ êµë³´ë¬¸ê³ ì…ë‹ˆë‹¤.
-êµë³´ë¬¸ê³  ì„œë¹„ìŠ¤ë¥¼ ì´ìš©í•´ ì£¼ì‹œëŠ” ê³ ê°ë‹˜ê»˜ ê°ì‚¬ë“œë¦½ë‹ˆë‹¤.
-ë³´ë‹¤ ë‚˜ì€ ì„œë¹„ìŠ¤ ì œê³µì„ ìœ„í•´ ì•„ë˜ì™€ ê°™ì€ ë³€ë™ì´ ì˜ˆì •ë˜ì–´ ìˆìœ¼ë‹ˆ ì´ìš© ì‹œ ì°¸ê³ í•˜ì—¬ ì£¼ì‹œê¸° ë°”ëë‹ˆë‹¤.',1 ,'money.gif', notice_n_no_seq.currval, 1, 0);
---3. í•´ì™¸ë°°ì†¡(FedEx) ë°°ì†¡ë£Œ ì¸ìƒ ì•ˆë‚´ (5/1)
+values(notice_n_no_seq.nextval, '°øÁö»çÇ×', '¼­ºñ½º Á¾·á ¹× º¯°æ ¾È³»', '2022-07-08', 
+'¾È³çÇÏ¼¼¿ä. ²ŞÀ» Å°¿ì´Â ¼¼»ó ±³º¸¹®°íÀÔ´Ï´Ù.
+±³º¸¹®°í ¼­ºñ½º¸¦ ÀÌ¿ëÇØ ÁÖ½Ã´Â °í°´´Ô²² °¨»çµå¸³´Ï´Ù.
+º¸´Ù ³ªÀº ¼­ºñ½º Á¦°øÀ» À§ÇØ ¾Æ·¡¿Í °°Àº º¯µ¿ÀÌ ¿¹Á¤µÇ¾î ÀÖÀ¸´Ï ÀÌ¿ë ½Ã Âü°íÇÏ¿© ÁÖ½Ã±â ¹Ù¶ø´Ï´Ù.',1 ,'money.gif', notice_n_no_seq.currval, 1, 0);
+--3. ÇØ¿Ü¹è¼Û(FedEx) ¹è¼Û·á ÀÎ»ó ¾È³» (5/1)
 insert into notice
-values(notice_n_no_seq.nextval, 'ê³µì§€ì‚¬í•­', 'í•´ì™¸ë°°ì†¡(FedEx) ë°°ì†¡ë£Œ ì¸ìƒ ì•ˆë‚´ (5/1)', '2022-03-01',
-'ìµœê·¼ ì½”ë¡œë‚˜ 19ë¡œ ì¸í•œ í•´ì™¸ ë°°ì†¡ì— í•„ìš”í•œ í•­ê³µìš´ì†¡ë£Œê°€ ê¸‰ê²©íˆ ì¦ê°€í•¨ì— ë”°ë¼, ë™ ì„œë¹„ìŠ¤ì˜ ì§€ì†ì ì´ê³  ì•ˆì •ì ì¸ ì œê³µì„ ìœ„í•œ í•„ìš” ìµœì†Œ ìˆ˜ì¤€ì˜ ìš”ê¸ˆ ì¡°ì •ì´ ë¶ˆê°€í”¼í•œ ì‹¤ì •ì…ë‹ˆë‹¤.
-ì´ì—, â€™22. 5. 1. ì FedExì˜ í•´ì™¸ ë°°ì†¡ ì„œë¹„ìŠ¤ì˜ ìš”ê¸ˆì´ ì¸ìƒë  ì˜ˆì • ì´ì˜¤ë‹ˆ, ê³ ê°ë‹˜ì˜ ë„ˆë¥¸ ì–‘í•´ë¥¼ ë¶€íƒë“œë¦¬ë©° ì¡°ì •ë‚´ìš©ì„ ì‚¬ì „ ê³µì§€í•˜ì˜¤ë‹ˆ ì„œë¹„ìŠ¤ ì´ìš©ì— ì°¸ì¡°í•˜ì‹œê¸° ë°”ëë‹ˆë‹¤.', 1,'service.gif' ,notice_n_no_seq.currval, 1, 0);
+values(notice_n_no_seq.nextval, '°øÁö»çÇ×', 'ÇØ¿Ü¹è¼Û(FedEx) ¹è¼Û·á ÀÎ»ó ¾È³» (5/1)', '2022-03-01',
+'ÃÖ±Ù ÄÚ·Î³ª 19·Î ÀÎÇÑ ÇØ¿Ü ¹è¼Û¿¡ ÇÊ¿äÇÑ Ç×°ø¿î¼Û·á°¡ ±Ş°İÈ÷ Áõ°¡ÇÔ¿¡ µû¶ó, µ¿ ¼­ºñ½ºÀÇ Áö¼ÓÀûÀÌ°í ¾ÈÁ¤ÀûÀÎ Á¦°øÀ» À§ÇÑ ÇÊ¿ä ÃÖ¼Ò ¼öÁØÀÇ ¿ä±İ Á¶Á¤ÀÌ ºÒ°¡ÇÇÇÑ ½ÇÁ¤ÀÔ´Ï´Ù.
+ÀÌ¿¡, ¡¯22. 5. 1. ÀÚ FedExÀÇ ÇØ¿Ü ¹è¼Û ¼­ºñ½ºÀÇ ¿ä±İÀÌ ÀÎ»óµÉ ¿¹Á¤ ÀÌ¿À´Ï, °í°´´ÔÀÇ ³Ê¸¥ ¾çÇØ¸¦ ºÎÅ¹µå¸®¸ç Á¶Á¤³»¿ëÀ» »çÀü °øÁöÇÏ¿À´Ï ¼­ºñ½º ÀÌ¿ë¿¡ ÂüÁ¶ÇÏ½Ã±â ¹Ù¶ø´Ï´Ù.', 1,'service.gif' ,notice_n_no_seq.currval, 1, 0);
 
 --ebook insert
 
@@ -111,7 +111,7 @@ insert into orders values(orders_O_no_SEQ.nextval, sysdate, 13500, 'bongkyoun');
 insert into orders values(orders_O_no_SEQ.nextval, sysdate, 14900, 'jihun');
 insert into orders values(orders_O_no_SEQ.nextval, sysdate, 16000, 'enbi');
 insert into orders values(orders_O_no_SEQ.nextval, sysdate, 16500, 'jeonghun');
-insert into orders values(orders_O_no_SEQ.nextval, sysdate, 14000, 'hunjeong');
+insert into orders values(orders_O_no_SEQ.nextval, sysdate, 14000, 'hyunjeong');
 
 --orderdetail insert
 
@@ -130,14 +130,16 @@ insert into eorder values(eorder_eo_no_seq.nextval, sysdate, sysdate+10, 3, 'jih
 
 --review insert
 
-insert into review values(review_r_no_seq.nextval, 'ì±…ì´ ì¬ë°Œì–´ìš”', sysdate, 5, 'ì±… ì²˜ìŒ ì‚¬ë´¤ëŠ”ë° ì´ ì±…ì´ ì œì¼ ì¬ë°Œë„¤ìš”.', 'seongmin', 1 ,review_r_no_seq.currval, 1, 0);
-insert into review values(review_r_no_seq.nextval, 'ì˜¤ëŠ˜ ì±…ì´ ë² ìŠ¤íŠ¸', sysdate, 5, 'ë² ìŠ¤íŠ¸ì…€ëŸ¬ë¼ì„œ ì‚¬ë´¤ëŠ”ë° ê´œì°®ì€ë“¯', 'bongkyoun', 1, review_r_no_seq.currval, 1, 0);
-insert into review values(review_r_no_seq.nextval, 'ì•„ì´ê°€ ì¢‹ì•„í•´ìš”', sysdate, 5, 'ì•„ì´ê°€ ì´ ì±…ì„ ì½ë”ë‹ˆ ì¼ê¸°ë¥¼ ì¨ìš”.', 'jihun', 1, review_r_no_seq.currval, 1, 0);
+insert into review values(review_r_no_seq.nextval, 'Ã¥ÀÌ Àç¹Õ¾î¿ä', sysdate, 5, 'Ã¥ Ã³À½ »çºÃ´Âµ¥ ÀÌ Ã¥ÀÌ Á¦ÀÏ Àç¹Õ³×¿ä.', 'seongmin', 1 ,review_r_no_seq.currval, 1, 0);
+insert into review values(review_r_no_seq.nextval, '¿À´Ã Ã¥ÀÌ º£½ºÆ®', sysdate, 5, 'º£½ºÆ®¼¿·¯¶ó¼­ »çºÃ´Âµ¥ ±¦ÂúÀºµí', 'bongkyoun', 1, review_r_no_seq.currval, 1, 0);
+insert into review values(review_r_no_seq.nextval, '¾ÆÀÌ°¡ ÁÁ¾ÆÇØ¿ä', sysdate, 5, '¾ÆÀÌ°¡ ÀÌ Ã¥À» ÀĞ´õ´Ï ÀÏ±â¸¦ ½á¿ä.', 'jihun', 1, review_r_no_seq.currval, 1, 0);
 
 --cart insert
 
 insert into cart values(cart_c_no_seq.nextval, 2, 'seongmin', 1);
 insert into cart values(cart_c_no_seq.nextval, 4, 'bongkyoun', 2);
 insert into cart values(cart_c_no_seq.nextval, 5, 'jihun', 3);
-insert into cart values(cart_c_no_seq.nextval, 1, 'hunjeong', 9);
-insert into cart values(cart_c_no_seq.nextval, 3, 'hunjeong', 4);
+insert into cart values(cart_c_no_seq.nextval, 1, 'hyunjeong', 9);
+insert into cart values(cart_c_no_seq.nextval, 3, 'hyunjeong', 4);
+insert into cart values(cart_c_no_seq.nextval, 2, 'jeonghun', 7);
+insert into cart values(cart_c_no_seq.nextval, 1, 'eunbi', 6);
