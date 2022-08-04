@@ -17,6 +17,11 @@ List<Eorder> ebooklist = ebookService.selectById(u_id);
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel=stylesheet href="css/styles.css" type="text/css">
+<link rel=stylesheet href="css/shop.css" type="text/css">
+ 
+<style type="text/css" media="screen">
+</style>
 <title>Insert title here</title>
 </head>
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
@@ -25,18 +30,19 @@ List<Eorder> ebooklist = ebookService.selectById(u_id);
 		<input type="hidden" name="buyType">
 	</form>
 	<!-- container start-->
+	
 	<div id="container">
 		<!-- header start -->
 		<div id="header">
 			<!-- include_common_top.jsp start-->
-			<jsp:include page="include_common_top.jsp" />
+			<jsp:include page="include_common_top.jsp"/>
 			<!-- include_common_top.jsp end-->
 		</div>
 		<!-- header end -->
 		<!-- navigation start-->
 		<div id="navigation">
 			<!-- include_common_left.jsp start-->
-			<jsp:include page="include_common_left.jsp" />
+			<jsp:include page="include_common_left.jsp"/>
 			<!-- include_common_left.jsp end-->
 		</div>
 		<!-- navigation end-->
@@ -52,82 +58,64 @@ List<Eorder> ebooklist = ebookService.selectById(u_id);
 							<table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
-									<td height="22">&nbsp;&nbsp;<b>장바구니 보기</b></td>
+									<td height="22">&nbsp;&nbsp;<b>쇼핑몰 - 장바구니 보기</b></td>
+									<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>
+									<input type="button"  value="기기등록" onClick="setCookie();"></td>
+									
 								</tr>
-							</table> <!--form--> <!-- 
+							</table> 
+							<!--form-->
+							<!-- 
 							<form name="f" method="post">
 							 -->
 							<div id='f'>
-								<table align=center width=80% border="0" cellpadding="0"
-									cellspacing="1" bgcolor="BBBBBB">
+							<table  align=center  width=80% border="0" cellpadding="0" cellspacing="1"  bgcolor="BBBBBB">
 									<tr>
-										<td width=60 height=25 align="center" bgcolor="FF9999"
-											class=t1><font>이미지</font></td>
-										<td width=220 height=25 align="center" bgcolor="FF9999"
-											class=t1><font>책 제목</font></td>
-										<td width=112 height=25 align="center" bgcolor="FF9999"
-											class=t1><font>구매일</font></td>
-										<td width=120 height=25 align="center" bgcolor="FF9999"
-											class=t1><font>종료일</font></td>
-										<td width=70 height=25 align="center" bgcolor="FF9999"
-											class=t1><font>판매가</font></td>
+										<td width=60 height=25  align="center" bgcolor="E5F0FA" class=t1><font
+											 >선택</font></td>
+										<td width=40 height=25 align="center" bgcolor="E5F0FA" class=t1><font
+											 >이미지</font></td>
+										<td width=210 height=25 align="center" bgcolor="E5F0FA" class=t1><font
+											 >책이름</font></td>
+										<td width=110 height=25 align="center" bgcolor="E5F0FA" class=t1><font
+											 >구매일</font></td>
+										<td width=110 height=25 align="center" bgcolor="E5F0FA" class=t1><font
+											 >종료일</font></td>
+										
 									</tr>
+									
 									<!-- cart item start -->
 									<%
-									for (Eorder ebook : ebooklist) {
-										
+									int tot_price=0;
+									for(Eorder ebook : ebooklist){ 
+									
 									%>
 									<tr>
-										<td width=40 height=26 align=center bgcolor="ffffff" class=t1>
-											<img src='image/<%=ebook.getEbook().getProduct().getB_image()%>.jpg' width="34" height="28" />
-										</td>
-										<td width=210 height=26 align=center bgcolor="ffffff" class=t1>
-											<a href='product_detail.jsp?p_no=<%=ebook.getEbook().getProduct().getB_no()%>'><%=ebook.getEbook().getProduct().getB_name()%></a>
-										</td>
-
-										<td width=112 height=26 align=center bgcolor="ffffff" class=t1>
-											<form action="cart_update_action.jsp" method="post"
-												name="ebook">
-												<input type="text" readonly="readonly" size="2"
-													style="text-align: center; width: 15%" name="c_qty"
-													value="<%=ebook.getEo_date_buy()%>">
-											</form>
-										</td>
-
-										<td width=146 height=26 align=center bgcolor="ffffff" class=t1><%=ebook.getEo_date_end()%></td>
-										<td width=50 height=26 align=center bgcolor="ffffff" class=t1>
-
-											<%-- 
-											<form action="cart_delete_item_action.jsp" method="post">
-												<input type="hidden" name="cart_no" value="<%=cart.getCart_no()%>">
-												<input type="submit" value="삭제">
-											</form>
-											 --%>
-											<form name="ebook">
-												<input type="text" name="c_no"
-													value="<%=ebook.getEbook().getE_price()%>">
-											</form>
-
-										</td>
+										<td width=60 height=26 align=center bgcolor="ffffff" class=t1></td>
+										<td width=40 height=26 align=center bgcolor="ffffff" class=t1><img src='image/<%=ebook.getEbook().getProduct().getB_image()%>.jpg' width="34" height="28"/></td>
+										<td width=210 height=26 align=center bgcolor="ffffff" class=t1><a href='product_detail.jsp?p_no=<%=ebook.getEbook().getProduct().getB_no()%>'><%=ebook.getEbook().getProduct().getB_name() %></a></td>
+										<td width=110 height=26 align=center bgcolor="ffffff" class=t1><%=ebook.getEo_date_buy()%></td>
+										<td width=110 height=26 align=center bgcolor="ffffff" class=t1><%=ebook.getEo_date_end()%></td>
+										
 									</tr>
 									<%}%>
 									<!-- cart item end -->
-
-
-
 									
 								</table>
-
-							</div> <!-- 
+							</div>
+							<!-- 
 							</form> 
-							 --> <br />
-
-							<table style="padding-left: 10px" border="0" cellpadding="0"
-								cellspacing="1" width="590">
+							 -->
+							<br />
+							<table style="padding-left: 10px" border="0" cellpadding="0" cellspacing="1" width="590">
 								<tr>
-									<td align=center>&nbsp;&nbsp; <a href="product_list.jsp"
-										class=m1>계속 구경하기</a>&nbsp;&nbsp;
-										
+									<td align=center>&nbsp;&nbsp;
+									
+									<a href="product_list.jsp" class=m1>계속 구경하기</a>&nbsp;&nbsp;
+									a
+									<a href="javascript:cart_view_form_order_submit();" class=m1>총 <span style="font-weight: bold;" id="cart_item_select_count"></span>개 주문하기[주문폼]</a>
+									<a href="javascript:cart_delete();" class=m1>장바구니 비우기</a>&nbsp;&nbsp;
+									
 									</td>
 								</tr>
 							</table></td>
@@ -140,7 +128,7 @@ List<Eorder> ebooklist = ebookService.selectById(u_id);
 		<!--wrapper end-->
 		<div id="footer">
 			<!-- include_common_bottom.jsp start-->
-			<jsp:include page="include_common_bottom.jsp" />
+			<jsp:include page="include_common_bottom.jsp"/>
 			<!-- include_common_bottom.jsp end-->
 		</div>
 	</div>
