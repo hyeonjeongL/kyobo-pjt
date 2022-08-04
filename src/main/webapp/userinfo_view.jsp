@@ -103,7 +103,8 @@ UserInfo user = userInfoService.selectById(u_id);
 								<tr>
 									<td align=center><input type="button" value="내정보수정"
 										onClick="userModify()">&nbsp; <input type="button"
-										value="탈퇴" onClick="userRemove()">&nbsp;</td>
+										value="탈퇴" onClick="userRemove()">&nbsp; <input type="button"
+										value="리뷰보기" onClick="reviewGo()"></td>
 								</tr>
 							</table>
 						</td>

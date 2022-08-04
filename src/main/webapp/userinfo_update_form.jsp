@@ -19,7 +19,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel=stylesheet href="css/styles.css" type="text/css">
 <link rel=stylesheet href="css/user.css" type="text/css">
-<script type="text/javascript" src="js/user.js"></script>
+<script type="text/javascript" src="js/userinfo.js"></script>
 </head>
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
 	marginwidth=0 marginheight=0>
@@ -71,52 +71,52 @@
 										<td width=100 align=center bgcolor="E5F0FA" height="33">비밀번호</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><input type="password" style="width: 150px"
-											name="password" value="<%=user.getU_password()%>"></td>
+											name="u_password" value="<%=user.getU_password()%>"></td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E5F0FA" height="33">비밀번호
 											확인</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><input type="password" style="width: 150px"
-											name="password2" value="<%=user.getU_password()%>"></td>
+											name="password2" value="<%=user.getU_password()%>" onkeyup="repassword()">&nbsp;&nbsp;<font id="pass2" color="red"></font></td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E5F0FA" height="33">이름</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><input type="text" style="width: 150px"
-											name="name" value="<%=user.getU_name()%>"></td>
+											name="u_name" value="<%=user.getU_name()%>"></td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E5F0FA" height="33">핸드폰번호</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><input type="text" style="width: 150px"
-											name="name" value="<%=user.getU_phone()%>"></td>
+											name="u_phone" value="<%=user.getU_phone()%>"></td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E5F0FA" height="33">생일</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><input type="hidden" style="width: 150px"
-											name="name" value="<%=user.getU_birth()%>"><%=user.getU_birth()%></td>
+											name="u_birth" value="<%=user.getU_birth()%>"><%=user.getU_birth()%></td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E5F0FA" height="33">성별</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><input type="hidden" style="width: 150px"
-											name="name" value="<%=user.getU_gender()%>"><%=user.getU_gender()%></td>
+											name="u_gender" value="<%=user.getU_gender()%>"><%=user.getU_gender()%></td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E5F0FA" height="33">이메일
 											</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><input type="text" style="width: 150px"
-											name="email" value="<%=user.getU_email()%>"></td>
+											name="u_email" value="<%=user.getU_email()%>"></td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E5F0FA" height="33">주소
 											</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><input type="text" style="width: 150px"
-											name="email" value="<%=user.getU_address()%>"></td>
+											name="u_address" value="<%=user.getU_address()%>"></td>
 									</tr>
 								</table>
 							</form> <br>
@@ -124,7 +124,7 @@
 							<table width=590 border=0 cellpadding=0 cellspacing=0>
 								<tr>
 									<td align=center><input type="button" value="내정보수정"
-										onClick="userModify()"> &nbsp; <input type="button"
+										onClick="userModifyAction()"> &nbsp; <input type="button"
 										value="메인" onClick="userMain()"></td>
 								</tr>
 							</table>
