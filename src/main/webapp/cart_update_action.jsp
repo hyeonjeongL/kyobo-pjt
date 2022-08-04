@@ -23,7 +23,7 @@ if(c_qtyStr.equals("0")){
 }
 
 
-response.sendRedirect("cart_view.jsp");
+response.sendRedirect("cart_ciew_update_qty.jsp");
 
 
 %>

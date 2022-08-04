@@ -15,4 +15,6 @@ Cart cart = new Cart();
 CartService cartService = new CartService();
 cartService.addCart(cart);
 
+response.sendRedirect("cart_view.jsp");
+
 %>
