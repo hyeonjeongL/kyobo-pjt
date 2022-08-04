@@ -53,10 +53,17 @@ public class OrderDaoTest {
 		 order = new Orders(0, null, order_price, "jihun", orderDetailList);
 		 int rowCount1 = orderDao.create(order);
 		 System.out.println(rowCount1);
+		 // cartDao.cartDeleteAll("jihun"); 이건 카트에 담은거 주문 했으면 카트 비우는거임.
 		 */
-		// System.out.println(orderDao.deleteByOrdersNo(1));
-		// cartDao.cartDeleteAll("jihun"); 이건 카트에 담은거 주문 했으면 카트 비우는거임.
-		 System.out.println(orderDao.delete("jihun"));
+		 //o_no로 주문(개별) 삭제
+		//System.out.println(orderDao.deleteByOrdersNo(3));
+		 //u_id로 주문 전체 삭제
+		//System.out.println(orderDao.delete("enbi"));
+		
+		 
+		 List<Orders> orderList1 = orderDao.List_detail("jihun");
+		 System.out.println(orderList1);
+		 orderDao.orderDetail("jihun", 1);
 		 
 	}
 
