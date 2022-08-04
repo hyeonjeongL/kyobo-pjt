@@ -13,6 +13,12 @@ public class NoticeService {
 	
 	private NoticeDao noticeDao;
 	
+	public NoticeService() throws Exception{
+		noticeDao = new NoticeDao();
+	
+	}
+	
+	
 	public static NoticeService getInstance() throws Exception{
 		if(instance==null) {
 			instance = new NoticeService();
@@ -41,9 +47,9 @@ public class NoticeService {
 	
 	// 공지사항 전체 출력
 	public List<Notice> noticeSelectAll() throws Exception{
-		List<Notice> noticeList = new ArrayList<Notice>();
-		noticeList = noticeDao.NoticeSelectAll();
-		return noticeList;
+		List<Notice> a = new ArrayList<Notice>();
+		a= noticeDao.NoticeSelectAll();
+		return a;
 	}
 	
 	// 공지사항 조회수 증가
