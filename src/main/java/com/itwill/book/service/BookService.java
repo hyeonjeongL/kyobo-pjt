@@ -11,11 +11,36 @@ import com.itwill.book.dto.PageMakerDto;
 
 public class BookService {
 	private BookDao bookDao;
+	private static BookService _instance;
 
 	public BookService() throws Exception{
 		bookDao=new BookDao();
 	}
 	
+	public static BookService getInstance() throws Exception{
+		if(_instance==null) {
+			_instance=new BookService();
+		}
+		return _instance;
+	}
+	
+	//리스트
+	/*
+	public PageMakerDto<Book> getBookList(int currentPage) throws Exception {
+		// 전체 글 개수
+		int totRecordCount = bookDao.getTotBookCount();
+		
+		// 페이지 계산
+		PageMaker pageMaker = new PageMaker(totRecordCount, currentPage, 3, 5);
+		
+		// 게시물 데이터 얻기
+		List<Book> bookList = bookDao.getBookList(pageMaker.getPageBegin(), pageMaker.getPageEnd());
+		
+		PageMakerDto<Book> pageMakerBookList = new PageMakerDto<Book>(bookList, pageMaker, totRecordCount);
+		
+		return pageMakerBookList;
+	}
+	*/
 	//리스트
 	public List<Book> selectList()throws Exception{
 		List<Book> bookList= bookDao.selectList();

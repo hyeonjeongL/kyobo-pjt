@@ -27,9 +27,78 @@ if(book==null){
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>교보문고</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel=stylesheet href="css/styles.css" type="text/css">
+<link rel=stylesheet href="css/menu.css" type="text/css">
+<link rel=stylesheet href="css/shop.css" type="text/css">
+
+<style type="text/css" media="screen">
+</style>
+<script type="text/javascript">
+	function add_cart_popup_window(){
+		if (<%=!isLogin%>) {
+			alert('로그인 하세요');
+			location.href = 'userinfo_login_form.jsp';
+		} else {
+			
+			var left = Math.ceil(( window.screen.width)/3);
+			var top = Math.ceil(( window.screen.height)/3); 
+			console.log(left);
+			console.log(top);
+			var cartWin = window.open("about:blank","cartForm","width=420,height=200,top="+top+",left="+left+",location=no, directories=no, status=no, menubar=no, scrollbars=no,copyhistory=no");
+			document.add_cart_form.action = 'cart_add_action_popup_window.jsp';
+			document.add_cart_form.target = 'cartForm';
+			document.add_cart_form.method = 'POST';
+			document.add_cart_form.submit();
+		}
+	}
+	function order_create_form() {
+		if (<%=!isLogin%>) {
+			alert('로그인 하세요');
+			location.href = 'userinfo_login_form.jsp';
+		} else {
+			document.book_detail_form.method = 'POST';
+			document.book_detail_form.action = 'order_create_form.jsp';
+			document.book_detail_form.submit();
+		}
+	}
+	function bookList() {
+		location.href = 'book_list.jsp';
+	}
+</script>
 </head> 
-<body>
+<body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
+	marginwidth=0 marginheight=0>
+	<form name="book_detail_form">
+		<input type="hidden" name="p_no" value="<%=book.getB_no()%>">
+		<input type="hidden" name="p_qty" value="1"> <input
+			type="hidden" name="buyType" value="direct">
+	</form>
+	<!-- container start-->
+	<div id="container">
+		<!-- header start -->
+		<div id="header">
+			<!-- include_common_top.jsp start-->
+			<jsp:include page="include_common_top.jsp" />
+			<!-- include_common_top.jsp end-->
+		</div>
+		<!-- header end -->
+		<!-- navigation start-->
+		<div id="navigation">
+			<!-- include_common_left.jsp start-->
+			<jsp:include page="include_common_left.jsp" />
+			<!-- include_common_left.jsp end-->
+		</div>
+		<!-- navigation end-->
+		<!-- wrapper start -->
+		<div id="wrapper">
+			<!-- content start -->
+			<!-- include_content.jsp start-->
+			<div id="content">
+				<table border=0 cellpadding=0 cellspacing=0>
+					<tr>
+						<td><br />
 <table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
@@ -44,7 +113,7 @@ if(book==null){
 									<td width=30% align=center class=t1><font size=2
 										color=#0000FF><b>주문 권수</b></font></td>
 									<td width=40% align=center class=t1><font size=2
-										color=#0000FF><b>도서 사진</b></font></td>
+										color=#0000FF><b>&nbsp;&nbsp;&nbsp;&nbsp;</b></font></td>
 									<td width=30% align=center class=t1><font size=2
 										color=#0000FF><b>도서 정보</b></font></td>
 								</tr>
@@ -70,14 +139,14 @@ if(book==null){
 												<option value="9">9
 												<option value="10">10
 											</select> 권<br><br> 
-												<input type=submit value="장바구니에담기[장바구니보여주기]" /><br><br> 
+												<input type=submit value="장바구니 담기[장바구니보여주기]" /><br><br> 
 												<input type=button onclick="add_cart_popup_window();" value="장바구니에담기[계속쇼핑팝업]" />
 												<input type="hidden" name=b_no value="<%=book.getB_no()%>">
 										</form>
 									</td>
-									<td width=40% height=200 align=center>
+									<td width=100 height=200 align=center>
 									<img border=0 src='image/<%=book.getB_image()%>.jpg' width=120 height=200></td>
-									<td width=40% height=200 class=t1>
+									<td width=100 height=200 class=t1>
 										<ol type="disc">
 											<li>제&nbsp;&nbsp;&nbsp;목 : <%=book.getB_name()%>&nbsp;&nbsp;&nbsp;</li>
 											<li>가&nbsp;&nbsp;&nbsp;격 : <%=book.getB_price()%>&nbsp;&nbsp;&nbsp;</li>
@@ -92,6 +161,26 @@ if(book==null){
 									<td colSpan=3 height=21><hr color=#556b2f></td>
 								</tr>
 							</table>
-
+<table border="0" cellpadding="0" cellspacing="1">
+								<tr>
+									<td align=center><input type="button" value="주문하기[주문폼]"
+										onClick="order_create_form();"> &nbsp; <input
+										type="button" value="상품리스트" onClick="bookList();"></td>
+								</tr>
+							</table></td>
+					</tr>
+				</table>
+			</div>
+			<!-- include_content.jsp end-->
+			<!-- content end -->
+		</div>
+		<!--wrapper end-->
+		<div id="footer">
+			<!-- include_common_bottom.jsp start-->
+			<jsp:include page="include_common_bottom.jsp" />
+			<!-- include_common_bottom.jsp end-->
+		</div>
+	</div>
+	<!--container end-->
 </body>
 </html>

@@ -2,8 +2,11 @@ package com.itwill.book.service;
 
 import java.util.List;
 
+import com.itwill.book.common.PageMaker;
 import com.itwill.book.dao.ReviewDao;
 import com.itwill.book.dto.Review;
+import com.itwill.book.dto.ReviewBookListPageMakerDto;
+
 
 public class ReviewService {
 	private ReviewDao reviewDao;
@@ -38,17 +41,17 @@ public class ReviewService {
 	}
 	
 	
-	//리뷰 번호로 리뷰조회
+	//리뷰 번호로 리뷰조회 - 상품페이지 리뷰상세, 마이페이지 리뷰상세
 	public Review reviewSelectNo(int r_no) throws Exception{
 		return reviewDao.reviewSelectNo(r_no);
 	}
 	
-	//책 번호로 리뷰 조회
+	//책 번호로 리뷰 조회- 상품페이지에서
 	public List<Review> reviewSelectByBookNo(Review review) throws Exception{
 		return reviewDao.reviewSelectByBookNo(review);
 	}
 	
-	//회원 아이디로 리뷰 조회
+	//회원 아이디로 리뷰 조회 - 마이페이지
 	public List<Review> reviewSelectByUserId(String u_id) throws Exception{
 		return reviewDao.reviewSelectByUserId(u_id);
 	}
@@ -61,6 +64,26 @@ public class ReviewService {
 	//해당 리뷰의 총 댓글 수
 	public int reviewReplyCount(int groupno) throws Exception{
 		return reviewDao.reviewReplyCount(groupno);
+	}
+	
+	//게시물 리스트
+	public ReviewBookListPageMakerDto findReviewBookList(String u_id, int currentPage) throws Exception{
+		//1.전체글의 갯수
+		int totalRecordCount = reviewDao.reviewCountAll(); // 다시확인
+		//2.paging계산(PageMaker 유틸클래스)
+		
+		PageMaker pageMaker=new PageMaker(totalRecordCount,currentPage);
+		String a;
+		//3.게시물데이타 얻기
+		List<Review> reviewList=
+				reviewDao.reviewSelectByUserId(u_id, pageMaker.getPageBegin(),
+											pageMaker.getPageEnd());
+		
+		ReviewBookListPageMakerDto pageMakerReviewList=new ReviewBookListPageMakerDto();
+		pageMakerReviewList.totRecordCount=totalRecordCount;
+		pageMakerReviewList.itemList=reviewList;
+		pageMakerReviewList.pageMaker=pageMaker;
+		return pageMakerReviewList;
 	}
 	
 	

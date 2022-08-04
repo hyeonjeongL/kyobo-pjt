@@ -29,6 +29,10 @@ public class ReviewSQL {
 	//회원 아이디로 리뷰조회
 	public static final String SELECT_REVIEW_U_ID = "select * from review where u_id=?";
 	
+	//마이페이지에서 아이디로 리뷰리스트 조회 페이지
+	public static final String SELECT_REVIEW_U_ID_PAGE = "select ss.* from (select rownum idx, s.* from (select * from review where u_id=? order by r_groupno desc, r_step asc) s )ss where ss.idx >=? and ss.idx <=?";
+	
+	
 	//리뷰리스트 전체 정렬 조회
 	public static final String SELECT_REVIEW_ALL = "select r_no,R_NO, R_TITLE, R_DATE, R_GRADE, R_CONTENTS,U_ID, OD_NO, R_GROUPNO, R_STEP, R_DEPTH from review order by r_groupno DESC, r_step ASC";
 	
@@ -39,6 +43,8 @@ public class ReviewSQL {
 	
 	//해당 리뷰의 총 댓글 수
 	public static final String SELECT_REVIEW_REPLY_COUNT = "select count(*)-1 from review where r_groupno=?";
+	
+	
 	
 	
 	//---여기부터는 필요가있나
