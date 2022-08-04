@@ -17,6 +17,7 @@ import com.itwill.book.sql.NoticeSQL;
 public class NoticeDao {
 	private DataSource dataSource;
 	
+		
 	public NoticeDao() throws Exception{
 		Properties properties = new Properties();
 		properties.load(this.getClass().getResourceAsStream("/com/itwill/book/jdbc.properties"));
