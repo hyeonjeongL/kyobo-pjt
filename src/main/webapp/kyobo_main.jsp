@@ -38,9 +38,8 @@
 			<!-- content start -->
 			<!-- include_content.jsp start-->
 			<div id="content">
-				<div id="content">
 
-				</div>
+			</div>
 			<!-- include_content.jsp end-->
 			<!-- content end -->
 		</div>
