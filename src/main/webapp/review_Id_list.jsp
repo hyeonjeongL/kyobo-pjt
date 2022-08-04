@@ -19,7 +19,7 @@ if (pageNo == null || pageNo.equals("")) {
 <!DOCTYPE html>
 <html>
 <head>
-<title>교보문고</title>
+<title>마이페이지 리뷰</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel=stylesheet href="css/styles.css" type="text/css">
 <link rel=stylesheet href="css/menu.css" type="text/css">
@@ -51,27 +51,39 @@ if (pageNo == null || pageNo.equals("")) {
 			<!-- content start -->
 			<!-- include_content.jsp start-->
 			<div id="content">
-				
+				<table width=0 border=0 cellpadding=0 cellspacing=0>
+					<tr>
+						<td>
+							<!--contents--> <br />
+							<table style="padding-left: 10px" border=0 cellpadding=0
+								cellspacing=0>
+								<tr>
+									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>내가 쓴 리뷰
+											</b></td>
+								</tr>
+							</table> 
 					<form name="f" method="post" action="">
 								<table border="0" cellpadding="0" cellspacing="1" width="590"
 									bgcolor="BBBBBB">
 
 									<tr>
-										<td width=280 align=center bgcolor="E6ECDE">제목</td>
-										<td width=120 align=center bgcolor="E6ECDE">글쓴이</td>
-										<td width=120 align=center bgcolor="E6ECDE">글쓴날</td>
-										<td width=70 align=center bgcolor="E6ECDE">본횟수</td>
+										<td width=280 align=center bgcolor="E6ECDE">리뷰제목</td>
+										<td width=120 align=center bgcolor="E6ECDE">작성자</td>
+										<td width=120 align=center bgcolor="E6ECDE">상품이름</td>
+										<td width=120 align=center bgcolor="E6ECDE">작성날짜</td>
 									</tr>
 									<%
 										for (Review review : reviewlistPage.itemList) {
 									%>
 									<tr>
 										<td width=280 bgcolor="ffffff" style="padding-left: 10px" align="left">
-										<a href='board_view.jsp?boardno=<%=review.getR_no()%>&pageno=<%=reviewlistPage.pageMaker.getCurPage()%>'>
+										<a href='review_view.jsp?r_no=<%=review.getR_no()%>&pageno=<%=reviewlistPage.pageMaker.getCurPage()%>'>
 										<%=review.getR_title()%>
 										</a>
 										</td>
 										<td width=120 align=center bgcolor="ffffff"><%=review.getU_id()%>
+										</td>
+										<td width=120 align=center bgcolor="ffffff"><%=review.getOrderDetail().getBook().getB_name()%>
 										</td>
 										<td width=120 bgcolor="ffffff" style="padding-left: 10px" align="left">
 											<%=review.getR_date()%>
