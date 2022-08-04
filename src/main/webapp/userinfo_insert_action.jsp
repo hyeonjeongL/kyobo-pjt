@@ -26,7 +26,7 @@ if(result==2){
 		
 	}else if(result==1){
 		/*##################회원가입성공#################*/
-		response.sendRedirect("userinfo_login_from.jsp");
+		response.sendRedirect("userinfo_login_form.jsp");
 		return;
 	}
 	

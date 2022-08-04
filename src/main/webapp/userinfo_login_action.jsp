@@ -24,7 +24,7 @@
 		String msg = u_id+"는 존재하지 않는 아이디 입니다.";
 	
 		request.setAttribute("msg1", msg);
-		RequestDispatcher rd = request.getRequestDispatcher("userinfo_login_from.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("userinfo_login_form.jsp");
 		rd.forward(request, response);
 	}else if(result == 1){
 	
@@ -37,7 +37,7 @@
 		String msg = "패스워드가 일치하지 않습니다.";
 		request.setAttribute("msg2", msg);
 		request.setAttribute("loginId", u_id);
-		RequestDispatcher rd = request.getRequestDispatcher("userinfo_login_from.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("userinfo_login_form.jsp");
 		rd.forward(request, response);
 	}
 	

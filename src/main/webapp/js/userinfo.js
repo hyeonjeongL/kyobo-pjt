@@ -121,12 +121,12 @@ function userCreateForm() {
 	}
 
 	function userMain() {
-		location.href='user_main.jsp';
+		location.href='kyobo_main.jsp';
 	}
 	
 	function repassword() {
-		if(document.f.password.value != ""){
-		if(document.f.password.value != document.f.password2.value){
+		if(document.f.u_password.value != ""){
+		if(document.f.u_password.value != document.f.password2.value){
 			document.getElementById('pass2').innerHTML = "비밀번호가 일치하지 않습니다."
 			console.log("1");
 		}else{
