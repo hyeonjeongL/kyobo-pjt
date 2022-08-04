@@ -12,10 +12,12 @@ import javax.sql.DataSource;
 
 import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
 
+
 import com.itwill.book.dto.Book;
 import com.itwill.book.dto.OrderDetail;
 import com.itwill.book.dto.Review;
 import com.itwill.book.sql.ReviewSQL;
+
 
 public class ReviewDao {
 	
@@ -179,6 +181,32 @@ public class ReviewDao {
 		
 		return reviewBookList;
 	}
+/*	
+	//*****책 번호롤 리뷰조회 페이지
+	public List<Review> reviewSelectByBookNo(Review review, int start, int last) throws Exception {
+		List<Review> reviewBookList = new ArrayList<Review>();
+		Connection con = dataSource.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(ReviewSQL.);
+		pstmt.setInt(1, review.getOrderDetail().getBook().getB_no());
+		ResultSet rs = pstmt.executeQuery();
+		while(rs.next()) {
+			reviewBookList.add(new Review(
+					rs.getInt("r_no"), rs.getString("r_title"), rs.getDate("r_date"), 
+					rs.getInt("r_grade"), rs.getString("r_contents"), rs.getString("u_id"),
+					new OrderDetail(rs.getInt("od_no"), 0, 0, 
+							new Book(rs.getInt("b_no"), null, null, 0, null, null, null, null)), 
+					rs.getInt("r_groupno"), 
+					rs.getInt("r_step"), 
+					rs.getInt("r_depth")));
+		}
+		rs.close();
+		pstmt.close();
+		con.close();
+		
+		return reviewBookList;
+	}
+*/	
+	
 	
 	//회원 아이디로 리뷰조회
 	public List<Review> reviewSelectByUserId(String u_id) throws Exception{
@@ -203,6 +231,34 @@ public class ReviewDao {
 		
 		return reviewIdList;
 	}
+	
+	//********마이페이지에서 아이디의 리뷰조회
+	public List<Review> reviewSelectByUserId(String u_id, int start, int last) throws Exception{
+		List<Review> reviewIdList = new ArrayList<Review>();
+		Connection con = dataSource.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(ReviewSQL.SELECT_REVIEW_U_ID_PAGE);
+		pstmt.setString(1, u_id);
+		pstmt.setInt(2, start);
+		pstmt.setInt(3, last);
+		ResultSet rs = pstmt.executeQuery();
+		while(rs.next()) {
+			reviewIdList.add(new Review(
+					rs.getInt("r_no"), rs.getString("r_title"), rs.getDate("r_date"), 
+					rs.getInt("r_grade"), rs.getString("r_contents"), rs.getString("u_id"),
+					new OrderDetail(rs.getInt("od_no"), 0, 0, 
+							new Book(0, null, null, 0, null, null, null, null)), 
+					rs.getInt("r_groupno"), 
+					rs.getInt("r_step"), 
+					rs.getInt("r_depth")));
+		}
+		rs.close();
+		pstmt.close();
+		con.close();
+		
+		return reviewIdList;
+	}
+	
+
 	
 	//총 리뷰 수
 	public int reviewCountAll() throws Exception{
@@ -229,6 +285,9 @@ public class ReviewDao {
 		}
 		return count;
 	}
+	
+	
+	
 		
 	
 	

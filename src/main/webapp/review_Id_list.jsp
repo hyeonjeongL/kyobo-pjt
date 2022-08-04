@@ -1,3 +1,4 @@
+<%@page import="com.itwill.book.dto.ReviewBookListPageMakerDto"%>
 <%@page import="com.itwill.book.dto.Review"%>
 <%@page import="java.util.List"%>
 <%@page import="com.itwill.book.service.ReviewService"%>
@@ -5,12 +6,13 @@
     pageEncoding="UTF-8"%>
     
 <%
-	ReviewService reviewService = new ReviewService();
-	List<Review> reviewIdList = reviewService.reviewSelectByUserId("jihun");
+String pageNo = request.getParameter("pageNo");
+if (pageNo == null || pageNo.equals("")) {
+	pageNo = "1";
+}
+
 	
-	Review findreview = reviewService.reviewSelectNo(4);
-	
-	int findReplyReview = reviewService.reviewReplyCount(4);
+	ReviewBookListPageMakerDto<Review> listPage = new ReviewService().findReviewBookList(u_id, Integer.parseInt(pageNo));
 	
 %>
 <!DOCTYPE html>
@@ -20,15 +22,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div>
-아이디리뷰리스트<%=reviewIdList %>
-<br>
-<br>
-<br>
-<%=findreview %>
-해당 리뷰의 총 댓글 수<%=findReplyReview %>
-총 리뷰 수<%=reviewService.reviewCountAll() %>
 
-</div>
+
+
+
 </body>
 </html>
