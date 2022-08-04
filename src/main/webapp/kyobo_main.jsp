@@ -1,26 +1,17 @@
-<%@page import="com.itwill.book.service.NoticeService"%>
-<%@page import="com.itwill.book.dto.Notice"%>
-<%@page import="com.itwill.book.dto.PageMakerDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%
-String pageno=request.getParameter("pageno");
-if(pageno==null||pageno.equals("")){
-	pageno="1";
-}
-PageMakerDto<Notice> noticeListPage = new NoticeService().getNoticeList(Integer.parseInt(pageno));
-%>
 
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <title>교보문고</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel=stylesheet href="css/styles.css" type="text/css">
-<link rel=stylesheet href="css/menu.css" type="text/css"> 
+<link rel=stylesheet href="css/menu.css" type="text/css">
 <link rel=stylesheet href="css/shop.css" type="text/css">
- 
+
 <style type="text/css" media="screen">
 </style>
 </head>
@@ -31,14 +22,14 @@ PageMakerDto<Notice> noticeListPage = new NoticeService().getNoticeList(Integer.
 		<!-- header start -->
 		<div id="header">
 			<!-- include_common_top.jsp start-->
-			<jsp:include page="include_common_top.jsp"/>
+			<jsp:include page="include_common_top.jsp" />
 			<!-- include_common_top.jsp end-->
 		</div>
 		<!-- header end -->
 		<!-- navigation start-->
 		<div id="navigation">
 			<!-- include_common_left.jsp start-->
-			<jsp:include page="include_common_left.jsp"/>
+			<jsp:include page="include_common_left.jsp" />
 			<!-- include_common_left.jsp end-->
 		</div>
 		<!-- navigation end-->
@@ -47,16 +38,16 @@ PageMakerDto<Notice> noticeListPage = new NoticeService().getNoticeList(Integer.
 			<!-- content start -->
 			<!-- include_content.jsp start-->
 			<div id="content">
+				<div id="content">
 
-				
-			</div>
+				</div>
 			<!-- include_content.jsp end-->
 			<!-- content end -->
 		</div>
 		<!--wrapper end-->
 		<div id="footer">
 			<!-- include_common_bottom.jsp start-->
-			<jsp:include page="include_common_bottom.jsp"/>
+			<jsp:include page="include_common_bottom.jsp" />
 			<!-- include_common_bottom.jsp end-->
 		</div>
 	</div>

@@ -1,5 +1,6 @@
 package com.itwill.book.dao.test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.itwill.book.dao.BookDao;
@@ -9,26 +10,47 @@ public class BookDaoTest {
 
 	public static void main(String[] args) throws Exception{
 		BookDao bookDao=new BookDao();
+
 		
 		//전체리스트
-		System.out.println(bookDao.selectAll());
+	System.out.println("1.리스트");
+		System.out.println(bookDao.selectList());
 		
+			
 		
+		//통합 검색
+		System.out.println("2.통합 검색");
+		ArrayList<Book> bookList = bookDao.selectByAll("이유");
+		for (Book book2 : bookList) {
+			System.out.println(book2);
+		}
+		
+
+		//번호 검색
+		System.out.println("3.번호 검색");
+		System.out.println(bookDao.selectByNo(17));
 		
 		//제목 검색
-		System.out.println(bookDao.selectByName("마시멜로이야기"));
+		System.out.println("4.제목 검색");
+		bookList = bookDao.selectByName("기"); 
+		for (Book book2 : bookList) {
+			System.out.println(book2); }
 		
 				
-		//저자 검색(2개 이상)
-		System.out.println(bookDao.selectByAuthor("마키타 젠지"));
+		//저자 검색
+		System.out.println("5.저자 검색");
+		bookList = bookDao.selectByAuthor("한복선");
+		for (Book book2 : bookList) {
+			System.out.println(book2);
+		}
 		
 		
-		
-		//카테고리 검색
-		System.out.println(bookDao.selectByClass("요리"));
-		
-		//번호 검색
-		System.out.println(bookDao.selectByNo(17));
+		//분야 검색
+		System.out.println("6.분야 검색");
+		bookList = bookDao.selectByClass("공포");
+		for (Book book2 : bookList) {
+			System.out.println(book2);
+		}
 		
 		
 		/* properties.load(this.getClass().getResourceAsStream("/com/itwill/book/jdbc.properties"))> 경로수정

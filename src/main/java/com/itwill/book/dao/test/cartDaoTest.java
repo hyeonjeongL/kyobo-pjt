@@ -21,17 +21,17 @@ public class cartDaoTest {
 			System.out.println("--------cart update------");
 			System.out.println(cartDao.cartUpdateQty(newCart));
 			
-			System.out.println("--------cart deleteByNo------");
-			System.out.println(cartDao.cartDeleteByNo(1));
-			
-			System.out.println("--------cart deleteAll------");
-			System.out.println(cartDao.cartDeleteAll("hunjeong"));
-			
-			System.out.println("--------cart selectById------");
-			System.out.println(cartDao.cartList("jihun"));
-			
-			System.out.println("--------cart Book Count------");
-			System.out.println(cartDao.cartBookCount(newCart));
+//			System.out.println("--------cart deleteByNo------");
+//			System.out.println(cartDao.cartDeleteByNo(1));
+//			
+//			System.out.println("--------cart deleteAll------");
+//			System.out.println(cartDao.cartDeleteAll("hunjeong"));
+//			
+//			System.out.println("--------cart selectById------");
+//			System.out.println(cartDao.cartList("jihun"));
+//			
+//			System.out.println("--------cart Book Count------");
+//			System.out.println(cartDao.cartBookCount(newCart));
 			
 			
 		}
