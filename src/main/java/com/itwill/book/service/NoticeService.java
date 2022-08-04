@@ -12,13 +12,9 @@ public class NoticeService {
 	private static NoticeService instance;
 	
 	private NoticeDao noticeDao;
-	
 	public NoticeService() throws Exception{
 		noticeDao = new NoticeDao();
-	
 	}
-	
-	
 	public static NoticeService getInstance() throws Exception{
 		if(instance==null) {
 			instance = new NoticeService();

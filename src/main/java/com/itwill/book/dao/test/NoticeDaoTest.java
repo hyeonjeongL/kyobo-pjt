@@ -12,21 +12,31 @@ public class NoticeDaoTest {
 		
 		NoticeDao noticeDao = new NoticeDao();
 		List<Notice> noticeList = new ArrayList<Notice>();
+		
+		
 		/*
-		System.out.println("---공지사항 목록 조회---");
-		ArrayList<Notice> noticeList = noticeDao.getNoticeList(1,3);
+		System.out.println("---공지사항 전체 출력--- 작동함"); 
+		noticeList = noticeDao.NoticeSelectAll();
+		System.out.println(noticeList);
+		*/
+		/*
+		System.out.println("---공지사항 목록 조회--- 작동함");
+		noticeList = noticeDao.getNoticeList(1,3);
 		for(Notice notice : noticeList)
 			System.out.println(notice);
 		*/
-		noticeList = noticeDao.NoticeSelectAll();
-		System.out.println(noticeList);
 		/*
-		System.out.println("---공지사항 상세 조회---");
+		System.out.println("---공지사항 상세 조회--- 작동함");
 		System.out.println(noticeDao.getNoticeDetail(1));
 		*/
 		/*
-		noticeList = noticeDao.getNoticeList(1, 3);
-		System.out.println(noticeList);
+		System.out.println("---공지사항 조회수 증가--- 작동함");
+		noticeDao.increaseNoticeReadCount(1);
+		System.out.println(noticeDao.getNoticeDetail(1));
+		*/
+		/*
+		System.out.println("---공지사항 총 개수 조회--- 작동함");
+		System.out.println(noticeDao.getNoticeCount());
 		*/
 	}
 

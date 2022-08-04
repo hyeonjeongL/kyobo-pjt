@@ -5,7 +5,7 @@
 <%
 if(request.getMethod().equalsIgnoreCase("GET")){
 	response.sendRedirect("cart_view.jsp");
-	return;
+	return;  
 }
 
 String u_id = request.getParameter("u_id");
