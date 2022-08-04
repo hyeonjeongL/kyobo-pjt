@@ -124,7 +124,7 @@ public class CartDao {
 		Connection con = dataSource.getConnection();
 		PreparedStatement pstmt = con.prepareStatement(CartSQL.CART_SELECT_BY_CNO);
 		pstmt.setString(1, c_no);
-		ResultSet rs = pstmt.executeQuery();
+		ResultSet rs = pstmt.executeQuery(); 
 		while(rs.next()) {
 			Cart cart = new Cart(rs.getInt("c_no"),
 								 rs.getInt("c_qty"),
