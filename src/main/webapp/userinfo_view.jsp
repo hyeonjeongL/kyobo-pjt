@@ -53,6 +53,7 @@ UserInfo user = userInfoService.selectById(u_id);
 											- 내정보보기</b></td>
 								</tr>
 							</table> <!-- view Form  -->
+							
 							<form name="f" method="post">
 								<table border="0" cellpadding="0" cellspacing="1" width="590"
 									bgcolor="BBBBBB">
@@ -104,9 +105,11 @@ UserInfo user = userInfoService.selectById(u_id);
 									<td align=center><input type="button" value="내정보수정"
 										onClick="userModify()">&nbsp; <input type="button"
 										value="탈퇴" onClick="userRemove()">&nbsp; <input type="button"
-										value="리뷰보기" onClick="reviewGo()"></td>
+										value="리뷰보기" onClick="reviewGo()">&nbsp; <input type="button"
+										value="ebook리스트" onClick="ebookGo()"></td>
 								</tr>
 							</table>
+							
 						</td>
 					</tr>
 				</table>

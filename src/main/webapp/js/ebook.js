@@ -6,3 +6,4 @@ function ebookBuy() {
 		document.add_cart_form.method = "POST";
 		document.add_cart_form.submit();
 	}
+	

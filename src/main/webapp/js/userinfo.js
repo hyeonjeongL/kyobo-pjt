@@ -177,3 +177,9 @@ function userCreateForm() {
 			document.f.submit();
 	}
 	
+	function ebookGo(){
+			document.f.action = "ebook_list.jsp";
+			document.f.method='POST';
+			document.f.submit();
+	}
+	
