@@ -141,3 +141,5 @@ insert into cart values(cart_c_no_seq.nextval, 4, 'bongkyoun', 2);
 insert into cart values(cart_c_no_seq.nextval, 5, 'jihun', 3);
 insert into cart values(cart_c_no_seq.nextval, 1, 'hunjeong', 9);
 insert into cart values(cart_c_no_seq.nextval, 3, 'hunjeong', 4);
+insert into cart values(cart_c_no_seq.nextval, 2, 'jeonghun', 7);
+insert into cart values(cart_c_no_seq.nextval, 1, 'enbi', 6);
