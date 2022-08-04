@@ -16,21 +16,3 @@ CartService cartService = new CartService();
 cartService.addCart(cart);
 
 %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-<p>
-
-
-
-
-</p>
-
-
-</body>
-</html>

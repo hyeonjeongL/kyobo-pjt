@@ -72,10 +72,10 @@ public class CartDao {
 
 	
 	//cart deleteByNo 카트 선택삭제
-	public int cartDeleteByNo (int b_no) throws Exception{
+	public int cartDeleteByNo (int c_no) throws Exception{
 		Connection con = dataSource.getConnection();
 		PreparedStatement pstmt = con.prepareStatement(CartSQL.CART_DELETE_BY_CNO);
-		pstmt.setInt(1, b_no);
+		pstmt.setInt(1, c_no);
 		
 		int deleteNoCount = pstmt.executeUpdate();
 		return deleteNoCount;
