@@ -11,8 +11,10 @@ public class cartServiceTestMain {
 	public static void main(String[] args) throws Exception{
 		CartService cartService = new CartService();
 		
-		//int book_count = cartService.addCart(0,1,"hunjeong",
-//							new Book(1, null, null, 0, null, null, null, null));
+		int book_count = cartService.addCart(new Cart(0,1,"jihun",
+							new Book(1, null, null, 0, null, null, null, null)));
+		
+		System.out.println(book_count);
 		
 		int deleteNoCount = cartService.cartDeleteByNo(1);
 		

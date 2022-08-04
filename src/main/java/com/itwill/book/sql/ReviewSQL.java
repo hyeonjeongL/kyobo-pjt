@@ -33,6 +33,13 @@ public class ReviewSQL {
 	public static final String SELECT_REVIEW_ALL = "select r_no,R_NO, R_TITLE, R_DATE, R_GRADE, R_CONTENTS,U_ID, OD_NO, R_GROUPNO, R_STEP, R_DEPTH from review order by r_groupno DESC, r_step ASC";
 	
 	
+	//총 리뷰 수
+	public static final String SELECT_REVIEW_COUNT_ALL = "select count(*) from review";
+	
+	
+	//해당 리뷰의 총 댓글 수
+	public static final String SELECT_REVIEW_REPLY_COUNT = "select count(*)-1 from review where r_groupno=?";
+	
 	
 	//---여기부터는 필요가있나
 	
