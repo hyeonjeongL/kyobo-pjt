@@ -6,15 +6,20 @@ public class CartSQL {
 	public static final String BOOK_COUNT_BY_ID_NO
 	= "select count(*) book_count from cart where u_id=? and b_no=?";
 
-	// 카트넣기 (있으면 update, 없으면 insert)
+	// 카트넣기 (없으면 insert)
 	public static final String CART_INSERT
 	= "insert into cart(c_no,c_qty,u_id,b_no) values (cart_c_no_seq.nextval, ?,?,?)";
 //	public static final String CART_INSERT_UPDATE
 //	= "update cart set c_no=?, c_qty=?, u_id=?, b_no=?";
 
-	//카트 수량변경
-	public static final String CART_UPDATE_QTY
+	//카트넣기(있으면 update)
+	public static final String CART_ADD
 	= "update cart set c_qty=c_qty+? where u_id=? and b_no=?";
+	
+	//카트에서 수량변경
+	public static final String CART_UPDATE_QTY
+	= "update cart set c_qty=? where c_no=?";
+	
 	//카트 선택 삭제
 	public static final String CART_DELETE_BY_CNO
 	= "delete from cart where c_no=?";

@@ -19,7 +19,9 @@ public class cartDaoTest {
 			
 			newCart = new Cart(0,3,"hunjeong", new Book(1,"자기개발서","마시멜로이야기",12000,"달콤한 유혹에서 이겨낼 때 비로소 얻게 된다",	"1_marshmallow","호아킴 데 포사다",	"한국경제신문사"));
 			System.out.println("--------cart update------");
-			System.out.println(cartDao.cartUpdateQty(newCart));
+			System.out.println(cartDao.cartAddQty(newCart));
+			
+//			System.out.println(cartDao.cartUpdateQty(2, 3));
 			
 //			System.out.println("--------cart deleteByNo------");
 //			System.out.println(cartDao.cartDeleteByNo(1));

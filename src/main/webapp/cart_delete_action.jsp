@@ -10,8 +10,12 @@ if(request.getMethod().equalsIgnoreCase("GET")){
 	return;
 }
 
-String c_no = request.getParameter("c_no");
+String c_noStr = request.getParameter("c_no");
 
 CartService cartService  = new CartService();
+cartService.cartDeleteByCNo(Integer.parseInt(c_noStr));
+
+response.sendRedirect("cart_view.jsp");
+
 
 %>
