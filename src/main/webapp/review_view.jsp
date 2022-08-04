@@ -32,7 +32,7 @@
 <link rel=stylesheet href="css/styles.css" type="text/css">
 <link rel=stylesheet href="css/menu.css" type="text/css">
 <link rel=stylesheet href="css/shop.css" type="text/css">
-
+<script type="text/javascript" src="js/review.js"></script>
 <style type="text/css" media="screen">
 </style>
 </head>
@@ -80,11 +80,23 @@
 										<td width=100 align=center bgcolor="E6ECDE" height="22">글쓴이</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><%=review.getU_id()%></td>
+									</tr>
+									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">작성날짜</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><%=review.getU_id()%></td>
 									</tr>
+									<tr>
+										<td width=100 align=center bgcolor="E6ECDE" height="22">상품이름</td>
+										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
+											align="left"><%=review.getOrderDetail().getBook().getB_name()%></td>
+									</tr>
 
+									<tr>
+										<td width=100 align=center bgcolor="E6ECDE" height="22">별점</td>
+										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
+											align="left"><%=review.getR_title()%></td>
+									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">제목</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
@@ -92,8 +104,8 @@
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">내용</td>
-										<td width=490 bgcolor="ffffff" height="180px"
-											style="padding-left: 10px" align="left"><%=review.getR_contents()%><br />
+										<td width=490 bgcolor="ffffff" height="100px"
+											style="padding-left: 10px" align="left"><%=review.getR_contents()%>
 
 										</td>
 									</tr>
@@ -108,7 +120,7 @@
 										<input type="button" value="답글쓰기" onClick="boardReplyCreate()"> &nbsp; 
 										<input type="button" value="수정" onClick="boardUpdate()"> &nbsp; 
 										<input type="button" value="삭제" onClick="boardRemove()"> &nbsp; 
-										<input type="button" value="리스트" onClick="boardList()"></td>
+										<input type="button" value="리스트" onClick="reviewList()"></td>
 								</tr>
 							</table></td>
 					</tr>
