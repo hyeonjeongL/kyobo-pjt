@@ -80,6 +80,7 @@ values(notice_n_no_seq.nextval, '공지사항', '해외배송(FedEx) 배송료 �
 
 --ebook insert
 
+<<<<<<< HEAD
 insert into ebook values(ebook_e_no_seq.nextval, 7000, 1);
 insert into ebook values(ebook_e_no_seq.nextval, 8000, 2);
 insert into ebook values(ebook_e_no_seq.nextval, 9000, 3);
@@ -109,6 +110,13 @@ insert into ebook values(ebook_e_no_seq.nextval, 10000, 22);
 insert into ebook values(ebook_e_no_seq.nextval, 7000, 23);
 insert into ebook values(ebook_e_no_seq.nextval, 3000, 24);
 insert into ebook values(ebook_e_no_seq.nextval, 7000, 25);
+=======
+insert into ebook values(ebook_e_no_seq.nextval, 12000, 1);
+insert into ebook values(ebook_e_no_seq.nextval, 13500, 2);
+insert into ebook values(ebook_e_no_seq.nextval, 14900, 3);
+insert into ebook values(ebook_e_no_seq.nextval, 17000, 4);
+insert into ebook values(ebook_e_no_seq.nextval, 16000, 5);
+>>>>>>> branch 'master' of https://github.com/2022-05-JAVA-DEVELOPER/web-project-team2-kyobo.git
 
 --eorder insert
 

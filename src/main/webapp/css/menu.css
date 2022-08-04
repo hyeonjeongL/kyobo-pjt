@@ -9,7 +9,7 @@ div#header h1 {
 	line-height: 80px;
 	margin: 0px 0 0 0;
 	padding-left: 10px;
-	background: #fff url('../image/nav_bg01.png');
+	background: #fff url('../image/library.jpg');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 100%
@@ -51,7 +51,7 @@ div#header #menu {
 
 #menu li#logo {
 	width: 80px;
-	background: url('../image/itwill-logo.png');
+	background: url('../image/kyobologo.GIF');
 	background-position: left;
 	background-size: 110%;
 	background-repeat: no-repeat;
