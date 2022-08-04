@@ -10,10 +10,19 @@ import com.itwill.book.dto.ReviewBookListPageMakerDto;
 
 
 public class ReviewService {
+	private static ReviewService _instance;
+	
 	private ReviewDao reviewDao;
 	
 	public ReviewService() throws Exception{
 		reviewDao = new ReviewDao();
+	}
+	
+	public static ReviewService getInstance() throws Exception{
+		if(_instance==null) {
+			_instance=new ReviewService();
+		}
+		return _instance;
 	}
 	
 

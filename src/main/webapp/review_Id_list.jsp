@@ -7,13 +7,19 @@
 
     
 <%
+
+	String sUserId = (String)session.getAttribute("sUserId");
+	if(sUserId == null){
+		response.sendRedirect("kyobo_main.jsp");
+	}
+
 String pageNo = request.getParameter("pageno");
 if (pageNo == null || pageNo.equals("")) {
 	pageNo = "1";
 }
 
 	
-	ReviewBookListPageMakerDto reviewlistPage = new ReviewService().findReviewBookList("jihun", Integer.parseInt(pageNo));
+	ReviewBookListPageMakerDto reviewlistPage = new ReviewService().findReviewBookList(sUserId, Integer.parseInt(pageNo));
 	
 %>
 <!DOCTYPE html>
@@ -128,12 +134,7 @@ if (pageNo == null || pageNo.equals("")) {
 									</td>
 								</tr>
 							</table> <!-- button -->
-							<table border="0" cellpadding="0" cellspacing="1" width="590">
-								<tr>
-									<td align="right"><input type="button" value="게시물 생성"
-										onclick="boardCreate();" /></td>
-								</tr>
-							</table></td>
+							</td>
 					</tr>
 				</table>
 								

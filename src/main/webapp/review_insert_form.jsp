@@ -1,3 +1,4 @@
+<%@page import="java.util.Date"%>
 <%@page import="com.itwill.book.dto.Review"%>
 <%@page import="com.itwill.book.service.ReviewService"%>
 <%@page import="com.itwill.book.dto.UserInfo"%>
@@ -5,7 +6,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-String u_id="enbi";
+//String u_id="enbi";
+
+String sUserId = (String)session.getAttribute("sUserId");
+if(sUserId == null){
+	response.sendRedirect("kyobo_main.jsp");
+}
+
 
 ReviewService reviewService = new ReviewService();
 
@@ -21,7 +28,7 @@ ReviewService reviewService = new ReviewService();
 <link rel=stylesheet href="css/user.css" type="text/css">
 <style type="text/css" media="screen">
 </style>
-<script type="text/javascript" src="js/reivew.js"></script>
+<script type="text/javascript" src="js/review.js"></script>
 </head>
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
 	marginwidth=0 marginheight=0>
@@ -68,22 +75,16 @@ ReviewService reviewService = new ReviewService();
 											name="r_title"></td>
 									</tr>
 									<tr>
-										<td width=100 align=center bgcolor="E6ECDE" height="22">작성날짜</td>
-										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
-											align="left"><input type="text" style="width: 150px"
-											name="r_date"></td>
-									</tr>
-									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">아이디</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><input type="text" style="width: 150px"
-											name="u_id"></td>
+											name="u_id" readonly="readonly" disabled=true value=<%=sUserId %>></td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">주문번호</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><input type="text" style="width: 150px"
-											name="od_no"></td>
+											name="od_no" value=""></td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">평점</td>
@@ -103,12 +104,12 @@ ReviewService reviewService = new ReviewService();
 							<table border=0 cellpadding=0 cellspacing=1 style="align: center;">
 								<tr>
 									<td align=center>
-									<input type="button" value="등록" onclick="userCreate();"> &nbsp; 
-									<input type="button" value="메인" onClick="userMain()">
+									<input type="button" value="등록" onclick="reviewCreate()"> &nbsp; 
+									<input type="button" value="메인" onClick="mainGo()">
+									
 									</td>
 								</tr>
 							</table>
-
 						</td>
 					</tr>
 				</table>

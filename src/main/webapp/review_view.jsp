@@ -116,8 +116,8 @@
 							<table width=590 border=0 cellpadding=0 cellspacing=0>
 								<tr>
 									<td align=center><input type="button" value="글쓰기"
-										onClick="boardCreate()"> &nbsp; 
-										<input type="button" value="답글쓰기" onClick="boardReplyCreate()"> &nbsp; 
+										onClick="reviewCreateGo()"> &nbsp; 
+										<input type="button" value="댓글쓰기" onClick="reviewReplyCreate()"> &nbsp; 
 										<input type="button" value="수정" onClick="boardUpdate()"> &nbsp; 
 										<input type="button" value="삭제" onClick="boardRemove()"> &nbsp; 
 										<input type="button" value="리스트" onClick="reviewList()"></td>
