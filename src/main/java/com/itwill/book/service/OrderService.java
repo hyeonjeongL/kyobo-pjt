@@ -32,7 +32,8 @@ public class OrderService {
 		
 		return orderDao.create(creatOrder);
 	}
-		public int crerat(String sUserId) throws Exception {
+		//카트 전체 주문
+		public int create(String sUserId) throws Exception {
 			List<Cart> cartList = cartDao.cartList(sUserId);
 			ArrayList<OrderDetail> orderDetailList = new ArrayList<OrderDetail>();
 			int o_tot_price = 0;
@@ -50,8 +51,26 @@ public class OrderService {
 				return 0;				
 			
 		}
-	
-	
-	
-	
+		//카트 선택 주문
+		/*
+		public int create(String sUserId, String[] cart_item_noStr_array) throws Exception {
+			ArrayList<OrderDetail> orderItemList=new ArrayList<OrderDetail>();
+			int o_tot_price=0;
+			int oi_tot_count=0;
+			for(int i =0;i<cart_item_noStr_array.length;i++) {
+				Cart cart = cartDao.getCartItemByCartNo(Integer.parseInt(cart_item_noStr_array[i]));
+				OrderDetail orderDetail=new OrderDetail(0, cart.getC_qty(),0,cart.getBook());
+				orderItemList.add(orderDetail);
+				o_tot_price+=orderDetail.getOd_qty()*orderDetail.getBook().getP_price();
+				oi_tot_count+=orderDetail.getOd_qty();
+			}
+			Orders newOrder=new Orders(0, null, o_tot_price, sUserId,orderItemList);
+			orderDao.create(newOrder);
+			for(int i =0;i<cart_item_noStr_array.length;i++) {
+				cartDao.deleteCartByNo(Integer.parseInt(cart_item_noStr_array[i]));
+			}
+		return 0;
+		
+		}
+	*/
 }
