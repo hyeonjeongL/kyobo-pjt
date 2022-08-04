@@ -9,7 +9,6 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="login_check.jspf"%>
 <%
-sUserId = (String) session.getAttribute("sUserId");
 OrderService orderService = new OrderService();
 List<Orders> orderList = orderService.list(sUserId);
 %>
@@ -101,7 +100,7 @@ List<Orders> orderList = orderService.list(sUserId);
 							<table border="0" cellpadding="0" cellspacing="1" width="590">
 								<tr>
 									<td align=center>&nbsp;&nbsp;
-									<a href=product_list.jsp
+									<a href=book_list.jsp
 										class=m1>계속 구경하기</a>
 									<a href='javascript:order_delete_all_action();'
 										class=m1>주문전체삭제</a>
