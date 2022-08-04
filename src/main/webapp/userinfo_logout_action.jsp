@@ -1,13 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@include file="login_check.jspf"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<%
+	String id = (String)session.getAttribute("sUserid");
+	if(id != null){
+		session.invalidate();
+	}
 
-</body>
-</html>
+	response.sendRedirect("userinfo_login_from.jsp");
+
+%>
