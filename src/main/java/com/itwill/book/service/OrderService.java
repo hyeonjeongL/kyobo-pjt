@@ -16,6 +16,11 @@ public class OrderService {
 	private BookDao bookDao;
 	private CartDao cartDao;
 	
+	public OrderService() throws Exception{
+	orderDao = new OrderDao();
+	bookDao = new BookDao();
+	cartDao = new CartDao();
+}
 	//상품에서 주문
 	public int create(String sUserId, int b_no, int od_qty) throws Exception {
 		Book book = bookDao.selectByNo(b_no);
