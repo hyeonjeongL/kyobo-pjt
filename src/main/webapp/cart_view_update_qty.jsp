@@ -217,7 +217,7 @@ List<Cart> cartList = cartService.getCartList("hunjeong");
 													type="button" value="-"
 													onclick="changeNumber('-','cart_update_form_<%=cart.getC_no()%>');"/>
 												<input type="text" readonly="readonly" size="2"
-													style="text-align: center; width: 15%" name="cart_qty"
+													style="text-align: center; width: 15%" name="c_qty"
 													value="<%=cart.getC_qty()%>"> <input
 													type="button" value="+"
 													onclick="changeNumber('+','cart_update_form_<%=cart.getC_no()%>');"/>
