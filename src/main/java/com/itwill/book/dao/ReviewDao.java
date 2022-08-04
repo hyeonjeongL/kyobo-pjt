@@ -161,7 +161,7 @@ public class ReviewDao {
 		List<Review> reviewBookList = new ArrayList<Review>();
 		Connection con = dataSource.getConnection();
 		PreparedStatement pstmt = con.prepareStatement(ReviewSQL.SELECT_REVIEW_B_NO);
-		pstmt.setInt(1, review.getOrderDetail().getBook().getB_price());
+		pstmt.setInt(1, review.getOrderDetail().getBook().getB_no());
 		ResultSet rs = pstmt.executeQuery();
 		while(rs.next()) {
 			reviewBookList.add(new Review(
@@ -202,6 +202,32 @@ public class ReviewDao {
 		con.close();
 		
 		return reviewIdList;
+	}
+	
+	//총 리뷰 수
+	public int reviewCountAll() throws Exception{
+		int count = 0;
+		Connection con = dataSource.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(ReviewSQL.SELECT_REVIEW_COUNT_ALL);
+		ResultSet rs = pstmt.executeQuery();
+		if(rs.next()) {
+			count = rs.getInt(1);
+		}
+		
+		return count;
+	}
+	
+	//해당 리뷰의 총 댓글 수
+	public int reviewReplyCount(int groupno) throws Exception{
+		int count = 0;
+		Connection con = dataSource.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(ReviewSQL.SELECT_REVIEW_REPLY_COUNT);
+		pstmt.setInt(1, groupno);
+		ResultSet rs = pstmt.executeQuery();
+		if(rs.next()) {
+			count = rs.getInt(1);
+		}
+		return count;
 	}
 		
 	

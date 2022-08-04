@@ -72,21 +72,24 @@ public class ReviewDaoTest {
 		List<Review> reviewBookList = new ArrayList<Review>();
 		Review findReview = new Review(0, null, null, 0, null, null, 
 				new OrderDetail(0, 0, 0, 
-						new Book(4, null, null, 0, null, null, null, null)), 0, 0, 0);
+						new Book(1, null, null, 0, null, null, null, null)), 0, 0, 0);
 		reviewBookList = reviewDao.reviewSelectByBookNo(findReview);
 		for (Review review : reviewBookList) {
-			System.out.println(review);
+			System.out.println("책 번호 조회 : "+review);
 		}
 
 		
 		//회원 아이디로 리뷰 조회
 		List<Review> reviewIdList = reviewDao.reviewSelectByUserId("jihun");
 		for (Review review : reviewIdList) {
-			System.out.println(review);
+			//System.out.println(review);
 		}
 		
+		//총 리뷰 수 조회
+		System.out.println("총 리뷰 수 : "+ reviewDao.reviewCountAll());
 		
-		
+		//해당 리뷰의 총 댓글 수
+		System.out.println("해당 리뷰의 총 댓글 수 : "+ reviewDao.reviewReplyCount(4));
 		
 		
 		
