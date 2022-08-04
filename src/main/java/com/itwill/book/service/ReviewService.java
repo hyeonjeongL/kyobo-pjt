@@ -38,17 +38,17 @@ public class ReviewService {
 	}
 	
 	
-	//리뷰 번호로 리뷰조회
+	//리뷰 번호로 리뷰조회 - 상품페이지 리뷰상세, 마이페이지 리뷰상세
 	public Review reviewSelectNo(int r_no) throws Exception{
 		return reviewDao.reviewSelectNo(r_no);
 	}
 	
-	//책 번호로 리뷰 조회
+	//책 번호로 리뷰 조회- 상품페이지에서
 	public List<Review> reviewSelectByBookNo(Review review) throws Exception{
 		return reviewDao.reviewSelectByBookNo(review);
 	}
 	
-	//회원 아이디로 리뷰 조회
+	//회원 아이디로 리뷰 조회 - 마이페이지
 	public List<Review> reviewSelectByUserId(String u_id) throws Exception{
 		return reviewDao.reviewSelectByUserId(u_id);
 	}
