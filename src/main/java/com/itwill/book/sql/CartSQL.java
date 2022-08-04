@@ -2,7 +2,7 @@ package com.itwill.book.sql;
 
 public class CartSQL {
 	
-	//카트수량체크
+	//카트전체수량체크
 	public static final String BOOK_COUNT_BY_ID_NO
 	= "select count(*) book_count from cart where u_id=? and b_no=?";
 

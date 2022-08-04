@@ -20,19 +20,18 @@ public class CartService {
 	 */
 	
 	public int addCart (Cart newCart) throws Exception {
-		Cart cart = new Cart(0, newCart.getC_qty(), newCart.getU_id(),
-							new Book(newCart.getBook().getB_no(), null, null, 0, null, null, null, null));
-		int book_count = cartDao.cartBookCount(cart);
+		 	
+		int book_count = cartDao.cartBookCount(newCart);
 		if(book_count == 0) {
-			cartDao.cartInsert(cart);
+			cartDao.cartInsert(newCart);
 		} else if (book_count >=1) {
-			cartDao.cartUpdateQty(cart);
+			cartDao.cartUpdateQty(newCart);
 		}
 		
 		return book_count;
 	}
 	
-	
+	 
 	/*
 	 * 카트리스트보기
 	 */
