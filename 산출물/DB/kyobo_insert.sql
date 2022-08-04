@@ -80,11 +80,11 @@ values(notice_n_no_seq.nextval, '공지사항', '해외배송(FedEx) 배송료 �
 
 --ebook insert
 
-insert into ebook values(ebook_e_no_seq.nextval, sysdate, 12000, 1);
-insert into ebook values(ebook_e_no_seq.nextval, sysdate, 13500, 2);
-insert into ebook values(ebook_e_no_seq.nextval, sysdate, 14900, 3);
-insert into ebook values(ebook_e_no_seq.nextval, sysdate, 17000, 4);
-insert into ebook values(ebook_e_no_seq.nextval, sysdate, 16000, 5);
+insert into ebook values(ebook_e_no_seq.nextval, 12000, 1);
+insert into ebook values(ebook_e_no_seq.nextval, 13500, 2);
+insert into ebook values(ebook_e_no_seq.nextval, 14900, 3);
+insert into ebook values(ebook_e_no_seq.nextval, 17000, 4);
+insert into ebook values(ebook_e_no_seq.nextval, 16000, 5);
 
 --eorder insert
 
