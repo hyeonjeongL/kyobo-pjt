@@ -54,9 +54,9 @@ public class OrderDaoTest {
 		 int rowCount1 = orderDao.create(order);
 		 System.out.println(rowCount1);
 		 */
-		 System.out.println(orderDao.deleteByOrdersNo(1));
+		// System.out.println(orderDao.deleteByOrdersNo(1));
 		// cartDao.cartDeleteAll("jihun"); 이건 카트에 담은거 주문 했으면 카트 비우는거임.
-		 
+		 System.out.println(orderDao.delete("jihun"));
 		 
 	}
 

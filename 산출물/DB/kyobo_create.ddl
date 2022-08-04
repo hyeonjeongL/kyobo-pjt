@@ -141,7 +141,6 @@ CREATE SEQUENCE cart_c_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
 CREATE TABLE ebook(
 		e_no                          		NUMBER(10)		 NULL ,
-		e_date                        		DATE		 DEFAULT sysdate		 NULL ,
 		e_price                       		NUMBER(10)		 NULL ,
 		b_no                          		NUMBER(10)		 NULL 
 );
