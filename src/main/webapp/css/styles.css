@@ -103,15 +103,11 @@ div#wrapper {
 }
 
 div#content {
-	margin: 0 0 0 180px
-	
+	margin: 0 0 0 150px
 }
 
 div#footer {
 	clear: left;
 	width: 100%
-}
-textarea {
-	resize:none;
 }
 

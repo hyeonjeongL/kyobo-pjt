@@ -1,35 +1,40 @@
-<%@page import="com.itwill.book.dto.QnaPageMakerDto"%>
 <%@page import="com.itwill.book.dto.Qna"%>
 <%@page import="com.itwill.book.service.QnaService"%>
+<%@page import="com.itwill.book.service.ReviewService"%>
+<%@page import="com.itwill.book.dto.Review"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- 
     
 <%
-
-	String sUserId = (String)session.getAttribute("sUserId");
-	if(sUserId == null){
-		response.sendRedirect("kyobo_main.jsp");
+	int q_no= 0;
+	int pageno=1;
+	try{
+		q_no=Integer.parseInt(request.getParameter("q_no"));
+		pageno=Integer.parseInt(request.getParameter("pageno"));
+	}catch(Exception e){
+		
 	}
-
-	String pageNo = request.getParameter("pageno");
-	if (pageNo == null || pageNo.equals("")) {
-		pageNo = "1";
+	if(q_no==0){
+		//목록으로이동
+		response.sendRedirect("qna_list.jsp?pageno="+pageno);
+		return;
 	}
-
-	
-	QnaPageMakerDto qnalistPage = new QnaService().selectAll(Integer.parseInt(pageNo));
-	
+	QnaService qnaService = new QnaService();
+	Qna qna=qnaService.selectByNo(q_no);
+	if(q_no==0){
+		response.sendRedirect("qna_list.jsp?pageno="+pageno);
+		return;
+	}
 %>
 <!DOCTYPE html>
 <html>
 <head>
-<title>마이페이지 리뷰</title>
+<title>교보문고</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel=stylesheet href="css/styles.css" type="text/css">
 <link rel=stylesheet href="css/menu.css" type="text/css">
 <link rel=stylesheet href="css/shop.css" type="text/css">
-
+<script type="text/javascript" src="js/qna.js"></script>
 <style type="text/css" media="screen">
 </style>
 </head>
@@ -55,89 +60,73 @@
 		<div id="wrapper">
 			<!-- content start -->
 			<!-- include_content.jsp start-->
-			<div id="content">
-				<table width=0 border=0 cellpadding=0 cellspacing=0>
+		<div id="content">
+				<table border=0 cellpadding=0 cellspacing=0>
 					<tr>
-						<td>
-							<!--contents--> <br />
+						<td><br />
 							<table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
-									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>내가 쓴 리뷰
-											</b></td>
-								</tr>
-							</table> 
-					<form name="f" method="post" action="">
-								<table border="0" cellpadding="0" cellspacing="1" width="590"
-									bgcolor="BBBBBB">
-
-									<tr>
-										<td width=280 align=center bgcolor="E6ECDE">리뷰제목</td>
-										<td width=120 align=center bgcolor="E6ECDE">작성자</td>
-										<td width=120 align=center bgcolor="E6ECDE">작성날짜</td>
-									</tr>
-									<%
-										for (Qna qna : qnalistPage.itemList) {
-									%>
-									<tr>
-										<td width=280 bgcolor="ffffff" style="padding-left: 10px" align="left">
-										<a href='review_view.jsp?r_no=<%=qna.getQ_no()%>&pageno=<%=qnalistPage.pageMaker.getCurPage()%>'>
-										<%=qna.getQ_title()%>
-										</a>
-										</td>
-										<td width=120 align=center bgcolor="ffffff"><%=qna.getU_id()%>
-										</td>
-										<td width=120 bgcolor="ffffff" style="padding-left: 10px" align="left">
-											<%=qna.getQ_date()%>
-										</td>
-									</tr>
-									
-									<%
-										}
-									%>
-								</table>
-								</form>
-								<table border="0" cellpadding="0" cellspacing="1" width="590">
-								<tr>
-									<td align="center">
-							     
-										 <%if(qnalistPage.pageMaker.getPrevGroupStartPage()>0) {%>    
-										    <a href="./review_Id_list.jsp?pageno=1">◀◀</a>&nbsp;
-										 <%}%>
-										 <%if(qnalistPage.pageMaker.getPrevPage()>0) {%>    
-											<a href="./review_Id_list.jsp?pageno=<%=qnalistPage.pageMaker.getPrevPage()%>">◀</a>&nbsp;&nbsp;
-										 <%}%>
-										
-										<%
-											for (int i = qnalistPage.pageMaker.getBlockBegin(); i <= qnalistPage.pageMaker.getBlockEnd(); i++) {
-										 	if (qnalistPage.pageMaker.getCurPage() == i) {
-										%>
-										 <font color='red'><strong><%=i%></strong></font>&nbsp;
-										<%} else {%>
-										<a href="./review_Id_list.jsp?pageno=<%=i%>"><strong><%=i%></strong></a>&nbsp;
-										<%
-										   }
-										  }%>
-										  
-										  
-										 <%if(qnalistPage.pageMaker.getCurPage()< qnalistPage.pageMaker.getTotPage()){%>
-										  <a href="./review_Id_list.jsp?pageno=<%=qnalistPage.pageMaker.getNextPage()%>">▶&nbsp;</a>
-										 <%}%>
-										 <%if(qnalistPage.pageMaker.getNextGroupStartPage()< qnalistPage.pageMaker.getTotPage()){%>
-										<a
-										href="./review_Id_list.jsp?pageno=<%=qnalistPage.pageMaker.getTotPage()%>">▶▶</a>&nbsp;
-										 <%}%>
+									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp; <b> 게시물
+											내용보기 </b>
 									</td>
 								</tr>
-							</table> <!-- button -->
-							</td>
+							</table> <br> <!-- view Form  -->
+							
+							<form name="f" method="post">
+								<input type="hidden" name="reviewno" value="<%=qna.getQ_no()%>">
+								<input type="hidden" name="pageno" value="<%=pageno%>">
+								<table border="0" cellpadding="0" cellspacing="1" width="590"
+									bgcolor="BBBBBB">
+									<tr>
+										<td width=100 align=center bgcolor="E6ECDE" height="22">글쓴이</td>
+										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
+											align="left"><%=qna.getU_id()%></td>
+									</tr>
+									<tr>
+										<td width=100 align=center bgcolor="E6ECDE" height="22">문의내용</td>
+										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
+											align="left"><%=qna.getQ_clss()%></td>
+									</tr>
+									<tr>
+										<td width=100 align=center bgcolor="E6ECDE" height="22">작성날짜</td>
+										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
+											align="left"><%=qna.getQ_date()%></td>
+									</tr>
+
+									<tr>
+										<td width=100 align=center bgcolor="E6ECDE" height="22">제목</td>
+										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
+											align="left"><%=qna.getQ_title()%></td>
+									</tr>
+									<tr>
+										<td width=100 align=center bgcolor="E6ECDE" height="22">내용</td>
+										<td width=490 bgcolor="ffffff" height="100px"
+											style="padding-left: 10px" align="left"><%=qna.getQ_contents()%>
+
+										</td>
+									</tr>
+
+								</table>
+
+							</form> <br>
+							<table width=590 border=0 cellpadding=0 cellspacing=0>
+								<tr>
+									<td align=center><input type="button" value="글쓰기"
+										onClick="qnaCreate()"> &nbsp; 
+										<input type="button" value="수정" onClick="qnaUpdate()"> &nbsp; 
+										<input type="button" value="삭제" onClick="qnaRemove()"> &nbsp; 
+										<input type="button" value="리스트" onClick="qnaList()"></td>
+								</tr>
+							</table></td>
 					</tr>
 				</table>
-								
-				
-			<!-- include_content.jsp end-->
-			<!-- content end -->
-		</div>
+			</div>	
+			
+			
+			
+			
+			
 		<!--wrapper end-->
 		<div id="footer">
 			<!-- include_common_bottom.jsp start-->
@@ -148,4 +137,3 @@
 	<!--container end-->
 </body>
 </html>
-
