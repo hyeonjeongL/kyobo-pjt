@@ -70,6 +70,9 @@ insert into notice
 values(notice_n_no_seq.nextval, '공지사항', '해외배송(FedEx) 배송료 인상 안내 (5/1)', '2022-03-01',
 '최근 코로나 19로 인한 해외 배송에 필요한 항공운송료가 급격히 증가함에 따라, 동 서비스의 지속적이고 안정적인 제공을 위한 필요 최소 수준의 요금 조정이 불가피한 실정입니다.
 이에, ’22. 5. 1. 자 FedEx의 해외 배송 서비스의 요금이 인상될 예정 이오니, 고객님의 너른 양해를 부탁드리며 조정내용을 사전 공지하오니 서비스 이용에 참조하시기 바랍니다.', 1,'service.gif' ,notice_n_no_seq.currval, 1, 0);
+insert into notice
+values(notice_n_no_seq.nextval, '테스트','테스트',sysdate,
+'테스트', 1,'service.gif' ,notice_n_no_seq.currval, 1, 0);
 
 --ebook insert
 
