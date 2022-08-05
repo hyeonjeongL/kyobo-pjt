@@ -122,8 +122,8 @@ if(i%book_column_size==0){
 <a href="book_detail.jsp?b_no=<%=book.getB_no()%>">
 
 <img width="63px" height="95px" src='image/<%=book.getB_image()%>.jpg' border="0"></a><br> 
-										 <b>[<%=book.getB_class()%>]</b><br> 
-											<b><%=book.getB_name()%></b><br> 
+										 [<%=book.getB_class()%>]><br> 
+											<%=book.getB_name()%><br> 
 											저자&nbsp;:&nbsp;<%=book.getB_author()%><br> 
 											출판사&nbsp;:&nbsp;<%=book.getB_publisher()%><br> 
 <font color="#FF0000"><%=new DecimalFormat("#,##0").format(book.getB_price())%>원

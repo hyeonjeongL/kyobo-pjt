@@ -82,9 +82,9 @@ if(i%book_column_size==0){
 
 <td align="center" width="25%"  bgcolor="ffffff">
 <a href="book_detail.jsp?b_no=<%=book.getB_no()%>">
-<img width="55px" height="88px" src='image/<%=book.getB_image()%>.jpg' border="0"></a><br />
-											<br /> <b>[<%=book.getB_class()%>]</b><br> 
-											 <b><%=book.getB_name()%></b><br> 
+<img width="55px" height="88px" src='image/<%=book.getB_image()%>.jpg' border="0"></a><br>
+											 [<%=book.getB_class()%>]<br> 
+											 <%=book.getB_name()%><br> 
 <font color="#FF0000"><%=new DecimalFormat("#,##0").format(book.getB_price())%>원
 </font></td>
 <%if(i%book_column_size==3){%>
