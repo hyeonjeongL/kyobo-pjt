@@ -279,7 +279,7 @@ public class BookDao {
 	}
 	
 	// 전체 검색
-	
+	/*
 	public List<Book> selectList() throws Exception {
 			List<Book> bookList = new ArrayList<Book>();
 
@@ -293,7 +293,7 @@ public class BookDao {
 				bookList.add(book);
 			}
 			return bookList;
-		}
+		}*/
 	
 	//도서 전체 조회 
 	
