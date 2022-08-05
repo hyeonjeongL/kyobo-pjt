@@ -4,7 +4,7 @@
 <%@page import="com.itwill.book.service.BookService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- <%@include file="login_check.jspf"%>
+ <%--<%@include file="login_check.jspf"%>--%>
 <%
 String b_noStr=request.getParameter("b_no");
 if(b_noStr==null||b_noStr.equals("")){
@@ -81,8 +81,8 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
 	marginwidth=0 marginheight=0>
 	<form name="book_detail_form">
-		<input type="hidden" name="p_no" value="<%=book.getB_no()%>">
-		<input type="hidden" name="p_qty" value="1"> <input
+		<input type="hidden" name="b_no" value="<%=book.getB_no()%>">
+		<input type="hidden" name="b_qty" value="1"> <input
 			type="hidden" name="buyType" value="direct">
 	</form>
 	<!-- container start-->

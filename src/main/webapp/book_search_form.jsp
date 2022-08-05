@@ -50,8 +50,16 @@ request.setCharacterEncoding("UTF-8");
 			<!-- content start -->
 			<!-- include_content.jsp start-->
 			<div id="content">
-				<h3>&nbsp;&nbsp;&nbsp;검색</h3>
-				<hr />
+				<table border=0 cellpadding=0 cellspacing=0>
+					<tr>
+						<td><br />
+							<table style="padding-left: 10px" border=0 cellpadding=0
+								cellspacing=0>
+								<tr>
+									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>도서 검색</b></td>
+								</tr>
+							</table>
+							</table>
 
 				<form action="book_search_result.jsp" method="get">
 
