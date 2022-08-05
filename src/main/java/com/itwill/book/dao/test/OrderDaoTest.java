@@ -65,7 +65,8 @@ public class OrderDaoTest {
 		 //List<Orders> orderList1 = orderDao.List_detail("jihun");
 		// System.out.println(orderList1);
 		 
-		 System.out.println(orderDao.orderDetail("jihun", 2));
+		 System.out.println(orderDao.orderDetail("jihun", 3));
+		 System.out.println(orderDao.List_detail("jihun"));
 		 
 	}
 

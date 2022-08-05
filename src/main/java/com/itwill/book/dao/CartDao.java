@@ -141,7 +141,7 @@ public class CartDao {
 		pstmt.setInt(1, c_no);
 		ResultSet rs = pstmt.executeQuery(); 
 		while(rs.next()) {
-			Cart cart = new Cart(rs.getInt("c_no"),
+			cartListOrder = new Cart(rs.getInt("c_no"),
 								 rs.getInt("c_qty"),
 								 rs.getString("u_id"),
 								 new Book(rs.getInt("b_no"),
@@ -152,7 +152,6 @@ public class CartDao {
 										  rs.getString("b_image"),
 										  rs.getString("b_author"),
 										  rs.getString("b_publisher")));
-							
 		}
 		con.close();
 		return cartListOrder;

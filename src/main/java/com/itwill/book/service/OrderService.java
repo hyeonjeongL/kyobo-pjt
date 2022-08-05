@@ -38,7 +38,7 @@ public class OrderService {
 		return orderDao.create(creatOrder);
 	}
 		//카트 전체 주문
-		public int create(String sUserId) throws Exception {
+		public int createCartAll(String sUserId) throws Exception {
 			List<Cart> cartList = cartDao.cartList(sUserId);
 			ArrayList<OrderDetail> orderDetailList = new ArrayList<OrderDetail>();
 			int o_tot_price = 0;
@@ -58,7 +58,7 @@ public class OrderService {
 		}
 		//카트 선택 주문
 		
-		public int create(String sUserId, String[] cart_item_noStr_array) throws Exception {
+		public int createCartSelect(String sUserId, String[] cart_item_noStr_array) throws Exception {
 			ArrayList<OrderDetail> orderItemList=new ArrayList<OrderDetail>();
 			int o_tot_price=0;
 			int oi_tot_count=0;

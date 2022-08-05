@@ -19,10 +19,10 @@ List<Eorder> ebooklist = ebookService.selectById(u_id);
 <meta charset="UTF-8">
 <link rel=stylesheet href="css/styles.css" type="text/css">
 <link rel=stylesheet href="css/shop.css" type="text/css">
- 
+<script type="text/javascript" src="js/ebook.js"></script>
 <style type="text/css" media="screen">
 </style>
-<title>Insert title here</title>
+<title>교보문고</title>
 </head>
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
 	marginwidth=0 marginheight=0>
@@ -58,9 +58,9 @@ List<Eorder> ebooklist = ebookService.selectById(u_id);
 							<table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
-									<td height="22">&nbsp;&nbsp;<b>쇼핑몰 - 장바구니 보기</b></td>
-									<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>
-									<input type="button"  value="기기등록" onClick="setCookie();"></td>
+									<td height="22">&nbsp;&nbsp;<b>마이페이지 - eBook보관함</b></td>
+									<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+									<td><input type="button" value="기기등록" onClick="setCookies();"> </td>
 									
 								</tr>
 							</table> 
@@ -69,6 +69,7 @@ List<Eorder> ebooklist = ebookService.selectById(u_id);
 							<form name="f" method="post">
 							 -->
 							<div id='f'>
+							<form name="ebook">
 							<table  align=center  width=80% border="0" cellpadding="0" cellspacing="1"  bgcolor="BBBBBB">
 									<tr>
 										<td width=60 height=25  align="center" bgcolor="E5F0FA" class=t1><font
@@ -95,13 +96,14 @@ List<Eorder> ebooklist = ebookService.selectById(u_id);
 										<td width=40 height=26 align=center bgcolor="ffffff" class=t1><img src='image/<%=ebook.getEbook().getProduct().getB_image()%>.jpg' width="34" height="28"/></td>
 										<td width=210 height=26 align=center bgcolor="ffffff" class=t1><a href='product_detail.jsp?p_no=<%=ebook.getEbook().getProduct().getB_no()%>'><%=ebook.getEbook().getProduct().getB_name() %></a></td>
 										<td width=110 height=26 align=center bgcolor="ffffff" class=t1><%=ebook.getEo_date_buy()%></td>
-										<td width=110 height=26 align=center bgcolor="ffffff" class=t1><%=ebook.getEo_date_end()%></td>
+										<td width=110 height=26 align=center bgcolor="ffffff" class=t1><%=ebook.getEo_date_end()%><input type="hidden" name="b_no" value="<%=ebook.getEbook().getProduct().getB_no()%>"></td>
 										
 									</tr>
 									<%}%>
 									<!-- cart item end -->
 									
 								</table>
+								</form>
 							</div>
 							<!-- 
 							</form> 

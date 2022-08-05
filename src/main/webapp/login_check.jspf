@@ -4,9 +4,7 @@
 <%
 	String sUserId=(String)session.getAttribute("sUserId");
 	if(sUserId==null){
-		//response.sendRedirect("kyobo_main.jsp");
-		sUserId = "jihun";
-		session.setAttribute("sUserId", sUserId);
+		response.sendRedirect("kyobo_main.jsp");
 		return;
 	}
 %>  

@@ -9,9 +9,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="login_check.jspf"%>
-<%
-
-
+<% sUserId = (String) session.getAttribute("sUserId");%>
+<% 
 if (request.getMethod().equalsIgnoreCase("GET")) {
 	response.sendRedirect("order_list.jsp");
 	return;
@@ -32,7 +31,7 @@ UserInfoService userInfoService = new UserInfoService();
 BookService bookService = new BookService();
 
 List<Cart> cartItemList = new ArrayList<Cart>();
-UserInfo userinfo = userInfoService.selectById(sUserId);
+UserInfo userInfo = userInfoService.selectById(sUserId);
 
 if (buyType.equals("cart")) {
 	cartItemList = cartService.getCartList(sUserId);
@@ -140,9 +139,9 @@ form > table tr td{
 											고</td>
 									</tr>
 									<tr>
-										<td width=290 height=26 align=center bgcolor="ffffff" class=t1><%=userinfo.getU_id()%></td>
-										<td width=112 height=26 align=center bgcolor="ffffff" class=t1><%=userinfo.getU_name()%></td>
-										<td width=166 height=26 align=center bgcolor="ffffff" class=t1><%=userinfo.getU_email()%></td>
+										<td width=290 height=26 align=center bgcolor="ffffff" class=t1><%=userInfo.getU_id()%></td>
+										<td width=112 height=26 align=center bgcolor="ffffff" class=t1><%=userInfo.getU_name()%></td>
+										<td width=166 height=26 align=center bgcolor="ffffff" class=t1><%=userInfo.getU_email()%></td>
 										<td width=50 height=26 align=center bgcolor="ffffff" class=t1></td>
 									</tr>
 								</table>
@@ -171,7 +170,7 @@ form > table tr td{
 									<tr>
 										<td width=290 height=26 align=center bgcolor="ffffff" class=t1>
 											<a
-											href='product_detail.jsp?p_no=<%=cart.getBook().getB_no()%>'><%=cart.getBook().getB_name()%></a>
+											href='book_detail.jsp?b_no=<%=cart.getBook().getB_no()%>'><%=cart.getBook().getB_name()%></a>
 										</td>
 										<td width=112 height=26 align=center bgcolor="ffffff" class=t1><%=cart.getC_qty()%></td>
 										<td width=166 height=26 align=center bgcolor="ffffff" class=t1>
@@ -192,12 +191,13 @@ form > table tr td{
 									</tr>
 								</table>
 							</form>
+							
 							<br />
 							<table border="0" cellpadding="0" cellspacing="1" width="590">
 								<tr>
 									<td align=center>&nbsp;&nbsp; <a
 										href="javascript:order_create_form_submit();" class=m1>구매/결재하기</a>
-										&nbsp;&nbsp;<a href=product_list.jsp class=m1>계속 쇼핑하기</a>
+										&nbsp;&nbsp;<a href=book_list.jsp class=m1>계속 쇼핑하기</a>
 
 									</td>
 								</tr>
