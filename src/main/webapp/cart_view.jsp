@@ -193,6 +193,7 @@ List<Cart> cartList = cartService.getCartList(u_id);
 											class=t1><font><b>선택삭제</b></font></td>
 									</tr>
 									<!-- cart item start -->
+									
 									<%
 									int tot_price = 0;
 									for (Cart cart : cartList) {
@@ -245,13 +246,29 @@ List<Cart> cartList = cartService.getCartList(u_id);
 									<%}%>
 									<!-- cart item end -->
 
-
+									<%
+									int deli_price = 0;
+									if(1<tot_price && tot_price<=50000){
+										deli_price=2500;
+									} else {
+										deli_price=0;
+									}
+									%>
 
 									<tr>
 										<td width=640 colspan=6 height=26 class=t1 bgcolor="ffffff">
 											<p align=right>
 												<br /> 
-												<font color='red'>총주문금액 : <span id="tot_order_price"><%=new DecimalFormat("#,##0").format(tot_price)%></span> 원</font>
+												<font color='red'>총주문금액 : <span id="tot_order_price"><%=new DecimalFormat("#,##0").format(tot_price)%></span> 원</font><br>
+												<font color='red'>(+) 배송비 : <span id="deli_price"><%=new DecimalFormat("#,##0").format(deli_price)%></span> 원</font>
+											</p>
+										</td>
+									</tr>
+									<tr>
+										<td width=640 colspan=6 height=26 class=t1 bgcolor="ffffff">
+											<p align=right>
+												<br /> 
+												<font color='red' >총결제금액 : <span id="tot_order_price"><%=new DecimalFormat("#,##0").format(tot_price+deli_price)%></span> 원</font>
 											</p>
 										</td>
 									</tr>
