@@ -16,14 +16,7 @@ public class BookService {
 	public BookService() throws Exception{
 		bookDao=new BookDao();
 	}
-	/*
-	public static BookService getInstance() throws Exception{
-		if(_instance==null) {
-			_instance=new BookService();
-		}
-		return _instance;
-	}
-	*/
+	
 	//리스트
 	public PageMakerDto<Book> getBookList(int currentPage) throws Exception {
 		// 전체 글 개수
@@ -85,10 +78,24 @@ public class BookService {
 	public ArrayList<Book> selectByClass(String b_class) throws Exception{
 		return bookDao.selectByClass(b_class);
 	}
+	//카테고리 검색 페이지
 	public PageMakerDto<Book> selectByClass(String keyword, int currentPage) throws Exception {
 		int totRecordCount = bookDao.selectByClass(keyword).size();
 		PageMaker pageMaker = new PageMaker(totRecordCount, currentPage, 3, 5);
 		List<Book> bookList = bookDao.selectByClass(keyword, pageMaker.getPageBegin(), pageMaker.getPageEnd());		
+		PageMakerDto<Book> pageMakerBookList = new PageMakerDto<Book>(bookList, pageMaker, totRecordCount);
+		
+		return pageMakerBookList;
+	}
+	//출판사 검색
+	public ArrayList<Book> selectByPublisher(String b_publisher) throws Exception{
+		return bookDao.selectByPublisher(b_publisher);
+	}
+	//출판사 검색 페이지
+	public PageMakerDto<Book> selectByPublisher(String keyword, int currentPage) throws Exception {
+		int totRecordCount = bookDao.selectByClass(keyword).size();
+		PageMaker pageMaker = new PageMaker(totRecordCount, currentPage, 3, 5);
+		List<Book> bookList = bookDao.selectByPublisher(keyword, pageMaker.getPageBegin(), pageMaker.getPageEnd());		
 		PageMakerDto<Book> pageMakerBookList = new PageMakerDto<Book>(bookList, pageMaker, totRecordCount);
 		
 		return pageMakerBookList;

@@ -72,7 +72,9 @@ values(notice_n_no_seq.nextval, '공지사항', '해외배송(FedEx) 배송료 �
 이에, ’22. 5. 1. 자 FedEx의 해외 배송 서비스의 요금이 인상될 예정 이오니, 고객님의 너른 양해를 부탁드리며 조정내용을 사전 공지하오니 서비스 이용에 참조하시기 바랍니다.', 1,'service.gif' ,notice_n_no_seq.currval, 1, 0);
 insert into notice
 values(notice_n_no_seq.nextval, '테스트','테스트',sysdate,
-'테스트', 1,'service.gif' ,notice_n_no_seq.currval, 1, 0);
+'테스트', 1,'service.GIF' ,notice_n_no_seq.currval, 1, 0);
+
+
 
 --ebook insert
 

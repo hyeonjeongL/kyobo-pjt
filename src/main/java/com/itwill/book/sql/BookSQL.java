@@ -24,6 +24,14 @@ public class BookSQL {
 		public static final String BOOK_SELECT_BY_AUTHOR_LIST
 		="select * from (select rownum idx, s.* from (select * from book where b_author like ? order by b_author) s) where idx >= ? and idx <= ?";
 
+		//출판사 검색
+				public static final String BOOK_SELECT_BY_PUBLISHER
+				="select * from book where b_publisher like ?";
+				
+				public static final String BOOK_SELECT_BY_PUBLISHER_LIST
+				="select * from (select rownum idx, s.* from (select * from book where b_publisher like ? order by b_publisher) s) where idx >= ? and idx <= ?";
+
+				
 		//카테고리 검색?
 		public static final String BOOK_SELECT_BY_CLASS
 		="select * from book where b_class like ?";
