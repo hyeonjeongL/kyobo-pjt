@@ -17,9 +17,8 @@
 		response.sendRedirect("review_Id_list.jsp?pageno="+pageno);
 		return;
 	}
-	ReviewService reviewService = new ReviewService();
-	Review review=reviewService.reviewSelectNo(r_no);
-	if(r_no==null){
+	Review review = ReviewService.getInstance().reviewSelectNo(r_no);
+	if(review==null){
 		response.sendRedirect("review_Id_list.jsp?pageno="+pageno);
 		return;
 	}
@@ -119,7 +118,7 @@
 										onClick="reviewCreateGo()"> &nbsp; 
 										<input type="button" value="댓글쓰기" onClick="reviewReplyCreate()"> &nbsp; 
 										<input type="button" value="수정" onClick="boardUpdate()"> &nbsp; 
-										<input type="button" value="삭제" onClick="boardRemove()"> &nbsp; 
+										<input type="button" value="삭제" onClick="reviewRemove()"> &nbsp; 
 										<input type="button" value="리스트" onClick="reviewList()"></td>
 								</tr>
 							</table></td>

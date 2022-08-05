@@ -6,7 +6,7 @@
     pageEncoding="UTF-8"%>
 
 <%
-
+String u_id = (String)session.getAttribute("sUserId");
 	//String u_id = "jihun";
 
 	if(request.getMethod().equalsIgnoreCase("GET")){
@@ -44,8 +44,7 @@
 	String r_title = request.getParameter("r_title");
 	String r_contents = request.getParameter("r_contents");
 	String r_grade = request.getParameter("r_grade");
-	String u_id = request.getParameter("u_id");
-	//String od_no = request.getParameter("od_no");
+	//String u_id = request.getParameter("u_id");
 	String od_no = request.getParameter("od_no");
 	ReviewService reviewService = new ReviewService();
 	

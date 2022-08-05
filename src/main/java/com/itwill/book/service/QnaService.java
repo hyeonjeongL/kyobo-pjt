@@ -49,12 +49,12 @@ public class QnaService {
 	}
 
 	// 회원 아이디로 리뷰 조회 - 마이페이지
-	public List<Qna> reviewSelectByUserId(String u_id, int start, int last) throws Exception {
+	public List<Qna> selectById(String u_id, int start, int last) throws Exception {
 		return qnaDao.selectById(u_id, start, last);
 	}
 
 	//게시물 리스트
-	public QnaPageMakerDto findReviewBookList(String u_id, int currentPage) throws Exception{
+	public QnaPageMakerDto selectAll(int currentPage) throws Exception{
 		//1.전체글의 갯수
 		int totalRecordCount = qnaDao.QnaCountAll(); // 다시확인
 		//2.paging계산(PageMaker 유틸클래스)

@@ -26,6 +26,9 @@ public class ReviewSQL {
 	//책 번호로 리뷰조회
 	public static final String SELECT_REVIEW_B_NO = "select * from review r join orderdetail od on r.od_no = od.od_no where od.b_no=?";
 	
+	//상품페이지에서 해당 상품의 리뷰 전체 조회
+	public static final String SELECT_REVIEW_B_NO_PAGE = "select aa.* from(select rownum idx, a.* from (select * from review r join orderdetail od on r.od_no = od.od_no where od.b_no=? order by r_groupno desc, r_step asc) a) aa where aa.idx >=? and aa.idx <=?";
+	
 	//회원 아이디로 리뷰조회
 	public static final String SELECT_REVIEW_U_ID = "select * from review where u_id=?";
 	

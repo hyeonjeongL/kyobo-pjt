@@ -14,7 +14,7 @@ public class BookDaoTest {
 		
 		//전체리스트
 		System.out.println("1.리스트");
-		System.out.println(bookDao.selectList());
+		//System.out.println(bookDao.selectList());
 		/* 전체 리스트
 		 * ArrayList<Book> totBookList = bookDao.getBookList(); for (Book book :
 		 * totBookList) { System.out.println(book); }

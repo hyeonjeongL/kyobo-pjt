@@ -34,11 +34,12 @@ public class BookService {
 	}
 	
 	//리스트
+	/*
 	public List<Book> selectList()throws Exception{
 		List<Book> bookList= bookDao.selectList();
 		return bookList;
 	}
-
+*/
 	//번호검색
 	public Book selectByNo(int b_no)throws Exception{
 		Book book= bookDao.selectByNo(b_no);

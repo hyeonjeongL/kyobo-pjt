@@ -5,16 +5,17 @@
 <%@page import="com.itwill.book.service.UserInfoService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@include file="login_check.jspf"%>
 <%
 //String u_id="enbi";
 
-String sUserId = (String)session.getAttribute("sUserId");
-if(sUserId == null){
+String u_id = (String)session.getAttribute("sUserId");
+if(u_id == null){
 	response.sendRedirect("kyobo_main.jsp");
 }
-
-
 ReviewService reviewService = new ReviewService();
+
+
 
 
 %> 
