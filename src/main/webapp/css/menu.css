@@ -1,10 +1,11 @@
-@import url("cart.css");
+
 div#header {
 	all: unset; 
 	background-color: #F3F2ED;
 }
 
 div#header h1 {
+	
 	height: 80px;
 	line-height: 80px;
 	margin: 0px 0 0 0;
@@ -12,10 +13,14 @@ div#header h1 {
 	background: #fff url('../image/library.jpg');
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: 100%
+	background-size: 100%;
+	margin-bottom: 10px;
+	
 }
+
+
 div#header #menu {
-	margin-top:10px; 
+	margin-top:3px; 
 }
 
 #menu ul {
@@ -40,7 +45,6 @@ div#header #menu {
 
 #menu li a {
 	display: block;
-	color: white;
 	text-align: center;
 	padding: 10px 16px 20px 16px;
 	text-decoration: none;
@@ -49,14 +53,7 @@ div#header #menu {
 	background-color: #4CAF50;
 }
 
-#menu li#logo {
-	width: 80px;
-	background: url('../image/kyobologo.GIF');
-	background-position: left;
-	background-size: 110%;
-	background-repeat: no-repeat;
-	opacity: 0.8;
-}
+
 #menu li#logo:hover{
 	opacity: 1;
 }
@@ -81,4 +78,38 @@ div#header #menu {
 }
 #menu limypage:hover{
 	opacity: 1;
+}
+
+#sub_menu ul {
+	list-style-type: none;
+	margin: 10px 0px 0px 0px;
+	padding: 0;
+	width: 300px;
+	margin: 0px auto 0px auto;
+}
+#sub_menu ul:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+#sub_menu li{
+	width: 25%;
+	float: left;
+}
+
+#sub_menu li a {
+	display: block;
+	text-align: center;
+	padding: 5px 5px 5px 5px;
+	text-decoration: none;
+	color: #000;
+	font-size: 9pt;
+	font-weight: 900;
+	opacity: 1;
+}
+
+#sub_menu li a:hover {
+	color: #222;
+    font-weight: bold;
+	opacity: 0.8
 }

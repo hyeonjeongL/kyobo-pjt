@@ -29,7 +29,7 @@
 <link rel=stylesheet href="css/styles.css" type="text/css">
 <link rel=stylesheet href="css/menu.css" type="text/css">
 <link rel=stylesheet href="css/shop.css" type="text/css">
-
+<script type="text/javascript" src="js/qna.js"></script>
 <style type="text/css" media="screen">
 </style>
 </head>
@@ -81,7 +81,7 @@
 									%>
 									<tr>
 										<td width=280 bgcolor="ffffff" style="padding-left: 10px" align="left">
-										<a href='review_view.jsp?r_no=<%=qna.getQ_no()%>&pageno=<%=qnalistPage.pageMaker.getCurPage()%>'>
+										<a href='qna_view.jsp?q_no=<%=qna.getQ_no()%>&pageno=<%=qnalistPage.pageMaker.getCurPage()%>'>
 										<%=qna.getQ_title()%>
 										</a>
 										</td>
@@ -102,10 +102,10 @@
 									<td align="center">
 							     
 										 <%if(qnalistPage.pageMaker.getPrevGroupStartPage()>0) {%>    
-										    <a href="./review_Id_list.jsp?pageno=1">◀◀</a>&nbsp;
+										    <a href="./qna_list.jsp?pageno=1">◀◀</a>&nbsp;
 										 <%}%>
 										 <%if(qnalistPage.pageMaker.getPrevPage()>0) {%>    
-											<a href="./review_Id_list.jsp?pageno=<%=qnalistPage.pageMaker.getPrevPage()%>">◀</a>&nbsp;&nbsp;
+											<a href="./qna_list.jsp?pageno=<%=qnalistPage.pageMaker.getPrevPage()%>">◀</a>&nbsp;&nbsp;
 										 <%}%>
 										
 										<%
@@ -114,18 +114,18 @@
 										%>
 										 <font color='red'><strong><%=i%></strong></font>&nbsp;
 										<%} else {%>
-										<a href="./review_Id_list.jsp?pageno=<%=i%>"><strong><%=i%></strong></a>&nbsp;
+										<a href="./qna_list.jsp?pageno=<%=i%>"><strong><%=i%></strong></a>&nbsp;
 										<%
 										   }
 										  }%>
 										  
 										  
 										 <%if(qnalistPage.pageMaker.getCurPage()< qnalistPage.pageMaker.getTotPage()){%>
-										  <a href="./review_Id_list.jsp?pageno=<%=qnalistPage.pageMaker.getNextPage()%>">▶&nbsp;</a>
+										  <a href="./qna_list.jsp?pageno=<%=qnalistPage.pageMaker.getNextPage()%>">▶&nbsp;</a>
 										 <%}%>
 										 <%if(qnalistPage.pageMaker.getNextGroupStartPage()< qnalistPage.pageMaker.getTotPage()){%>
 										<a
-										href="./review_Id_list.jsp?pageno=<%=qnalistPage.pageMaker.getTotPage()%>">▶▶</a>&nbsp;
+										href="./qna_list.jsp?pageno=<%=qnalistPage.pageMaker.getTotPage()%>">▶▶</a>&nbsp;
 										 <%}%>
 									</td>
 								</tr>
@@ -134,6 +134,15 @@
 					</tr>
 				</table>
 								
+								<table border=0 cellpadding=0 cellspacing=1 style="align: center;">
+								<tr>
+									<td align=center>
+									<input type="button" value="글쓰기" onclick="qnaCreateGo()"> &nbsp; 
+									<input type="button" value="메인" onClick="mainGo()">
+									
+									</td>
+								</tr>
+							</table>
 				
 			<!-- include_content.jsp end-->
 			<!-- content end -->
