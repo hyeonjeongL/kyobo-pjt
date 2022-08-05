@@ -19,7 +19,7 @@ if (pageNo == null || pageNo.equals("")) {
 }
 
 	
-	ReviewBookListPageMakerDto reviewlistPage = new ReviewService().findReviewBookList(sUserId, Integer.parseInt(pageNo));
+	ReviewBookListPageMakerDto reviewlistPage = new ReviewService().findReviewIdList(sUserId, Integer.parseInt(pageNo));
 	
 %>
 <!DOCTYPE html>

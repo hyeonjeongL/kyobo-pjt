@@ -13,9 +13,7 @@ function reviewCreateGo(){
 	location.href='review_insert_form.jsp';
 }
 
-function reviewReplyCreate(){
-	location.href='review_reply_insert_form.jsp';
-}
+
 
 function reviewCreate() { 
 		if (f.r_title.value == "") {
@@ -45,19 +43,25 @@ function reviewCreate() {
 	}
 	
 function reviewReplyCreate() {
-		if (f.title.value == "") {
+		document.f.action = "review_reply_insert_form.jsp";
+		document.f.method='POST';
+		document.f.submit();
+	}
+	
+function reviewReplayCreate() {
+		if (f.r_title.value == "") {
 			alert("제목을 입력하십시요.");
-			f.title.focus();
+			f.r_title.focus();
 			return false;
 		}
-		if (f.writer.value == "") {
+		if (f.u_id.value == "") {
 			alert("작성자를 입력하십시요.");
-			f.writer.focus();
+			f.u_id.focus();
 			return false;
 		}
-		if (f.content.value == "") {
+		if (f.r_contents.value == "") {
 			alert("내용을 입력하십시요.");
-			f.content.focus();
+			f.r_contents.focus();
 			return false;
 		}
 		f.action = "review_reply_insert_action.jsp";

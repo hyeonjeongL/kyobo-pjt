@@ -17,9 +17,8 @@
 		response.sendRedirect("review_Id_list.jsp?pageno="+pageno);
 		return;
 	}
-	ReviewService reviewService = new ReviewService();
-	Review review=reviewService.reviewSelectNo(r_no);
-	if(r_no==null){
+	Review review = ReviewService.getInstance().reviewSelectNo(r_no);
+	if(review==null){
 		response.sendRedirect("review_Id_list.jsp?pageno="+pageno);
 		return;
 	}

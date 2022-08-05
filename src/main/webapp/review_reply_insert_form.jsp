@@ -5,7 +5,7 @@
 <%
 	//댓글의 대상글번호를 읽어서 변수에 저장
 	if(request.getParameter("r_no")==null){
-		response.sendRedirect("kyobo_main.jsp"); //바꾸기
+		//response.sendRedirect("kyobo_main.jsp"); //바꾸기
 		return;
 	}
 	int r_no = Integer.parseInt(request.getParameter("r_no"));
