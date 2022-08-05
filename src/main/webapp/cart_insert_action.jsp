@@ -6,7 +6,13 @@
 <%@include file="login_check.jspf"%>
 
 <%
-String u_id = "hunjeong";
+
+if(request.getMethod().equalsIgnoreCase("GET")){
+	response.sendRedirect("kyobo_main");
+	return;
+}
+
+String u_id = (String) session.getAttribute("sUserId");
 
 String c_noStr = request.getParameter("c_no");
 String c_qty = request.getParameter("c_qty");

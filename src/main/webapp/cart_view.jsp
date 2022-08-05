@@ -110,9 +110,9 @@ List<Cart> cartList = cartService.getCartList(u_id);
 				if (cart_item_no_check_list.item(i).checked === true) {
 					document.cart_view_form.innerHTML += "<input type='hidden' name='cart_item_no' value='"+ cart_item_no_check_list.item(i).value + "'>";
 					var updateFormId='cart_update_form_'+ cart_item_no_check_list.item(i).value;
-					var cart_qty=document.getElementById(updateFormId).cart_qty.value;
+					var c_qty=document.getElementById(updateFormId).c_qty.value;
 					var cart_product_unit_price=document.getElementById(updateFormId).cart_product_unit_price.value;
-					tot_order_price+=cart_qty*cart_product_unit_price;
+					tot_order_price+=c_qty*cart_product_unit_price;
 					cart_item_check_selected_count++;
 				}
 			}
@@ -237,17 +237,7 @@ List<Cart> cartList = cartService.getCartList(u_id);
 											<form id="cart_delete_item_form_<%=cart.getC_no()%>">
 												<input type="hidden" name="c_no"
 													value="<%=cart.getC_no()%>"> <a
-													href="javascript:cart_delete_item_action('cart_delete_item_form_<%=cart.getC_no()%>');">
-													<svg xmlns="http://www.w3.org/2000/svg" width="15"
-														height="15" viewBox="0 0 28 28" class="icon--close">
-													<g fill="none" fill-rule="evenodd"> <path
-														d="M0 0H28V28H0z"></path> <g fill="#9B9BA0"
-														transform="translate(6 6)" class="icon--close__group">
-													<rect width="2" height="18" x="7" y="-1" rx="1"
-														transform="rotate(-135 8 8)"></rect> <rect width="2"
-														height="18" x="7" y="-1" rx="1"
-														transform="rotate(-45 8 8)"></rect> </g> </g> </svg>
-												</a>
+													href="javascript:cart_delete_item_action('cart_delete_item_form_<%=cart.getC_no()%>');">삭제</a>
 											</form>
 
 										</td>
