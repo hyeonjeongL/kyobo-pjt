@@ -8,7 +8,7 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="login_check.jspf"%>
 <%
-
+sUserId = (String) session.getAttribute("sUserId");
 OrderService orderService = new OrderService();
 List<Orders> orderList = orderService.list(sUserId);
 %>
@@ -24,8 +24,8 @@ List<Orders> orderList = orderService.list(sUserId);
 </style>
 <script type="text/javascript">
 	function order_delete_all_action(){
-		document.order_delete_all_form.action='order_delete_all_action.jsp';
 		document.order_delete_all_form.method='POST';
+		document.order_delete_all_form.action='order_delete_all.jsp';
 		document.order_delete_all_form.submit();
 	}
 </script>
@@ -62,7 +62,7 @@ List<Orders> orderList = orderService.list(sUserId);
 							<table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
-									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>쇼핑몰 -
+									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>교보문고-
 											주문 목록</b></td>
 								</tr>
 							</table> <!--form-->

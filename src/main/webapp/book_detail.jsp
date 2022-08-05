@@ -72,9 +72,9 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 		location.href = 'book_list.jsp';
 	}
 	function reviewGo(){
-        document.f.action = "review_book_list.jsp";
-        document.f.method='POST';
-        document.f.submit();
+        document.book_detail_form.action = "review_book_list.jsp";
+        document.book_detail_form.method='POST';
+        document.book_detail_form.submit();
   }
 </script>
 </head> 
@@ -150,7 +150,6 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 												<option value="10">10
 											</select> 권<br><br> 
 												<input type=submit value="장바구니 이동" /><br><br> 
-												<input type=button onclick="add_cart_popup_window();" value="[계속쇼핑팝업]" />
 												<input type="hidden" name=b_no value="<%=book.getB_no()%>">
 										</form>
 									</td>

@@ -11,7 +11,7 @@
 String pageno=request.getParameter("pageno");
 if(pageno==null||pageno.equals("")){
 	pageno="1";
-}	
+}
 
 //게시물조회
 
@@ -53,7 +53,7 @@ if(pageno==null||pageno.equals("")){
 			<!-- content start -->
 			<!-- include_content.jsp start-->
 			<div id="content">
-					<table border=0 cellpadding=0 cellspacing=0>
+
 					<tr>
 						<td><br />
 							<table style="padding-left: 10px" border=0 cellpadding=0
@@ -71,7 +71,7 @@ if(pageno==null||pageno.equals("")){
 									</td>
 								</tr>
 							</table> <br /> <!-- list -->
-							<form name="f" method="post" action="">
+							<form name="f" method="POST" action="">
 								<table border="0" cellpadding="0" cellspacing="1" width="590"
 									bgcolor="BBBBBB">
 
@@ -144,7 +144,6 @@ if(pageno==null||pageno.equals("")){
 										 <%}%>
 									</td>
 								</tr>
-					</tr>
 				</table>
 			</div>
 			<!-- include_content.jsp end-->
