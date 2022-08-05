@@ -60,7 +60,12 @@ public class CartService {
 	public int cartDeleteAll (String u_id) throws Exception{
 		return cartDao.cartDeleteAll(u_id);
 	}
-	
+	/*
+	 * orderInsert 사용
+	 */
+	public Cart cartListOrder (int c_no)throws Exception{
+		return cartDao.cartListOrder(c_no);
+	}
 
 
 }
