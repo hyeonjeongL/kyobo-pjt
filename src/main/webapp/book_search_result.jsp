@@ -81,8 +81,8 @@ PageMakerDto<Book> listPage = null;
 					
 					<h1 align="center">검색 결과가 없습니다.</h1>
 					<br>
-					<div class="">
-					<input class="back" type="button" value="돌아가기" onclick="window.history.back()" style="width:75px;height:27px">
+					<div class="book-detail-button">
+					&nbsp;&nbsp;<button onclick="location.href='book_search_form.jsp'">돌아가기</button>
 					</div>
 					<%
 					} else {
