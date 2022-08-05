@@ -4,11 +4,11 @@
 <%@page import="com.itwill.book.service.OrderService"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="java.text.SimpleDateFormat"%>
-<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="login_check.jspf"%>
 <%
+
 OrderService orderService = new OrderService();
 List<Orders> orderList = orderService.list(sUserId);
 %>
