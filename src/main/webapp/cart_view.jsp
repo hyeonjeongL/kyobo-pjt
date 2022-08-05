@@ -106,6 +106,8 @@ List<Cart> cartList = cartService.getCartList(u_id);
 			var cart_item_check_selected_count = 0;
 			document.cart_view_form.innerHTML ='';
 			document.cart_view_form.innerHTML +="<input type='hidden' name='buyType'>";
+			
+			
 			var tot_order_price=0;
 			for (var i = 0; i < cart_item_no_check_list.length; i++) {
 				if (cart_item_no_check_list.item(i).checked === true) {
@@ -115,10 +117,23 @@ List<Cart> cartList = cartService.getCartList(u_id);
 					var cart_product_unit_price=document.getElementById(updateFormId).cart_product_unit_price.value;
 					tot_order_price+=c_qty*cart_product_unit_price;
 					cart_item_check_selected_count++;
+					
 				}
 			}
+			
+			if(1<tot_order_price && tot_order_price<50000){
+				deli_price=2500;
+				tot_order_price=tot_order_price+deli_price;
+			}else{
+				deli_price=0;
+				tot_order_price=tot_order_price+deli_price;
+				
+			}
+			
+			var tot_order_price_deli=tot_order_price+deli_price;
 			document.getElementById('cart_item_select_count').innerHTML = cart_item_check_selected_count;
 			document.getElementById('tot_order_price').innerHTML = tot_order_price.toLocaleString();
+			document.getElementById('tot_order_price_deli').innerHTML = tot_order_price_deli.toLocaleString();
 			
 	}
 	/*
@@ -260,8 +275,8 @@ List<Cart> cartList = cartService.getCartList(u_id);
 										<td width=640 colspan=6 height=26 class=t1 bgcolor="ffffff">
 											<p align=right>
 												<br /> 
-												<font color='red'>총주문금액 : <span id="tot_order_price"><%=new DecimalFormat("#,##0").format(tot_price)%></span> 원</font><br>
-												<font color='red'>(+) 배송비 : <span id="deli_price"><%=new DecimalFormat("#,##0").format(deli_price)%></span> 원</font>
+												<font color='red'>총 주문 금액 : <span id="tot_order_price"><%=new DecimalFormat("#,##0").format(tot_price)%></span> 원</font><br>
+												<font color='red'>(+) 배송비 : <span id="deli_price" name=:"deli_price"><%=new DecimalFormat("#,##0").format(deli_price)%></span> 원</font>
 											</p>
 										</td>
 									</tr>
@@ -269,7 +284,7 @@ List<Cart> cartList = cartService.getCartList(u_id);
 										<td width=640 colspan=6 height=26 class=t1 bgcolor="ffffff">
 											<p align=right>
 												<br /> 
-												<font color='red' >총결제금액 : <span id="tot_order_price"><%=new DecimalFormat("#,##0").format(tot_price+deli_price)%></span> 원</font>
+												<font color='red' size=4>총 결제 금액 : <span id="tot_order_price_deli"><%=new DecimalFormat("#,##0").format(tot_price+deli_price)%></span> 원</font>
 											</p>
 										</td>
 									</tr>
