@@ -73,7 +73,7 @@ public class ReviewDaoTest {
 		Review findReview = new Review(0, null, null, 0, null, null, 
 				new OrderDetail(0, 0, 0, 
 						new Book(1, null, null, 0, null, null, null, null)), 0, 0, 0);
-		reviewBookList = reviewDao.reviewSelectByBookNo(findReview);
+		//reviewBookList = reviewDao.reviewSelectByBookNo(findReview);
 		for (Review review : reviewBookList) {
 			System.out.println("책 번호 조회 : "+review);
 		}
