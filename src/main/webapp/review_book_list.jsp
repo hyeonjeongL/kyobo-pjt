@@ -120,10 +120,10 @@ b_no="2";
 									<td align="center">
 							     
 										 <%if(reviewBooklistPage.pageMaker.getPrevGroupStartPage()>0) {%>    
-										    <a href="./review_Id_list.jsp?pageno=1">◀◀</a>&nbsp;
+										    <a href="./review_book_list.jsp?pageno=1">◀◀</a>&nbsp;
 										 <%}%>
 										 <%if(reviewBooklistPage.pageMaker.getPrevPage()>0) {%>    
-											<a href="./review_Id_list.jsp?pageno=<%=reviewBooklistPage.pageMaker.getPrevPage()%>">◀</a>&nbsp;&nbsp;
+											<a href="./review_book_list.jsp?pageno=<%=reviewBooklistPage.pageMaker.getPrevPage()%>">◀</a>&nbsp;&nbsp;
 										 <%}%>
 										
 										<%
@@ -132,18 +132,18 @@ b_no="2";
 										%>
 										 <font color='red'><strong><%=i%></strong></font>&nbsp;
 										<%} else {%>
-										<a href="./review_Id_list.jsp?pageno=<%=i%>"><strong><%=i%></strong></a>&nbsp;
+										<a href="./review_book_list.jsp?pageno=<%=i%>"><strong><%=i%></strong></a>&nbsp;
 										<%
 										   }
 										  }%>
 										  
 										  
 										 <%if(reviewBooklistPage.pageMaker.getCurPage()< reviewBooklistPage.pageMaker.getTotPage()){%>
-										  <a href="./review_Id_list.jsp?pageno=<%=reviewBooklistPage.pageMaker.getNextPage()%>">▶&nbsp;</a>
+										  <a href="./review_book_list.jsp?pageno=<%=reviewBooklistPage.pageMaker.getNextPage()%>">▶&nbsp;</a>
 										 <%}%>
 										 <%if(reviewBooklistPage.pageMaker.getNextGroupStartPage()< reviewBooklistPage.pageMaker.getTotPage()){%>
 										<a
-										href="./review_Id_list.jsp?pageno=<%=reviewBooklistPage.pageMaker.getTotPage()%>">▶▶</a>&nbsp;
+										href="./review_book_list.jsp?pageno=<%=reviewBooklistPage.pageMaker.getTotPage()%>">▶▶</a>&nbsp;
 										 <%}%>
 									</td>
 								</tr>
