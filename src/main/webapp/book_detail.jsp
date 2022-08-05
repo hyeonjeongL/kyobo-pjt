@@ -150,7 +150,6 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 												<option value="10">10
 											</select> 권<br><br> 
 												<input type=submit value="장바구니 이동" /><br><br> 
-												<input type=button onclick="add_cart_popup_window();" value="[계속쇼핑팝업]" />
 												<input type="hidden" name=b_no value="<%=book.getB_no()%>">
 										</form>
 									</td>
