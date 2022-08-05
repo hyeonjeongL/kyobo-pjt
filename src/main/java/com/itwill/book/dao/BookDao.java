@@ -351,7 +351,7 @@ public class BookDao {
 		return bookList;
 	}
 	
-	//통합 검색(제목, 저자, 분야)
+	//통합 검색(제목, 저자, 분야, 출판사)
 	public ArrayList<Book> selectByAll(String keyword) throws Exception {
 		ArrayList<Book> bookList = new ArrayList<Book>();
 		Connection conn = null;
@@ -363,6 +363,7 @@ public class BookDao {
 			pstmt.setString(1, "%" + keyword + "%");
 			pstmt.setString(2, "%" + keyword + "%");
 			pstmt.setString(3, "%" + keyword + "%");
+			pstmt.setString(4, "%" + keyword + "%");
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				Book book = new Book(rs.getInt("b_no"), rs.getString("b_class"), rs.getString("b_name"), rs.getInt("b_price"),
@@ -380,7 +381,7 @@ public class BookDao {
 		
 		return bookList;
 	}
-	//통합 검색(제목, 저자, 분야) 페이지
+	//통합 검색(제목, 저자, 분야, 출판사) 페이지
 	public ArrayList<Book> selectByAll(String keyword, int start, int last) throws Exception {
 		ArrayList<Book> bookList = new ArrayList<Book>();
 		Connection conn = null;
@@ -392,8 +393,9 @@ public class BookDao {
 			pstmt.setString(1, "%" + keyword + "%");
 			pstmt.setString(2, "%" + keyword + "%");
 			pstmt.setString(3, "%" + keyword + "%");
-			pstmt.setInt(4, start);
-			pstmt.setInt(5, last);
+			pstmt.setString(4, "%" + keyword + "%");
+			pstmt.setInt(5, start);
+			pstmt.setInt(6, last);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				Book book = new Book(rs.getInt("b_no"), rs.getString("b_class"), rs.getString("b_name"), rs.getInt("b_price"),

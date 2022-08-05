@@ -4,10 +4,10 @@ public class BookSQL {
 	
 	//통합 검색(제목,저자,카테고리)
 	public static final String BOOK_SELECT_ALL
-	="select * from book where b_name like ? or b_author like ? or b_class like ?";
+	="select * from book where b_name like ? or b_author like ? or b_class like ? b_publisher like ?";
 
 	public static final String BOOK_SELECT_ALL_LIST
-	="select * from (select rownum idx, s.* from (select * from book where b_name like ? or b_author like ? or b_class like ? order by b_name) s) where idx >= ? and idx <= ?";
+	="select * from (select rownum idx, s.* from (select * from book where b_name like ? or b_author like ? or b_class like ? or b_publisher like ? order by b_name) s) where idx >= ? and idx <= ?";
 
 		//제목 검색
 		public static final String BOOK_SELECT_BY_NAME

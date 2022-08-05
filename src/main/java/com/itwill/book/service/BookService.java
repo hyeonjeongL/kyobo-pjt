@@ -93,7 +93,7 @@ public class BookService {
 	}
 	//출판사 검색 페이지
 	public PageMakerDto<Book> selectByPublisher(String keyword, int currentPage) throws Exception {
-		int totRecordCount = bookDao.selectByClass(keyword).size();
+		int totRecordCount = bookDao.selectByPublisher(keyword).size();
 		PageMaker pageMaker = new PageMaker(totRecordCount, currentPage, 3, 5);
 		List<Book> bookList = bookDao.selectByPublisher(keyword, pageMaker.getPageBegin(), pageMaker.getPageEnd());		
 		PageMakerDto<Book> pageMakerBookList = new PageMakerDto<Book>(bookList, pageMaker, totRecordCount);
