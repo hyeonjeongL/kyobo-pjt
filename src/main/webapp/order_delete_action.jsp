@@ -13,7 +13,7 @@
                      		response.sendRedirect("order_list.jsp");
                      		return;
                      	}
-                     	String j_noStr=request.getParameter("o_no");
+                     	String j_noStr=request.getParameter("j_no");
                      	OrderService orderService=new OrderService();
                      	orderService.DeleteByOrderNo(Integer.parseInt(j_noStr));
                      	response.sendRedirect("order_list.jsp");

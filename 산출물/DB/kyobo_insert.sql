@@ -118,12 +118,12 @@ insert into orders values(orders_O_no_SEQ.nextval, sysdate, 14000, 'hunjeong');
 
 --orderdetail insert
 
-insert into orderdetail values(orderdetail_od_no_SEQ.nextval, 1, orders_o_no_seq.currval, 1);
-insert into orderdetail values(orderdetail_od_no_SEQ.nextval, 1, orders_o_no_seq.currval, 2);
-insert into orderdetail values(orderdetail_od_no_SEQ.nextval, 1, orders_o_no_seq.currval, 3);
-insert into orderdetail values(orderdetail_od_no_SEQ.nextval, 1, orders_o_no_seq.currval, 4);
-insert into orderdetail values(orderdetail_od_no_SEQ.nextval, 1, orders_o_no_seq.currval, 5);
-insert into orderdetail values(orderdetail_od_no_SEQ.nextval, 1, orders_o_no_seq.currval, 6);
+insert into orderdetail values(orderdetail_od_no_SEQ.nextval, 1, 1, 1);
+insert into orderdetail values(orderdetail_od_no_SEQ.nextval, 1, 2, 2);
+insert into orderdetail values(orderdetail_od_no_SEQ.nextval, 1, 3, 3);
+insert into orderdetail values(orderdetail_od_no_SEQ.nextval, 1, 4, 4);
+insert into orderdetail values(orderdetail_od_no_SEQ.nextval, 1, 5, 5);
+insert into orderdetail values(orderdetail_od_no_SEQ.nextval, 1, 6, 6);
 
 --eorder insert
 
