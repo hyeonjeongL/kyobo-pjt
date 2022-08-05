@@ -4,7 +4,7 @@
 <%@page import="com.itwill.book.service.BookService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- <%@include file="login_check.jspf"%>
+ <%--<%@include file="login_check.jspf"%>--%>
 <%
 String b_noStr=request.getParameter("b_no");
 if(b_noStr==null||b_noStr.equals("")){

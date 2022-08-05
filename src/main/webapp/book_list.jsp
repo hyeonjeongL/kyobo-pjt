@@ -5,7 +5,7 @@
 <%@page import="com.itwill.book.service.BookService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@include file="login_check.jspf"%>
+<%-- <%@include file="login_check.jspf"%>--%>
 
 <%
 	//1.요청페이지번호	

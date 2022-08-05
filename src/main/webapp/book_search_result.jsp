@@ -82,7 +82,7 @@ PageMakerDto<Book> listPage = null;
 					<h1 align="center">검색 결과가 없습니다.</h1>
 					<br>
 					<div class="">
-					<input class="back" type="button" value="돌아가기" onclick="window.history.back()">
+					<input class="back" type="button" value="돌아가기" onclick="window.history.back()" style="width:75px;height:27px">
 					</div>
 					<%
 					} else {
@@ -123,7 +123,7 @@ if(i%book_column_size==0){
 <p><img width="63px" height="95px" src='image/<%=book.getB_image()%>.jpg' border="0"></a><br> 
 										 <b>[<%=book.getB_class()%>]</b><br> 
 											<b><%=book.getB_name()%></b><br> 
-											저&nbsp;자&nbsp;:&nbsp;<%=book.getB_author()%><br> 
+											저자&nbsp;:&nbsp;<%=book.getB_author()%><br> 
 											출판사&nbsp;:&nbsp;<%=book.getB_publisher()%><br> 
 <font color="#FF0000"><%=new DecimalFormat("#,##0").format(book.getB_price())%>원</p>
 </font></td>
