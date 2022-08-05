@@ -84,7 +84,7 @@ div#header #menu {
 	list-style-type: none;
 	margin: 10px 0px 0px 0px;
 	padding: 0;
-	width: 300px;
+	width: 600px;
 	margin: 0px auto 0px auto;
 }
 #sub_menu ul:after {
@@ -93,7 +93,7 @@ div#header #menu {
 	clear: both;
 }
 #sub_menu li{
-	width: 25%;
+	width: 15%;
 	float: left;
 }
 
