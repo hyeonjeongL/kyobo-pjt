@@ -30,17 +30,21 @@ public class CartDao {
 	}
 	
 		//수량체크
-	public int cartBookCount (Cart cart) throws Exception{
+	public int cartBookCount (String u_id, int b_no) throws Exception{
 		Connection con = dataSource.getConnection();
 		PreparedStatement pstmt = con.prepareStatement(CartSQL.BOOK_COUNT_BY_ID_NO);
-		pstmt.setString(1, cart.getU_id());
-		pstmt.setInt(2, cart.getBook().getB_no());
-		
+		pstmt.setString(1, u_id);
+		pstmt.setInt(2, b_no);
+		int qty=0;
 		ResultSet rs = pstmt.executeQuery();
-		rs.next();
-		int book_count = rs.getInt("book_count");
+		if(rs.next()){
+			qty = rs.getInt("c_qty");
+		}
+		if(qty>=1) {
+			qty=1;
+		}
 		con.close();
-		return book_count;
+		return qty ;
 	}
 		
 		

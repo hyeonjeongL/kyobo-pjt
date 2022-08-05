@@ -227,7 +227,7 @@ public class BookDao {
 			List<Book> bookList = new ArrayList<Book>();
 
 			Connection con = dataSource.getConnection();
-			PreparedStatement pstmt = con.prepareStatement(BookSQL.BOOK_LIST);
+			PreparedStatement pstmt = con.prepareStatement(BookSQL.BOOK_LIST_PAGE);
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
 				Book book = new Book(rs.getInt("b_no"), rs.getString("b_class"), rs.getString("b_name"),
