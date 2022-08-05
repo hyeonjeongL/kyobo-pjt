@@ -30,7 +30,7 @@ public class BookService {
 		int totRecordCount = bookDao.getTotBookCount();
 		
 		// 페이지 계산
-		PageMaker pageMaker = new PageMaker(totRecordCount, currentPage, 3, 5);
+		PageMaker pageMaker = new PageMaker(totRecordCount, currentPage, 8, 5);
 		
 		// 게시물 데이터 얻기
 		List<Book> bookList = bookDao.getList(pageMaker.getPageBegin(), pageMaker.getPageEnd());

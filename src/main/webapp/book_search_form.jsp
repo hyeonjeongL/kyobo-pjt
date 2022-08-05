@@ -57,9 +57,9 @@ request.setCharacterEncoding("UTF-8");
 
 					<div class="container">
 						<div class="row">
-							<select data-trigger="" name="searchType">
-								<tr>
 									<td>
+							<select data-trigger="" name="searchType">
+								
 										<option value="all">통합</option>
 										<option value="name">제목</option>
 										<option value="author">저자</option>
