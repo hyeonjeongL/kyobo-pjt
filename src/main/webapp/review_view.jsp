@@ -137,6 +137,7 @@
 			<!-- include_common_bottom.jsp end-->
 		</div>
 	</div>
+	</div>
 	<!--container end-->
 </body>
 </html>

@@ -13,8 +13,9 @@ function reviewCreateGo(){
 	location.href='review_insert_form.jsp';
 }
 function reviewUpdateGo(){
-		location.href="review_modify_form.jsp";
-		
+		document.f.action ='review_modify_form.jsp';
+		document.f.method="POST";
+		document.f.submit();
 	}
 
 
@@ -90,9 +91,9 @@ function reviewReplayCreate() {
 			f.r_title.focus();
 			return false;
 		}
-		if (f.u_id.value == "") {
-			alert("작성자를 입력하십시요.");
-			f.u_id.focus();
+		if (f.r_grade.value == "") {
+			alert("평점을 입력하십시요.");
+			f.r_grade.focus();
 			return false;
 		}
 		if (f.r_contents.value == "") {

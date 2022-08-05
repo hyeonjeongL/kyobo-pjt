@@ -1,28 +1,48 @@
+<%@page import="com.itwill.book.dto.Book"%>
+<%@page import="com.itwill.book.dto.OrderDetail"%>
 <%@page import="com.itwill.book.service.ReviewService"%>
 <%@page import="com.itwill.book.dto.Review"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
 <%
+/*	
 String u_id = (String)session.getAttribute("sUserId");
+	String r_no = request.getParameter("r_no");
+	
+	Review review = new Review(Integer.parseInt(r_no),null,null,0 ,null,null,
+			new OrderDetail(0,0,0,new Book(0,null,null,0,null,null,null,null))
+			,0,0,0);
+	ReviewService reviewService = new ReviewService();
+	reviewService.reviewUpdateByNo(review);
+	
+	if (review == null) {
+		response.sendRedirect("review_Id_list.jsp");
+		return;
+	}
+
+	String pageno = "1";
+	if (request.getParameter("pageno") != null) {
+		pageno = request.getParameter("pageno");
+	}
+*/
+%>
+
+<%
 	Integer r_no = null;
 	try {
 		r_no = Integer.valueOf(request.getParameter("r_no"));
 	} catch (Exception ex) {
 	}
 	//글번호가 없다면
-	/********************/
-		r_no=1;	
-
-	/********************/
 	if (r_no == null) {
 		//목록으로 이동
-		response.sendRedirect("review_Id_list.jsp");
+		//response.sendRedirect("board_list.jsp");
 		return;
 	}
-	
 	Review review = ReviewService.getInstance().reviewSelectNo(r_no);
 	if (review == null) {
-		response.sendRedirect("review_Id_list.jsp");
+		//response.sendRedirect("board_list.jsp");
 		return;
 	}
 	String pageno = "1";
