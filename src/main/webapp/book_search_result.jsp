@@ -1,41 +1,39 @@
-<%@page import="com.itwill.book.dto.PageMakerDto"%>
-<%@page import="com.itwill.book.dao.BookDao"%>
-<%@page import="com.itwill.book.service.BookService"%>
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="com.itwill.book.dto.Book"%>
-<%@page import="java.util.ArrayList" %>
+<%@page import="com.itwill.book.service.BookService"%>
+<%@page import="com.itwill.book.dto.PageMakerDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%
-    request.setCharacterEncoding("UTF-8");
-    String searchType = request.getParameter("searchType");
-    String keyword = request.getParameter("keyword");
-    if(searchType==null|| searchType.equals("")){
-		response.sendRedirect("book_search_form.jsp");
-		return;
-	}
-   
-    String pageNo = request.getParameter("pageNo");
-	if (pageNo == null || pageNo.equals("")) {
-		pageNo = "1";
-	}
-	
-	PageMakerDto<Book> listPage = null;
-	
-	 if (searchType.equals("all")) {
-			listPage = new BookService().selectByAll(keyword, Integer.parseInt(pageNo));
-	    }
-	 if (searchType.equals("name")) {
-			listPage = new BookService().selectByName(keyword, Integer.parseInt(pageNo));
-	    }
-	 if (searchType.equals("author")) {
-			listPage = new BookService().selectByAuthor(keyword, Integer.parseInt(pageNo));
-	    }
-	 if (searchType.equals("class")) {
-			listPage = new BookService().selectByClass(keyword, Integer.parseInt(pageNo));
-	    }
-	
-    %>
-    
+	pageEncoding="UTF-8"%>
+<%
+request.setCharacterEncoding("UTF-8");
+String searchType = request.getParameter("searchType");
+String keyword = request.getParameter("keyword");
+if(searchType==null|| searchType.equals("")){
+	response.sendRedirect("book_search_form.jsp");
+	return;
+}
+
+String pageno = request.getParameter("pageno");
+if (pageno == null || pageno.equals("")) {
+	pageno = "1";
+}
+
+PageMakerDto<Book> listPage = null;
+
+ if (searchType.equals("all")) {
+		listPage = new BookService().selectByAll(keyword, Integer.parseInt(pageno));
+    }
+ if (searchType.equals("name")) {
+		listPage = new BookService().selectByName(keyword, Integer.parseInt(pageno));
+    }
+ if (searchType.equals("author")) {
+		listPage = new BookService().selectByAuthor(keyword, Integer.parseInt(pageno));
+    }
+ if (searchType.equals("class")) {
+		listPage = new BookService().selectByClass(keyword, Integer.parseInt(pageno));
+    }
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,7 +43,7 @@
 <link rel=stylesheet href="css/styles.css" type="text/css">
 <link rel=stylesheet href="css/menu.css" type="text/css">
 <link rel=stylesheet href="css/shop.css" type="text/css">
-
+ 
 <style type="text/css" media="screen">
 </style>
 </head>
@@ -70,6 +68,7 @@
 		<!-- wrapper start -->
 		<div id="wrapper">
 			<!-- content start -->
+
 			<!-- include_content.jsp start-->
 			<div id="content">
 				<div style="margin: 10px;">
@@ -86,65 +85,96 @@
 					} else {
 					%>
 						<table style="padding-left: 10px" border=0 cellpadding=0 cellspacing=0>
-							<tr>
-								<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp; <b>검색어와 일치하는 도서 목록</b>
-								</td>
+
+<tr>
+<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp; <b>검색어와 일치하는 도서 목록</b></td>
 							</tr>
 							<tr bgcolor="#FFFFFF">
 								<td height="20" class="t1" align="right" valign="bottom">♠ 총 <font color="#FF0000"><%=listPage.totRecordCount%></font>건 | 현재페이지( <font color="#FF0000"><%=listPage.pageMaker.getCurPage()%></font> / <font color="#0000FF"><%=listPage.pageMaker.getTotPage()%></font> )
 								</td>
-							</tr>
-						</table>
-					<div>
+
+</tr>
+</table>
+<div>
 					<div class="book-detail-button">
 					<button onclick="location.href='book_search_form.jsp'">돌아가기</button>
 					</div>
 					<form name="f" method="post">
-					        <%
-					            for (Book book : listPage.itemList) {
-					                if (book.getB_image() == null) {
-					                    book.setB_image("image/noimg.jpg");
-					                }
-					        %>
-					<hr>
-					    <table class='book-list'>
-					        <!-- 책정보 시작 -->
-					
-					        <tr>
-					            <td class='book-list-img' rowspan="4">
-					                <a href='book_detail.jsp?b_no=<%=book.getB_no()%>'>
-					                <img alt='bookcover' src='image/<%=book.getB_image()%>.jpg' width="60px" height="80px"></a>
-					                <input type="hidden" name="bookNo" value="<%=book.getB_no()%>">
-					            </td>
-					            <td class='book-td'><span class='bookcategory'>[<%=book.getB_class()%>]</span>&nbsp;&nbsp;&nbsp;<a href='book_detail.jsp?b_no=<%=book.getB_no()%>'><strong><%=book.getB_name()%></strong>
-					            </a></td>
-					        </tr>
-					        <tr>
-					            <td class='book-td'><strong>저자&nbsp;:&nbsp;</strong><%=book.getB_author()%>&nbsp;&nbsp; </td>
-					        </tr>
-					        <tr>
-					        <td class='book-td'><strong>출판사&nbsp;:&nbsp;</strong><%=book.getB_publisher()%>&nbsp;&nbsp; </td>
-					        </tr>
-					        <tr>
-					        <td class='book-td'><strong>가격&nbsp;:&nbsp;</strong><%=book.getB_price()%>&nbsp;&nbsp; </td>
-					        </tr>
-					        <tr>
-			<%}
-					        }%>		            <td class='book-td'>
-</div>
-	</div>
-	<!-- include_content.jsp end-->
-	<!-- content end -->
-	</div>
-	<!--wrapper end-->
-	<div id="footer">
-		<!-- include_common_bottom.jsp start-->
-		<jsp:include page="include_common_bottom.jsp" />
-		<!-- include_common_bottom.jsp end-->
-	</div>
+					   <table width="100%" align="center" border="0" cellpadding="10"
+									cellspacing="1" bgcolor="BBBBBB">
+<%
+int book_size=listPage.itemList.size();
+int book_column_size=4;
+int book_line_count=1;
+
+for(int i=0;i < listPage.itemList.size();i++){
+	Book book=listPage.itemList.get(i);
+%>
+<%
+if(i%book_column_size==0){
+%>
+<tr>
+<%}%> 
+
+<td align="center" width="25%"  bgcolor="ffffff">
+<a href="book_detail.jsp?b_no=<%=book.getB_no()%>">
+<img width="60px" height="80px" src='image/<%=book.getB_image()%>.jpg' border="0"></a><br />
+											<br /> <b>[<%=book.getB_class()%>]</b><br> 
+											<br /> <b><%=book.getB_name()%></b><br> 
+<font color="#FF0000"><%=new DecimalFormat("#,##0").format(book.getB_price())%>원
+</font></td>
+<%if(i%book_column_size==3){%>
+</tr>
+<%}%>
+<%}%>
+</table>
+</form>
+<!-- 페이지 번호 리스트 -->
+			<table border="0" cellpadding="0" cellspacing="1" width="590">
+				<tr>
+					<td align="center">
+			     
+						<%if(listPage.pageMaker.getPrevGroupStartPage()>0) {%>    
+									    <a href="./book_search_result.jsp?pageno=1&searchType=<%=searchType%>&keyword=<%=keyword%>">◀◀</a>&nbsp;
+									 <%}%>
+									 <%if(listPage.pageMaker.getPrevPage()>0) {%>    
+										<a href="./book_search_result.jsp?pageno=<%=listPage.pageMaker.getPrevPage()%>&searchType=<%=searchType%>&keyword=<%=keyword%>">◀</a>&nbsp;&nbsp;
+									 <%}%>
+									
+									<%
+										for (int i = listPage.pageMaker.getBlockBegin(); i <= listPage.pageMaker.getBlockEnd(); i++) {
+									 	if (listPage.pageMaker.getCurPage() == i) {
+									%>
+									 <font color='blue'><strong><%=i%></strong></font>&nbsp;
+									<%} else {%>
+									<a href="./book_search_result.jsp?pageno=<%=i%>&searchType=<%=searchType%>&keyword=<%=keyword%>"><strong><%=i%></strong></a>&nbsp;
+									<%
+									   }
+									  }%>
+									  
+									  
+									 <%if(listPage.pageMaker.getCurPage() < listPage.pageMaker.getTotPage()){%>
+									  <a href="./book_search_result.jsp?pageno=<%=listPage.pageMaker.getNextPage()%>&searchType=<%=searchType%>&keyword=<%=keyword%>">▶&nbsp;</a>
+									 <%}%>
+									 <%if(listPage.pageMaker.getNextGroupStartPage()< listPage.pageMaker.getTotPage()){%>
+									<a href="./book_search_result.jsp?pageno=<%=listPage.pageMaker.getTotPage()%>&searchType=<%=searchType%>&keyword=<%=keyword%>">▶▶</a>&nbsp;
+									 <%}
+									 }%>
+					</td>
+				</tr>
+			</table> 
+			<!-- 페이지 번호 리스트 -->
+			</div>
+			<!-- include_content.jsp end-->
+			<!-- content end -->
+			</div>
+		<!--wrapper end-->
+		<div id="footer">
+			<!-- include_common_bottom.jsp start-->
+			<jsp:include page="include_common_bottom.jsp" />
+			<!-- include_common_bottom.jsp end-->
+		</div>
 	</div>
 	<!--container end-->
-
-
 </body>
 </html>

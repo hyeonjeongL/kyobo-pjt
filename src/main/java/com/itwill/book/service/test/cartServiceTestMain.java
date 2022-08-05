@@ -11,24 +11,24 @@ public class cartServiceTestMain {
 	public static void main(String[] args) throws Exception{
 		CartService cartService = new CartService();
 		
-		int book_count = cartService.addCart(new Cart(0,1,"jihun",
-							new Book(1, null, null, 0, null, null, null, null)));
+		int qty = cartService.addCart(new Cart(0,0,"jihun",
+							new Book(3, null, null, 0, null, null, null, null)));
 		
-		System.out.println(book_count);
+		System.out.println(qty);
 		
-		int deleteNoCount = cartService.cartDeleteByCNo(1);
-		System.out.println(deleteNoCount);
-		
-		int deleteAll = cartService.cartDeleteAll("hunjeong");
-		System.out.println(deleteAll);
-		
-		
-		List<Cart> cartList = cartService.getCartList("jihun");
-		System.out.println(cartList);
-		
-		int cartUpdateQty = cartService.cartUpdateQty(9,3);
-		System.out.println(cartUpdateQty);
-		
+//		int deleteNoCount = cartService.cartDeleteByCNo(1);
+//		System.out.println(deleteNoCount);
+//		
+//		int deleteAll = cartService.cartDeleteAll("hunjeong");
+//		System.out.println(deleteAll);
+//		
+//		
+//		List<Cart> cartList = cartService.getCartList("jihun");
+//		System.out.println(cartList);
+//		
+//		int cartUpdateQty = cartService.cartUpdateQty(9,3);
+//		System.out.println(cartUpdateQty);
+//		
 
 	}
 

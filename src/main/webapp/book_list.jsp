@@ -5,17 +5,15 @@
 <%@page import="com.itwill.book.service.BookService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%-- <%@include file="login_check.jspf"%>--%>
-<%
-BookService bookService =new BookService();
-List<Book> bookList= bookService.selectList();
-%>
+<%@include file="login_check.jspf"%>
+
 <%
 	//1.요청페이지번호	
 String pageno=request.getParameter("pageno");
 if(pageno==null||pageno.equals("")){
 	pageno="1";
 }	
+PageMakerDto<Book> bookList = new BookService().getBookList(Integer.parseInt(pageno));
 
 %>
 <!DOCTYPE html>
@@ -68,12 +66,12 @@ if(pageno==null||pageno.equals("")){
 <table width="100%" align="center" border="0" cellpadding="10"
 									cellspacing="1" bgcolor="BBBBBB">
 <%
-int book_size=bookList.size();
+int book_size=bookList.itemList.size();
 int book_column_size=4;
 int book_line_count=1;
 
-for(int i=0;i<bookList.size();i++){
-	Book book=bookList.get(i);
+for(int i=0;i < bookList.itemList.size();i++){
+	Book book=bookList.itemList.get(i);
 %>
 <%
 if(i%book_column_size==0){
@@ -93,9 +91,42 @@ if(i%book_column_size==0){
 <%}%>
 <%}%>
 </table>
-							</form> <br /></td>
-					</tr>
-				</table>
+</form>
+<!-- 페이지 번호 리스트 -->
+			<table border="0" cellpadding="0" cellspacing="1" width="590">
+				<tr>
+					<td align="center">
+			     
+						 <%if(bookList.pageMaker.getPrevGroupStartPage()>0) {%>    
+						    <a href="./book_list.jsp?pageno=1">◀◀</a>&nbsp;
+						 <%}%>
+						 <%if(bookList.pageMaker.getPrevPage()>0) {%>    
+							<a href="./book_list.jsp?pageno=<%=bookList.pageMaker.getPrevPage()%>">◀</a>&nbsp;&nbsp;
+						 <%}%>
+						
+						<%
+							for (int i = bookList.pageMaker.getBlockBegin(); i <= bookList.pageMaker.getBlockEnd(); i++) {
+						 	if (bookList.pageMaker.getCurPage() == i) {
+						%>
+						 <font color='blue'><strong><%=i%></strong></font>&nbsp;
+						<%} else {%>
+						<a href="./book_list.jsp?pageno=<%=i%>"><strong><%=i%></strong></a>&nbsp;
+						<%
+						   }
+						  }%>
+						  
+						  
+						 <%if(bookList.pageMaker.getCurPage() < bookList.pageMaker.getTotPage()){%>
+						  <a href="./book_list.jsp?pageno=<%=bookList.pageMaker.getNextPage()%>">▶&nbsp;</a>
+						 <%}%>
+						 <%if(bookList.pageMaker.getNextGroupStartPage()< bookList.pageMaker.getTotPage()){%>
+						<a
+						href="./book_list.jsp?pageno=<%=bookList.pageMaker.getTotPage()%>">▶▶</a>&nbsp;
+						 <%}%>
+					</td>
+				</tr>
+			</table> 
+			<!-- 페이지 번호 리스트 -->
 			</div>
 			<!-- include_content.jsp end-->
 			<!-- content end -->

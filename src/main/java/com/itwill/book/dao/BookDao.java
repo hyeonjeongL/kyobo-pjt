@@ -227,7 +227,7 @@ public class BookDao {
 			List<Book> bookList = new ArrayList<Book>();
 
 			Connection con = dataSource.getConnection();
-			PreparedStatement pstmt = con.prepareStatement(BookSQL.BOOK_LIST);
+			PreparedStatement pstmt = con.prepareStatement(BookSQL.BOOK_LIST_PAGE);
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
 				Book book = new Book(rs.getInt("b_no"), rs.getString("b_class"), rs.getString("b_name"),
@@ -238,9 +238,9 @@ public class BookDao {
 			return bookList;
 		}
 	
-	//도서 전체 조회  > 안됨 1개만 나옴
-	/*
-	public ArrayList<Book> selectList() throws Exception{
+	//도서 전체 조회 
+	
+	public ArrayList<Book> getList() throws Exception{
 		ArrayList<Book> bookList = new ArrayList<Book>();
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -266,7 +266,7 @@ public class BookDao {
 		return bookList;
 	}
 	//도서 전체 조회2
-	public ArrayList<Book> selectList(int start, int last) throws Exception{
+	public ArrayList<Book> getList(int start, int last) throws Exception{
 		ArrayList<Book> bookList = new ArrayList<Book>();
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -292,7 +292,7 @@ public class BookDao {
 		}
 		
 		return bookList;
-	}*/
+	}
 	
 	//통합 검색(제목, 저자, 분야)
 	public ArrayList<Book> selectByAll(String keyword) throws Exception {
@@ -354,15 +354,54 @@ public class BookDao {
 		
 		return bookList;
 	}
-	//리스트 반환
-	/*
-	public ArrayList<Book> findBookList(int start, int last) throws Exception{
-		System.out.println(""+start+" ~ "+last);
-		Connection con=null;
-		PreparedStatement pstmt=null;
-		ResultSet rs=null;
-		ArrayList<Book> books =new ArrayList<Book>();
-		
-	}*/
 	
+	// 도서 수량 조회
+	public int getTotBookCount() throws Exception {
+		int totBookCount = 0;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement("select count(*) from book");
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				totBookCount = rs.getInt(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (rs != null) rs.close();
+			if (pstmt != null) pstmt.close();
+			if (conn != null) conn.close();
+		}
+		
+		return totBookCount;
+	}
+	
+	public int getTotBookCount(String keyword) throws Exception {
+		int totBookCount = 0;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement("select count(*) from book where b_name like ? or b_author like ? or b_publisher like ?");
+			pstmt.setString(1, "%" + keyword + "%");
+			pstmt.setString(2, "%" + keyword + "%");
+			pstmt.setString(3, "%" + keyword + "%");
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				totBookCount = rs.getInt(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (rs != null) rs.close();
+			if (pstmt != null) pstmt.close();
+			if (conn != null) conn.close();
+		}
+		
+		return totBookCount;
+	}
 }
