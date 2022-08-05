@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="com.itwill.book.dto.Book"%>
 <%@page import="com.itwill.book.service.BookService"%>
 <%@page import="com.itwill.book.dto.PageMakerDto"%>
@@ -86,8 +87,7 @@ PageMakerDto<Book> listPage = null;
 						<table style="padding-left: 10px" border=0 cellpadding=0 cellspacing=0>
 
 <tr>
-<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp; <b>검색어와 일치하는 도서 목록</b>
-								</td>
+<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp; <b>검색어와 일치하는 도서 목록</b></td>
 							</tr>
 							<tr bgcolor="#FFFFFF">
 								<td height="20" class="t1" align="right" valign="bottom">♠ 총 <font color="#FF0000"><%=listPage.totRecordCount%></font>건 | 현재페이지( <font color="#FF0000"><%=listPage.pageMaker.getCurPage()%></font> / <font color="#0000FF"><%=listPage.pageMaker.getTotPage()%></font> )
@@ -100,39 +100,35 @@ PageMakerDto<Book> listPage = null;
 					<button onclick="location.href='book_search_form.jsp'">돌아가기</button>
 					</div>
 					<form name="f" method="post">
-					        <%
-					            for (Book book : listPage.itemList) {
-					                if (book.getB_image() == null) {
-					                    book.setB_image("image/noimg.jpg");
-					                }
-					        %>
-					<hr>
-					    <table class='book-list'>
-					        <!-- 책정보 시작 -->
-					
-					        <tr>
-					            <td class='book-list-img' rowspan="4">
-					                <a href='book_detail.jsp?b_no=<%=book.getB_no()%>'>
-					                <img alt='bookcover' src='image/<%=book.getB_image()%>.jpg' width="60px" height="80px"></a>
-					                <input type="hidden" name="bookNo" value="<%=book.getB_no()%>">
-					            </td>
-					            <td class='book-td'><span class='bookcategory'>[<%=book.getB_class()%>]</span>&nbsp;&nbsp;&nbsp;<a href='book_detail.jsp?b_no=<%=book.getB_no()%>'><strong><%=book.getB_name()%></strong>
-					            </a></td>
-					        </tr>
-					        <tr>
-					            <td class='book-td'><strong>저자&nbsp;:&nbsp;</strong><%=book.getB_author()%>&nbsp;&nbsp; </td>
-					        </tr>
-					        <tr>
-					        <td class='book-td'><strong>출판사&nbsp;:&nbsp;</strong><%=book.getB_publisher()%>&nbsp;&nbsp; </td>
-					        </tr>
-					        <tr>
-					        <td class='book-td'><strong>가격&nbsp;:&nbsp;</strong><%=book.getB_price()%>&nbsp;&nbsp; </td>
-					        </tr>
-					        <tr>
-			<%
-					        }%>		            <td class='book-td'>
-					        <hr>
-					        </form>
+					   <table width="100%" align="center" border="0" cellpadding="10"
+									cellspacing="1" bgcolor="BBBBBB">
+<%
+int book_size=listPage.itemList.size();
+int book_column_size=4;
+int book_line_count=1;
+
+for(int i=0;i < listPage.itemList.size();i++){
+	Book book=listPage.itemList.get(i);
+%>
+<%
+if(i%book_column_size==0){
+%>
+<tr>
+<%}%> 
+
+<td align="center" width="25%"  bgcolor="ffffff">
+<a href="book_detail.jsp?b_no=<%=book.getB_no()%>">
+<img width="60px" height="80px" src='image/<%=book.getB_image()%>.jpg' border="0"></a><br />
+											<br /> <b>[<%=book.getB_class()%>]</b><br> 
+											<br /> <b><%=book.getB_name()%></b><br> 
+<font color="#FF0000"><%=new DecimalFormat("#,##0").format(book.getB_price())%>원
+</font></td>
+<%if(i%book_column_size==3){%>
+</tr>
+<%}%>
+<%}%>
+</table>
+</form>
 <!-- 페이지 번호 리스트 -->
 			<table border="0" cellpadding="0" cellspacing="1" width="590">
 				<tr>
@@ -161,8 +157,7 @@ PageMakerDto<Book> listPage = null;
 									  <a href="./book_search_result.jsp?pageno=<%=listPage.pageMaker.getNextPage()%>&searchType=<%=searchType%>&keyword=<%=keyword%>">▶&nbsp;</a>
 									 <%}%>
 									 <%if(listPage.pageMaker.getNextGroupStartPage()< listPage.pageMaker.getTotPage()){%>
-									<a
-									href="./book_search_result.jsp?pageno=<%=listPage.pageMaker.getTotPage()%>&searchType=<%=searchType%>&keyword=<%=keyword%>">▶▶</a>&nbsp;
+									<a href="./book_search_result.jsp?pageno=<%=listPage.pageMaker.getTotPage()%>&searchType=<%=searchType%>&keyword=<%=keyword%>">▶▶</a>&nbsp;
 									 <%}
 									 }%>
 					</td>
@@ -172,7 +167,7 @@ PageMakerDto<Book> listPage = null;
 			</div>
 			<!-- include_content.jsp end-->
 			<!-- content end -->
-		</div>
+			</div>
 		<!--wrapper end-->
 		<div id="footer">
 			<!-- include_common_bottom.jsp start-->
