@@ -97,7 +97,7 @@ ReviewService reviewService = new ReviewService();
 										<td width=100 align=center bgcolor="E6ECDE">리뷰내용</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><textarea name="r_contents" class="textarea"
-												style="width: 350px" rows="10"></textarea></td>
+												style="width: 350px" rows="10" ></textarea></td>
 									</tr>
 								</table>
 							</form> <br>

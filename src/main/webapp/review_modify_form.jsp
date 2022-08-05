@@ -38,7 +38,7 @@ String u_id = (String)session.getAttribute("sUserId");
 <link rel=stylesheet href="css/styles.css" type="text/css">
 <link rel=stylesheet href="css/menu.css" type="text/css">
 <link rel=stylesheet href="css/shop.css" type="text/css">
-
+<script type="text/javascript" src="js/review.js"></script>
 <style type="text/css" media="screen">
 </style>
 </head>
@@ -72,8 +72,7 @@ String u_id = (String)session.getAttribute("sUserId");
 							<table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
-									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp; <b>게시판 -
-											게시판 수정</b>
+									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp; <b>리뷰 수정</b>
 									</td>
 								</tr>
 							</table> <br> <!-- modify Form  -->

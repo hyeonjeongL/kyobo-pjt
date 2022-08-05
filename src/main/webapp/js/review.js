@@ -12,7 +12,10 @@ function mainGo(){
 function reviewCreateGo(){
 	location.href='review_insert_form.jsp';
 }
-
+function reviewUpdateGo(){
+		location.href="review_modify_form.jsp";
+		
+	}
 
 
 function reviewCreate() { 
@@ -102,6 +105,7 @@ function reviewReplayCreate() {
 		f.submit();
 	}
 
+	
 
 
 

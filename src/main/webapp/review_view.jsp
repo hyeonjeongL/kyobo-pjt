@@ -117,7 +117,7 @@
 									<td align=center><input type="button" value="글쓰기"
 										onClick="reviewCreateGo()"> &nbsp; 
 										<input type="button" value="댓글쓰기" onClick="reviewReplyCreate()"> &nbsp; 
-										<input type="button" value="수정" onClick="boardUpdate()"> &nbsp; 
+										<input type="button" value="수정" onClick="reviewUpdateGo()"> &nbsp; 
 										<input type="button" value="삭제" onClick="reviewRemove()"> &nbsp; 
 										<input type="button" value="리스트" onClick="reviewList()"></td>
 								</tr>
