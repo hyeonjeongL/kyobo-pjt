@@ -22,6 +22,7 @@ public class QnaTest {
 		Qna qna = new Qna(0, "답글", "답글제목", null, "테스트중", "seongmin",4,1,0);
 		
 		qnaDao.reinsert(qna);
+		qnaDao.selectAll(1, 10);
 		
 		
 	}

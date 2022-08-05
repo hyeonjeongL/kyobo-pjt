@@ -155,7 +155,7 @@ public class QnaDao {
 		sql.append(QnaSQL.QNA_SELECT_ALL);
 		PreparedStatement pstmt = con.prepareStatement(sql.toString());
 		pstmt.setInt(1, start);
-		pstmt.setInt(1, last);
+		pstmt.setInt(2, last);
 		ResultSet rs = pstmt.executeQuery();
 		while(rs.next()) {
 			int q_no = rs.getInt("q_no");
