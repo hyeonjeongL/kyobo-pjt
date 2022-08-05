@@ -164,7 +164,7 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 											<li>출판사 : <%=book.getB_publisher()%>&nbsp;</li>
 											<li>소&nbsp;&nbsp;&nbsp;개 : <%=book.getB_summary()%>&nbsp;</li>
 											<li>대여료 : <%=ebook.getE_price()%> (e-book, 90일)&nbsp;</li>
-										</ol>
+										</ol> 
 									</td>
 								</tr>
 								<tr>

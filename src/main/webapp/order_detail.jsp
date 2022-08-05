@@ -31,9 +31,9 @@ form > table tr td{
 </style>
 <script type="text/javascript">
 function reviewGo(){
-    document.book_detail_form.action = "review_book_list.jsp";
-    document.book_detail_form.method='POST';
-    document.book_detail_form.submit();
+    document.f.action = "review_insert_form.jsp";
+    document.f.method ='POST';
+    document.f.submit();
 }
 </script>
 </head>
@@ -105,7 +105,7 @@ function reviewGo(){
 										<td width=112 height=25 align=center bgcolor="E6ECDE" class=t1>수 량</td>
 										<td width=166 height=25  align=center bgcolor="E6ECDE" class=t1>가 격</td>
 										<td width=50 height=25  align=center bgcolor="E6ECDE" class=t1>비 고</td>
-													<input type="button" value="리뷰" onClick="임은비화이팅">
+													
 									</tr>
 									
 									<!-- orer item start -->
@@ -127,7 +127,9 @@ function reviewGo(){
 										<td width=166 height=26 align=center bgcolor="ffffff" class=t1>
 										<%=new DecimalFormat("#,###").format(orderDetail.getOd_qty()*orderDetail.getBook().getB_price())%>
 										</td>
-										<td width=50 height=26 align=center class=t1 bgcolor="ffffff"></td>
+										<td width=50 height=26 align=center class=t1 bgcolor="ffffff">
+										<input type="button" value="리뷰" onClick="reviewGo()">
+										</td>
 									</tr>
 									<%}%>
 									<!-- cart item end -->
@@ -147,7 +149,7 @@ function reviewGo(){
 									<td align=center> 
 										&nbsp;&nbsp;<a href=order_list.jsp
 										class=m1>주문목록</a>
-										&nbsp;&nbsp;<a href=product_list.jsp
+										&nbsp;&nbsp;<a href=book_list.jsp
 										class=m1>계속 쇼핑하기</a>
 
 									</td>
