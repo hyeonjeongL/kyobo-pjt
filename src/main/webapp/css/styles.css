@@ -74,12 +74,14 @@ div#navigation p {
 div#extra{background:#CCC8B3;}
 */
 div#footer {
-	background: #BFBD93;
+	background: #FAECC5;
 }
 
 div#footer p {
+	font-size: 9pt;
 	margin: 0;
 	padding: 5px 10px
+	
 }
 
 div#container {
@@ -104,10 +106,12 @@ div#wrapper {
 
 div#content {
 	margin: 0 0 0 150px
+	
 }
 
 div#footer {
 	clear: left;
 	width: 100%
+	
 }
 
