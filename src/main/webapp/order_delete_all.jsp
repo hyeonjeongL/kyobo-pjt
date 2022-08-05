@@ -1,13 +1,17 @@
+<%@page import="com.itwill.book.service.OrderService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@include file="login_check.jspf"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+	pageEncoding="UTF-8"%>
+<%@ include file="login_check.jspf"%>
+<%
+if (request.getMethod().equalsIgnoreCase("GET")) {
+	response.sendRedirect("order_list.jsp");
+	return;
+}
 
-</body>
-</html>
+sUserId = (String) session.getAttribute("sUserId");
+
+OrderService orderService = new OrderService();
+orderService.delete(sUserId);
+
+response.sendRedirect("order_list.jsp");
+%>
