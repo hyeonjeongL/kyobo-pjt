@@ -4,7 +4,7 @@
 <%@page import="com.itwill.book.service.BookService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%-- <%@include file="login_check.jspf"%>--%>
+ <%@include file="login_check.jspf"%>
 <%
 String b_noStr=request.getParameter("b_no");
 if(b_noStr==null||b_noStr.equals("")){
@@ -52,19 +52,19 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 			console.log(left);
 			console.log(top);
 			var cartWin = window.open("about:blank","cartForm","width=420,height=200,top="+top+",left="+left+",location=no, directories=no, status=no, menubar=no, scrollbars=no,copyhistory=no");
-			document.add_cart_form.action = 'cart_add_action_popup_window.jsp';
+			document.add_cart_form.action = 'cart_insert_action.jsp';
 			document.add_cart_form.target = 'cartForm';
 			document.add_cart_form.method = 'POST';
 			document.add_cart_form.submit();
 		}
 	}
-	function order_create_form() {
+	function order_insert_form() {
 		if (<%=!isLogin%>) {
 			alert('로그인 하세요');
 			location.href = 'userinfo_login_form.jsp';
 		} else {
 			document.book_detail_form.method = 'POST';
-			document.book_detail_form.action = 'order_create_form.jsp';
+			document.book_detail_form.action = 'order_insert_form.jsp';
 			document.book_detail_form.submit();
 		}
 	}
@@ -169,10 +169,12 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 							</table>
 <table border="0" cellpadding="0" cellspacing="1">
 								<tr>
-									<td align=center><input type="button" value="주문하기[주문폼]"
-										onClick="order_create_form();"> &nbsp; <input
-										type="button" value="상품리스트" onClick="bookList();">&nbsp; <input
-										type="button" value="ebook 90일 대여하기" onClick="ebookBuy()"></td>
+									<td align=center>
+									<input type="button" value="주문하기[주문폼]" onClick="order_insert_form();"> &nbsp; 
+										<input type="button" value="상품리스트" onClick="bookList();">&nbsp; 
+										<input type="button" value="ebook 90일 대여하기" onClick="ebookBuy()">&nbsp;
+										<input type="button" value="도서 리뷰" onClick="reviewWrite()">								
+										</td>
 								</tr>
 							</table></td>
 					</tr>

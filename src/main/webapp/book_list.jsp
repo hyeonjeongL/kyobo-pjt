@@ -5,7 +5,7 @@
 <%@page import="com.itwill.book.service.BookService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%-- <%@include file="login_check.jspf"%>--%>
+<%@include file="login_check.jspf"%>
 <%
 BookService bookService =new BookService();
 List<Book> bookList= bookService.selectList();
@@ -16,6 +16,7 @@ String pageno=request.getParameter("pageno");
 if(pageno==null||pageno.equals("")){
 	pageno="1";
 }	
+PageMakerDto<Book> listPage = new BookService().getBookList(Integer.parseInt(pageno));
 
 %>
 <!DOCTYPE html>
@@ -93,9 +94,42 @@ if(i%book_column_size==0){
 <%}%>
 <%}%>
 </table>
-							</form> <br /></td>
-					</tr>
-				</table>
+</form>
+<!-- 페이지 번호 리스트 -->
+			<table border="0" cellpadding="0" cellspacing="1" width="590">
+				<tr>
+					<td align="center">
+			     
+						 <%if(listPage.pageMaker.getPrevGroupStartPage()>0) {%>    
+						    <a href="./bookList.jsp?pageNo=1">◀◀</a>&nbsp;
+						 <%}%>
+						 <%if(listPage.pageMaker.getPrevPage()>0) {%>    
+							<a href="./bookList.jsp?pageNo=<%=listPage.pageMaker.getPrevPage()%>">◀</a>&nbsp;&nbsp;
+						 <%}%>
+						
+						<%
+							for (int i = listPage.pageMaker.getBlockBegin(); i <= listPage.pageMaker.getBlockEnd(); i++) {
+						 	if (listPage.pageMaker.getCurPage() == i) {
+						%>
+						 <font color='blue'><strong><%=i%></strong></font>&nbsp;
+						<%} else {%>
+						<a href="./bookList.jsp?pageNo=<%=i%>"><strong><%=i%></strong></a>&nbsp;
+						<%
+						   }
+						  }%>
+						  
+						  
+						 <%if(listPage.pageMaker.getCurPage() < listPage.pageMaker.getTotPage()){%>
+						  <a href="./bookList.jsp?pageNo=<%=listPage.pageMaker.getNextPage()%>">▶&nbsp;</a>
+						 <%}%>
+						 <%if(listPage.pageMaker.getNextGroupStartPage()< listPage.pageMaker.getTotPage()){%>
+						<a
+						href="./bookList.jsp?pageNo=<%=listPage.pageMaker.getTotPage()%>">▶▶</a>&nbsp;
+						 <%}%>
+					</td>
+				</tr>
+			</table> 
+			<!-- 페이지 번호 리스트 -->
 			</div>
 			<!-- include_content.jsp end-->
 			<!-- content end -->
