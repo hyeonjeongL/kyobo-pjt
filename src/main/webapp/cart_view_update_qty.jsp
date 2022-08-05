@@ -7,13 +7,13 @@
 <%@page import="com.itwill.book.service.CartService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@include file="login_check.jspf"%>
+
 <%
 
-String u_id = request.getParameter("u_id");
+String u_id = (String) session.getAttribute("sUserId");
 CartService cartService = new CartService();
-List<Cart> cartList = cartService.getCartList("hunjeong");
-//Book book = new Book(0,"","",0,"","","","");
-//Cart cart = new Cart();
+List<Cart> cartList = cartService.getCartList("u_id");
 
 
 %>
@@ -34,11 +34,11 @@ List<Cart> cartList = cartService.getCartList("hunjeong");
 		console.log(formId);
 		var form = document.getElementById(formId);
 		if (desc == '+') {
-			form.cart_qty.value = parseInt(form.cart_qty.value) + 1;
+			form.c_qty.value = parseInt(form.c_qty.value) + 1;
 
 		} else if (desc == '-') {
-			if (form.cart_qty.value - 1 >= 0) {
-				form.cart_qty.value = parseInt(form.cart_qty.value) - 1;
+			if (form.c_qty.value - 1 >= 0) {
+				form.c_qty.value = parseInt(form.c_qty.value) - 1;
 			}
 		}
 
@@ -212,7 +212,7 @@ List<Cart> cartList = cartService.getCartList("hunjeong");
 										<td width=112 height=26 align=center bgcolor="ffffff" class=t1>
 											<form action="cart_update_action.jsp" method="post"
 												id="cart_update_form_<%=cart.getC_no()%>">
-												<input type="hidden" name="cart_no"
+												<input type="hidden" name="c_no"
 													value="<%=cart.getC_no()%>"> <input
 													type="button" value="-"
 													onclick="changeNumber('-','cart_update_form_<%=cart.getC_no()%>');"/>

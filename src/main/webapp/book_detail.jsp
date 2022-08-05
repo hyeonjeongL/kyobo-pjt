@@ -127,7 +127,7 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 								</tr>
 								<tr width=100%>
 									<td width=30% height=200 align=center class=t1>
-										<form name="add_cart_form" method="post" action="cart_add_action.jsp">
+										<form name="add_cart_form" method="post" action="cart_insert_action.jsp">
 											수량 :
 											<!-- 
 											 <input type=text name="cart_qty" value=1 size=4 class=TXTFLD>  
@@ -159,7 +159,7 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 											<li>저&nbsp;&nbsp;&nbsp;자 : <%=book.getB_author()%>&nbsp;</li>
 											<li>출판사 : <%=book.getB_publisher()%>&nbsp;</li>
 											<li>소&nbsp;&nbsp;&nbsp;개 : <%=book.getB_summary()%>&nbsp;</li>
-											<li>대여료 : <%=ebook.getE_price()%>&nbsp;</li>
+											<li>대여료 : <%=ebook.getE_price()%> (e-book, 90일)&nbsp;</li>
 										</ol>
 									</td>
 								</tr>

@@ -2,7 +2,7 @@ package com.itwill.book.common;
 public class PageMaker {
  
     // 페이지당 게시물 수
-    private int pageScale = 3;
+    private int pageScale = 5;
     // 화면당 페이지 수
     private int blockScale = 10;
      

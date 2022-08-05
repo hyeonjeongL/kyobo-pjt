@@ -7,13 +7,13 @@
 <%@page import="com.itwill.book.service.CartService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@include file="login_check.jspf"%>
+    
 <%
 
-String u_id = request.getParameter("u_id");
+String u_id = (String) session.getAttribute("sUserId");
 CartService cartService = new CartService();
-List<Cart> cartList = cartService.getCartList("hunjeong");
-//Book book = new Book(0,"","",0,"","","","");
-//Cart cart = new Cart();
+List<Cart> cartList = cartService.getCartList(u_id);
 
 
 %>
@@ -21,7 +21,7 @@ List<Cart> cartList = cartService.getCartList("hunjeong");
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>쇼핑몰 관리</title>
+<title>교보문고 - 장바구니</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel=stylesheet href="css/styles.css" type="text/css">
 <link rel=stylesheet href="css/shop.css" type="text/css">
@@ -34,11 +34,11 @@ List<Cart> cartList = cartService.getCartList("hunjeong");
 		console.log(formId);
 		var form = document.getElementById(formId);
 		if (desc == '+') {
-			form.cart_qty.value = parseInt(form.cart_qty.value) + 1;
+			form.c_qty.value = parseInt(form.c_qty.value) + 1;
 
 		} else if (desc == '-') {
-			if (form.cart_qty.value - 1 >= 0) {
-				form.cart_qty.value = parseInt(form.cart_qty.value) - 1;
+			if (form.c_qty.value - 1 >= 0) {
+				form.c_qty.value = parseInt(form.c_qty.value) - 1;
 			}
 		}
 
@@ -110,9 +110,9 @@ List<Cart> cartList = cartService.getCartList("hunjeong");
 				if (cart_item_no_check_list.item(i).checked === true) {
 					document.cart_view_form.innerHTML += "<input type='hidden' name='cart_item_no' value='"+ cart_item_no_check_list.item(i).value + "'>";
 					var updateFormId='cart_update_form_'+ cart_item_no_check_list.item(i).value;
-					var cart_qty=document.getElementById(updateFormId).cart_qty.value;
+					var c_qty=document.getElementById(updateFormId).c_qty.value;
 					var cart_product_unit_price=document.getElementById(updateFormId).cart_product_unit_price.value;
-					tot_order_price+=cart_qty*cart_product_unit_price;
+					tot_order_price+=c_qty*cart_product_unit_price;
 					cart_item_check_selected_count++;
 				}
 			}
@@ -210,14 +210,14 @@ List<Cart> cartList = cartService.getCartList("hunjeong");
 										</td>
 
 										<td width=112 height=26 align=center bgcolor="ffffff" class=t1>
-											<form action="cart_update_action.jsp" method="post"
+											<form  method="post"
 												id="cart_update_form_<%=cart.getC_no()%>">
-												<input type="hidden" name="cart_no"
+												<input type="hidden" name="c_no"
 													value="<%=cart.getC_no()%>"> <input
 													type="button" value="-"
 													onclick="changeNumber('-','cart_update_form_<%=cart.getC_no()%>');"/>
 												<input type="text" readonly="readonly" size="2"
-													style="text-align: center; width: 15%" name="cart_qty"
+													style="text-align: center; width: 15%" name="c_qty"
 													value="<%=cart.getC_qty()%>"> <input
 													type="button" value="+"
 													onclick="changeNumber('+','cart_update_form_<%=cart.getC_no()%>');"/>
@@ -237,17 +237,7 @@ List<Cart> cartList = cartService.getCartList("hunjeong");
 											<form id="cart_delete_item_form_<%=cart.getC_no()%>">
 												<input type="hidden" name="c_no"
 													value="<%=cart.getC_no()%>"> <a
-													href="javascript:cart_delete_item_action('cart_delete_item_form_<%=cart.getC_no()%>');">
-													<svg xmlns="http://www.w3.org/2000/svg" width="15"
-														height="15" viewBox="0 0 28 28" class="icon--close">
-													<g fill="none" fill-rule="evenodd"> <path
-														d="M0 0H28V28H0z"></path> <g fill="#9B9BA0"
-														transform="translate(6 6)" class="icon--close__group">
-													<rect width="2" height="18" x="7" y="-1" rx="1"
-														transform="rotate(-135 8 8)"></rect> <rect width="2"
-														height="18" x="7" y="-1" rx="1"
-														transform="rotate(-45 8 8)"></rect> </g> </g> </svg>
-												</a>
+													href="javascript:cart_delete_item_action('cart_delete_item_form_<%=cart.getC_no()%>');">삭제</a>
 											</form>
 
 										</td>

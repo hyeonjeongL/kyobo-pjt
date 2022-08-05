@@ -354,5 +354,15 @@ public class BookDao {
 		
 		return bookList;
 	}
+	//리스트 반환
+	/*
+	public ArrayList<Book> findBookList(int start, int last) throws Exception{
+		System.out.println(""+start+" ~ "+last);
+		Connection con=null;
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		ArrayList<Book> books =new ArrayList<Book>();
+		
+	}*/
 	
 }

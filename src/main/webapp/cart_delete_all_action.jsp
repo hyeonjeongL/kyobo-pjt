@@ -8,10 +8,10 @@ if(request.getMethod().equalsIgnoreCase("GET")){
 	return;  
 }
 
-String u_id = request.getParameter("u_id");
+String u_id = (String) session.getAttribute("sUserId");
 
 CartService cartService = new CartService();
-cartService.cartDeleteAll("hunjeong");
+cartService.cartDeleteAll(u_id);
 
 response.sendRedirect("cart_view.jsp");
 
