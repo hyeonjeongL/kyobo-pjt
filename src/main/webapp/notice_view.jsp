@@ -3,23 +3,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-	NoticeService noticeService =new NoticeService();
-	Notice noticeDetail =new Notice();
-
-
-	
-	request.setCharacterEncoding("UTF-8");
-	request.getParameter("noticeno");
-	
-	String noStr = request.getParameter("noticeno");
-	if(noStr==null || noStr.equals("")){
-		response.sendRedirect("notice_list.jsp");
+	Integer noticeno=null;
+	int pageno=1;
+	try{
+		noticeno =Integer.parseInt(request.getParameter("noticeno"));
+		pageno=Integer.parseInt(request.getParameter("pageno"));
+	}catch(Exception e){
+		
+	}
+	if(noticeno==null){
+		//목록으로이동
+		response.sendRedirect("notice_list.jsp?pageno="+pageno);
+		return;
+	}
+	Notice notice=NoticeService.getInstance().noticeSelectByNo(pageno);
+	if(notice==null){
+		response.sendRedirect("notice_list.jsp?pageno="+pageno);
 		return;
 	}
 	
-	noticeDetail = noticeService.noticeSelectByNo(Integer.parseInt(noStr));
-	
-	
+	//읽은회수증가
+	NoticeService.getInstance().updateviewCount(noticeno);
+
 %>
 <!DOCTYPE html>
 <html>
@@ -29,9 +34,14 @@
 <link rel=stylesheet href="css/styles.css" type="text/css">
 <link rel=stylesheet href="css/menu.css" type="text/css">
 <link rel=stylesheet href="css/shop.css" type="text/css">
-
 <style type="text/css" media="screen">
 </style>
+<script type="text/javascript">
+function noticeList() {
+	f.action = "notice_list.jsp?pageno="+<%=pageno%>;
+	f.submit();
+}
+</script>
 </head>
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
 	marginwidth=0 marginheight=0>
@@ -56,9 +66,7 @@
 			<!-- content start -->
 			<!-- include_content.jsp start-->
 			<div id="content">
-								<table border=0 cellpadding=0 cellspacing=0>
-					<tr>
-						<td><br />
+						<br/>
 							<table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
@@ -69,25 +77,36 @@
 							</table> <br> <!-- view Form  -->
 
 							<form name="f" method="post">
-								<input type="hidden" name="notino" value="<%=noticeDetail.getN_no() %>">
+								<input type="hidden" name="notino" value="<%=notice.getN_no() %>">
 								<input type="hidden" name="pageno" value="1">
 								<table border="0" cellpadding="0" cellspacing="1" width="590" bgcolor="BBBBBB">
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">공지일</td>
-										<td width=490 bgcolor="ffffff" align="left" style="padding-left: 10"><%=noticeDetail.getN_date()%></td>
+										<td width=490 bgcolor="ffffff" align="left" style="padding-left: 10"><%=notice.getN_date()%></td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">제목</td>
-										<td width=490 bgcolor="ffffff" align="left" style="padding-left: 10"><%=noticeDetail.getN_title()%></td>
+										<td width=490 bgcolor="ffffff" align="left" style="padding-left: 10"><%=notice.getN_title()%></td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">내용</td>
-										<td width=490 bgcolor="ffffff" align="left" style="padding-left: 10"><%=noticeDetail.getN_contents().replace("\n","<br/>") %></td>
-										
+										<td width=490 bgcolor="ffffff" align="left" style="padding-left: 10"><%=notice.getN_contents().replace("\n","<br/>")%>
+									</tr>
+									<tr>
+										<td width=100 align=center bgcolor="E6ECDE" height="22">이미지</td>
+										<td width=490 bgcolor="ffffff" align="left" style="padding-left: 10">
+										<img border=0 src="image/<%=notice.getN_image()%>" style =  "width:100%; height : auto;"></td>
 									</tr>
 								</table>
+							</form><br>
+							<table width=590 border=0 cellpadding=0 cellspacing=0>
+								<tr>
+									<td align=center>
+									<input type="button" value="리스트" onClick="noticeList()"></td>
+								</tr>
+							</table>
 			</div>
-
+	
 			<!-- include_content.jsp end-->
 			<!-- content end -->
 		</div>
