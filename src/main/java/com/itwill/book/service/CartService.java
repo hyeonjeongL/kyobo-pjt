@@ -21,14 +21,14 @@ public class CartService {
 	
 	public int addCart (Cart newCart) throws Exception {
 		 	
-		int book_count = cartDao.cartBookCount(newCart);
-		if(book_count == 0) {
+		int qty = cartDao.cartBookCount(newCart.getU_id(), newCart.getBook().getB_no());
+		if(qty == 0) {
 			cartDao.cartInsert(newCart);
-		} else if (book_count >=1) {
+		} else if (qty ==1) {
 			cartDao.cartAddQty(newCart);
 		}
 		
-		return book_count;
+		return 0;
 	}
 	
 	//카트 수량변경
