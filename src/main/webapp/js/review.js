@@ -13,8 +13,8 @@ function reviewCreateGo(){
 	location.href='review_insert_form.jsp';
 }
 function reviewUpdateGo(){
-		document.f.action ='review_modify_form.jsp';
-		document.f.method="POST";
+		document.f.action = "review_modify_form.jsp";
+		document.f.method='POST';
 		document.f.submit();
 	}
 

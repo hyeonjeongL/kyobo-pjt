@@ -6,7 +6,7 @@
 	pageEncoding="UTF-8"%>
 	
 <%
-/*	
+	
 String u_id = (String)session.getAttribute("sUserId");
 	String r_no = request.getParameter("r_no");
 	
@@ -17,7 +17,7 @@ String u_id = (String)session.getAttribute("sUserId");
 	reviewService.reviewUpdateByNo(review);
 	
 	if (review == null) {
-		response.sendRedirect("review_Id_list.jsp");
+		//response.sendRedirect("review_Id_list.jsp");
 		return;
 	}
 
@@ -25,10 +25,11 @@ String u_id = (String)session.getAttribute("sUserId");
 	if (request.getParameter("pageno") != null) {
 		pageno = request.getParameter("pageno");
 	}
-*/
+
 %>
 
 <%
+/*
 	Integer r_no = null;
 	try {
 		r_no = Integer.valueOf(request.getParameter("r_no"));
@@ -49,6 +50,7 @@ String u_id = (String)session.getAttribute("sUserId");
 	if (request.getParameter("pageno") != null) {
 		pageno = request.getParameter("pageno");
 	}
+	*/
 %>
 <!DOCTYPE html>
 <html>
