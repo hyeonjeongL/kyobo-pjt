@@ -18,7 +18,7 @@ if (pageNo == null || pageNo.equals("")) {
 	pageNo = "1";
 }
 
-	
+	//삭제 오류 For input string: "null"
 	ReviewBookListPageMakerDto reviewlistPage = new ReviewService().findReviewIdList(sUserId, Integer.parseInt(pageNo));
 	
 %>
