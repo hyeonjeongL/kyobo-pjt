@@ -41,19 +41,25 @@ if (buyType.equals("cart")) {
 		//cartItemList.add(cartService.getCartItemByCartNo(Integer.parseInt(cart_item_noStr)));
 	}
 } else if (buyType.equals("direct")) {
-	/*
-	private int b_no;
-	private String b_class;
-	private String b_name;
-	private int b_price;
-	private String b_summary;
-	private String b_image;
-	private String b_author;
-	private String b_publisher;
-	*/
 	Book book = bookService.selectByNo(Integer.parseInt(b_noStr));
-	cartItemList.add(new Cart(0, 0, sUserId, book));
+	/*	
+	private int c_no;
+	private int c_qty;
+	private String u_id;
+	private Book book;
+	*/
+	cartItemList.add(new Cart(0, Integer.parseInt(b_qtyStr), sUserId, book));
 }
+/*
+private int b_no;
+private String b_class;
+private String b_name;
+private int b_price;
+private String b_summary;
+private String b_image;
+private String b_author;
+private String b_publisher;
+*/
 	//Book book = BookService.selectByNo(new Book(Integer.parseInt(b_noStr));
 %>
 
@@ -85,8 +91,8 @@ form > table tr td{
 	marginwidth=0 marginheight=0>
 	<form name="order_create_form" method="post">
 		<input type="hidden" name="buyType" value="<%=buyType%>"> <input
-			type="hidden" name="p_no" value="<%=b_noStr%>"> <input
-			type="hidden" name="p_qty" value="<%=b_qtyStr%>">
+			type="hidden" name="b_no" value="<%=b_noStr%>"> <input
+			type="hidden" name="b_qty" value="<%=b_qtyStr%>">
 		<%
 		for (String cart_item_noStr : cart_item_noStr_array) {
 		%>
