@@ -73,6 +73,13 @@ function reviewReplayCreate() {
 		f.action = "board_list.jsp";
 		f.submit();
 	}
+	
+	function reviewRemove() {
+		if (confirm("정말 삭제하시겠습니까?")) {
+			document.f.action = "review_remove_action.jsp";
+			document.f.submit();
+		}
+	}
 
 
 
