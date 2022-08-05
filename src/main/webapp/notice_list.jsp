@@ -53,7 +53,7 @@ if(pageno==null||pageno.equals("")){
 			<!-- content start -->
 			<!-- include_content.jsp start-->
 			<div id="content">
-					<table border=0 cellpadding=0 cellspacing=0>
+
 					<tr>
 						<td><br />
 							<table style="padding-left: 10px" border=0 cellpadding=0

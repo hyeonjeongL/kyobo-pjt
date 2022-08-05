@@ -16,7 +16,7 @@
 		response.sendRedirect("notice_list.jsp?pageno="+pageno);
 		return;
 	}
-	Notice notice=NoticeService.getInstance().noticeSelectByNo(pageno);
+	Notice notice=NoticeService.getInstance().noticeSelectByNo(noticeno);
 	if(notice==null){
 		response.sendRedirect("notice_list.jsp?pageno="+pageno);
 		return;
@@ -38,7 +38,7 @@
 </style>
 <script type="text/javascript">
 function noticeList() {
-	f.action = "notice_list.jsp?pageno="+<%=pageno%>;
+	f.action = "notice_list.jsp";
 	f.submit();
 }
 </script>
