@@ -62,6 +62,7 @@ PageMakerDto<Book> bookList = new BookService().getBookList(Integer.parseInt(pag
 									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>도서 목록</b></td>
 								</tr>
 							</table>
+							</table>
 <form name="f" method="post">
 <table width="100%" align="center" border="0" cellpadding="10"
 									cellspacing="1" bgcolor="BBBBBB">
@@ -81,7 +82,7 @@ if(i%book_column_size==0){
 
 <td align="center" width="25%"  bgcolor="ffffff">
 <a href="book_detail.jsp?b_no=<%=book.getB_no()%>">
-<img width="60px" height="80px" src='image/<%=book.getB_image()%>.jpg' border="0"></a><br />
+<img width="65px" height="83px" src='image/<%=book.getB_image()%>.jpg' border="0"></a><br />
 											<br /> <b>[<%=book.getB_class()%>]</b><br> 
 											<br /> <b><%=book.getB_name()%></b><br> 
 <font color="#FF0000"><%=new DecimalFormat("#,##0").format(book.getB_price())%>원

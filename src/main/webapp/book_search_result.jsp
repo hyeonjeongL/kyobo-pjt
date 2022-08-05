@@ -95,7 +95,6 @@ PageMakerDto<Book> listPage = null;
 
 </tr>
 </table>
-<div>
 					<div class="book-detail-button">
 					<button onclick="location.href='book_search_form.jsp'">돌아가기</button>
 					</div>
@@ -118,9 +117,10 @@ if(i%book_column_size==0){
 
 <td align="center" width="25%"  bgcolor="ffffff">
 <a href="book_detail.jsp?b_no=<%=book.getB_no()%>">
-<img width="60px" height="80px" src='image/<%=book.getB_image()%>.jpg' border="0"></a><br />
+<img width="65px" height="90px" src='image/<%=book.getB_image()%>.jpg' border="0"></a><br />
 											<br /> <b>[<%=book.getB_class()%>]</b><br> 
 											<br /> <b><%=book.getB_name()%></b><br> 
+											<br /> 저자&nbsp;:&nbsp;<b><%=book.getB_author()%></b><br> 
 <font color="#FF0000"><%=new DecimalFormat("#,##0").format(book.getB_price())%>원
 </font></td>
 <%if(i%book_column_size==3){%>
@@ -134,7 +134,7 @@ if(i%book_column_size==0){
 				<tr>
 					<td align="center">
 			     
-						<%if(listPage.pageMaker.getPrevGroupStartPage()>0) {%>    
+									<%if(listPage.pageMaker.getPrevGroupStartPage()>0) {%>    
 									    <a href="./book_search_result.jsp?pageno=1&searchType=<%=searchType%>&keyword=<%=keyword%>">◀◀</a>&nbsp;
 									 <%}%>
 									 <%if(listPage.pageMaker.getPrevPage()>0) {%>    
@@ -167,7 +167,7 @@ if(i%book_column_size==0){
 			</div>
 			<!-- include_content.jsp end-->
 			<!-- content end -->
-			</div>
+		</div>
 		<!--wrapper end-->
 		<div id="footer">
 			<!-- include_common_bottom.jsp start-->
