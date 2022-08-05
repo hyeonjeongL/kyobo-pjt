@@ -58,23 +58,23 @@ insert into notice
 values(notice_n_no_seq.nextval, '공지사항', '광복절 및 택배 없는 날 배송일정 안내', '2022-08-01', 
 '안녕하세요. 꿈을 키우는 세상 교보문고입니다.
 언제나 교보문고를 사랑해주시는 고객님께 진심으로 감사의 말씀드립니다.
-8월 13일 택배 없는 날, 8월 15일 광복절 휴무로 인해 변경되는 배송일정을 안내드립니다.', 1,'humu.gif' ,notice_n_no_seq.currval, 1, 0);
+8월 13일 택배 없는 날, 8월 15일 광복절 휴무로 인해 변경되는 배송일정을 안내드립니다.', 1,'humu.GIF' ,notice_n_no_seq.currval, 1, 0);
 --2. 서비스 종료 및 변경 안내
 insert into notice
 values(notice_n_no_seq.nextval, '공지사항', '서비스 종료 및 변경 안내', '2022-07-08', 
 '안녕하세요. 꿈을 키우는 세상 교보문고입니다.
 교보문고 서비스를 이용해 주시는 고객님께 감사드립니다.
-보다 나은 서비스 제공을 위해 아래와 같은 변동이 예정되어 있으니 이용 시 참고하여 주시기 바랍니다.',1 ,'money.gif', notice_n_no_seq.currval, 1, 0);
+보다 나은 서비스 제공을 위해 아래와 같은 변동이 예정되어 있으니 이용 시 참고하여 주시기 바랍니다.',1 ,'money.GIF', notice_n_no_seq.currval, 1, 0);
 --3. 해외배송(FedEx) 배송료 인상 안내 (5/1
 insert into notice
 values(notice_n_no_seq.nextval, '공지사항', '해외배송(FedEx) 배송료 인상 안내 (5/1)', '2022-03-01',
 '최근 코로나 19로 인한 해외 배송에 필요한 항공운송료가 급격히 증가함에 따라, 동 서비스의 지속적이고 안정적인 제공을 위한 필요 최소 수준의 요금 조정이 불가피한 실정입니다.
-이에, ’22. 5. 1. 자 FedEx의 해외 배송 서비스의 요금이 인상될 예정 이오니, 고객님의 너른 양해를 부탁드리며 조정내용을 사전 공지하오니 서비스 이용에 참조하시기 바랍니다.', 1,'service.gif' ,notice_n_no_seq.currval, 1, 0);
+이에, ’22. 5. 1. 자 FedEx의 해외 배송 서비스의 요금이 인상될 예정 이오니, 고객님의 너른 양해를 부탁드리며 조정내용을 사전 공지하오니 서비스 이용에 참조하시기 바랍니다.', 1,'service.GIF' ,notice_n_no_seq.currval, 1, 0);
 insert into notice
 values(notice_n_no_seq.nextval, '테스트','테스트',sysdate,
-'테스트', 1,'service.GIF' ,notice_n_no_seq.currval, 1, 0);
-
-
+'테스트', 1,'test.png' ,notice_n_no_seq.currval, 1, 0);
+--delete from notice;
+    
 
 --ebook insert
 
