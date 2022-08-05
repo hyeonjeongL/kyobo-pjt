@@ -12,7 +12,7 @@ if(b_noStr==null||b_noStr.equals("")){
 	return;
 }
 boolean isLogin =false;
-if(session.getAttribute("userId")!=null){
+if(session.getAttribute("sUserId")!=null){
 	isLogin=true;
 }
 BookService bookService =new BookService();
@@ -71,6 +71,11 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 	function bookList() {
 		location.href = 'book_list.jsp';
 	}
+	function reviewGo(){
+        document.f.action = "review_book_list.jsp?b_no="+b_no;
+        document.f.method='POST';
+        document.f.submit();
+  }
 </script>
 </head> 
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
@@ -173,7 +178,7 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 									<input type="button" value="주문하기[주문폼]" onClick="order_insert_form();"> &nbsp; 
 										<input type="button" value="상품리스트" onClick="bookList();">&nbsp; 
 										<input type="button" value="ebook 90일 대여하기" onClick="ebookBuy()">&nbsp;
-										<input type="button" value="도서 리뷰" onClick="reviewWrite()">								
+										<input type="button" value="도서 리뷰" onClick="reviewGo()">								
 										</td>
 								</tr>
 							</table></td>
