@@ -32,6 +32,9 @@ PageMakerDto<Book> listPage = null;
  if (searchType.equals("class")) {
 		listPage = new BookService().selectByClass(keyword, Integer.parseInt(pageno));
     }
+ if (searchType.equals("publisher")) {
+		listPage = new BookService().selectByPublisher(keyword, Integer.parseInt(pageno));
+    }
 %>
 
 <!DOCTYPE html>
@@ -117,11 +120,12 @@ if(i%book_column_size==0){
 
 <td align="center" width="25%"  bgcolor="ffffff">
 <a href="book_detail.jsp?b_no=<%=book.getB_no()%>">
-<img width="63px" height="95px" src='image/<%=book.getB_image()%>.jpg' border="0"></a><br />
-											<br /> <b>[<%=book.getB_class()%>]</b><br> 
-											<br /> <b><%=book.getB_name()%></b><br> 
-											<br /> 저자&nbsp;:&nbsp;<%=book.getB_author()%><br> 
-<font color="#FF0000"><%=new DecimalFormat("#,##0").format(book.getB_price())%>원
+<p><img width="63px" height="95px" src='image/<%=book.getB_image()%>.jpg' border="0"></a><br> 
+										 <b>[<%=book.getB_class()%>]</b><br> 
+											<b><%=book.getB_name()%></b><br> 
+											저&nbsp;자&nbsp;:&nbsp;<%=book.getB_author()%><br> 
+											출판사&nbsp;:&nbsp;<%=book.getB_publisher()%><br> 
+<font color="#FF0000"><%=new DecimalFormat("#,##0").format(book.getB_price())%>원</p>
 </font></td>
 <%if(i%book_column_size==3){%>
 </tr>

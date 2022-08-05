@@ -161,7 +161,6 @@ public class BookDao {
 		
 		return bookList;
 	}
-	
 
 	//분야 검색
 	public ArrayList<Book> selectByClass(String keyword) throws Exception {
@@ -200,6 +199,64 @@ public class BookDao {
 		try {
 			conn = dataSource.getConnection();
 			pstmt = conn.prepareStatement(BookSQL.BOOK_SELECT_BY_CLASS_LIST);
+			pstmt.setString(1, "%" + keyword + "%");
+			pstmt.setInt(2, start);
+			pstmt.setInt(3, last);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				Book book = new Book(rs.getInt("b_no"), rs.getString("b_class"), rs.getString("b_name"), rs.getInt("b_price"),
+						rs.getString("b_summary"), rs.getString("b_image"), rs.getString("b_author"),
+						rs.getString("b_publisher"));
+				bookList.add(book);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (rs != null) rs.close();
+			if (pstmt != null) pstmt.close();
+			if (conn != null) conn.close();
+		}
+		
+		return bookList;
+	}
+	
+	//출판사 검색
+	public ArrayList<Book> selectByPublisher(String keyword) throws Exception {
+		ArrayList<Book> bookList = new ArrayList<Book>();
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement(BookSQL.BOOK_SELECT_BY_PUBLISHER);
+			pstmt.setString(1, "%" + keyword + "%");
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				Book book = new Book(rs.getInt("b_no"), rs.getString("b_class"), rs.getString("b_name"), rs.getInt("b_price"),
+						rs.getString("b_summary"), rs.getString("b_image"), rs.getString("b_author"),
+						rs.getString("b_publisher"));
+				bookList.add(book);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (rs != null) rs.close();
+			if (pstmt != null) pstmt.close();
+			if (conn != null) conn.close();
+		}
+		
+		return bookList;
+	}
+	
+	//출판사 검색 페이지
+	public ArrayList<Book> selectByPublisher(String keyword, int start, int last) throws Exception {
+		ArrayList<Book> bookList = new ArrayList<Book>();
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement(BookSQL.BOOK_SELECT_BY_PUBLISHER_LIST);
 			pstmt.setString(1, "%" + keyword + "%");
 			pstmt.setInt(2, start);
 			pstmt.setInt(3, last);

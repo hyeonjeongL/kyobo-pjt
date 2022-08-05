@@ -72,9 +72,9 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 		location.href = 'book_list.jsp';
 	}
 	function reviewGo(){
-        document.f.action = "review_book_list.jsp";
-        document.f.method='POST';
-        document.f.submit();
+        document.book_detail_form.action = "review_book_list.jsp";
+        document.book_detail_form.method='POST';
+        document.book_detail_form.submit();
   }
 </script>
 </head> 
