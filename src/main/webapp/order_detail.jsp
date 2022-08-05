@@ -149,7 +149,7 @@ function reviewGo(){
 									<td align=center> 
 										&nbsp;&nbsp;<a href=order_list.jsp
 										class=m1>주문목록</a>
-										&nbsp;&nbsp;<a href=product_list.jsp
+										&nbsp;&nbsp;<a href=book_list.jsp
 										class=m1>계속 쇼핑하기</a>
 
 									</td>
