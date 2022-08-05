@@ -3,10 +3,10 @@ package com.itwill.book.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.itwill.book.common.NoticeListPageMakerDto;
 import com.itwill.book.common.PageMaker;
 import com.itwill.book.dao.NoticeDao;
 import com.itwill.book.dto.Notice;
-import com.itwill.book.dto.PageMakerDto;
 
 public class NoticeService {
 	private static NoticeService instance;
@@ -24,14 +24,18 @@ public class NoticeService {
 	
 	
 	// 공지사항 목록
-	public PageMakerDto<Notice> getNoticeList(int currentPage) throws Exception{
-		//전체 글 개수 구하기
-		int totRecordCount = noticeDao.getNoticeCount();
-		//페이지 계산
-		PageMaker pageMaker = new PageMaker(totRecordCount, currentPage, 10, 10);
-		//게시물 데이터
-		List<Notice> noticeList = noticeDao.getNoticeList(pageMaker.getPageBegin(), pageMaker.getPageEnd());
-		PageMakerDto<Notice> pageMakerNoticeList = new PageMakerDto<Notice>(noticeList, pageMaker, totRecordCount);
+	public NoticeListPageMakerDto findNoticeList(int currentPage) throws Exception{
+		//1.전체글의 갯수
+		int totalRecordCount = noticeDao.getNoticeCount();
+		//2.paging계산(PageMaker 유틸클래스)
+		PageMaker pageMaker=new PageMaker(totalRecordCount,currentPage);
+		//3.게시물데이타 얻기
+		List<Notice> noticeList=
+				noticeDao.getNoticeList(pageMaker.getPageBegin(),pageMaker.getPageEnd());
+		NoticeListPageMakerDto pageMakerNoticeList=new NoticeListPageMakerDto();
+		pageMakerNoticeList.totRecordCount=totalRecordCount;
+		pageMakerNoticeList.itemList=noticeList;
+		pageMakerNoticeList.pageMaker=pageMaker;
 		return pageMakerNoticeList;
 	}
 	

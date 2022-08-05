@@ -9,9 +9,9 @@
 
 	
 	request.setCharacterEncoding("UTF-8");
-	request.getParameter("n_no");
+	request.getParameter("noticeno");
 	
-	String noStr = request.getParameter("n_no");
+	String noStr = request.getParameter("noticeno");
 	if(noStr==null || noStr.equals("")){
 		response.sendRedirect("notice_list.jsp");
 		return;
