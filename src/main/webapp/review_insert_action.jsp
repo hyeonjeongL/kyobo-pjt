@@ -45,7 +45,6 @@
 	String r_contents = request.getParameter("r_contents");
 	String r_grade = request.getParameter("r_grade");
 	String u_id = request.getParameter("u_id");
-	//String od_no = request.getParameter("od_no");
 	String od_no = request.getParameter("od_no");
 	ReviewService reviewService = new ReviewService();
 	
