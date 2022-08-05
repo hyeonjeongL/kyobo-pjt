@@ -5,7 +5,7 @@
 <%@include file="login_check.jspf"%>
 
 <%
-
+ 
 if(request.getMethod().equalsIgnoreCase("GET")){
 	response.sendRedirect("kyobo_main.jsp");
 	return;
