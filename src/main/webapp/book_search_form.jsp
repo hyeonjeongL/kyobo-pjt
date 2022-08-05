@@ -55,23 +55,16 @@ request.setCharacterEncoding("UTF-8");
 
 				<form action="book_search_result.jsp" method="get">
 
-					<div class="container">
 						<div class="row">
-									<td>
-							<select data-trigger="" name="searchType">
-								
+							<select data-trigger="" name="searchType" style="width:50px;height:30px">
 										<option value="all">통합</option>
 										<option value="name">제목</option>
 										<option value="author">저자</option>
 										<option value="class">분야</option>
 							</select>
-					</td>
+			<input id="search" type="text" name="keyword" placeholder="검색어를 입력하세요" style="width:130px;height:25px"> 
+				<input type="submit" value="검색" action="book_search_result.jsp" style="width:35px;height:30px">
 			</div>
-		</div>
-		<div class="input-field second-wrap">
-			<input id="search" type="text" name="keyword" placeholder="검색어를 입력하세요" /> 
-				<input type="submit" value="검색" action="book_search_result.jsp">
-		</div>
 		</form>
 	</div>
 	<!-- include_content.jsp end-->
