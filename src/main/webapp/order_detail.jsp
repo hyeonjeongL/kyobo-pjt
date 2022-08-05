@@ -30,7 +30,11 @@ form > table tr td{
 */
 </style>
 <script type="text/javascript">
-	
+function reviewGo(){
+    document.book_detail_form.action = "review_book_list.jsp";
+    document.book_detail_form.method='POST';
+    document.book_detail_form.submit();
+}
 </script>
 </head>
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
@@ -101,6 +105,7 @@ form > table tr td{
 										<td width=112 height=25 align=center bgcolor="E6ECDE" class=t1>수 량</td>
 										<td width=166 height=25  align=center bgcolor="E6ECDE" class=t1>가 격</td>
 										<td width=50 height=25  align=center bgcolor="E6ECDE" class=t1>비 고</td>
+													<input type="button" value="리뷰" onClick="임은비화이팅">
 									</tr>
 									
 									<!-- orer item start -->
@@ -130,7 +135,7 @@ form > table tr td{
 										<td width=640 colspan=4 height=26  bgcolor="ffffff" class=t1>
 										
 											<p align=right style="padding-top: 10px">
-												<font color=#FF0000>총 주문 금액 : <%=new DecimalFormat("#,###.0").format(tot_price)%> 원
+												<font color=#FF0000>총 주문 금액 : <%=new DecimalFormat("#,###.").format(tot_price)%> 원
 												</font>
 											</p>
 										</td>

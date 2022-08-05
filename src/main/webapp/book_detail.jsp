@@ -58,13 +58,13 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 			document.add_cart_form.submit();
 		}
 	}
-	function order_insert_form() {
+	function order_create_form() {
 		if (<%=!isLogin%>) {
 			alert('로그인 하세요');
 			location.href = 'userinfo_login_form.jsp';
 		} else {
 			document.book_detail_form.method = 'POST';
-			document.book_detail_form.action = 'order_insert_form.jsp';
+			document.book_detail_form.action = 'order_create_form.jsp';
 			document.book_detail_form.submit();
 		}
 	}
@@ -174,7 +174,7 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 <table border="0" cellpadding="0" cellspacing="1">
 								<tr>
 									<td align=center>
-									<input type="button" value="주문하기[주문폼]" onClick="order_insert_form();"> &nbsp; 
+									<input type="button" value="주문하기[주문폼]" onClick="order_create_form();"> &nbsp; 
 										<input type="button" value="상품리스트" onClick="bookList();">&nbsp; 
 										<input type="button" value="ebook 90일 대여하기" onClick="ebookBuy()">&nbsp;
 										<input type="button" value="도서 리뷰" onClick="reviewGo()">								
