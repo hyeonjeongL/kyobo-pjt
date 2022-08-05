@@ -159,7 +159,7 @@ public class ReviewDao {
 	}
 	
 	//책 번호로 리뷰조회
-/*	
+	
 	public List<Review> reviewSelectByBookNo(Review review) throws Exception{
 		List<Review> reviewBookList = new ArrayList<Review>();
 		Connection con = dataSource.getConnection();
@@ -182,8 +182,8 @@ public class ReviewDao {
 		
 		return reviewBookList;
 	}
-*/
 
+/*
 	public List<Review> reviewSelectByBookNo(int b_no) throws Exception{
 		List<Review> reviewBookList = new ArrayList<Review>();
 		Connection con = dataSource.getConnection();
@@ -233,7 +233,9 @@ public class ReviewDao {
 		
 		return reviewBookList;
 	}
-	/*
+	
+*/	
+
 	//************상품페이지에서 해당 상품의 리뷰 전체 조회
 	public List<Review> reviewSelectByBookNo(Review review,int start, int last) throws Exception{
 		List<Review> reviewBookList = new ArrayList<Review>();
@@ -259,7 +261,7 @@ public class ReviewDao {
 		
 		return reviewBookList;
 	}
-	*/
+
 	
 	//회원 아이디로 리뷰조회
 	public List<Review> reviewSelectByUserId(String u_id) throws Exception{

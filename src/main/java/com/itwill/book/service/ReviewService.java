@@ -57,17 +57,18 @@ public class ReviewService {
 		return reviewDao.reviewSelectNo(r_no);
 	}
 	
-/*	
+	
 	//책 번호로 리뷰 조회- 상품페이지에서
 	public List<Review> reviewSelectByBookNo(Review review) throws Exception{
 		return reviewDao.reviewSelectByBookNo(review);
 	}
-*/	
 	
+/*	
 	//책 번호로 리뷰 조회- 상품페이지에서
 	public List<Review> reviewSelectByBookNo(int b_no) throws Exception{
 		return reviewDao.reviewSelectByBookNo(b_no);
 	}
+*/	
 	
 	//회원 아이디로 리뷰 조회 - 마이페이지
 	public List<Review> reviewSelectByUserId(String u_id) throws Exception{
@@ -103,7 +104,7 @@ public class ReviewService {
 		return pageMakerReviewList;
 	}
 
-
+/*
 	//상품 리뷰 게시물 리스트 
 		public ReviewBookListPageMakerDto findReviewBookList(int b_no, int currentPage) throws Exception{
 			//1.전체글의 갯수
@@ -123,8 +124,9 @@ public class ReviewService {
 			pageMakerReviewList.pageMaker=pageMaker;
 			return pageMakerReviewList;
 		}
+*/		
 	
-/*	
+	
 	//상품 리뷰 게시물 리스트 
 			public ReviewBookListPageMakerDto findReviewBookList(Review review, int currentPage) throws Exception{
 				//1.전체글의 갯수
@@ -143,7 +145,7 @@ public class ReviewService {
 				pageMakerReviewList.pageMaker=pageMaker;
 				return pageMakerReviewList;
 			}
-*/	
+
 	
 	
 	

@@ -20,10 +20,15 @@ if (pageNo == null || pageNo.equals("")) {
 	pageNo = "1";
 }
 
-String b_no = request.getParameter("p_no");
+//String b_no = request.getParameter("b_no");
+String b_no = request.getParameter("b_no");
+
+Review review1 = new Review(0,null,null,0 ,null,null,
+		new OrderDetail(0,0,0,new Book(Integer.parseInt(b_no),null,null,0,null,null,null,null))
+		,0,0,0);
 
 /***************/
-b_no="2";
+//b_no="1";
 
 /***************/
 
@@ -33,7 +38,8 @@ b_no="2";
 						new Book(1, null, null, 0, null, null, null, null)), 0, 0, 0);
 */
 	
-	ReviewBookListPageMakerDto reviewBooklistPage = new ReviewService().findReviewBookList(Integer.parseInt(b_no), Integer.parseInt(pageNo));
+	//ReviewBookListPageMakerDto reviewBooklistPage = new ReviewService().findReviewBookList(Integer.parseInt(b_no), Integer.parseInt(pageNo));
+	ReviewBookListPageMakerDto reviewBooklistPage = new ReviewService().findReviewBookList(review1, Integer.parseInt(pageNo));
 	
 %>
 <!DOCTYPE html>
@@ -89,7 +95,6 @@ b_no="2";
 									<tr>
 										<td width=280 align=center bgcolor="E6ECDE">리뷰제목</td>
 										<td width=120 align=center bgcolor="E6ECDE">작성자</td>
-										<td width=120 align=center bgcolor="E6ECDE">상품이름</td>
 										<td width=120 align=center bgcolor="E6ECDE">작성날짜</td>
 									</tr>
 									<%
@@ -102,8 +107,6 @@ b_no="2";
 										</a>
 										</td>
 										<td width=120 align=center bgcolor="ffffff"><%=review.getU_id()%>
-										</td>
-										<td width=120 align=center bgcolor="ffffff"><%=review.getOrderDetail().getBook().getB_name()%>
 										</td>
 										<td width=120 bgcolor="ffffff" style="padding-left: 10px" align="left">
 											<%=review.getR_date()%>
@@ -120,10 +123,10 @@ b_no="2";
 									<td align="center">
 							     
 										 <%if(reviewBooklistPage.pageMaker.getPrevGroupStartPage()>0) {%>    
-										    <a href="./review_book_list.jsp?pageno=1">◀◀</a>&nbsp;
+										    <a href="./review_book_list.jsp?b_no=<%=review1.getOrderDetail().getBook().getB_no() %>&pageno=1">◀◀</a>&nbsp;
 										 <%}%>
 										 <%if(reviewBooklistPage.pageMaker.getPrevPage()>0) {%>    
-											<a href="./review_book_list.jsp?pageno=<%=reviewBooklistPage.pageMaker.getPrevPage()%>">◀</a>&nbsp;&nbsp;
+											<a href="./review_book_list.jsp?b_no=<%=review1.getOrderDetail().getBook().getB_no() %>&pageno=<%=reviewBooklistPage.pageMaker.getPrevPage()%>">◀</a>&nbsp;&nbsp;
 										 <%}%>
 										
 										<%
@@ -132,18 +135,18 @@ b_no="2";
 										%>
 										 <font color='red'><strong><%=i%></strong></font>&nbsp;
 										<%} else {%>
-										<a href="./review_book_list.jsp?pageno=<%=i%>"><strong><%=i%></strong></a>&nbsp;
+										<a href="./review_book_list.jsp?b_no=<%=review1.getOrderDetail().getBook().getB_no() %>&pageno=<%=i%>"><strong><%=i%></strong></a>&nbsp;
 										<%
 										   }
 										  }%>
 										  
 										  
 										 <%if(reviewBooklistPage.pageMaker.getCurPage()< reviewBooklistPage.pageMaker.getTotPage()){%>
-										  <a href="./review_book_list.jsp?pageno=<%=reviewBooklistPage.pageMaker.getNextPage()%>">▶&nbsp;</a>
+										  <a href="./review_book_list.jsp?b_no=<%=review1.getOrderDetail().getBook().getB_no() %>&pageno=<%=reviewBooklistPage.pageMaker.getNextPage()%>">▶&nbsp;</a>
 										 <%}%>
 										 <%if(reviewBooklistPage.pageMaker.getNextGroupStartPage()< reviewBooklistPage.pageMaker.getTotPage()){%>
 										<a
-										href="./review_book_list.jsp?pageno=<%=reviewBooklistPage.pageMaker.getTotPage()%>">▶▶</a>&nbsp;
+										href="./review_book_list.jsp?b_no=<%=review1.getOrderDetail().getBook().getB_no() %>&pageno=<%=reviewBooklistPage.pageMaker.getTotPage()%>">▶▶</a>&nbsp;
 										 <%}%>
 									</td>
 								</tr>
