@@ -19,7 +19,7 @@ if (request.getMethod().equalsIgnoreCase("GET")) {
 String buyType = request.getParameter("buyType");
 String b_noStr = request.getParameter("b_no");
 String b_qtyStr = request.getParameter("b_qty");
-String[] cart_item_noStr_array = request.getParameterValues("c_no");
+String[] cart_item_noStr_array = request.getParameterValues("cart_item_no");
 
 if(buyType==null)buyType="";
 if(b_noStr==null)b_noStr="";
@@ -191,6 +191,7 @@ form > table tr td{
 									</tr>
 								</table>
 							</form>
+							
 							<br />
 							<table border="0" cellpadding="0" cellspacing="1" width="590">
 								<tr>
