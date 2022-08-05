@@ -69,8 +69,8 @@ function reviewReplayCreate() {
 		f.submit();
 	}
 
-	function boardList() {
-		f.action = "board_list.jsp";
+	function reviewList() {
+		f.action = "review_Id_list.jsp";
 		f.submit();
 	}
 	
@@ -80,6 +80,28 @@ function reviewReplayCreate() {
 			document.f.submit();
 		}
 	}
+	
+	function reviewUpdate() {
+		if (f.r_title.value == "") {
+			alert("제목을 입력하십시요.");
+			f.r_title.focus();
+			return false;
+		}
+		if (f.u_id.value == "") {
+			alert("작성자를 입력하십시요.");
+			f.u_id.focus();
+			return false;
+		}
+		if (f.r_contents.value == "") {
+			alert("내용을 입력하십시요.");
+			f.r_contents.focus();
+			return false;
+		}
+
+		f.action = "review_modify_action.jsp";
+		f.submit();
+	}
+
 
 
 

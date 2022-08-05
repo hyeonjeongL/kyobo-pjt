@@ -2,7 +2,24 @@
 <%@page import="com.itwill.book.service.ReviewService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <%
+/*    
+	if(request.getMethod().equalsIgnoreCase("GET")){
+		response.sendRedirect("review_Id_list.jsp");
+		return;
+	}
+	
+	ReviewService reviewService = new ReviewService();
+	String r_no =  request.getParameter("r_no");
+	reviewService.reviewDeleteByNo(Integer.parseInt(r_no));
+	response.sendRedirect("kyobo_main.jsp");
+		
+*/	
+
+%>
+ 
+ <%
 	Integer r_no = null;
 	Integer pageno = null;
 	try {
@@ -16,13 +33,16 @@
 		result = false;
 		msg = "삭제실패";
 	} else {
-		
+		 try{
 			ReviewService.getInstance().reviewDeleteByNo(r_no);
 			result = true;
 			msg = "삭제성공";
-		
-		
+	} catch(Exception e){
+		result = false;
+		msg = "삭제실패:" + e.getMessage();
 	}
+	}
+	
 %>
 <script type="text/javascript">
 <%if (result) {%>
@@ -31,8 +51,9 @@
 <%} else {%>
 	alert('<%=msg%>');
 	//history.back();
-	location.href='review_Id_list?pageno=<%=pageno%>';
+	location.href='review_Id_list.jsp?pageno=<%=pageno%>';
 <%}%>
 	
 </script>
+ 
 

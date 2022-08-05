@@ -1,17 +1,17 @@
 <%@page import="com.itwill.book.service.ReviewService"%>
 <%@page import="com.itwill.book.dto.Review"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%
-	//´ñ±ÛÀÇ ´ë»ó±Û¹øÈ£¸¦ ÀÐ¾î¼­ º¯¼ö¿¡ ÀúÀå
+	//ëŒ“ê¸€ì˜ ëŒ€ìƒê¸€ë²ˆí˜¸ë¥¼ ì½ì–´ì„œ ë³€ìˆ˜ì— ì €ìž¥
 	if(request.getParameter("r_no")==null){
-		//response.sendRedirect("kyobo_main.jsp"); //¹Ù²Ù±â
+		//response.sendRedirect("kyobo_main.jsp"); //ë°”ê¾¸ê¸°
 		return;
 	}
 	int r_no = Integer.parseInt(request.getParameter("r_no"));
 	Review review=ReviewService.getInstance().reviewSelectNo(r_no);
 	if(review==null){
-		response.sendRedirect("kyobo_main.jsp");//¹Ù²Ù±â
+		response.sendRedirect("kyobo_main.jsp");//ë°”ê¾¸ê¸°
 		return;
 	}
 	String pageno="1";
@@ -22,7 +22,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>¸®ºä ´ñ±Û ÀÛ¼º</title>
+<title>ë¦¬ë·° ëŒ“ê¸€ ìž‘ì„±</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel=stylesheet href="css/styles.css" type="text/css">
 <link rel=stylesheet href="css/user.css" type="text/css">
@@ -60,7 +60,7 @@
 								cellspacing=0>
 								<tr>
 
-									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>´ñ±Û ¾²±â</b></td>
+									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>ëŒ“ê¸€ ì“°ê¸°</b></td>
 								</tr>
 							</table> <br> <!-- write Form  -->
 							<form name="f" method="post">
@@ -70,21 +70,21 @@
 								<table border="0" cellpadding="0" cellspacing="1" width="590"
 									bgcolor="BBBBBB">
 									<tr>
-										<td width=100 align=center bgcolor="E6ECDE" height="22">´ñ±Û Á¦¸ñ</td>
+										<td width=100 align=center bgcolor="E6ECDE" height="22">ëŒ“ê¸€ ì œëª©</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
 											<input value="[RE]<%=review.getR_title()%>"  type="text" style="width: 150"
 											name="r_reply_title">
 										</td>
 									</tr>
 									<tr>
-										<td width=100 align=center bgcolor="E6ECDE" height="22">ÀÛ¼ºÀÚ</td>
+										<td width=100 align=center bgcolor="E6ECDE" height="22">ìž‘ì„±ìž</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
 											<input value="<%=review.getU_id()%>" type="text" style="width: 150"
 											name="r_reply_u_id">
 										</td>
 									</tr>
 									<tr>
-										<td width=100 align=center bgcolor="E6ECDE" height="22">´ñ±Û ³»¿ë</td>
+										<td width=100 align=center bgcolor="E6ECDE" height="22">ëŒ“ê¸€ ë‚´ìš©</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
 											<textarea name="r_reply_contents" class="textarea" style="width: 350px" rows="14">>><%=review.getR_contents()%></textarea>
 										</td>
@@ -96,8 +96,8 @@
 
 							<table width=590 border=0 cellpadding=0 cellspacing=0>
 								<tr>
-									<td align=center><input type="button" value="´ñ±Û µî·Ï" onClick="reviewReplyCreate()"> &nbsp; 
-									<input type="button" value="°Ô½ÃÆÇ ¸ñ·Ï" onClick="reviewList()"></td>
+									<td align=center><input type="button" value="ëŒ“ê¸€ ë“±ë¡" onClick="reviewReplayCreate()"> &nbsp; 
+									<input type="button" value="ê²Œì‹œíŒ ëª©ë¡" onClick="reviewList()"></td>
 								</tr>
 							</table></td>
 					</tr>
