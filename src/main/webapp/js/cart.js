@@ -27,6 +27,8 @@ function changeNumber(desc, formId) {
 		}
 		
 	}
+	
+	
 	/*
 	cart 전체삭제(비우기)
 	 */
@@ -54,7 +56,7 @@ function changeNumber(desc, formId) {
 			}
 		}
 		if (!isChecked) {
-			alert('제품을선택해주세요');
+			alert('구매 할 제품을 선택해주세요');
 			return;
 		}
 		document.cart_view_form.buyType.value = 'cart_select';
@@ -86,11 +88,11 @@ function changeNumber(desc, formId) {
 					tot_order_price+=c_qty*cart_product_unit_price;
 					
 					var deli_price=0;
-					if( 1<tot_order_price && tot_order_price<50000){
-						deli_price=2500;
-					} else {
-						deli_price=0;
-					}
+						if( 1<tot_order_price && tot_order_price<50000){
+							deli_price=2500;
+						} else {
+							deli_price=0;
+						}
 
 					tot_order_price_deli+=c_qty*cart_product_unit_price+deli_price;
 					

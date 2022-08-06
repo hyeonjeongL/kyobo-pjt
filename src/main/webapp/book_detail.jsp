@@ -76,6 +76,15 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
         document.book_detail_form.method='POST';
         document.book_detail_form.submit();
   }
+	
+	function cart_insert_action(formId) {
+		if(window.confirm('해당 상품이 장바구니에 담겼습니다. 장바구니로 이동하시겠습니까?')) {
+		var form = document.getElementById(formId);
+		form.method = 'POST';
+		form.action = 'cart_insert_action.jsp';
+		form.submit();
+		}
+	}
 </script>
 </head> 
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
@@ -128,7 +137,7 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 								</tr>
 								<tr width=100%>
 									<td width=30% height=200 align=center class=t1>
-										<form name="add_cart_form" method="post" action="cart_insert_action.jsp">
+										<form id="add_cart_from" name="add_cart_form" method="post" action="cart_insert_action.jsp">
 											수량 :
 											<!-- 
 											 <input type=text name="cart_qty" value=1 size=4 class=TXTFLD>  
@@ -145,7 +154,7 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 												<option value="9">9
 												<option value="10">10
 											</select> 권<br><br> 
-												<input type=submit value="장바구니 이동" /><br><br> 
+												<a href="javascript:cart_insert_action('add_cart_from');">장바구니 담기</a>
 												<input type="hidden" name=b_no value="<%=book.getB_no()%>">
 										</form>
 									</td>
