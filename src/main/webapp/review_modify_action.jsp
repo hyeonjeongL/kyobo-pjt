@@ -20,7 +20,7 @@ review.setR_grade(Integer.parseInt(request.getParameter("r_grade")));
 review.setR_contents(request.getParameter("r_contents"));
 
 //2. 데이터베이스에 변경된 내용 적용
-ReviewService.getInstance().reviewUpdateByNo(review);
+ReviewService.getInstance().reviewUpdate(review);
 String pageno = "1";
 if (request.getParameter("pageno") != null) {
 	pageno = request.getParameter("pageno");

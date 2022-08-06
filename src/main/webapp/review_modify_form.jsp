@@ -1,56 +1,22 @@
+<%@page import="java.io.PrintWriter"%>
 <%@page import="com.itwill.book.dto.Book"%>
 <%@page import="com.itwill.book.dto.OrderDetail"%>
 <%@page import="com.itwill.book.service.ReviewService"%>
 <%@page import="com.itwill.book.dto.Review"%>
+<%@page import="com.itwill.book.dao.ReviewDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	
 <%
-	
-String u_id = (String)session.getAttribute("sUserId");
-	String r_no = request.getParameter("r_no");
-	
-	Review review = new Review(Integer.parseInt(r_no),null,null,0 ,null,null,
-			new OrderDetail(0,0,0,new Book(0,null,null,0,null,null,null,null))
-			,0,0,0);
-	ReviewService reviewService = new ReviewService();
-	reviewService.reviewUpdateByNo(review);
-	
-	if (review == null) {
-		//response.sendRedirect("review_Id_list.jsp");
-		return;
-	}
-
+int r_no = 0;
+if(request.getParameter("r_no") != null){
+	r_no = Integer.parseInt(request.getParameter("r_no"));
+}
+Review review = new ReviewDao().reviewSelectNo(r_no);
 	String pageno = "1";
 	if (request.getParameter("pageno") != null) {
 		pageno = request.getParameter("pageno");
 	}
-
-%>
-
-<%
-/*
-	Integer r_no = null;
-	try {
-		r_no = Integer.valueOf(request.getParameter("r_no"));
-	} catch (Exception ex) {
-	}
-	//글번호가 없다면
-	if (r_no == null) {
-		//목록으로 이동
-		//response.sendRedirect("board_list.jsp");
-		return;
-	}
-	Review review = ReviewService.getInstance().reviewSelectNo(r_no);
-	if (review == null) {
-		//response.sendRedirect("board_list.jsp");
-		return;
-	}
-	String pageno = "1";
-	if (request.getParameter("pageno") != null) {
-		pageno = request.getParameter("pageno");
-	}
-	*/
 %>
 <!DOCTYPE html>
 <html>
@@ -76,11 +42,7 @@ String u_id = (String)session.getAttribute("sUserId");
 		</div>
 		<!-- header end -->
 		<!-- navigation start-->
-		<div id="navigation">
-			<!-- include_common_left.jsp start-->
-			<jsp:include page="include_common_left.jsp" />
-			<!-- include_common_left.jsp end-->
-		</div>
+		
 		<!-- navigation end-->
 		<!-- wrapper start -->
 		<div id="wrapper">
@@ -99,7 +61,7 @@ String u_id = (String)session.getAttribute("sUserId");
 								</tr>
 							</table> <br> <!-- modify Form  -->
 							<form name="f" method="post">
-								<input type="hidden" name="pageno" value="<%=pageno%>" /> <input
+								<input
 									type="hidden" name="r_no" value="<%=review.getR_no()%>" />
 								<table border="0" cellpadding="0" cellspacing="1" width="590"
 									bgcolor="BBBBBB">
@@ -129,7 +91,7 @@ String u_id = (String)session.getAttribute("sUserId");
 							<table width=590 border=0 cellpadding=0 cellspacing=0>
 								<tr>
 									<td align=center><input type="button" value="수정" onClick="reviewUpdate()"> &nbsp; 
-									<input type="button" value="리스트" onClick="reviewList()"></td>
+									<input type="button" value="리스트" onClick="reviewBookList()"></td>
 								</tr>
 							</table></td>
 					</tr>
