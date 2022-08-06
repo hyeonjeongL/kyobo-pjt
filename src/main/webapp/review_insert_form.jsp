@@ -1,3 +1,4 @@
+<%@page import="com.itwill.book.dto.OrderDetail"%>
 <%@page import="com.itwill.book.dto.Orders"%>
 <%@page import="com.itwill.book.service.OrderService"%>
 <%@page import="java.util.Date"%>
@@ -17,7 +18,9 @@ if(u_id == null){
 }
 ReviewService reviewService = new ReviewService();
 
-
+String o_no=request.getParameter("j_no");
+OrderService orderService=new OrderService();
+Orders orders = orderService.detail(u_id,Integer.parseInt(o_no));
 
 %> 
     
@@ -66,6 +69,11 @@ ReviewService reviewService = new ReviewService();
 							<form name="f" method="post">
 								<table border="0" cellpadding="0" cellspacing="1" width="590"
 									bgcolor="BBBBBB">
+									
+									<%
+										for(OrderDetail orderDetail:orders.getOrderDetailList()) {
+									%>
+									
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">리뷰제목</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
@@ -82,7 +90,7 @@ ReviewService reviewService = new ReviewService();
 										<td width=100 align=center bgcolor="E6ECDE" height="22">주문번호</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><input type="text" style="width: 150px"
-											name="od_no" value=""></td>
+											name="od_no" value="<%=orders.getO_no() %>" readonly="readonly"></td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">평점</td>
@@ -96,6 +104,8 @@ ReviewService reviewService = new ReviewService();
 											align="left"><textarea name="r_contents" class="textarea"
 												style="width: 350px" rows="10" ></textarea></td>
 									</tr>
+									
+									<%}%>
 								</table>
 							</form> <br>
 

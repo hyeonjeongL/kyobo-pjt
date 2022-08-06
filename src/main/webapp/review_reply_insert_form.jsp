@@ -33,6 +33,9 @@ if(u_id==null){ //팝업으로 로그인 회원만 가능이라고 알리기
 	if(request.getParameter("pageno")!=null){
 		pageno = request.getParameter("pageno");
 	}
+	
+	
+	
 %> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>

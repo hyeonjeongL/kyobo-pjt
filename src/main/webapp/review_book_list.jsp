@@ -1,3 +1,4 @@
+<%@page import="com.itwill.book.service.BookService"%>
 <%@page import="com.itwill.book.dto.Book"%>
 <%@page import="com.itwill.book.dto.OrderDetail"%>
 <%@page import="com.itwill.book.dto.ReviewBookListPageMakerDto"%>
@@ -20,6 +21,8 @@ if (pageNo == null || pageNo.equals("")) {
 	pageNo = "1";
 }
 
+
+
 String b_no = request.getParameter("b_no");
 
 Review review1 = new Review(0,null,null,0 ,null,null,
@@ -28,6 +31,9 @@ Review review1 = new Review(0,null,null,0 ,null,null,
 
 	
 	ReviewBookListPageMakerDto reviewBooklistPage = new ReviewService().findReviewBookList(review1, Integer.parseInt(pageNo));
+	
+	BookService bookService =new BookService();
+	Book book=bookService.selectByNo(Integer.parseInt(b_no));
 	
 %>
 <!DOCTYPE html>
@@ -73,6 +79,7 @@ Review review1 = new Review(0,null,null,0 ,null,null,
 								</tr>
 							</table> 
 					<form name="f" method="post" action="">
+						<input type="hidden" name="b_no" value="<%=b_no%>">
 								<table border="0" cellpadding="0" cellspacing="1" width="590"
 									bgcolor="BBBBBB">
 

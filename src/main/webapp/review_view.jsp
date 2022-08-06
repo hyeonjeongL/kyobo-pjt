@@ -1,9 +1,17 @@
+
+<%@page import="com.itwill.book.dto.Book"%>
+<%@page import="com.itwill.book.service.BookService"%>
+<%@page import="com.itwill.book.dto.Orders"%>
+<%@page import="com.itwill.book.service.OrderService"%>
 <%@page import="com.itwill.book.service.ReviewService"%>
 <%@page import="com.itwill.book.dto.Review"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
 <%
+
+//String u_id = (String)session.getAttribute("sUserId");
+
 	Integer r_no=null;
 	int pageno=1;
 	try{
@@ -23,6 +31,17 @@
 		response.sendRedirect("review_Id_list.jsp?pageno="+pageno);
 		return;
 	}
+
+	/*
+	String b_no = request.getParameter("b_no");
+	BookService bookService =new BookService();
+	Book book=bookService.selectByNo(Integer.parseInt(b_no));
+	*/
+	
+	//String o_no=request.getParameter("j_no");
+	//OrderService orderService=new OrderService();
+	//Orders orders = orderService.detail(u_id,Integer.parseInt(o_no));
+	
 %>
 <!DOCTYPE html>
 <html>
@@ -85,7 +104,7 @@
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">상품이름</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
-											align="left"><%=review.getOrderDetail().getBook().getB_no()%></td>
+											align="left"></td>
 									</tr>
 
 									<tr>
@@ -111,9 +130,9 @@
 							</form> <br>
 							<table width=590 border=0 cellpadding=0 cellspacing=0>
 								<tr>
-									<td align=center><input type="button" value="글쓰기"
-										onClick="reviewCreateGo()"> &nbsp; 
-										<input type="button" value="댓글쓰기" onClick="reviewReplyCreate()"> &nbsp; 
+								<td align=center>
+								<!-- 	<input type="button" value="글쓰기" onClick="reviewCreateGo()"> &nbsp; -->
+									 	<input type="button" value="댓글쓰기" onClick="reviewReplyCreate()"> &nbsp;   
 										<input type="button" value="수정" onClick="reviewUpdate()"> &nbsp; 
 										<input type="button" value="삭제" onClick="reviewRemove()"> &nbsp; 
 										<input type="button" value="리스트" onClick="reviewList()"></td>

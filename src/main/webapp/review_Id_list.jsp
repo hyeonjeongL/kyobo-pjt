@@ -60,7 +60,7 @@ if (pageNo == null || pageNo.equals("")) {
 							<table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
-									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>내가 쓴 리뷰
+									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>내가 쓴 글
 											</b></td>
 								</tr>
 							</table> 
@@ -71,7 +71,6 @@ if (pageNo == null || pageNo.equals("")) {
 									<tr>
 										<td width=280 align=center bgcolor="E6ECDE">리뷰제목</td>
 										<td width=120 align=center bgcolor="E6ECDE">작성자</td>
-										<td width=120 align=center bgcolor="E6ECDE">상품이름</td>
 										<td width=120 align=center bgcolor="E6ECDE">작성날짜</td>
 									</tr>
 									<%
@@ -84,9 +83,6 @@ if (pageNo == null || pageNo.equals("")) {
 										</a>
 										</td>
 										<td width=120 align=center bgcolor="ffffff"><%=review.getU_id()%>
-										</td>
-										<td width=120 align=center bgcolor="ffffff"><%=review.getOrderDetail().getBook().getB_name()%>
-										</td>
 										<td width=120 bgcolor="ffffff" style="padding-left: 10px" align="left">
 											<%=review.getR_date()%>
 										</td>
