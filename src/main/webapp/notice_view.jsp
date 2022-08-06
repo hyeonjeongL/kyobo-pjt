@@ -9,7 +9,7 @@
 		noticeno =Integer.parseInt(request.getParameter("noticeno"));
 		pageno=Integer.parseInt(request.getParameter("pageno"));
 	}catch(Exception e){
-		
+		e.printStackTrace();
 	}
 	if(noticeno==null){
 		//목록으로이동
@@ -24,6 +24,9 @@
 	
 	//읽은회수증가
 	NoticeService.getInstance().updateviewCount(noticeno);
+
+	System.out.println(request.getParameter("noticeno"));
+	System.out.println(request.getParameter("pageno"));
 
 %>
 <!DOCTYPE html>
@@ -41,11 +44,17 @@ function noticeList() {
 	f.action = "notice_list.jsp";
 	f.submit();
 }
+console.log("N_no : <%=notice.getN_no() %>");
+console.log("N_date : <%=notice.getN_date()%>");
+console.log("N_content :<%=notice.getN_contents().replace("\n","<br/>")%>");
+console.log("N_title : <%=notice.getN_title()%>");
+console.log("N_title :<%=notice.getN_title()%>");
+console.log("N_image :<%=notice.getN_image()%>");
 </script>
 </head>
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
 	marginwidth=0 marginheight=0>
-	<!-- container start-->
+ 	<!-- container start-->
 	<div id="container">
 		<!-- header start -->
 		<div id="header">
@@ -78,24 +87,29 @@ function noticeList() {
 
 							<form name="f" method="post">
 								<input type="hidden" name="notino" value="<%=notice.getN_no() %>">
+								<!-- <input type="hidden" name="notino" value="26"> -->
 								<input type="hidden" name="pageno" value="1">
 								<table border="0" cellpadding="0" cellspacing="1" width="590" bgcolor="BBBBBB">
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">공지일</td>
 										<td width=490 bgcolor="ffffff" align="left" style="padding-left: 10"><%=notice.getN_date()%></td>
+										<!-- <td width=490 bgcolor="ffffff" align="left" style="padding-left: 10">20220806</td> -->
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">제목</td>
 										<td width=490 bgcolor="ffffff" align="left" style="padding-left: 10"><%=notice.getN_title()%></td>
+										<!-- <td width=490 bgcolor="ffffff" align="left" style="padding-left: 10">테스트</td> -->
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">내용</td>
-										<td width=490 bgcolor="ffffff" align="left" style="padding-left: 10"><%=notice.getN_contents().replace("\n","<br/>")%>
+										<td width=490 bgcolor="ffffff" align="left" style="padding-left: 10"><%=notice.getN_contents().replace("\n","<br/>")%></td>
+										<!-- <td width=490 bgcolor="ffffff" align="left" style="padding-left: 10">test</td> -->
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">이미지</td>
 										<td width=490 bgcolor="ffffff" align="left" style="padding-left: 10">
 										<img border=0 src="image/<%=notice.getN_image()%>" style =  "width:100%; height : auto;"></td>
+										<!-- <img border=0 src="image/1_courage.jpg" style =  "width:100%; height : auto;"></td> -->
 									</tr>
 								</table>
 							</form><br>

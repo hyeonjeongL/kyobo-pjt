@@ -9,11 +9,12 @@ import com.itwill.book.service.NoticeService;
 public class noticeServiceTest {
 
 	public static void main(String[] args) throws Exception{
+		/*
 		NoticeService noticeService = new NoticeService();
 		List<Notice> noticeList = new ArrayList<Notice>();
 		noticeList = noticeService.noticeSelectAll();
 		System.out.println(noticeList);
-		
+		*/
 		
 	}
 
