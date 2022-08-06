@@ -11,32 +11,22 @@
 <%
 
 	String sUserId = (String)session.getAttribute("sUserId");
-
+	if(sUserId == null){
+		response.sendRedirect("kyobo_main.jsp");
+	}
 
 String pageNo = request.getParameter("pageno");
 if (pageNo == null || pageNo.equals("")) {
 	pageNo = "1";
 }
 
-//String b_no = request.getParameter("b_no");
 String b_no = request.getParameter("b_no");
 
 Review review1 = new Review(0,null,null,0 ,null,null,
 		new OrderDetail(0,0,0,new Book(Integer.parseInt(b_no),null,null,0,null,null,null,null))
 		,0,0,0);
 
-/***************/
-//b_no="1";
-
-/***************/
-
-/*
-	new Review(0, null, null, 0, null, null, 
-				new OrderDetail(0, 0, 0, 
-						new Book(1, null, null, 0, null, null, null, null)), 0, 0, 0);
-*/
 	
-	//ReviewBookListPageMakerDto reviewBooklistPage = new ReviewService().findReviewBookList(Integer.parseInt(b_no), Integer.parseInt(pageNo));
 	ReviewBookListPageMakerDto reviewBooklistPage = new ReviewService().findReviewBookList(review1, Integer.parseInt(pageNo));
 	
 %>
@@ -64,11 +54,7 @@ Review review1 = new Review(0,null,null,0 ,null,null,
 		</div>
 		<!-- header end -->
 		<!-- navigation start-->
-		<div id="navigation">
-			<!-- include_common_left.jsp start-->
-			<jsp:include page="include_common_left.jsp" />
-			<!-- include_common_left.jsp end-->
-		</div>
+		
 		<!-- navigation end-->
 		<!-- wrapper start -->
 		<div id="wrapper">

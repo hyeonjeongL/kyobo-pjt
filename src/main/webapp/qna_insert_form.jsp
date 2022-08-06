@@ -11,7 +11,10 @@
 
 String sUserId = (String)session.getAttribute("sUserId");
 if(sUserId == null){
-	response.sendRedirect("kyobo_main.jsp");
+	out.println("<script>");
+	out.println("alert('로그인 후 이용바랍니다');");
+	out.println("location.href='kyobo_main.jsp';");
+	out.println("</script>");
 }
 
 
@@ -43,11 +46,7 @@ QnaService qnaService = new QnaService();
 		</div>
 		<!-- header end -->
 		<!-- navigation start-->
-		<div id="navigation">
-			<!-- include_common_left.jsp start-->
-			<jsp:include page="include_common_left.jsp"/>
-			<!-- include_common_left.jsp end-->
-		</div>
+	
 		<!-- navigation end-->
 		<!-- wrapper start -->
 		<div id="wrapper">
