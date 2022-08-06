@@ -1,3 +1,5 @@
+<%@page import="com.itwill.book.dto.Orders"%>
+<%@page import="com.itwill.book.service.OrderService"%>
 <%@page import="java.util.Date"%>
 <%@page import="com.itwill.book.dto.Review"%>
 <%@page import="com.itwill.book.service.ReviewService"%>
@@ -14,7 +16,6 @@ if(u_id == null){
 	response.sendRedirect("kyobo_main.jsp");
 }
 ReviewService reviewService = new ReviewService();
-
 
 
 
