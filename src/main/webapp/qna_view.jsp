@@ -102,7 +102,7 @@
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">내용</td>
 										<td width=490 bgcolor="ffffff" height="100px"
-											style="padding-left: 10px" align="left"><%=qna.getQ_contents()%>
+											style="padding-left: 10px" align="left"><%=qna.getQ_contents().replace("\n", "<br/>")%>
 
 										</td>
 									</tr>
