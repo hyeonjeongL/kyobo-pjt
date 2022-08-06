@@ -46,7 +46,7 @@ div#container {
 div#content p {
 	line-height: 1.4
 }
-
+/*
 div#navigation {
 	background: #F6F0E0;
 }
@@ -70,6 +70,7 @@ div#navigation p {
 	margin-top: 20px;
 	margin-left: 15px
 }
+*/
 /*
 div#extra{background:#CCC8B3;}
 */
@@ -91,11 +92,13 @@ div#container {
 /*
 div#navigation{float:left;width:150px;height:350px;margin-left:-700px}
 */
+/*
 div#navigation {
 	float: left;
 	width: 150px;
 	height: 350px;
 }
+*/
 /*
 div#wrapper{float:left;width:100%}
 */
