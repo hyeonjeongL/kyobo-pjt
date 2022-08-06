@@ -11,9 +11,7 @@
 <%
 
 	String sUserId = (String)session.getAttribute("sUserId");
-	if(sUserId == null){
-		response.sendRedirect("kyobo_main.jsp");
-	}
+
 
 String pageNo = request.getParameter("pageno");
 if (pageNo == null || pageNo.equals("")) {
