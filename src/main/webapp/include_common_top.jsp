@@ -17,10 +17,7 @@
 		<li><a href="book_list.jsp">도서목록</a></li>
 		<li><a href="notice_list.jsp">공지사항</a></li>
 		<li><a href="qna_list.jsp">Q&A</a></li>
-		<%if(u_id != null){ %>
-		<li><a href="notice_list.jsp">장바구니</a></li>
-		<li><a href="qna_list.jsp">주문목록</a></li>
-		<%} %>
+
 		
 		
 	</ul>

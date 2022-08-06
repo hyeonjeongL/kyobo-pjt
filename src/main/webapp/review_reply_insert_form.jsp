@@ -57,11 +57,7 @@ if(u_id==null){ //팝업으로 로그인 회원만 가능이라고 알리기
 		</div>
 		<!-- header end -->
 		<!-- navigation start-->
-		<div id="navigation">
-			<!-- include_common_left.jsp start-->
-			<jsp:include page="include_common_left.jsp"/>
-			<!-- include_common_left.jsp end-->
-		</div>
+		
 		<!-- navigation end-->
 		<!-- wrapper start -->
 		<div id="wrapper">
