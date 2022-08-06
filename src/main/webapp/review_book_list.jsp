@@ -101,7 +101,7 @@ Review review1 = new Review(0,null,null,0 ,null,null,
 										</td>
 										<td width=120 bgcolor="ffffff" style="padding-left: 10px" align="left">
 											<%=review.getR_date()%>
-										</td>
+										</td> 
 									</tr>
 									
 									<%

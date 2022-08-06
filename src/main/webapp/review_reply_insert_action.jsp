@@ -26,7 +26,7 @@
 	*/
 	
 	String u_id = (String)session.getAttribute("sUserId");
-	
+	 
 	
 	if(request.getMethod().equalsIgnoreCase("GET")){
 		response.sendRedirect("riview_id_list.jsp");
