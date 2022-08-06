@@ -77,7 +77,7 @@
 할머니가 말했다.
 <br><br>
 1
-
+<a href="kyobo_main.jsp">메인으로</a>
 
 </div>
 
@@ -103,6 +103,7 @@
 <br><br>
 2
 <a href="ebook_detail2.jsp?b_no=<%=b_no%>" id="u" value="1" >다음페이지</a>
+
 </div>
 
 
