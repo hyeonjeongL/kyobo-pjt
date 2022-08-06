@@ -6,13 +6,39 @@
 <%@page import="com.itwill.book.dao.ReviewDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
 <%
+String u_id=null;
+if(session.getAttribute("sUserId")!=null){
+	u_id=(String)session.getAttribute("sUserId");
+}
+if(u_id==null){
+	PrintWriter script= response.getWriter();
+	script.println("<script>");
+	script.println("alert('로그인 하세요')");
+	script.println("location.href='userinfo_login_form.jsp'");
+	script.println("</script>");
+}
 int r_no = 0;
 if(request.getParameter("r_no") != null){
 	r_no = Integer.parseInt(request.getParameter("r_no"));
 }
+if(r_no == 0){
+	PrintWriter script = response.getWriter();
+	script.println("<script>");
+	script.println("alert('유효하지 않은 글입니다')");
+	script.println("location.href='reivew_view.jsp'");
+	script.println("</script>");
+}
 Review review = new ReviewDao().reviewSelectNo(r_no);
+if(!u_id.equals(review.getU_id())){
+	PrintWriter script= response.getWriter();
+	script.println("<script>");
+	script.println("alert('권한이 없습니다')");
+	script.println("location.href='book_list.jsp'");
+	script.println("</script>");
+}
+%>	
+<%
 	String pageno = "1";
 	if (request.getParameter("pageno") != null) {
 		pageno = request.getParameter("pageno");
