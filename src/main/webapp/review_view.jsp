@@ -72,7 +72,7 @@
 							</table> <br> <!-- view Form  -->
 							
 							<form name="f" method="post">
-								<input type="hidden" name="reviewno" value="<%=review.getR_no()%>">
+								<input type="hidden" name="r_no" value="<%=review.getR_no()%>">
 								<input type="hidden" name="pageno" value="<%=pageno%>">
 								<table border="0" cellpadding="0" cellspacing="1" width="590"
 									bgcolor="BBBBBB">

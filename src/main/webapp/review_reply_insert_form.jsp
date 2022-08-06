@@ -1,15 +1,30 @@
+<%@page import="com.itwill.book.dto.Book"%>
+<%@page import="com.itwill.book.dto.OrderDetail"%>
 <%@page import="com.itwill.book.service.ReviewService"%>
 <%@page import="com.itwill.book.dto.Review"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+
+String u_id = (String)session.getAttribute("sUserId");
+
+
+if(u_id==null){ //팝업으로 로그인 회원만 가능이라고 알리기
+	response.sendRedirect("userinfo_login_form.jsp");	
+}
+
+
+
 	//댓글의 대상글번호를 읽어서 변수에 저장
 	if(request.getParameter("r_no")==null){
-		//response.sendRedirect("kyobo_main.jsp"); //바꾸기
+		response.sendRedirect("kyobo_main.jsp"); //바꾸기
 		return;
 	}
 	int r_no = Integer.parseInt(request.getParameter("r_no"));
 	Review review=ReviewService.getInstance().reviewSelectNo(r_no);
+	
+	
+	
 	if(review==null){
 		response.sendRedirect("kyobo_main.jsp");//바꾸기
 		return;
@@ -72,21 +87,21 @@
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">댓글 제목</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
-											<input value="[RE]<%=review.getR_title()%>"  type="text" style="width: 150"
-											name="r_reply_title">
+											<input value=""  type="text" style="width: 150"
+											name="r_title">
 										</td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">작성자</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
-											<input value="<%=review.getU_id()%>" type="text" style="width: 150"
-											name="r_reply_u_id">
+											<input value="<%=u_id%>" readonly="readonly" disabled=true type="text" 
+											style="width: 150" name="u_id">
 										</td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">댓글 내용</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
-											<textarea name="r_reply_contents" class="textarea" style="width: 350px" rows="14">>><%=review.getR_contents()%></textarea>
+											<textarea name="r_contents" class="textarea" style="width: 350px" rows="14"></textarea>
 										</td>
 									</tr>
 
@@ -97,7 +112,7 @@
 							<table width=590 border=0 cellpadding=0 cellspacing=0>
 								<tr>
 									<td align=center><input type="button" value="댓글 등록" onClick="reviewReplayCreate()"> &nbsp; 
-									<input type="button" value="게시판 목록" onClick="reviewList()"></td>
+									<input type="button" value="게시판 목록" onClick="reviewBookList()"></td>
 								</tr>
 							</table></td>
 					</tr>
