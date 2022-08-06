@@ -12,7 +12,6 @@ import javax.sql.DataSource;
 
 import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
 
-
 import com.itwill.book.dto.Book;
 import com.itwill.book.dto.OrderDetail;
 import com.itwill.book.dto.Review;
@@ -110,6 +109,34 @@ public class ReviewDao {
 		con.close();
 		
 		return rowCount;
+	}
+	//리뷰 수정_정현
+	public int update(Review review) throws Exception{
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		int count = 0;
+		try {
+			con = dataSource.getConnection();
+			String sql = "UPDATE review " + "SET r_title = ?, r_contents = ? ,r_grade = ?" + "WHERE r_no = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, review.getR_title());
+			pstmt.setString(2, review.getR_contents());
+			pstmt.setInt(3, review.getR_grade());
+			pstmt.setInt(4, review.getR_no());
+			count = pstmt.executeUpdate();
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+			} catch (Exception ex) {
+			}
+			try {
+				if (con != null)
+					con.close();;
+			} catch (Exception ex) {
+			}
+		}
+		return count;
 	}
 	
 	//리뷰 번호로 리뷰삭제

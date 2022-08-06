@@ -37,7 +37,7 @@ public class ReviewService {
 	}
 	
 	//리뷰수정
-	public int reviewUpdateByNo(Review review) throws Exception{
+	public int reviewUpdate(Review review) throws Exception{
 		return reviewDao.reviewUpdateByNo(review);
 	}
 	

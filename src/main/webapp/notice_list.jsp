@@ -42,20 +42,19 @@ if(pageno==null||pageno.equals("")){
 		</div>
 		<!-- header end -->
 		<!-- navigation start-->
-		<div id="navigation">
+		 <!--   <div id="navigation"> -->
 			<!-- include_common_left.jsp start-->
 			<!--<jsp:include page="include_common_left.jsp" />-->
 			<!-- include_common_left.jsp end-->
-		</div>
-		<!-- navigation end-->
+		<!--  </div> -->
+ 		<!-- navigation end-->
 		<!-- wrapper start -->
 		<div id="wrapper">
 			<!-- content start -->
 			<!-- include_content.jsp start-->
 			<div id="content">
 
-					<tr>
-						<td><br />
+						<br />
 							<table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>

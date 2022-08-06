@@ -11,6 +11,7 @@
 sUserId = (String) session.getAttribute("sUserId");
 OrderService orderService = new OrderService();
 List<Orders> orderList = orderService.list(sUserId);
+OrderDetail orderDetail = new OrderDetail();
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -78,12 +79,18 @@ List<Orders> orderList = orderService.list(sUserId);
 
 									<!-- order start -->
 									<%
+									int deli_price=0;
 									for (Orders orders : orderList) {
+										if(1<orders.getO_price() && orders.getO_price()<=50000){
+											deli_price=2500;
+										} else {
+											deli_price=0;
+										}
 									%>
 									<tr>
 										<td width=145 height=26 align=center bgcolor="ffffff" class=t1><%=orders.getO_no()%></td>
 										<td width=112 height=26 align=center bgcolor="ffffff" class=t1><%=new SimpleDateFormat("yyyy/MM/dd").format(orders.getO_date())%></td>
-										<td width=136 height=26 align=center bgcolor="ffffff" class=t1><%=new DecimalFormat("#,###").format(orders.getO_price())%></td>
+										<td width=136 height=26 align=center bgcolor="ffffff" class=t1><%=new DecimalFormat("#,###").format(orders.getO_price()+deli_price)%></td>
 										<td width=80 height=26 align=center bgcolor="ffffff" class=t1><a
 											href="order_detail.jsp?o_no=<%=orders.getO_no()%>" class=m1>주문상세</a></td>
 									</tr>

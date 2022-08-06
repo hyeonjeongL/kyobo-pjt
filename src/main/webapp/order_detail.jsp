@@ -49,11 +49,6 @@ function reviewGo(){
 		</div>
 		<!-- header end -->
 		<!-- navigation start-->
-		<div id="navigation">
-			<!-- include_common_left.jsp start-->
-			<jsp:include page="include_common_left.jsp"/>
-			<!-- include_common_left.jsp end-->
-		</div>
 		<!-- navigation end-->
 		<!-- wrapper start -->
 		<div id="wrapper">
@@ -111,8 +106,15 @@ function reviewGo(){
 									<!-- orer item start -->
 									<%
 									int tot_price=0;
+									int deli_price = 0;
 																for(OrderDetail orderDetail:orders.getOrderDetailList()) {
 																tot_price+=orderDetail.getOd_qty()*orderDetail.getBook().getB_price();
+																
+																if(1<tot_price && tot_price<=50000){
+																	deli_price=2500;
+																} else {
+																	deli_price=0;
+																}
 									%>
 									<tr>
 										<td width=290 height=26 align=center  bgcolor="ffffff" class=t1>
@@ -134,11 +136,19 @@ function reviewGo(){
 									<%}%>
 									<!-- cart item end -->
 									<tr>
-										<td width=640 colspan=4 height=26  bgcolor="ffffff" class=t1>
-										
-											<p align=right style="padding-top: 10px">
-												<font color=#FF0000>총 주문 금액 : <%=new DecimalFormat("#,###.").format(tot_price)%> 원
-												</font>
+										<td width=640 colspan=6 height=26 class=t1 bgcolor="ffffff">
+											<p align=right>
+												<br /> 
+												<font color='red'>총 주문 금액 : <span id="tot_order_price"><%=new DecimalFormat("#,##0").format(tot_price)%></span> 원</font><br>
+												<font color='red'>(+) 배송비 : <span id="deli_price" name=:"deli_price"><%=new DecimalFormat("#,##0").format(deli_price)%></span> 원</font>
+											</p>
+										</td>
+									</tr>
+									<tr>
+										<td width=640 colspan=6 height=26 class=t1 bgcolor="ffffff">
+											<p align=right>
+												<br /> 
+												<font color='red' size=4>총 결제 금액 : <span id="tot_order_price_deli"><%=new DecimalFormat("#,##0").format(tot_price+deli_price)%></span> 원</font>
 											</p>
 										</td>
 									</tr>

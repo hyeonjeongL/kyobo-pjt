@@ -111,11 +111,6 @@ form > table tr td{
 		</div>
 		<!-- header end -->
 		<!-- navigation start-->
-		<div id="navigation">
-			<!-- include_common_left.jsp start-->
-			<jsp:include page="include_common_left.jsp" />
-			<!-- include_common_left.jsp end-->
-		</div>
 		<!-- navigation end-->
 		<!-- wrapper start -->
 		<div id="wrapper">
@@ -169,8 +164,14 @@ form > table tr td{
 									</tr>
 									<%
 									int tot_price = 0;
+									int deli_price = 0;
 									for (Cart cart : cartItemList) {
 										tot_price += cart.getC_qty() * cart.getBook().getB_price();
+										if(1<tot_price && tot_price<=50000){
+											deli_price=2500;
+										} else {
+											deli_price=0;
+										}
 									%>
 									<!-- cart item start -->
 									<tr>
@@ -186,12 +187,20 @@ form > table tr td{
 									</tr>
 									<!-- cart item end -->
 									<%}%>
+										<tr>
+										<td width=640 colspan=6 height=26 class=t1 bgcolor="ffffff">
+											<p align=right>
+												<br /> 
+												<font color='red'>총 주문 금액 : <span id="tot_order_price"><%=new DecimalFormat("#,##0").format(tot_price)%></span> 원</font><br>
+												<font color='red'>(+) 배송비 : <span id="deli_price" name=:"deli_price"><%=new DecimalFormat("#,##0").format(deli_price)%></span> 원</font>
+											</p>
+										</td>
+									</tr>
 									<tr>
-										<td width=640 colspan=4 height=26 bgcolor="ffffff" class=t1>
-											<p align=right style="padding-top: 10px">
-												<font color=#FF0000>총 주문 금액 : <%=new DecimalFormat("#,###").format(tot_price)%>
-													원
-												</font>
+										<td width=640 colspan=6 height=26 class=t1 bgcolor="ffffff">
+											<p align=right>
+												<br /> 
+												<font color='red' size=4>총 결제 금액 : <span id="tot_order_price_deli"><%=new DecimalFormat("#,##0").format(tot_price+deli_price)%></span> 원</font>
 											</p>
 										</td>
 									</tr>
@@ -202,7 +211,7 @@ form > table tr td{
 							<table border="0" cellpadding="0" cellspacing="1" width="590">
 								<tr>
 									<td align=center>&nbsp;&nbsp; <a
-										href="javascript:order_create_form_submit();" class=m1>구매/결재하기</a>
+										href="javascript:order_create_form_submit();" class=m1>결제하기</a>
 										&nbsp;&nbsp;<a href=book_list.jsp class=m1>계속 쇼핑하기</a>
 
 									</td>
