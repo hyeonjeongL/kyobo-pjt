@@ -24,7 +24,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>마이페이지 리뷰</title>
+<title>Q&A 게시판</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel=stylesheet href="css/styles.css" type="text/css">
 <link rel=stylesheet href="css/menu.css" type="text/css">
@@ -63,16 +63,23 @@
 							<table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
-									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>내가 쓴 리뷰
+									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>Q&A게시판
 											</b></td>
 								</tr>
+								<tr bgcolor="#FFFFFF">
+									<td height="20" class="t1" align="right" valign="bottom">♠
+										총 <font color="#FF0000"><%=qnalistPage.totRecordCount%></font>
+										건 | 현재페이지( <font color="#FF0000"><%=qnalistPage.pageMaker.getCurPage()%></font>
+										/ <font color="#0000FF"><%=qnalistPage.pageMaker.getTotPage()%></font>
+										)
+									</td>
 							</table> 
 					<form name="f" method="post" action="">
 								<table border="0" cellpadding="0" cellspacing="1" width="590"
 									bgcolor="BBBBBB">
 
 									<tr>
-										<td width=280 align=center bgcolor="E6ECDE">리뷰제목</td>
+										<td width=280 align=center bgcolor="E6ECDE">제목</td>
 										<td width=120 align=center bgcolor="E6ECDE">작성자</td>
 										<td width=120 align=center bgcolor="E6ECDE">작성날짜</td>
 									</tr>

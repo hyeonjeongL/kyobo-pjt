@@ -1,3 +1,4 @@
+<%@page import="com.itwill.book.dto.Qna"%>
 <%@page import="com.itwill.book.service.QnaService"%>
 <%@page import="java.util.Date"%>
 <%@page import="com.itwill.book.dto.Review"%>
@@ -10,13 +11,14 @@
 //String u_id="enbi";
 
 String sUserId = (String)session.getAttribute("sUserId");
+int pageno=Integer.parseInt(request.getParameter("pageno"));
 if(sUserId == null){
 	response.sendRedirect("kyobo_main.jsp");
 }
 
-
+String q_no = request.getParameter("q_no");
 QnaService qnaService = new QnaService();
-
+Qna qna = qnaService.selectByNo(Integer.parseInt(q_no));
 
 %> 
     
@@ -67,19 +69,21 @@ QnaService qnaService = new QnaService();
 							</table> 
 							<!-- write Form  -->
 							<form name="f" method="post">
+								<input type="hidden" name="q_no" value="<%=qna.getQ_no()%>">
+								<input type="hidden" name="pageno" value="<%=pageno%>">
 								<table border="0" cellpadding="0" cellspacing="1" width="590"
 									bgcolor="BBBBBB">
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">제목</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><input type="text" style="width: 150px"
-											name="q_title"></td>
+											name="q_title" value="<%=qna.getQ_title()%>"></td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">문의내용</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><input type="text" style="width: 150px"
-											name="q_class" value=""></td>
+											name="q_class" value="<%=qna.getQ_clss()%>"></td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">아이디</td>
@@ -91,7 +95,7 @@ QnaService qnaService = new QnaService();
 										<td width=100 align=center bgcolor="E6ECDE">리뷰내용</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><textarea name="q_contents" class="textarea"
-												style="width: 350px" rows="10"></textarea></td>
+												style="width: 350px" rows="10" ><%=qna.getQ_contents() %></textarea></td>
 									</tr>
 								</table>
 							</form> <br>
@@ -99,7 +103,7 @@ QnaService qnaService = new QnaService();
 							<table border=0 cellpadding=0 cellspacing=1 style="align: center;">
 								<tr>
 									<td align=center>
-									<input type="button" value="작성" onclick="qnaCreate()"> &nbsp; 
+									<input type="button" value="작성" onclick="qnaUpdate()"> &nbsp; 
 									<input type="button" value="메인" onClick="mainGo()">
 									
 									</td>

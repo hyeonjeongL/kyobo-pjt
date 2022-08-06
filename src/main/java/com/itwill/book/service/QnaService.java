@@ -9,7 +9,7 @@ import com.itwill.book.dto.QnaPageMakerDto;
 
 
 public class QnaService {
-	private static ReviewService _instance;
+	private static QnaService _instance;
 
 	private QnaDao qnaDao;
 
@@ -17,9 +17,9 @@ public class QnaService {
 		qnaDao = new QnaDao();
 	}
 
-	public static ReviewService getInstance() throws Exception {
+	public static QnaService getInstance() throws Exception {
 		if (_instance == null) {
-			_instance = new ReviewService();
+			_instance = new QnaService();
 		}
 		return _instance;
 	}

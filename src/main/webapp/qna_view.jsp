@@ -74,7 +74,7 @@
 							</table> <br> <!-- view Form  -->
 							
 							<form name="f" method="post">
-								<input type="hidden" name="reviewno" value="<%=qna.getQ_no()%>">
+								<input type="hidden" name="q_no" value="<%=qna.getQ_no()%>">
 								<input type="hidden" name="pageno" value="<%=pageno%>">
 								<table border="0" cellpadding="0" cellspacing="1" width="590"
 									bgcolor="BBBBBB">
@@ -112,9 +112,9 @@
 							</form> <br>
 							<table width=590 border=0 cellpadding=0 cellspacing=0>
 								<tr>
-									<td align=center><input type="button" value="글쓰기"
-										onClick="qnaCreate()"> &nbsp; 
-										<input type="button" value="수정" onClick="qnaUpdate()"> &nbsp; 
+									<td align=center><input type="button" value="답글쓰기"
+										onClick="qnaReplyCreateGo()"> &nbsp; 
+										<input type="button" value="수정" onClick="qnaUpdateGo()"> &nbsp; 
 										<input type="button" value="삭제" onClick="qnaRemove()"> &nbsp; 
 										<input type="button" value="리스트" onClick="qnaList()"></td>
 								</tr>

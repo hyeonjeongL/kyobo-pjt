@@ -13,7 +13,9 @@ function qnaCreateGo(){
 	location.href='qna_insert_form.jsp';
 }
 function qnaUpdateGo(){
-		location.href="qna_modify_form.jsp";
+		document.f.action = "qna_update_form.jsp";
+		f.method = "POST"
+		document.f.submit();
 		
 	}
 
@@ -40,7 +42,7 @@ function qnaCreate() {
 		document.f.submit();
 	}
 	
-function qnaReplyCreate() {
+function qnaReplyCreateGo() {
 		document.f.action = "qna_reply_insert_form.jsp";
 		document.f.method='POST';
 		document.f.submit();
@@ -68,13 +70,14 @@ function qnaReplayCreate() {
 	}
 
 	function qnaList() {
-		f.action = "qna_Id_list.jsp";
+		f.action = "qna_list.jsp";
+		f.method='POST';
 		f.submit();
 	}
 	
 	function qnaRemove() {
 		if (confirm("정말 삭제하시겠습니까?")) {
-			document.f.action = "qna_remove_action.jsp";
+			document.f.action = "qna_delete_action.jsp";
 			f.method = "POST"
 			document.f.submit();
 		}
@@ -96,7 +99,7 @@ function qnaReplayCreate() {
 			f.q_contents.focus();
 			return false;
 		}
-		f.action = "qna_modify_action.jsp";
+		f.action = "qna_update_action.jsp";
 		f.method = "POST"
 		f.submit();
 	}
