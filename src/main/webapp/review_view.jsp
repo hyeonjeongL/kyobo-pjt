@@ -84,18 +84,18 @@
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">작성날짜</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
-											align="left"><%=review.getU_id()%></td>
+											align="left"><%=review.getR_date()%></td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">상품이름</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
-											align="left"><%=review.getOrderDetail().getBook().getB_name()%></td>
+											align="left"><%=review.getOrderDetail().getBook().getB_no()%></td>
 									</tr>
 
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">별점</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
-											align="left"><%=review.getR_title()%></td>
+											align="left"><%=review.getR_grade()%></td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">제목</td>
