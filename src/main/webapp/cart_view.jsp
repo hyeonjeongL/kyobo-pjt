@@ -174,7 +174,6 @@ List<Cart> cartList = cartService.getCartList(u_id);
 										 	</a>&nbsp;&nbsp;
 										 	<a href="javascript:cart_delete();" class=m1>장바구니 비우기</a>&nbsp;&nbsp;
 											
-											
 											<%
 											}
 											%>
@@ -188,6 +187,7 @@ List<Cart> cartList = cartService.getCartList(u_id);
 			<!-- content end -->
 		</div>
 		<!--wrapper end-->
+		<br><br>
 		<div id="footer">
 			<!-- include_common_bottom.jsp start-->
 			<jsp:include page="include_common_bottom.jsp" />

@@ -78,7 +78,7 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
   }
 	
 	function cart_insert_action(formId) {
-		if(window.confirm('해당 상품이 장바구니에 담겼습니다. 장바구니로 이동하시겠습니까?')) {
+		if(window.confirm('장바구니에 추가하시겠습니까?')) {
 		var form = document.getElementById(formId);
 		form.method = 'POST';
 		form.action = 'cart_insert_action.jsp';
