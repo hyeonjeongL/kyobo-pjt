@@ -103,7 +103,7 @@
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">상품이름</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px" 
-											align="left"></td><%=review.getOrderDetail().getBook().getB_name()%></td>
+											align="left"><%=review.getOrderDetail().getBook().getB_name()%></td>
 									</tr>
 
 									<tr>
@@ -129,11 +129,10 @@
 							</form> <br>
 							<table width=590 border=0 cellpadding=0 cellspacing=0>
 								<tr>
-
 								<td align=center>
 								<!-- 	<input type="button" value="글쓰기" onClick="reviewCreateGo()"> &nbsp; -->
-									 	<input type="button" value="댓글쓰기" onClick="reviewReplyCreate()"> &nbsp;   
-										<input type="button" value="수정" onClick="reviewUpdate()"> &nbsp; 
+										<input type="button" value="댓글쓰기" onClick="reviewReplyCreate()"> &nbsp; 
+										<input type="button" value="수정" onClick="reviewUpdateGo()"> &nbsp; 
 										<input type="button" value="삭제" onClick="reviewRemove()"> &nbsp; 
 										<input type="button" value="리스트" onClick="reviewList()"></td>
 								</tr>

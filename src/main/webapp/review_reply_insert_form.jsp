@@ -80,6 +80,7 @@ if(u_id==null){ //팝업으로 로그인 회원만 가능이라고 알리기
 							<form name="f" method="post">
 								<input type="hidden" name="pageno"  value="<%=pageno%>" />
 		        				<input type="hidden" name="r_reply_no" value="<%=review.getR_no()%>"/>
+		        				<input type="hidden" name="b_no" value=""/>
 
 								<table border="0" cellpadding="0" cellspacing="1" width="590"
 									bgcolor="BBBBBB">
