@@ -52,28 +52,28 @@
 										<td width=100 align=center bgcolor="E5F0FA" height="33">
 											아이디</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
-											<input type="text" style="width: 150px; height:15px; font-size: 18px;" name="u_id"
+											<input type="text" style="width: 150px; height:15px; font-size: 13px;" name="u_id" 
 											value="<%=fuser.getU_id()%>">&nbsp;&nbsp;<font color="red"><%=msg%></font>
 										</td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E5F0FA" height="33">비밀번호</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
-											<input type="password" style="width: 150px; height:15px; font-size: 18px;" name="u_password"
+											<input type="password" style="width: 150px; height:15px; font-size: 13px;" name="u_password"
 											value="<%=fuser.getU_password()%>">
 										</td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E5F0FA" height="33">비밀번호 확인</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
-											<input type="password" style="width: 150px; height:15px; font-size: 18px;" name="password2"
+											<input type="password" style="width: 150px; height:15px; font-size: 13px;" name="password2"
 											value="<%=fuser.getU_password()%>" onkeyup="repassword()">&nbsp;&nbsp;<font id="pass2" color="red"></font>
 										</td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E5F0FA" height="33">이름</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
-											<input type="text" style="width: 150px; height:15px; font-size: 18px;" name="u_name"
+											<input type="text" style="width: 150px; height:15px; font-size: 13px;" name="u_name"
 											value="<%=fuser.getU_name()%>">
 										</td>
 									</tr>
@@ -81,7 +81,7 @@
 										<td width=100 align=center bgcolor="E5F0FA" height="33">핸드폰번호
 											</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
-											<input type="text" style="width: 150px; height:15px; font-size: 18px;" name="u_phone"
+											<input type="text" style="width: 150px; height:15px; font-size: 13px;" name="u_phone" placeholder='ex) 01012345678'
 											value="<%=fuser.getU_phone()%>">
 										</td>
 									</tr>
@@ -89,7 +89,7 @@
 										<td width=100 align=center bgcolor="E5F0FA" height="33">생일
 											</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
-											<input type="text" style="width: 150px; height:15px; font-size: 18px;" name="u_birth"
+											<input type="text" style="width: 150px; height:15px; font-size: 13px;" name="u_birth"  placeholder='ex) 910101'
 											value="<%=fuser.getU_birth()%>">
 										</td>
 									</tr>
@@ -106,7 +106,7 @@
 										<td width=100 align=center bgcolor="E5F0FA" height="33">이메일
 											</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
-											<input type="text" style="width: 150px; height:15px; font-size: 18px;" name="u_email"
+											<input type="text" style="width: 150px; height:15px; font-size: 13px;" name="u_email" placeholder='ex) abc@gmail.com'
 											value="<%=fuser.getU_email()%>">
 										</td>
 									</tr>
@@ -114,7 +114,7 @@
 										<td width=100 align=center bgcolor="E5F0FA" height="33">주소
 											</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px" align="left">
-											<input type="text" style="width: 150px; height:15px; font-size: 18px;" name="u_address"
+											<input type="text" style="width: 150px; height:15px; font-size: 15px;" name="u_address"
 											value="<%=fuser.getU_address()%>">
 										</td>
 									</tr>

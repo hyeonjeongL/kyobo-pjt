@@ -92,11 +92,11 @@ List<Eorder> ebooklist = ebookService.selectById(u_id);
 									
 									%>
 									<tr>
-										<td width=60 height=26 align=center bgcolor="ffffff" class=t1></td>
+										<td width=60 height=26 align=center bgcolor="ffffff" class=t1><input type="checkbox" name="ebook_check" onchange="check_box_count();" value="<%=ebook.getEbook().getProduct().getB_no()%>" ></td>
 										<td width=40 height=26 align=center bgcolor="ffffff" class=t1><img src='image/<%=ebook.getEbook().getProduct().getB_image()%>.jpg' width="34" height="28"/></td>
-										<td width=210 height=26 align=center bgcolor="ffffff" class=t1><a href='product_detail.jsp?p_no=<%=ebook.getEbook().getProduct().getB_no()%>'><%=ebook.getEbook().getProduct().getB_name() %></a></td>
+										<td width=210 height=26 align=center bgcolor="ffffff" class=t1><a href='ebook_detail.jsp?b_no=<%=ebook.getEbook().getProduct().getB_no()%>'><%=ebook.getEbook().getProduct().getB_name() %></a></td>
 										<td width=110 height=26 align=center bgcolor="ffffff" class=t1><%=ebook.getEo_date_buy()%></td>
-										<td width=110 height=26 align=center bgcolor="ffffff" class=t1><%=ebook.getEo_date_end()%><input type="hidden" name="b_no" value="<%=ebook.getEbook().getProduct().getB_no()%>"></td>
+										<td width=110 height=26 align=center bgcolor="ffffff" class=t1><%=ebook.getEo_date_end()%></td>
 										
 									</tr>
 									<%}%>
@@ -113,10 +113,10 @@ List<Eorder> ebooklist = ebookService.selectById(u_id);
 								<tr>
 									<td align=center>&nbsp;&nbsp;
 									
-									<a href="product_list.jsp" class=m1>계속 구경하기</a>&nbsp;&nbsp;
-									a
-									<a href="javascript:cart_view_form_order_submit();" class=m1>총 <span style="font-weight: bold;" id="cart_item_select_count"></span>개 주문하기[주문폼]</a>
-									<a href="javascript:cart_delete();" class=m1>장바구니 비우기</a>&nbsp;&nbsp;
+									<a href="book_list.jsp" class=m1>계속 구경하기</a>&nbsp;&nbsp;
+									
+									<a href="javascript:ebook_form_delete_submit();" class=m1>총 <span style="font-weight: bold;" id="ebook_select_count" >0</span>개 삭제하기</a>
+									</a>&nbsp;&nbsp;
 									
 									</td>
 								</tr>

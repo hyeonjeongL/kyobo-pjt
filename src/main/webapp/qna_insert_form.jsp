@@ -11,7 +11,10 @@
 
 String sUserId = (String)session.getAttribute("sUserId");
 if(sUserId == null){
-	response.sendRedirect("kyobo_main.jsp");
+	out.println("<script>");
+	out.println("alert('로그인 후 이용바랍니다');");
+	out.println("location.href='kyobo_main.jsp';");
+	out.println("</script>");
 }
 
 
