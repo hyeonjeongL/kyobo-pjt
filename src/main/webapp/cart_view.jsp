@@ -48,13 +48,6 @@ List<Cart> cartList = cartService.getCartList(u_id);
 			<!-- include_common_top.jsp end-->
 		</div>
 		<!-- header end -->
-		<!-- navigation start-->
-		<div id="navigation">
-			<!-- include_common_left.jsp start-->
-			<jsp:include page="include_common_left.jsp" />
-			<!-- include_common_left.jsp end-->
-		</div>
-		<!-- navigation end-->
 		<!-- wrapper start -->
 		<div id="wrapper">
 			<!-- content start -->
@@ -112,13 +105,13 @@ List<Cart> cartList = cartService.getCartList(u_id);
 											<form  method="post"
 												id="cart_update_form_<%=cart.getC_no()%>">
 												<input type="hidden" name="c_no"
-													value="<%=cart.getC_no()%>"> <input
-													type="button" value="-"
+													value="<%=cart.getC_no()%>"> 
+													<input type="button" value="-"
 													onclick="changeNumber('-','cart_update_form_<%=cart.getC_no()%>');"/>
 												<input type="text" readonly="readonly" size="2"
 													style="text-align: center; width: 15%" name="c_qty"
-													value="<%=cart.getC_qty()%>"> <input
-													type="button" value="+"
+													value="<%=cart.getC_qty()%>"> 
+													<input type="button" value="+"
 													onclick="changeNumber('+','cart_update_form_<%=cart.getC_no()%>');"/>
 												<input type="hidden" name="cart_product_unit_price" value="<%=cart.getBook().getB_price()%>"/>	
 											</form>

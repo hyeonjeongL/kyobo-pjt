@@ -17,9 +17,6 @@
 		<li><a href="book_list.jsp">도서목록</a></li>
 		<li><a href="notice_list.jsp">공지사항</a></li>
 		<li><a href="qna_list.jsp">Q&A</a></li>
-
-		
-		
 	</ul>
 	<hr size="1px" noshade="noshade" style="margin: 3px 0px 3px 0px" >
 </div>
