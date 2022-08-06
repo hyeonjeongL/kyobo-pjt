@@ -92,8 +92,9 @@ div#header #menu {
 	display: block;
 	clear: both;
 }
+
 #sub_menu li{
-	width: 15%;
+	width: 25%;
 	float: left;
 }
 
