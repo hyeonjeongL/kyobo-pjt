@@ -8,19 +8,16 @@ slideWidth = 300; //슬라이드이미지 넓이
 slideMargin = 100; //슬라이드 끼리의 마진값
 makeClone(); // 처음이미지와 마지막 이미지 복사 함수
 initfunction(); //슬라이드 넓이와 위치값 초기화 함수
-
 function makeClone() {
   let cloneSlide_first = slideImg[0].cloneNode(true);
   let cloneSlide_last = slides.lastElementChild.cloneNode(true);
   slides.append(cloneSlide_first);
   slides.insertBefore(cloneSlide_last, slides.firstElementChild);
 }
-
 function initfunction() {
   slides.style.width = (slideWidth + slideMargin) * (slideCount + 2) + 'px';
   slides.style.left = -(slideWidth + slideMargin) + 'px';
 }
-
 next.addEventListener('click', function () {
   //다음 버튼 눌렀을때
   if (currentIdx <= slideCount - 1) {
@@ -39,7 +36,6 @@ next.addEventListener('click', function () {
   }
   currentIdx += 1;
 });
-
 prev.addEventListener('click', function () {
   //이전 버튼 눌렀을때
   console.log(currentIdx);

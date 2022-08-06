@@ -35,14 +35,13 @@
 			
   <div id="slideShow">
     <ul class="slides">
-      <li><img src="image/1_courage.jpg" alt=""></li>
-      <li><img src="image/4_repack.jpg" alt=""></li>
-      <li><img src="image/3_drink.jpg" alt=""></li>
-      <li><img src="image/2_party.jpg" alt=""></li>
-      <li><img src="image/5_nomore.jpg" alt=""></li>
-      <li><img src="image/4_cleancodejpg" alt=""></li>
+      <li><img src="image/flower.jpg" alt=""></li>
+      <li><img src="image/fox.jpg" alt=""></li>
+      <li><img src="image/lightning.jpg" alt=""></li>
+      <li><img src="image/moon.jpg" alt=""></li>
+      <li><img src="image/nature.jpg" alt=""></li>
+      <li><img src="image/space.jpg" alt=""></li>
     </ul>
-
     <p class="controller">
       <!-- &lang: 왼쪽 방향 화살표 &rang: 오른쪽 방향 화살표 --> 
       <span class="prev">&lang;</span> 

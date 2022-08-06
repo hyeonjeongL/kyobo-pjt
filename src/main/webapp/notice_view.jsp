@@ -66,7 +66,7 @@ console.log("N_image :<%=notice.getN_image()%>");
 		<!-- navigation start-->
 		<div id="navigation">
 			<!-- include_common_left.jsp start-->
-			<jsp:include page="include_common_left.jsp" />
+			<!--<jsp:include page="include_common_left.jsp" />-->
 			<!-- include_common_left.jsp end-->
 		</div>
 		<!-- navigation end-->
