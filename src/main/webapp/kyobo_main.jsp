@@ -8,6 +8,7 @@
 <link rel=stylesheet href="css/styles.css" type="text/css">
 <link rel=stylesheet href="css/menu.css" type="text/css">
 <link rel=stylesheet href="css/shop.css" type="text/css">
+<link rel="stylesheet" href="css/style.css">
 
 <style type="text/css" media="screen">
 </style>
@@ -31,18 +32,25 @@
 			<!-- content start -->
 			<!-- include_content.jsp start-->
 			<div id="content">
-				<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
-					codebase="http://active.macromedia.com/flash4/cabs/swflash.cab#version=4,0,0,0"
-					width="540px" height="350px">
-					<param name="movie" value="image/FI_main.swf">
-					<param name="play" value="true">
-					<param name="loop" value="true">
-					<param name="quality" value="high">
-					<embed src="image/enter.png" scale="exactfit" play="true"
-						loop="true" quality="high" style="margin: 10px;"
-						pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"
-						width="540px" height="350px"></embed>
-				</object>
+			
+  <div id="slideShow">
+    <ul class="slides">
+      <li><img src="image/1_courage.jpg" alt=""></li>
+      <li><img src="image/4_repack.jpg" alt=""></li>
+      <li><img src="image/3_drink.jpg" alt=""></li>
+      <li><img src="image/2_party.jpg" alt=""></li>
+      <li><img src="image/5_nomore.jpg" alt=""></li>
+      <li><img src="image/4_cleancodejpg" alt=""></li>
+    </ul>
+
+    <p class="controller">
+      <!-- &lang: 왼쪽 방향 화살표 &rang: 오른쪽 방향 화살표 --> 
+      <span class="prev">&lang;</span> 
+      <span class="next">&rang;</span>
+    </p>
+  </div>
+  <script src="js/slideShow.js"></script>
+				
 			</div>
 			<!-- include_content.jsp end-->
 			<!-- content end -->
