@@ -11,7 +11,7 @@
     
 <%
 
-
+UserInfo userInfo = new UserInfo();
 String u_id = (String) session.getAttribute("sUserId");
 CartService cartService = new CartService();
 List<Cart> cartList = cartService.getCartList(u_id);
@@ -60,7 +60,7 @@ List<Cart> cartList = cartService.getCartList(u_id);
 							<table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
-									<td height="22">&nbsp;&nbsp;<b>장바구니 보기</b></td>
+									<td height="22">&nbsp;&nbsp;<Font size="5">장바구니보기</Font></td>
 								</tr>
 							</table> <!--form--> <!-- 
 							<form name="f" method="post">
@@ -98,7 +98,7 @@ List<Cart> cartList = cartService.getCartList(u_id);
 											<img src='image/<%=cart.getBook().getB_image()%>.jpg' width="34" height="28" />
 										</td>
 										<td width=210 height=26 align=center bgcolor="ffffff" class=t1>
-											<a href='book_detail.jsp?p_no=<%=cart.getBook().getB_no()%>'><%=cart.getBook().getB_name()%></a>
+											<a href='book_detail.jsp?b_no=<%=cart.getBook().getB_no()%>'><%=cart.getBook().getB_name()%></a>
 										</td>
 
 										<td width=112 height=26 align=center bgcolor="ffffff" class=t1>
@@ -174,7 +174,6 @@ List<Cart> cartList = cartService.getCartList(u_id);
 										 	</a>&nbsp;&nbsp;
 										 	<a href="javascript:cart_delete();" class=m1>장바구니 비우기</a>&nbsp;&nbsp;
 											
-											
 											<%
 											}
 											%>
@@ -188,6 +187,7 @@ List<Cart> cartList = cartService.getCartList(u_id);
 			<!-- content end -->
 		</div>
 		<!--wrapper end-->
+		<br><br>
 		<div id="footer">
 			<!-- include_common_bottom.jsp start-->
 			<jsp:include page="include_common_bottom.jsp" />
