@@ -86,19 +86,19 @@ div#footer p {
 }
 
 div#container {
-	width: 700px;
+	width: 750px;
 	margin: 0 auto
 }
 /*
 div#navigation{float:left;width:150px;height:350px;margin-left:-700px}
 */
-/*
+
 div#navigation {
 	float: left;
-	width: 150px;
-	height: 350px;
+	width: 1px;
+	height: 450px;
 }
-*/
+
 /*
 div#wrapper{float:left;width:100%}
 */

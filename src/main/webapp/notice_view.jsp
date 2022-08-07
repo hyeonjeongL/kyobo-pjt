@@ -25,9 +25,6 @@
 	//읽은회수증가
 	NoticeService.getInstance().updateviewCount(noticeno);
 
-	System.out.println(request.getParameter("noticeno"));
-	System.out.println(request.getParameter("pageno"));
-
 %>
 <!DOCTYPE html>
 <html>

@@ -25,7 +25,10 @@
 		</div>
 		<!-- header end -->
 		<!-- navigation start-->
-		
+	<div id="navigation"> </div>
+				<!-- include_common_left.jsp start-->
+			<jsp:include page="include_common_left.jsp"/>
+			<!-- include_common_left.jsp end-->
 		<!-- navigation end-->
 		<!-- wrapper start -->
 		<div id="wrapper">
@@ -35,12 +38,12 @@
 			
   <div id="slideShow">
     <ul class="slides">
-      <li><img src="image/flower.jpg" alt=""></li>
-      <li><img src="image/fox.jpg" alt=""></li>
-      <li><img src="image/lightning.jpg" alt=""></li>
-      <li><img src="image/moon.jpg" alt=""></li>
-      <li><img src="image/nature.jpg" alt=""></li>
-      <li><img src="image/space.jpg" alt=""></li>
+      <li><img src="image/slideimage1.jpg" id = mainImage Width = 300 height = 300 alt=""></li>
+      <li><img src="image/slideimage2.jpg" Width = 300 height = 300 alt=""></li>
+      <li><img src="image/slideimage3.jpg" Width = 300 height = 300 alt=""></li>
+      <li><img src="image/slideimage4.jpg" Width = 300 height = 300 alt=""></li>
+      <li><img src="image/slideimage5.jpg" Width = 300 height = 300 alt=""></li>
+      <li><img src="image/slideimage6.jpg" Width = 300 height = 300 alt=""></li>
     </ul>
     <p class="controller">
       <!-- &lang: 왼쪽 방향 화살표 &rang: 오른쪽 방향 화살표 --> 
@@ -49,7 +52,25 @@
     </p>
   </div>
   <script src="js/slideShow.js"></script>
-				
+	<script>
+  var myImage = document.getElementById("mainImage");
+  var imageArray = ["image/slideimage1.jpg",
+	  				"image/slideimage2.jpg",
+	  				"image/slideimage3.jpg",
+	  				"image/slideimage4.jpg",
+	  				"image/slideimage5.jpg",
+	  				"image/slideimage6.jpg"];
+  var imageIndex = 0;
+  
+  function changeImage(){
+	  myImage.setAttribute("src", imageArray[imageIndex]);
+	  imageIndex++;
+	  if(imageIndex>=imageArray.length){
+		  imageIndex = 0;
+	  }
+  }
+  setInterval(changeImage, 3000);
+  </script>			
 			</div>
 			<!-- include_content.jsp end-->
 			<!-- content end -->
