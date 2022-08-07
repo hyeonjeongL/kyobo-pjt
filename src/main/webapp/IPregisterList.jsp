@@ -18,10 +18,22 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel=stylesheet href="css/styles.css" type="text/css">
 <script type="text/javascript">
 </script>
 </head>
 <body>
+<div><table style="padding-left: 10px" border=0 cellpadding=0
+								cellspacing=0>
+								<tr>
+									<td height="17">&nbsp;&nbsp;<b>등록된 PC</b></td>
+									
+								
+									
+									
+								</tr>
+							</table> 
+<br>
 <div id='f'>
 							<form name="ebook">
 							<table  align=center  width=80% border="0" cellpadding="0" cellspacing="1"  bgcolor="BBBBBB">
@@ -32,10 +44,10 @@
 											 >분류</font></td>
 										<td width=210 height=25 align="center" bgcolor="E5F0FA" class=t1><font
 											 >PC이름</font></td>
-										<td width=110 height=25 align="center" bgcolor="E5F0FA" class=t1><font
+										<td width=210 height=25 align="center" bgcolor="E5F0FA" class=t1><font
 											 >IP주소</font></td>
-										<td width=110 height=25 align="center" bgcolor="E5F0FA" class=t1><font
-											 >종료일</font></td>
+										<td width=210 height=25 align="center" bgcolor="E5F0FA" class=t1><font
+											 >등록일</font></td>
 										
 									</tr>
 									
@@ -57,6 +69,9 @@
 									
 								</table>
 								</form>
+								<br>
+									<td><input type="button" value="PC등록" onClick="setCookies();"> </td>
+							</div>
 							</div>
 </body>
 </html>

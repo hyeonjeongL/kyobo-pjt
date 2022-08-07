@@ -52,7 +52,7 @@ function ipregisterlist_popup_window(){
 	var top = Math.ceil(( window.screen.height)/3);
 	console.log(left);
 	console.log(top);
-	window.open("about:blank","ebook","width=420,height=200,top="+top+",left="+left+",location=no, directories=no, status=no, menubar=no, scrollbars=no,copyhistory=no");
+	window.open("about:blank","ebook","width=620,height=400,top="+top+",left="+left+",location=no, directories=no, status=no, menubar=no, scrollbars=no,copyhistory=no");
 	document.ebook.action = 'IPregisterList.jsp';
 	document.ebook.target = 'ebook';
 	document.ebook.method = 'POST';
