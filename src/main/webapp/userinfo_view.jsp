@@ -31,6 +31,11 @@ UserInfo user = userInfoService.selectById(u_id);
 			<!-- include_common_top.jsp end-->
 		</div>
 		<!-- header end -->
+		<div id="navigation">
+			<!-- include_common_left.jsp start-->
+			<jsp:include page="include_common_left.jsp" />
+			<!-- include_common_left.jsp end-->
+		</div>
 		<!-- navigation start-->
 		
 		<div id="wrapper">

@@ -30,7 +30,11 @@ if(msg2 == null) msg2 = "";
 		</div>
 		<!-- header end -->
 		<!-- navigation start-->
-		
+		<div id="navigation">
+			<!-- include_common_left.jsp start-->
+			<jsp:include page="include_common_left.jsp" />
+			<!-- include_common_left.jsp end-->
+		</div>
 		<!-- navigation end-->
 		<!-- wrapper start -->
 		<div id="wrapper">
