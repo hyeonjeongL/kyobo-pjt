@@ -7,7 +7,6 @@
 <%@page import="com.itwill.book.dto.Review"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
 <%
 
 //String u_id = (String)session.getAttribute("sUserId");
@@ -84,8 +83,7 @@
 							<table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
-									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp; <b> 게시물
-											내용보기 </b>
+									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp; <b>리뷰 상세</b>
 									</td>
 								</tr>
 							</table> <br> <!-- view Form  -->
@@ -106,7 +104,7 @@
 											align="left"><%=review.getR_date()%></td>
 									</tr>
 									<tr>
-										<td width=100 align=center bgcolor="E6ECDE" height="22">상품이름</td>
+										<td width=100 align=center bgcolor="E6ECDE" height="22">상품명</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px" 
 											align="left"><%=review.getOrderDetail().getBook().getB_name()%></td>
 									</tr>

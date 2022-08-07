@@ -81,7 +81,7 @@ Orders orders = orderService.detail(u_id,Integer.parseInt(o_no));
 									%>
 									
 									<tr>
-										<td width=100 align=center bgcolor="E6ECDE" height="22">리뷰제목</td>
+										<td width=100 align=center bgcolor="E6ECDE" height="22">제목</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><input type="text" style="width: 150px"
 											name="r_title"></td>
@@ -96,16 +96,16 @@ Orders orders = orderService.detail(u_id,Integer.parseInt(o_no));
 										<td width=100 align=center bgcolor="E6ECDE" height="22">주문번호</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><input type="text" style="width: 150px"
-											name="od_no" value="<%=orders.getO_no() %>" readonly="readonly"></td>
+											name="od_no" value="<%=orderDetail.getOd_no() %>" readonly="readonly"></td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">평점</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><input type="text" style="width: 150px"
-											name="r_grade"></td>
+											name="r_grade" placeholder="1 ~ 10" ></td>
 									</tr>
 									<tr>
-										<td width=100 align=center bgcolor="E6ECDE">리뷰내용</td>
+										<td width=100 align=center bgcolor="E6ECDE">내용</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><textarea name="r_contents" class="textarea"
 												style="width: 350px" rows="10" ></textarea></td>

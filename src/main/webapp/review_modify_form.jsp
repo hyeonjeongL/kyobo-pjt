@@ -105,7 +105,7 @@ if(!u_id.equals(review.getU_id())){
 										<td width=100 align=center bgcolor="E6ECDE" height="22">평점</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><input type="text" style="width: 150"
-											name="r_grade" value="<%=review.getR_grade()%>"></td>
+											name="r_grade" value="<%=review.getR_grade()%>" placeholder="1 ~ 10" ></td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">내용</td>
