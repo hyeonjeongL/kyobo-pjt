@@ -94,12 +94,12 @@
 								<table border="0" cellpadding="0" cellspacing="1" width="590"
 									bgcolor="BBBBBB">
 									<tr>
-										<td width=100 align=center bgcolor="E6ECDE" height="22">글쓴이</td>
+										<td width=100 align=center bgcolor="E6ECDE" height="22">아이디</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><%=review.getU_id()%></td>
 									</tr>
 									<tr>
-										<td width=100 align=center bgcolor="E6ECDE" height="22">작성날짜</td>
+										<td width=100 align=center bgcolor="E6ECDE" height="22">작성&nbsp;날짜</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><%=review.getR_date()%></td>
 									</tr>
@@ -110,7 +110,7 @@
 									</tr>
 
 									<tr>
-										<td width=100 align=center bgcolor="E6ECDE" height="22">별점</td>
+										<td width=100 align=center bgcolor="E6ECDE" height="22">평점</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><%=review.getR_grade()%></td>
 									</tr>
