@@ -26,10 +26,11 @@ a {
 }
 div#header {
 	background-color: #F3F2ED;
-	background: #fff url('../image/library.jpg');
+	background: #fff url('../image/background.jpg');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 100%
+	
 }
 div#header h1 {
 	height: 80px;

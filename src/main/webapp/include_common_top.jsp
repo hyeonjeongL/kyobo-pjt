@@ -7,10 +7,13 @@
 
 %>
 <jsp:include page="include_common_top_menu.jsp"/>
-
 <h1>
 	<div style="width:100px;padding-top: 5px;margin: 0px auto 0px auto">
-	<img src='image/kyobologo.GIF' width="80" height="70" align="top" /></div>
+	<a href = kyobo_main.jsp>	
+	<img src='image/kyobologo.png' width="80" height="70" align="top" />
+	</a>
+	</div>
+	
 </h1>
 <div id="sub_menu">
 	<ul>
