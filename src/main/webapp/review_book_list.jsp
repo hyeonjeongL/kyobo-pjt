@@ -12,9 +12,7 @@
 <%
 
 	String sUserId = (String)session.getAttribute("sUserId");
-	if(sUserId == null){
-		response.sendRedirect("kyobo_main.jsp");
-	}
+
 
 String pageNo = request.getParameter("pageno");
 if (pageNo == null || pageNo.equals("")) {
@@ -60,7 +58,11 @@ Review review1 = new Review(0,null,null,0 ,null,null,
 		</div>
 		<!-- header end -->
 		<!-- navigation start-->
-		
+			<div id="navigation"> 
+			<!-- include_common_left.jsp start-->
+			<jsp:include page="include_common_left.jsp" />
+			<!-- include_common_left.jsp end-->
+		  </div> 
 		<!-- navigation end-->
 		<!-- wrapper start -->
 		<div id="wrapper">
@@ -83,7 +85,7 @@ Review review1 = new Review(0,null,null,0 ,null,null,
 								<table border="0" cellpadding="0" cellspacing="1" width="590"
 									bgcolor="BBBBBB">
 
-									<tr>
+									<tr height="30">
 										<td width=280 align=center bgcolor="E6ECDE">리뷰제목</td>
 										<td width=120 align=center bgcolor="E6ECDE">작성자</td>
 										<td width=120 align=center bgcolor="E6ECDE">작성날짜</td>
@@ -91,7 +93,7 @@ Review review1 = new Review(0,null,null,0 ,null,null,
 									<%
 										for (Review review : reviewBooklistPage.itemList) {
 									%>
-									<tr>
+									<tr height="40">
 										<td width=280 bgcolor="ffffff" style="padding-left: 10px" align="left">
 										<a href='review_view.jsp?r_no=<%=review.getR_no()%>&pageno=<%=reviewBooklistPage.pageMaker.getCurPage()%>'>
 										<%=review.getR_title()%>

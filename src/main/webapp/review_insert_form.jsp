@@ -10,12 +10,14 @@
     pageEncoding="UTF-8"%>
 <%@include file="login_check.jspf"%>
 <%
-//String u_id="enbi";
 
 String u_id = (String)session.getAttribute("sUserId");
 if(u_id == null){
 	response.sendRedirect("kyobo_main.jsp");
 }
+
+
+
 ReviewService reviewService = new ReviewService();
 
 String o_no=request.getParameter("j_no");
@@ -47,7 +49,11 @@ Orders orders = orderService.detail(u_id,Integer.parseInt(o_no));
 		</div>
 		<!-- header end -->
 		<!-- navigation start-->
-		
+			<div id="navigation"> 
+			<!-- include_common_left.jsp start-->
+			<jsp:include page="include_common_left.jsp" />
+			<!-- include_common_left.jsp end-->
+		  </div> 
 		<!-- navigation end-->
 		<!-- wrapper start -->
 		<div id="wrapper">

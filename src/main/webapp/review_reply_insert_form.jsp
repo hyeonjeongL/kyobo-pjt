@@ -1,3 +1,4 @@
+<%@page import="java.io.PrintWriter"%>
 <%@page import="com.itwill.book.dto.Book"%>
 <%@page import="com.itwill.book.dto.OrderDetail"%>
 <%@page import="com.itwill.book.service.ReviewService"%>
@@ -9,15 +10,19 @@
 String u_id = (String)session.getAttribute("sUserId");
 
 
-if(u_id==null){ //팝업으로 로그인 회원만 가능이라고 알리기
-	response.sendRedirect("userinfo_login_form.jsp");	
+if(u_id==null){
+	PrintWriter script= response.getWriter();
+	script.println("<script>");
+	script.println("alert('로그인 하세요')");
+	script.println("location.href='userinfo_login_form.jsp'");
+	script.println("</script>");
 }
 
 
 
 	//댓글의 대상글번호를 읽어서 변수에 저장
 	if(request.getParameter("r_no")==null){
-		response.sendRedirect("kyobo_main.jsp"); //바꾸기
+		response.sendRedirect("kyobo_main.jsp"); 
 		return;
 	}
 	int r_no = Integer.parseInt(request.getParameter("r_no"));
@@ -26,7 +31,7 @@ if(u_id==null){ //팝업으로 로그인 회원만 가능이라고 알리기
 	
 	
 	if(review==null){
-		response.sendRedirect("kyobo_main.jsp");//바꾸기
+		response.sendRedirect("kyobo_main.jsp");
 		return;
 	}
 	String pageno="1";
@@ -60,7 +65,11 @@ if(u_id==null){ //팝업으로 로그인 회원만 가능이라고 알리기
 		</div>
 		<!-- header end -->
 		<!-- navigation start-->
-		
+			<div id="navigation"> 
+			<!-- include_common_left.jsp start-->
+			<jsp:include page="include_common_left.jsp" />
+			<!-- include_common_left.jsp end-->
+		  </div> 
 		<!-- navigation end-->
 		<!-- wrapper start -->
 		<div id="wrapper">
