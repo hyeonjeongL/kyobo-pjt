@@ -24,15 +24,15 @@
 	Review review = new ReviewDao().reviewSelectNo(r_no);
 	if(!u_id.equals(review.getU_id())){
 		result = false;
-		msg = "삭제실패";
+		msg = "권한이 없습니다";
 	} else {
 		 try{
 			ReviewService.getInstance().reviewDeleteByNo(r_no);
 			result = true;
-			msg = "삭제성공";
+			msg = "삭제 성공";
 	} catch(ReviewException e){
 		result = false;
-		msg = "삭제실패:" + e.getMessage();
+		msg = "권한이 없습니다:" + e.getMessage();
 	}
 	}
 	
