@@ -29,7 +29,11 @@
 		<div id="header">
 			<jsp:include page="include_common_top.jsp"/>
 		</div>
-	
+		<div id="navigation">
+			<!-- include_common_left.jsp start-->
+			<jsp:include page="include_common_left.jsp" />
+			<!-- include_common_left.jsp end-->
+		</div>
 		<div id="wrapper">
 			<div id="content">
 				<table width=0 border=0 cellpadding=0 cellspacing=0>
