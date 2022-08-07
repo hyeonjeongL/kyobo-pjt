@@ -1,10 +1,17 @@
+<%@page import="java.io.PrintWriter"%>
+<%@page import="com.itwill.book.dao.ReviewDao"%>
 <%@page import="com.itwill.book.common.ReviewException"%>
 <%@page import="com.itwill.book.dto.Review"%>
 <%@page import="com.itwill.book.service.ReviewService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
- <%
+    <%
+    String u_id=null;
+    if(session.getAttribute("sUserId")!=null){
+    	u_id=(String)session.getAttribute("sUserId");
+    }
+    
 	Integer r_no = null;
 	Integer pageno = null;
 	try {
@@ -14,7 +21,8 @@
 	}
 	boolean result = true;
 	String msg = "";
-	if (r_no == null) {
+	Review review = new ReviewDao().reviewSelectNo(r_no);
+	if(!u_id.equals(review.getU_id())){
 		result = false;
 		msg = "삭제실패";
 	} else {
@@ -29,6 +37,7 @@
 	}
 	
 %>
+
 <script type="text/javascript">
 <%if (result) {%>
 	alert('<%=msg%>');
