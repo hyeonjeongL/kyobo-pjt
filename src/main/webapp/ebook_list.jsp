@@ -59,8 +59,10 @@ List<Eorder> ebooklist = ebookService.selectById(u_id);
 								cellspacing=0>
 								<tr>
 									<td height="22">&nbsp;&nbsp;<b>마이페이지 - eBook보관함</b></td>
-									<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-									<td><input type="button" value="기기등록" onClick="setCookies();"> </td>
+									<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+									<td><input type="button" value="쿠키등록" onClick="setCookies();"> </td>
+									<td><input type="button" value="PC등록" onClick="setCookies();"> </td>
+									<td><input type="button" value="등록된 PC" onClick="ipregisterlist_popup_window();"> </td>
 									
 								</tr>
 							</table> 
@@ -96,7 +98,7 @@ List<Eorder> ebooklist = ebookService.selectById(u_id);
 										<td width=40 height=26 align=center bgcolor="ffffff" class=t1><img src='image/<%=ebook.getEbook().getProduct().getB_image()%>.jpg' width="34" height="28"/></td>
 										<td width=210 height=26 align=center bgcolor="ffffff" class=t1><a href='ebook_detail.jsp?b_no=<%=ebook.getEbook().getProduct().getB_no()%>'><%=ebook.getEbook().getProduct().getB_name() %></a></td>
 										<td width=110 height=26 align=center bgcolor="ffffff" class=t1><%=ebook.getEo_date_buy()%></td>
-										<td width=110 height=26 align=center bgcolor="ffffff" class=t1><%=ebook.getEo_date_end()%></td>
+										<td width=110 height=26 align=center bgcolor="ffffff" class=t1><%=ebook.getEo_date_end()%><input type="hidden" name="b_no" value="<%=ebook.getEbook().getProduct().getB_no()%>"></td>
 										
 									</tr>
 									<%}%>

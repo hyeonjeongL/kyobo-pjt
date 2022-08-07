@@ -45,3 +45,16 @@ function pagedown() {
 	var a = f.d.value-1;
 	location.href='ebook_detail('+a+').jsp';
 }
+
+
+function ipregisterlist_popup_window(){
+	var left = Math.ceil(( window.screen.width)/3);
+	var top = Math.ceil(( window.screen.height)/3);
+	console.log(left);
+	console.log(top);
+	window.open("about:blank","ebook","width=420,height=200,top="+top+",left="+left+",location=no, directories=no, status=no, menubar=no, scrollbars=no,copyhistory=no");
+	document.ebook.action = 'IPregisterList.jsp';
+	document.ebook.target = 'ebook';
+	document.ebook.method = 'POST';
+	document.ebook.submit();
+}
