@@ -40,6 +40,7 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 <style type="text/css" media="screen">
 </style>
 <script type="text/javascript" src=js/ebook.js></script>
+<script type="text/javascript" src=js/book.js></script>
 <script type="text/javascript">
 	function add_cart_popup_window(){
 		if (<%=!isLogin%>) {
@@ -94,7 +95,7 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 	marginwidth=0 marginheight=0>
 	<form name="book_detail_form">
 		<input type="hidden" name="b_no" value="<%=book.getB_no()%>">
-		<input type="hidden" name="b_qty" value="1"> <input
+		<input type="hidden" id="b_qty" name="b_qty" value="1"> <input
 			type="hidden" name="buyType" value="direct">
 	</form>
 	<!-- container start-->
@@ -144,12 +145,12 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 								</tr>
 								<tr width=100%>
 									<td width=30% height=200 align=center class=t1>
-										<form id="add_cart_from" name="add_cart_form" method="post" action="cart_insert_action.jsp">
+										<form id="add_cart_from" name="add_cart_form" onchange="changeqty();" method="post" action="cart_insert_action.jsp">
 											수량 :
 											<!-- 
 											 <input type=text name="cart_qty" value=1 size=4 class=TXTFLD>  
 											-->
-											<select name="cart_qty">
+											<select id="cart_qty" name="cart_qty">
 												<option value="1">1
 												<option value="2">2
 												<option value="3">3
