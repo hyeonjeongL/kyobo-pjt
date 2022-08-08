@@ -165,8 +165,7 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 												<option value="9">9
 												<option value="10">10
 											</select> 권<br><br> 
-												<a href="javascript:cart_insert_action('add_cart_from');">장바구니 담기</a>
-												<input type=button onclick="add_cart_popup_window();" value="장바구니에담기[계속쇼핑팝업]" />
+												<a href="javascript:cart_insert_action('add_cart_from');" onclick="add_cart_popup_window();">장바구니에담기</a>
 												<input type="hidden" name=b_no value="<%=book.getB_no()%>">
 										</form>
 									</td>

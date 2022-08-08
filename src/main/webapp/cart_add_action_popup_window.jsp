@@ -27,25 +27,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>장바구니 담기 완료</title>
 <script type="text/javascript">
 </script>
 </head>
 <body>
-<div style="width:250px ;margin:0 auto;padding: 10px">
-	<img src="http://pics.gmkt.kr/pc/ko/item/vip/img_cartplus_n.png" width="33px" height="33px"
+<div style="width:250px ;margin:0 auto;padding: 25px ">
+	<img src="image/cart22.png" width="50px" height="30px"
 		alt="장바구니이미지">
 	<strong>상품을 담았습니다.</strong>
-	<div  style="margin-top: 15px;margin-left: auto;margin-right: auto;padding: 10px" >
-		<div  style="margin: 0 auto;padding: 0px 20px">
+	<div  style="margin-top: 10px;margin-left: auto;margin-right: auto;padding: 10px" >
+		<div  style="margin: 0 auto;padding: 0px 30px">
 			<button onclick="window.close();opener.location.href='book_list.jsp';">
 				계속 쇼핑
 			</button>
-			<!-- 
-			<button onclick="window.close();opener.location.href='cart_view_select_update_qyt_image.jsp';">
-				장바구니로
-			</button> 
-			-->
+			
 			<button onclick="window.close();opener.location.href='cart_view.jsp';">
 				장바구니로
 			</button>
