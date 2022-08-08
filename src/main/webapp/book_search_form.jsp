@@ -56,7 +56,7 @@ request.setCharacterEncoding("UTF-8");
 							<table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
-									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>도서 검색</b></td>
+									<td bgcolor="f4f4f4" height="35">&nbsp;&nbsp;<Font size="4">도서 검색</td>
 								</tr>
 							</table>
 							</table>

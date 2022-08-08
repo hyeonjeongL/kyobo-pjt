@@ -76,8 +76,8 @@ Review review1 = new Review(0,null,null,0 ,null,null,
 							<table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
-									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>상품 리뷰
-											</b></td>
+									<td bgcolor="f4f4f4" height="35">&nbsp;&nbsp;<Font size="4">상품 리뷰
+											</td>
 								</tr>
 							</table> 
 					<form name="f" method="post" action="">
