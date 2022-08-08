@@ -16,7 +16,7 @@ OrderDetail orderDetail = new OrderDetail();
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>쇼핑몰 관리</title>
+<title>교보문고-주문목록</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel=stylesheet href="css/styles.css" type="text/css">
 <link rel=stylesheet href="css/shop.css" type="text/css">
@@ -63,8 +63,8 @@ OrderDetail orderDetail = new OrderDetail();
 							<table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
-									<td bgcolor="f4f4f4" height="35">&nbsp;&nbsp;<Font size="4">교보문고-
-											주문 목록</td>
+									<td bgcolor="f4f4f4" height="35">&nbsp;&nbsp;<Font size="4">
+											주문목록</td>
 								</tr>
 							</table> <!--form-->
 							<form name="f" method="post">

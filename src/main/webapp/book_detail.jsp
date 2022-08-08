@@ -187,7 +187,7 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 <table border="0" cellpadding="0" cellspacing="1">
 								<tr>
 									<td align=center>
-									<input type="button" value="주문하기[주문폼]" onClick="order_create_form();"> &nbsp; 
+									<input type="button" value="주문하기" onClick="order_create_form();"> &nbsp; 
 										<input type="button" value="상품리스트" onClick="bookList();">&nbsp; 
 										<input type="button" value="ebook 90일 대여하기" onClick="ebookBuy()">&nbsp;
 										<input type="button" value="도서 리뷰" onClick="reviewGo()">								
