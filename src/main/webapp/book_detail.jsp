@@ -53,7 +53,7 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 			console.log(left);
 			console.log(top);
 			var cartWin = window.open("about:blank","cartForm","width=420,height=200,top="+top+",left="+left+",location=no, directories=no, status=no, menubar=no, scrollbars=no,copyhistory=no");
-			document.add_cart_form.action = 'cart_insert_action.jsp';
+			document.add_cart_form.action = 'cart_add_action_popup_window.jsp';
 			document.add_cart_form.target = 'cartForm';
 			document.add_cart_form.method = 'POST';
 			document.add_cart_form.submit();
@@ -163,6 +163,7 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 												<option value="10">10
 											</select> 권<br><br> 
 												<a href="javascript:cart_insert_action('add_cart_from');">장바구니 담기</a>
+												<input type=button onclick="add_cart_popup_window();" value="장바구니에담기[계속쇼핑팝업]" />
 												<input type="hidden" name=b_no value="<%=book.getB_no()%>">
 										</form>
 									</td>
