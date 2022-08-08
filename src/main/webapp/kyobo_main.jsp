@@ -37,19 +37,25 @@
 			<div id="content">
 			
   <div id="slideShow">
-    <ul class="slides">
+       <ul class="slides">
       <li><img src="image/slideimage1.jpg" id = mainImage Width = 300 height = 300 alt=""
-      		img onclick = "javascript:location.href = 'book_detail.jsp?b_no=3';"></li>
+       onclick = "javascript:location.href = 'book_detail.jsp?b_no=3';"
+       style="cursor:pointer;"></li>
       <li><img src="image/slideimage2.jpg" Width = 300 height = 300 alt=""
-      img onclick = "javascript:location.href = 'book_detail.jsp?b_no=1';"></li>
+       onclick = "javascript:location.href = 'book_detail.jsp?b_no=1';"
+       style="cursor:pointer;"></li>
       <li><img src="image/slideimage3.jpg" Width = 300 height = 300 alt=""
-      img onclick = "javascript:location.href = 'book_detail.jsp?b_no=16';"></li>
+       onclick = "javascript:location.href = 'book_detail.jsp?b_no=16';"
+       style="cursor:pointer;"></li>
       <li><img src="image/slideimage4.jpg" Width = 300 height = 300 alt=""
-      img onclick = "javascript:location.href = 'book_detail.jsp?b_no=19';"></li>
+       onclick = "javascript:location.href = 'book_detail.jsp?b_no=19';"
+       style="cursor:pointer;"></li>
       <li><img src="image/slideimage5.jpg" Width = 300 height = 300 alt=""
-      img onclick = "javascript:location.href = 'book_detail.jsp?b_no=20';"></li>
+       onclick = "javascript:location.href = 'book_detail.jsp?b_no=20';"
+       style="cursor:pointer;"></li>
       <li><img src="image/slideimage6.jpg" Width = 300 height = 300 alt=""
-      img onclick = "javascript:location.href = 'book_detail.jsp?b_no=18';"></li>
+       onclick = "javascript:location.href = 'book_detail.jsp?b_no=18';"
+       style="cursor:pointer;"></li>
     </ul>
     <p class="controller">
       <!-- &lang: 왼쪽 방향 화살표 &rang: 오른쪽 방향 화살표 --> 
