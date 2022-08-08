@@ -62,57 +62,57 @@
 								<table border="0" cellpadding="0" cellspacing="1" width="590"
 									bgcolor="BBBBBB">
 									<tr>
-										<td width=100 align=center bgcolor="E5F0FA" height="33">사용자
+										<td width=100 align=center bgcolor="#E0E0F8" height="33">사용자
 											아이디</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><%=sUserId%></td>
 									</tr>
 									<tr>
-										<td width=100 align=center bgcolor="E5F0FA" height="33">비밀번호</td>
+										<td width=100 align=center bgcolor="#E0E0F8" height="33">비밀번호</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><input type="password" style="width: 150px"
 											name="u_password" value="<%=user.getU_password()%>"></td>
 									</tr>
 									<tr>
-										<td width=100 align=center bgcolor="E5F0FA" height="33">비밀번호
+										<td width=100 align=center bgcolor="#E0E0F8" height="33">비밀번호
 											확인</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><input type="password" style="width: 150px"
 											name="password2" value="<%=user.getU_password()%>" onkeyup="repassword()">&nbsp;&nbsp;<font id="pass2" color="red"></font></td>
 									</tr>
 									<tr>
-										<td width=100 align=center bgcolor="E5F0FA" height="33">이름</td>
+										<td width=100 align=center bgcolor="#E0E0F8" height="33">이름</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><input type="text" style="width: 150px"
 											name="u_name" value="<%=user.getU_name()%>"></td>
 									</tr>
 									<tr>
-										<td width=100 align=center bgcolor="E5F0FA" height="33">핸드폰번호</td>
+										<td width=100 align=center bgcolor="#E0E0F8" height="33">핸드폰번호</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><input type="text" style="width: 150px"
 											name="u_phone" value="<%=user.getU_phone()%>"></td>
 									</tr>
 									<tr>
-										<td width=100 align=center bgcolor="E5F0FA" height="33">생일</td>
+										<td width=100 align=center bgcolor="#E0E0F8" height="33">생일</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><input type="hidden" style="width: 150px"
 											name="u_birth" value="<%=user.getU_birth()%>"><%=user.getU_birth()%></td>
 									</tr>
 									<tr>
-										<td width=100 align=center bgcolor="E5F0FA" height="33">성별</td>
+										<td width=100 align=center bgcolor=""#E0E0F8" height="33">성별</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><input type="hidden" style="width: 150px"
 											name="u_gender" value="<%=user.getU_gender()%>"><%=user.getU_gender()%></td>
 									</tr>
 									<tr>
-										<td width=100 align=center bgcolor="E5F0FA" height="33">이메일
+										<td width=100 align=center bgcolor="#E0E0F8" height="33">이메일
 											</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><input type="text" style="width: 150px"
 											name="u_email" value="<%=user.getU_email()%>"></td>
 									</tr>
 									<tr>
-										<td width=100 align=center bgcolor="E5F0FA" height="33">주소
+										<td width=100 align=center bgcolor="#E0E0F8" height="33">주소
 											</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><input type="text" style="width: 150px"

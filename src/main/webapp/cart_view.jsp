@@ -76,17 +76,17 @@ List<Cart> cartList = cartService.getCartList(u_id);
 								<table align=center width=80% border="0" cellpadding="0"
 									cellspacing="1" bgcolor="BBBBBB">
 									<tr>
-										<td width=50 height=25 align="center" bgcolor="#E0E0F8"
+										<td width=50 height=25 align="center" bgcolor="FFE4B5"
 											class=t1><input type="checkbox" id="all_select_checkbox" checked="checked" onchange="cart_item_all_select(event);cart_item_select_count();"></td>
-										<td width=60 height=25 align="center" bgcolor="#E0E0F8"
+										<td width=60 height=25 align="center" bgcolor="FFE4B5"
 											class=t1><font style><b>이미지</b></font></td>
-										<td width=220 height=25 align="center" bgcolor="#E0E0F8"
+										<td width=220 height=25 align="center" bgcolor="FFE4B5"
 											class=t1><font><b>책 제목</b></font></td>
-										<td width=112 height=25 align="center" bgcolor="#E0E0F8"
+										<td width=112 height=25 align="center" bgcolor="FFE4B5"
 											class=t1><font><b>수 량</b></font></td>
-										<td width=120 height=25 align="center" bgcolor="#E0E0F8"
+										<td width=120 height=25 align="center" bgcolor="FFE4B5"
 											class=t1><font><b>판매가</b></font></td>
-										<td width=70 height=25 align="center" bgcolor="#E0E0F8"
+										<td width=70 height=25 align="center" bgcolor="FFE4B5"
 											class=t1><font><b>선택삭제</b></font></td>
 									</tr>
 									<!-- cart item start -->
