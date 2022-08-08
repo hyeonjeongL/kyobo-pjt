@@ -124,8 +124,8 @@ form > table tr td{
 							<table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
-									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>쇼핑몰 -
-											주문/결제폼</b></td>
+									<td bgcolor="f4f4f4" height="35">&nbsp;&nbsp;<Font size="4">쇼핑몰 -
+											주문/결제폼</td>
 								</tr>
 							</table> <!--form-->
 							<form>
