@@ -136,14 +136,14 @@ form > table tr td{
 										<td width=290 height=25 align=center bgcolor="E6ECDE" class=t1>아이디</td>
 										<td width=112 height=25 align=center bgcolor="E6ECDE" class=t1>이름</td>
 										<td width=166 height=25 align=center bgcolor="E6ECDE" class=t1>이메일</td>
-										<td width=50 height=25 align=center bgcolor="E6ECDE" class=t1>비
-											고</td>
+										<td width=50 height=25 align=center bgcolor="E6ECDE" class=t1>비 고</td>
 									</tr>
 									<tr>
 										<td width=290 height=26 align=center bgcolor="ffffff" class=t1><%=userInfo.getU_id()%></td>
 										<td width=112 height=26 align=center bgcolor="ffffff" class=t1><%=userInfo.getU_name()%></td>
 										<td width=166 height=26 align=center bgcolor="ffffff" class=t1><%=userInfo.getU_email()%></td>
 										<td width=50 height=26 align=center bgcolor="ffffff" class=t1></td>
+										
 									</tr>
 								</table>
 								<!--  주소지 작성
@@ -172,6 +172,7 @@ form > table tr td{
 											격</td>
 										<td width=50 height=25 bgcolor="E6ECDE" align=center class=t1>비
 											고</td>
+											
 									</tr>
 									<%
 									int tot_price = 0;

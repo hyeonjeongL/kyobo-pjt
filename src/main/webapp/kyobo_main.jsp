@@ -38,12 +38,18 @@
 			
   <div id="slideShow">
     <ul class="slides">
-      <li><img src="image/slideimage1.jpg" id = mainImage Width = 300 height = 300 alt=""></li>
-      <li><img src="image/slideimage2.jpg" Width = 300 height = 300 alt=""></li>
-      <li><img src="image/slideimage3.jpg" Width = 300 height = 300 alt=""></li>
-      <li><img src="image/slideimage4.jpg" Width = 300 height = 300 alt=""></li>
-      <li><img src="image/slideimage5.jpg" Width = 300 height = 300 alt=""></li>
-      <li><img src="image/slideimage6.jpg" Width = 300 height = 300 alt=""></li>
+      <li><img src="image/slideimage1.jpg" id = mainImage Width = 300 height = 300 alt=""
+      		img onclick = "javascript:location.href = 'book_detail.jsp?b_no=3';"></li>
+      <li><img src="image/slideimage2.jpg" Width = 300 height = 300 alt=""
+      img onclick = "javascript:location.href = 'book_detail.jsp?b_no=1';"></li>
+      <li><img src="image/slideimage3.jpg" Width = 300 height = 300 alt=""
+      img onclick = "javascript:location.href = 'book_detail.jsp?b_no=16';"></li>
+      <li><img src="image/slideimage4.jpg" Width = 300 height = 300 alt=""
+      img onclick = "javascript:location.href = 'book_detail.jsp?b_no=19';"></li>
+      <li><img src="image/slideimage5.jpg" Width = 300 height = 300 alt=""
+      img onclick = "javascript:location.href = 'book_detail.jsp?b_no=20';"></li>
+      <li><img src="image/slideimage6.jpg" Width = 300 height = 300 alt=""
+      img onclick = "javascript:location.href = 'book_detail.jsp?b_no=18';"></li>
     </ul>
     <p class="controller">
       <!-- &lang: 왼쪽 방향 화살표 &rang: 오른쪽 방향 화살표 --> 
