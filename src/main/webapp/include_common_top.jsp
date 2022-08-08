@@ -10,7 +10,7 @@
 <h1>
 	<div style="width:100px;padding-top: 5px;margin: 0px auto 0px auto">
 	<a href = kyobo_main.jsp>	
-	<img src='image/kyobologo.png' width="180" height="70" align="top" align="center"/>
+	<img src='image/logo.png' width="215" height="55" align="top" align="center"/>
 	</a>
 	</div>
 	
