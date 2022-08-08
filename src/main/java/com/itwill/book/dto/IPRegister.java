@@ -5,12 +5,14 @@ public class IPRegister {
 	private String i_name;
 	private String i_ipno;
 	private String u_id;
-	public IPRegister(int i_no, String i_name, String i_ipno, String u_id) {
+	private String i_date;
+	public IPRegister(int i_no, String i_name, String i_ipno, String u_id, String i_date) {
 		super();
 		this.i_no = i_no;
 		this.i_name = i_name;
 		this.i_ipno = i_ipno;
 		this.u_id = u_id;
+		this.i_date = i_date;
 	}
 	public int getI_no() {
 		return i_no;
@@ -36,11 +38,13 @@ public class IPRegister {
 	public void setU_id(String u_id) {
 		this.u_id = u_id;
 	}
-	@Override
-	public String toString() {
-		return "IPRegister [i_no=" + i_no + ", i_name=" + i_name + ", i_ipno=" + i_ipno + ", u_id=" + u_id + "]";
+	public String getI_date() {
+		return i_date;
 	}
-
+	public void setI_date(String i_date) {
+		this.i_date = i_date;
+	}
+	
 	
 	
 	

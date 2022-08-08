@@ -13,7 +13,6 @@
 		return;
 	}
 	
-	Cookie[] cookie = request.getCookies();
 	
 	for(int i=0; i<b_no.length; i++){
 			

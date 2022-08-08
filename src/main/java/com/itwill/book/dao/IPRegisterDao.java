@@ -72,9 +72,9 @@ public class IPRegisterDao {
 			int i_no = rs.getInt("i_no");
 			String i_name = rs.getString("i_name");
 			String i_ipno = rs.getString("i_ipno");
+			String i_date = rs.getString("i_date");
 			
-			
-			ipRegisterList.add(new IPRegister(i_no, i_name, i_ipno, u_id));
+			ipRegisterList.add(new IPRegister(i_no, i_name, i_ipno, u_id, i_date));
 		}
 		return ipRegisterList;
 	}

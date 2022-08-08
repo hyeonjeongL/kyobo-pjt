@@ -9,8 +9,8 @@
  	if(ip == null){
  		ip = request.getRemoteAddr();
  	}
-	//IPRegisterService ipRegisterService = new IPRegisterService();
-	//List<IPRegister> ipRegisters = ipRegisterService.selectById(u_id);
+	IPRegisterService ipRegisterService = new IPRegisterService();
+	List<IPRegister> ipRegisters = ipRegisterService.selectById(u_id);
  
  %>
 <!DOCTYPE html>
@@ -19,8 +19,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel=stylesheet href="css/styles.css" type="text/css">
-<script type="text/javascript">
-</script>
+<script type="text/javascript" src=js/ebook.js></script>
 </head>
 <body>
 <div><table style="padding-left: 10px" border=0 cellpadding=0
@@ -53,24 +52,24 @@
 									
 									<!-- cart item start -->
 									<%
-									
+									for(IPRegister ipRegister : ipRegisters){
 									
 									%>
 									<tr>
-										<td width=60 height=26 align=center bgcolor="ffffff" class=t1><input type="checkbox" name="ebook_check" onchange="check_box_count();" value="" ></td>
+										<td width=60 height=26 align=center bgcolor="ffffff" class=t1><input type="checkbox" name="i_no_check" onchange="check_box_count();" value="<%=ipRegister.getI_no()%>" ></td>
 										<td width=40 height=26 align=center bgcolor="ffffff" class=t1><img src='image/pc.jpg' width="33" height="40"/></td>
-										<td width=210 height=26 align=center bgcolor="ffffff" class=t1><a href='ebook_detail.jsp?b_no='></a></td>
-										<td width=110 height=26 align=center bgcolor="ffffff" class=t1></td>
-										<td width=110 height=26 align=center bgcolor="ffffff" class=t1><input type="hidden" name="b_no" value=""></td>
+										<td width=210 height=26 align=center bgcolor="ffffff" class=t1><%=ipRegister.getI_name() %></td>
+										<td width=110 height=26 align=center bgcolor="ffffff" class=t1><%=ipRegister.getI_ipno() %></td>
+										<td width=110 height=26 align=center bgcolor="ffffff" class=t1>
 										
 									</tr>
-									
+									<%} %>
 									<!-- cart item end -->
-									
 								</table>
 								</form>
 								<br>
-									<td><input type="button" value="PC등록" onClick="setCookies();"> </td>
+									<td><input type="button" value="PC등록" onClick="pcregister();"> </td>
+									<td><input type="button" value="선택PC삭제" onClick="pcdelete();"> </td>
 							</div>
 							</div>
 </body>
