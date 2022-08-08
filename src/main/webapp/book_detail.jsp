@@ -159,6 +159,8 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
    marginwidth=0 marginheight=0>
    <form name="book_detail_form">
       <input type="hidden" name="b_no" value="<%=book.getB_no()%>">
+      <input type="hidden" name="b_qty" id="b_qty" value="1">
+		<input type="hidden" name="buyType" value="direct">
 
    </form>
    <!-- container start-->
