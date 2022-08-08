@@ -56,4 +56,10 @@ public class UserInfoService {
 	public List<UserInfo> selectAll()throws Exception {
 		return userDao.selectAll();
 	}
+	
+	public int updateByAddress(String address, String u_id)throws Exception {
+		return userDao.updateByAddress(address, u_id);
+	}
+	
+	
 }

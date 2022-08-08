@@ -93,7 +93,7 @@
 할머니가 말했다.
 <br><br>
 1
-<a href="kyobo_main.jsp">메인으로</a>
+<a href="ebook_list.jsp">메인으로</a>
 
 </div>
 

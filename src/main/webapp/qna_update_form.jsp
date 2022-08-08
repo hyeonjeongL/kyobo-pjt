@@ -16,10 +16,20 @@ if(sUserId == null){
 	response.sendRedirect("kyobo_main.jsp");
 }
 
+
+String id = request.getParameter("id");
+
+if(!id.equals(sUserId)){
+	out.println("<script>");
+	out.println("alert('수정권한이 없습니다');");
+	out.println("location.href='qna_list.jsp'");
+	out.println("</script>");
+}
+
+
 String q_no = request.getParameter("q_no");
 QnaService qnaService = new QnaService();
 Qna qna = qnaService.selectByNo(Integer.parseInt(q_no));
-
 %> 
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">

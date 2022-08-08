@@ -132,6 +132,16 @@ public class UserInfoDao {
 		return u_id;
 	}
 	
+	public int updateByAddress(String address, String u_id) throws Exception{
+		Connection con = dataSource.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(UserInfoSQL.ADDRESS_UPDATE);
+		pstmt.setString(1, address);
+		pstmt.setString(2, u_id);
+		int rowCount = pstmt.executeUpdate();
+		pstmt.close();
+		con.close();
+		return rowCount;
+	}
 	
 	
 	

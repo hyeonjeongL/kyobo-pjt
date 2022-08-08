@@ -92,6 +92,18 @@ form > table tr td{
 		document.order_create_form.action = 'userinfo_update_form.jsp';
 		document.order_create_form.submit();
 	}
+	
+	function address_change() {
+		var a = prompt('변경할 주소를 입력하세요');
+		if(a == null || a == ""){
+			return;
+		}
+		document.order_create_form.action = 'order_address_update_action.jsp?a='+a;
+		document.order_create_form.method = 'POST';
+		document.order_create_form.submit();
+		
+	}
+	
 </script>
 </head>
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
@@ -158,7 +170,7 @@ form > table tr td{
 									<tr>
 										<td width=10 height=26 align=center bgcolor="ffffff" colspan = 3 class=t1><%=userInfo.getU_address()%></td>
 										<td width=50 height=26 align=center bgcolor="ffffff" colspan = 1 class=t1>
-										<input type="button" value="기본배송지 변경" onClick="window.open('http://localhost/web-project-team2-kyobo/userinfo_update_form.jsp')">
+										<input type="button" value="기본배송지 변경" onClick="address_change();">
 										
 										</td>
 									</tr>
