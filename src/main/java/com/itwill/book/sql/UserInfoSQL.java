@@ -6,4 +6,7 @@ public class UserInfoSQL {
 	public static final String USER_DELETE_BY_ID = "delete from userinfo where u_id=?";
 	public static final String USER_SELECT_ALL = "select * from userinfo";
 	public static final String USER_SELECT_BY_ID = "select * from userinfo where u_id=?";
+	
+	public static final String ADDRESS_UPDATE = "update userinfo set u_address=? where u_id=?";
+	
 }

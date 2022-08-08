@@ -57,6 +57,7 @@ public class CartDao {
 		pstmt.setInt(3, newCart.getBook().getB_no());
 		
 		int insertCount = pstmt.executeUpdate();
+		con.close();
 		return insertCount;
 
 		
@@ -71,6 +72,7 @@ public class CartDao {
 		pstmt.setInt(3, newCart.getBook().getB_no());
 		
 		int addQtyCount = pstmt.executeUpdate();
+		con.close();
 		return addQtyCount;
 	}
 	
@@ -83,6 +85,7 @@ public class CartDao {
 		pstmt.setInt(2, c_no);
 		
 		int updateQtyCount = pstmt.executeUpdate();
+		con.close();
 		return updateQtyCount;
 	}
 
@@ -94,6 +97,7 @@ public class CartDao {
 		pstmt.setInt(1, c_no);
 		
 		int deleteNoCount = pstmt.executeUpdate();
+		con.close();
 		return deleteNoCount;
 	}
 	
@@ -104,6 +108,7 @@ public class CartDao {
 		PreparedStatement pstmt = con.prepareStatement(CartSQL.CART_DELETE_ALL);
 		pstmt.setString(1, u_id);
 		int deleteAllCount  = pstmt.executeUpdate();
+		con.close();
 		return deleteAllCount;
 	}
 	

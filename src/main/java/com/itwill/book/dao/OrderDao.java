@@ -153,6 +153,7 @@ public class OrderDao {
 				}
 				orderList.add(orders);
 			}
+			con.close();
 			return orderList;
 		}
 	
