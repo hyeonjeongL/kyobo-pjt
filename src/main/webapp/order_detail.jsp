@@ -74,13 +74,13 @@ function reviewGo(){
 								<table align="center" width="80%"  border="0" cellpadding="0" cellspacing="1"  bgcolor="BBBBBB" >
 									<caption style="text-align: left;">주문상세정보</caption>
 									<tr>
-										<td width=290 height=25 bgcolor="#E0E0F8" align=center class=t1><font
+										<td width=290 height=25 bgcolor="FFE4B5" align=center class=t1><font
 											>주문번호</font></td>
-										<td width=112 height=25 bgcolor="#E0E0F8" align=center class=t1><font
+										<td width=112 height=25 bgcolor="FFE4B5" align=center class=t1><font
 											>주문일</font></td>
-										<td width=166 height=25 bgcolor="#E0E0F8" align=center class=t1><font
+										<td width=166 height=25 bgcolor="FFE4B5" align=center class=t1><font
 											>주문자</font></td>
-										<td width=50 height=25 bgcolor="#E0E0F8" align=center class=t1><font
+										<td width=50 height=25 bgcolor="FFE4B5" align=center class=t1><font
 											>비 고</font></td>
 									</tr>
 									<tr>
@@ -92,8 +92,8 @@ function reviewGo(){
 										</td>
 									</tr>
 										<tr>
-										<td width = 568 height=25 align=center bgcolor="E6ECDE" colspan = 3 class=t1>기본 배송지</td>
-										<td width=50 height=25 align=center bgcolor="E6ECDE" colspan=1
+										<td width = 568 height=25 align=center bgcolor="FFE4B5" colspan = 3 class=t1>기본 배송지</td>
+										<td width=50 height=25 align=center bgcolor="FFE4B5" colspan=1
 											class=t1>비 고</td>
 									</tr>
 										<tr>
@@ -108,10 +108,10 @@ function reviewGo(){
 								<table align=center  width=80% border="0" cellpadding="0" cellspacing="1"  bgcolor="BBBBBB" >
 									<caption style="text-align: left;">주문제품목록</caption>
 									<tr style="border: 0.1px solid">
-										<td width=290 height=25 align=center bgcolor="E6ECDE" class=t1>책 이름</td>
-										<td width=112 height=25 align=center bgcolor="E6ECDE" class=t1>수 량</td>
-										<td width=166 height=25  align=center bgcolor="E6ECDE" class=t1>가 격</td>
-										<td width=50 height=25  align=center bgcolor="E6ECDE" class=t1>비 고</td>
+										<td width=290 height=25 align=center bgcolor="FFE4B5" class=t1>책 이름</td>
+										<td width=112 height=25 align=center bgcolor="FFE4B5" class=t1>수 량</td>
+										<td width=166 height=25  align=center bgcolor="FFE4B5" class=t1>가 격</td>
+										<td width=50 height=25  align=center bgcolor="FFE4B5" class=t1>비 고</td>
 													
 									</tr>
 									
