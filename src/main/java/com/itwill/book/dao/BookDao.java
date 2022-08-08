@@ -101,6 +101,7 @@ public class BookDao {
 
 			);
 		}
+		con.close();
 		return book;
 	}
 	

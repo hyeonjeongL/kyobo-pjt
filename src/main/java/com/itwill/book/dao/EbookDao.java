@@ -42,7 +42,7 @@ public class EbookDao {
 					
 			ebook = new Ebook(e_no, e_price, book);
 		}
-
+		con.close();
 		return ebook;
 	}
 
