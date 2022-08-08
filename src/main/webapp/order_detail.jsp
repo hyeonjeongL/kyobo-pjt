@@ -1,3 +1,4 @@
+<%@page import="com.itwill.book.service.UserInfoService"%>
 <%@page import="com.itwill.book.dto.OrderDetail"%>
 <%@page import="com.itwill.book.dto.Orders"%>
 <%@page import="com.itwill.book.service.OrderService"%>
@@ -13,6 +14,8 @@ String o_noStr=request.getParameter("o_no");
 	}
 	OrderService orderService=new OrderService();
 	Orders orders = orderService.detail(sUserId,Integer.parseInt(o_noStr));
+	UserInfoService userInfoService = new UserInfoService();
+	UserInfo userInfo = userInfoService.selectById(sUserId);
 %>     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -71,23 +74,32 @@ function reviewGo(){
 								<table align="center" width="80%"  border="0" cellpadding="0" cellspacing="1"  bgcolor="BBBBBB" >
 									<caption style="text-align: left;">주문상세정보</caption>
 									<tr>
-										<td width=290 height=25 bgcolor="E6ECDE" align=center class=t1><font
+										<td width=290 height=25 bgcolor="#E0E0F8" align=center class=t1><font
 											>주문번호</font></td>
-										<td width=112 height=25 bgcolor="E6ECDE" align=center class=t1><font
+										<td width=112 height=25 bgcolor="#E0E0F8" align=center class=t1><font
 											>주문일</font></td>
-										<td width=166 height=25 bgcolor="E6ECDE" align=center class=t1><font
+										<td width=166 height=25 bgcolor="#E0E0F8" align=center class=t1><font
 											>주문자</font></td>
-										<td width=50 height=25 bgcolor="E6ECDE" align=center class=t1><font
+										<td width=50 height=25 bgcolor="#E0E0F8" align=center class=t1><font
 											>비 고</font></td>
 									</tr>
-									
-									
 									<tr>
 										<td width=290 height=26 align=center bgcolor="ffffff" class=t1><%=orders.getO_no()%></td>
 										<td width=112 height=26 align=center bgcolor="ffffff" class=t1><%=orders.getO_date()%></td>
 										<td width=166 height=26 align=center bgcolor="ffffff" class=t1><%=orders.getU_id()%></td>
 										<td width=50 height=26 align=center bgcolor="ffffff" class=t1>
 												<input type="submit" value="삭제">
+										</td>
+									</tr>
+										<tr>
+										<td width = 568 height=25 align=center bgcolor="E6ECDE" colspan = 3 class=t1>기본 배송지</td>
+										<td width=50 height=25 align=center bgcolor="E6ECDE" colspan=1
+											class=t1>비 고</td>
+									</tr>
+										<tr>
+										<td width=10 height=26 align=center bgcolor="ffffff" colspan = 3 class=t1><%=userInfo.getU_address()%></td>
+										<td width=50 height=26 align=center bgcolor="ffffff" colspan = 1 class=t1>
+										
 										</td>
 									</tr>
 								</table>
