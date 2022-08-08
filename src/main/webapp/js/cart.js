@@ -1,7 +1,8 @@
 /**
- * 
+ *
+ */
  
-function changeNumber(desc, formId) {
+	function changeNumber(desc, formId) {
 		console.log(formId);
 		var form = document.getElementById(formId);
 		if (desc == '+') {
@@ -15,6 +16,8 @@ function changeNumber(desc, formId) {
 		form.action = 'cart_update_action.jsp';
 		form.submit();
 	}
+	
+	
 	/*
 	cart item1개삭제하기
 	 */
@@ -98,11 +101,12 @@ function changeNumber(desc, formId) {
 					
 					cart_item_check_selected_count++;
 					
+				} else {
+				tot_order_price_deli+=0;
 				}
 			}
 			
 			
-			var tot_order_price_deli=tot_order_price+deli_price;
 			document.getElementById('cart_item_select_count').innerHTML = cart_item_check_selected_count;
 			document.getElementById('tot_order_price').innerHTML = tot_order_price.toLocaleString();
 			document.getElementById('deli_price').innerHTML = deli_price.toLocaleString();
@@ -110,7 +114,7 @@ function changeNumber(desc, formId) {
 			
 	}
 	/*
-	cart 아이템전체선택해제
+	cart 아이템전체선택해제!
 	*/
 	function cart_item_all_select(e){
 		var cart_item_no_check_list = document.getElementsByName("cart_item_no_check");
@@ -121,6 +125,8 @@ function changeNumber(desc, formId) {
 		}else{
 			for (var i = 0; i < cart_item_no_check_list.length; i++) {
 				cart_item_no_check_list.item(i).checked=false;
+				tot_order_price_deli=0;
+			document.getElementById('tot_order_price_deli').innerHTML = tot_order_price_deli.toLocaleString();
 			}
 		}
 	}

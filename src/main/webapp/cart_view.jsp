@@ -138,7 +138,6 @@ List<Cart> cartList = cartService.getCartList(u_id);
 										deli_price=0;
 									}
 									%>
-								
 
 									<tr>
 										<td width=640 colspan=6 height=26 class=t1 bgcolor="ffffff">
