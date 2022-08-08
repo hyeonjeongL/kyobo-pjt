@@ -48,6 +48,13 @@ List<Cart> cartList = cartService.getCartList(u_id);
 			<!-- include_common_top.jsp end-->
 		</div>
 		<!-- header end -->
+		<!-- navigation start-->
+		<div id="navigation">
+         <!-- include_common_left.jsp start-->
+         <jsp:include page="include_common_left.jsp"/>
+         <!-- include_common_left.jsp end-->
+      </div>
+		<!-- navigation end-->
 		<!-- wrapper start -->
 		<div id="wrapper">
 			<!-- content start -->
@@ -60,7 +67,7 @@ List<Cart> cartList = cartService.getCartList(u_id);
 							<table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
-									<td height="22">&nbsp;&nbsp;<Font size="5">장바구니보기</Font></td>
+									<td bgcolor="f4f4f4" height="40">&nbsp;&nbsp;<Font size="5">장바구니보기</Font></td>
 								</tr>
 							</table> <!--form--> <!-- 
 							<form name="f" method="post">
@@ -138,7 +145,6 @@ List<Cart> cartList = cartService.getCartList(u_id);
 										deli_price=0;
 									}
 									%>
-								
 
 									<tr>
 										<td width=640 colspan=6 height=26 class=t1 bgcolor="ffffff">
