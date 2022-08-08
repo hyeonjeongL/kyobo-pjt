@@ -88,22 +88,22 @@ console.log("N_image :<%=notice.getN_image()%>");
 								<input type="hidden" name="pageno" value="1">
 								<table border="0" cellpadding="0" cellspacing="1" width="590" bgcolor="BBBBBB">
 									<tr>
-										<td width=100 align=center bgcolor="E6ECDE" height="22">공지일</td>
+										<td width=100 align=center bgcolor="FFE4B5" height="22">공지일</td>
 										<td width=490 bgcolor="ffffff" align="left" style="padding-left: 10"><%=notice.getN_date()%></td>
 										<!-- <td width=490 bgcolor="ffffff" align="left" style="padding-left: 10">20220806</td> -->
 									</tr>
 									<tr>
-										<td width=100 align=center bgcolor="E6ECDE" height="22">제목</td>
+										<td width=100 align=center bgcolor="FFE4B5" height="22">제목</td>
 										<td width=490 bgcolor="ffffff" align="left" style="padding-left: 10"><%=notice.getN_title()%></td>
 										<!-- <td width=490 bgcolor="ffffff" align="left" style="padding-left: 10">테스트</td> -->
 									</tr>
 									<tr>
-										<td width=100 align=center bgcolor="E6ECDE" height="22">내용</td>
+										<td width=100 align=center bgcolor="FFE4B5" height="22">내용</td>
 										<td width=490 bgcolor="ffffff" align="left" style="padding-left: 10"><%=notice.getN_contents().replace("\n","<br/>")%></td>
 										<!-- <td width=490 bgcolor="ffffff" align="left" style="padding-left: 10">test</td> -->
 									</tr>
 									<tr>
-										<td width=100 align=center bgcolor="E6ECDE" height="22">이미지</td>
+										<td width=100 align=center bgcolor="FFE4B5" height="22">이미지</td>
 										<td width=490 bgcolor="ffffff" align="left" style="padding-left: 10">
 										<img border=0 src="image/<%=notice.getN_image()%>" style =  "width:100%; height : auto;"></td>
 										<!-- <img border=0 src="image/1_courage.jpg" style =  "width:100%; height : auto;"></td> -->

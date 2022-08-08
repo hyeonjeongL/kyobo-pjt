@@ -115,9 +115,9 @@
                            bgcolor="BBBBBB">
 
                            <tr height="30">
-                              <td width=280 align=center bgcolor="E6ECDE">리뷰제목</td>
-                              <td width=120 align=center bgcolor="E6ECDE">작성자</td>
-                              <td width=120 align=center bgcolor="E6ECDE">작성날짜</td>
+                              <td width=280 align=center bgcolor="FFE4B5">리뷰제목</td>
+                              <td width=120 align=center bgcolor="FFE4B5">작성자</td>
+                              <td width=120 align=center bgcolor="FFE4B5">작성날짜</td>
                            </tr>
                            <%
                               for (Review review : reviewBooklistPage.itemList) {

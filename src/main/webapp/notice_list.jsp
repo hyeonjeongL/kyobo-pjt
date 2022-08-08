@@ -75,10 +75,10 @@ if(pageno==null||pageno.equals("")){
 									bgcolor="BBBBBB">
 
 									<tr>
-										<td width=280 align=center bgcolor="E6ECDE">제목</td>
-										<td width=120 align=center bgcolor="E6ECDE">분류</td>
-										<td width=120 align=center bgcolor="E6ECDE">글쓴날</td>
-										<td width=70 align=center bgcolor="E6ECDE">본횟수</td>
+										<td width=280 align=center bgcolor="FFE4B5">제목</td>
+										<td width=120 align=center bgcolor="FFE4B5">분류</td>
+										<td width=120 align=center bgcolor="FFE4B5">글쓴날</td>
+										<td width=70 align=center bgcolor="FFE4B5">본횟수</td>
 									</tr>
 									<%
 										for (Notice notice:noticeListPage.itemList) {

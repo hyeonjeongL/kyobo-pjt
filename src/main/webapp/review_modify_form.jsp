@@ -96,19 +96,19 @@ if(!u_id.equals(review.getU_id())){
 								<table border="0" cellpadding="0" cellspacing="1" width="590"
 									bgcolor="BBBBBB">
 									<tr>
-										<td width=100 align=center bgcolor="E6ECDE" height="22">제목</td>
+										<td width=100 align=center bgcolor="FFE4B5" height="22">제목</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><input type="text" style="width: 150"
 											name="r_title" value="<%=review.getR_title()%>"></td>
 									</tr>
 									<tr>
-										<td width=100 align=center bgcolor="E6ECDE" height="22">평점</td>
+										<td width=100 align=center bgcolor="FFE4B5" height="22">평점</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><input type="text" style="width: 150"
 											name="r_grade" value="<%=review.getR_grade()%>" placeholder="1 ~ 10" ></td>
 									</tr>
 									<tr>
-										<td width=100 align=center bgcolor="E6ECDE" height="22">내용</td>
+										<td width=100 align=center bgcolor="FFE4B5" height="22">내용</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10px"
 											align="left"><textarea name="r_contents"
 												style="width: 350px" rows="14"><%=review.getR_contents()%></textarea></td>
