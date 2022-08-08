@@ -41,7 +41,6 @@ public class EorderDao {
 		pstmt.close();
 		con.close();
 		
-		
 		return rowCount;
 	}
 	
@@ -123,6 +122,7 @@ public class EorderDao {
 			
 			eorder = new Eorder(eo_no, date_buy, date_end, ebook, u_id);
 		}
+		con.close();
 		return eorder;
 	}
 	
@@ -143,7 +143,7 @@ public class EorderDao {
 		}
 		Date date = new Date();
 		long remaintime = eorder.getEo_date_end().getTime() - date.getTime();
-		
+		con.close();
 		return remaintime;
 	}
 	
