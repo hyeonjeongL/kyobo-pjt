@@ -21,7 +21,6 @@ if (session.getAttribute("sUserId") != null) {
 }
 BookService bookService = new BookService();
 Book book = bookService.selectByNo(Integer.parseInt(b_noStr));
-
 if (book == null) {
    out.println("<script>");
    out.println("alert('매진된상품입니다.');");
@@ -57,7 +56,6 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
    }%>
     
 <%
-
    String sUserId = (String)session.getAttribute("sUserId");
    String pageNo = request.getParameter("pageno");
    if (pageNo == null || pageNo.equals("")) {
@@ -103,7 +101,6 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
          alert('로그인 하세요');
          location.href = 'userinfo_login_form.jsp';
       } else {
-
          var left = Math.ceil((window.screen.width) / 3);
          var top = Math.ceil((window.screen.height) / 3);
          console.log(left);
@@ -143,7 +140,6 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
       document.book_detail_form.method = 'POST';
       document.book_detail_form.submit();
    }
-
    function cart_insert_action(formId) {
       if (
 <%=!isLogin%>
@@ -232,12 +228,6 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
                                     <option value="9">9
                                     <option value="10">10
 
-                                 </select> 권<br>
-                                 <br> <a
-                                    href="javascript:cart_insert_action('add_cart_from');">장바구니
-                                    담기</a> <input type=button onclick="add_cart_popup_window();"
-                                    value="장바구니에담기[계속쇼핑팝업]" /> <input type="hidden" name=b_no
-                                    value="<%=book.getB_no()%>">
 
                                  </select> 권<br><br> 
                                     <a href="javascript:cart_insert_action('add_cart_from');" onclick="add_cart_popup_window();">장바구니에담기</a>
