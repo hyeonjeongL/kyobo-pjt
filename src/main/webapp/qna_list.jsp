@@ -75,9 +75,9 @@
 									bgcolor="BBBBBB">
 
 									<tr>
-										<td width=280 align=center bgcolor="E6ECDE">제목</td>
-										<td width=120 align=center bgcolor="E6ECDE">작성자</td>
-										<td width=120 align=center bgcolor="E6ECDE">작성날짜</td>
+										<td width=280 align=center bgcolor="FFE4B5">제목</td>
+										<td width=120 align=center bgcolor="FFE4B5">작성자</td>
+										<td width=120 align=center bgcolor="FFE4B5">작성날짜</td>
 									</tr>
 									<%
 										for (Qna qna : qnalistPage.itemList) {

@@ -28,7 +28,6 @@
 
 	ReviewService reviewService = new ReviewService();
 	Review review=reviewService.reviewSelectNo(r_no);
-	
 	if(b_no!=null){
 		BookService bookService =new BookService();
 		Book book=bookService.selectByNo(b_no);
