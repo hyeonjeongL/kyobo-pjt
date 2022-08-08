@@ -4,20 +4,40 @@
 <%@page import="com.itwill.book.service.ReviewService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%!public String getTitleString(Review review) {
+      StringBuilder title = new StringBuilder(128);
+      String t = review.getR_title();
+      if (t.length() > 15) {
+         //t = t.substring(0,15);
+         //t = t+"...";
+         t = String.format("%s...", t.substring(0, 15));
+      }
+      //답글공백삽입
+      
+      for (int i = 0; i < review.getR_depth(); i++) {
+         title.append("&nbsp;&nbsp;");
+      }
+      
+      if (review.getR_depth() > 0) {
+         title.append("<img border='0' src='image/re.gif'/>"); // 댓글 시작에 ㄴ 나오게 하는거인듯
+      }
+      
+      title.append(t.replace(" ", "&nbsp;"));
+      
+      return title.toString();
+   }%>
     
 <%
 
-	String sUserId = (String)session.getAttribute("sUserId");
-	if(sUserId == null){
-		response.sendRedirect("kyobo_main.jsp");
-	}
-
+String sUserId = (String)session.getAttribute("sUserId");
+if(sUserId == null){
+	response.sendRedirect("kyobo_main.jsp");
+	return;
+}
 String pageNo = request.getParameter("pageno");
 if (pageNo == null || pageNo.equals("")) {
 	pageNo = "1";
 }
-
 	//삭제 오류 For input string: "null"
 	ReviewBookListPageMakerDto reviewlistPage = new ReviewService().findReviewIdList(sUserId, Integer.parseInt(pageNo));
 	
@@ -83,7 +103,7 @@ if (pageNo == null || pageNo.equals("")) {
 									<tr height="40">
 										<td width=280 bgcolor="ffffff" style="padding-left: 10px" align="left">
 										<a href='review_view.jsp?r_no=<%=review.getR_no()%>&pageno=<%=reviewlistPage.pageMaker.getCurPage()%>'>
-										<%=review.getR_title()%>
+										<%=getTitleString(review)%>
 										</a>
 										</td>
 										<td width=120 align=center bgcolor="ffffff"><%=review.getU_id()%>

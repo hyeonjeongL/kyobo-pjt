@@ -12,31 +12,29 @@
 //String u_id = (String)session.getAttribute("sUserId");
 
 	Integer r_no=null;
+	Integer b_no=null;
 	int pageno=1;
 	try{
 		r_no=Integer.parseInt(request.getParameter("r_no"));
 		pageno=Integer.parseInt(request.getParameter("pageno"));
+		b_no=Integer.parseInt(request.getParameter("b_no"));
 	}catch(Exception e){
-		
+		e.printStackTrace();
 	}
 	if(r_no==null){
 		//목록으로이동
 		response.sendRedirect("review_Id_list.jsp?pageno="+pageno);
 		return;
 	}
+
 	ReviewService reviewService = new ReviewService();
 	Review review=reviewService.reviewSelectNo(r_no);
-	if(r_no==null){
-		response.sendRedirect("review_Id_list.jsp?pageno="+pageno);
-		return;
-	}
-
-	/*
-	String b_no = request.getParameter("b_no");
-	BookService bookService =new BookService();
-	Book book=bookService.selectByNo(Integer.parseInt(b_no));
-	*/
 	
+	if(b_no!=null){
+		BookService bookService =new BookService();
+		Book book=bookService.selectByNo(b_no);
+		review.getOrderDetail().setBook(book);
+	}
 	//String o_no=request.getParameter("j_no");
 	//OrderService orderService=new OrderService();
 	//Orders orders = orderService.detail(u_id,Integer.parseInt(o_no));
