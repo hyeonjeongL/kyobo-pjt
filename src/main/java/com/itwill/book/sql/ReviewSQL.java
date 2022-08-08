@@ -54,10 +54,19 @@ public class ReviewSQL {
 	
 	
 	//해당 리뷰의 총 댓글 수
-	public static final String SELECT_REVIEW_REPLY_COUNT = "select count(*)-1 from review where r_groupno=?";
+	public static final String SELECT_REVIEW_REPLY_COUNT = "select count(*) review_count from review where r_groupno=?";
+	public static final String SELECT_REVIEW_BY_BOOK_ID = "select * from review where od_no=(select od_no from orderdetail od join book p on od.b_no=p.b_no where p.b_no=?)";
 	
 	
-	
+	////////////리뷰랑 댓글 모두 조회하는거
+	//public static final String SELECT_REVIEW_REPLY_BOOLIST_ALL = "select * from review where od_no=? union select * from review where r_groupno=? and od_no is null) a left outer join orderdetail od on a.od_no = od.od_no left outer join book b on od.b_no = b.b_no  order by r_step asc;";
+	public static final String SELECT_REVIEW_REPLY_BOOLIST_ALL = "select aa.* from(select rownum idx, a.* from"
+			+ "                    (select * from review r "
+			+ "                        left outer join orderdetail od"
+			+ "                        on r.od_no = od.od_no where r.r_groupno=?"
+			+ "                        order by r_groupno desc, r_step asc) a"
+			+ "                        ) aa"
+			+ "						where aa.idx >=? and aa.idx <=?";
 	
 	//---여기부터는 필요가있나
 	

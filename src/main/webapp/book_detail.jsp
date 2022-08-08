@@ -1,3 +1,4 @@
+<%@page import="com.itwill.book.service.ReviewService"%>
 <%@page import="com.itwill.book.dto.Ebook"%>
 <%@page import="com.itwill.book.service.EbookService"%>
 <%@page import="com.itwill.book.dto.Book"%>
@@ -17,6 +18,7 @@ if(session.getAttribute("sUserId")!=null){
 }
 BookService bookService =new BookService();
 Book book=bookService.selectByNo(Integer.parseInt(b_noStr));
+
 if(book==null){
 	out.println("<script>");
 	out.println("alert('매진된상품입니다.');");
@@ -26,6 +28,8 @@ if(book==null){
 }
 EbookService ebookService = new EbookService();
 Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
+
+
 %>
 <!DOCTYPE html>
 <html>
@@ -95,8 +99,7 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 	marginwidth=0 marginheight=0>
 	<form name="book_detail_form">
 		<input type="hidden" name="b_no" value="<%=book.getB_no()%>">
-		<input type="hidden" id="b_qty" name="b_qty" value="1"> <input
-			type="hidden" name="buyType" value="direct">
+		
 	</form>
 	<!-- container start-->
 	<div id="container">

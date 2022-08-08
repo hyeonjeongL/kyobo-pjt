@@ -215,8 +215,8 @@ public class ReviewDao {
 	public List<Review> reviewSelectByBookNo(Review review,int start, int last) throws Exception{
 		List<Review> reviewBookList = new ArrayList<Review>();
 		Connection con = dataSource.getConnection();
-		PreparedStatement pstmt = con.prepareStatement(ReviewSQL.SELECT_REVIEW_B_NO_PAGE);
-		pstmt.setInt(1, review.getOrderDetail().getBook().getB_no());
+		PreparedStatement pstmt = con.prepareStatement(ReviewSQL.SELECT_REVIEW_REPLY_BOOLIST_ALL);
+		pstmt.setInt(1, review.getR_groupno());
 		pstmt.setInt(2, start);
 		pstmt.setInt(3, last);
 		ResultSet rs = pstmt.executeQuery();
@@ -237,12 +237,40 @@ public class ReviewDao {
 		return reviewBookList;
 	}
 	
+	
+	//////////
+	////////////리뷰댓글 전체 조회
+		public List<Review> reviewSelectByBookList(Review review, int start, int last ) throws Exception{
+			List<Review> reviewBookList = new ArrayList<Review>();
+			Connection con = dataSource.getConnection();
+			PreparedStatement pstmt = con.prepareStatement(ReviewSQL.SELECT_REVIEW_REPLY_BOOLIST_ALL);
+			pstmt.setInt(1, review.getOrderDetail().getOd_no());
+			pstmt.setInt(2, review.getR_groupno());
+			pstmt.setInt(start, last);
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				reviewBookList.add(new Review(
+						rs.getInt("r_no"), rs.getString("r_title"), rs.getDate("r_date"), 
+						rs.getInt("r_grade"), rs.getString("r_contents"), rs.getString("u_id"),
+						new OrderDetail(rs.getInt("od_no"), 0, 0, 
+								new Book(rs.getInt("b_no"), null, null, 0, null, null, null, null)), 
+						rs.getInt("r_groupno"), 
+						rs.getInt("r_step"), 
+						rs.getInt("r_depth")));
+			}
+			rs.close();
+			pstmt.close();
+			con.close();
+			
+			return reviewBookList;
+		}
+	
 	//
 	//상품페이지에서 해당 상품 리뷰의 댓글 전체조회
 	public List<Review> reviewSelectReplyAll(Review review,int start, int last) throws Exception{
 		List<Review> reviewBookList = new ArrayList<Review>();
 		Connection con = dataSource.getConnection();
-		PreparedStatement pstmt = con.prepareStatement(ReviewSQL.SELECT_REVIEW_REPLY_ALL);
+		PreparedStatement pstmt = con.prepareStatement(ReviewSQL.SELECT_REVIEW_REPLY_BOOLIST_ALL);
 		pstmt.setInt(1, review.getR_groupno());
 		pstmt.setInt(2, start);
 		pstmt.setInt(3, last);
@@ -365,7 +393,31 @@ public class ReviewDao {
 		if(rs.next()) {
 			count = rs.getInt(1);
 		}
+		System.out.println("---------------------->"+count);
 		return count;
+	}
+
+	public Review findReviewByBook(Book book) throws Exception{
+		
+		Review review=null;
+		Connection con = dataSource.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(ReviewSQL.SELECT_REVIEW_BY_BOOK_ID);
+		pstmt.setInt(1, book.getB_no());
+		ResultSet rs = pstmt.executeQuery();
+		while(rs.next()) {
+			review=new Review(
+					rs.getInt("r_no"), rs.getString("r_title"), rs.getDate("r_date"), 
+					rs.getInt("r_grade"), rs.getString("r_contents"), rs.getString("u_id"),
+					new OrderDetail(rs.getInt("od_no"), 0, 0, 
+							new Book(book.getB_no(), null, null, 0, null, null, null, null)), 
+					rs.getInt("r_groupno"), 
+					rs.getInt("r_step"), 
+					rs.getInt("r_depth"));
+		}
+		rs.close();
+		pstmt.close();
+		con.close();
+		return review;
 	}
 
 	
