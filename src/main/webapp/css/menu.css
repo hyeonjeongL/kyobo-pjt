@@ -10,7 +10,7 @@ div#header h1 {
 	line-height: 80px;
 	margin: 0px 0 0 0;
 	padding-left: 10px;
-	background: #fff url('../image/bookbackground.jpg');
+	background: #996633 /*url('../image/bookbackground.jpg')*/;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 100%;
