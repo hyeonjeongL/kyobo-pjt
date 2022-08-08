@@ -5,7 +5,7 @@
     pageEncoding="UTF-8"%>
 <%
  String u_id = (String)session.getAttribute("sUserId");
- String i_name = (String)session.getAttribute("i_name");
+ String i_name = (String)request.getParameter("a");
  
  String ip = request.getHeader("X-Forwarded-For");
 	if(ip == null){

@@ -1,3 +1,6 @@
+<%@page import="com.itwill.book.dto.IPRegister"%>
+<%@page import="java.util.List"%>
+<%@page import="com.itwill.book.service.IPRegisterService"%>
 <%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -18,11 +21,24 @@
 	
 		}
 	}
+	String ip = request.getHeader("X-Forwarded-For");
+	if(ip == null){
+		ip = request.getRemoteAddr();
+	}
+	int b = 0;
 	
-	if(c == null){
+	IPRegisterService ipRegisterService = new IPRegisterService();
+	List<IPRegister> lists = ipRegisterService.selectById(id);
+	for(IPRegister list : lists){
+		if(list.getI_ipno().equals(ip)){
+			b=1;
+		}
+	}
+	
+	if(c == null && b==0){
 		out.println("<script>");
 		out.println("alert('읽을 수 있는 권한이 없습니다.')");
-		out.println("location.href=('kyobo_main.jsp')");
+		out.println("location.href=('ebook_list.jsp')");
 		out.println("</script>");
 	}
 %>

@@ -5,6 +5,10 @@
 	String b_no = request.getParameter("b_no");
 	String id = (String)session.getAttribute("sUserId");
 	
+	if(b_no == null){
+		response.sendRedirect("ebook_list.jsp");
+	}
+	
 	if(id==null){
 		response.sendRedirect("userinfo_login_from.jsp");
 		return;

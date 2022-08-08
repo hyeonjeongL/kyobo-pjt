@@ -60,7 +60,7 @@
 										<td width=40 height=26 align=center bgcolor="ffffff" class=t1><img src='image/pc.jpg' width="33" height="40"/></td>
 										<td width=210 height=26 align=center bgcolor="ffffff" class=t1><%=ipRegister.getI_name() %></td>
 										<td width=110 height=26 align=center bgcolor="ffffff" class=t1><%=ipRegister.getI_ipno() %></td>
-										<td width=110 height=26 align=center bgcolor="ffffff" class=t1>
+										<td width=110 height=26 align=center bgcolor="ffffff" class=t1><%=ipRegister.getI_date() %>
 										
 									</tr>
 									<%} %>

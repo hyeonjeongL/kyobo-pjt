@@ -65,9 +65,8 @@ function pcregister() {
 		return;
 	}
 	sessionStorage.setItem("i_name",a);
-	document.ebook.action = 'IPregister_insert_action.jsp';
-	document.ebook.method = 'POST';
-	document.ebook.submit();
+	location.href='IPregister_insert_action.jsp?a='+a;
+	
 	
 }
 
