@@ -50,8 +50,8 @@ UserInfo user = userInfoService.selectById(u_id);
 							<table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
-									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>내정보 관리
-											- 내정보보기</b></td>
+									<td bgcolor="f4f4f4" height="35">&nbsp;&nbsp;<Font size="4">내정보 관리
+											- 내정보보기</td>
 								</tr>
 							</table> <!-- view Form  -->
 							
