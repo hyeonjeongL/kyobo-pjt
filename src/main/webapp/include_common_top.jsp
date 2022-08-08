@@ -8,9 +8,9 @@
 %>
 <jsp:include page="include_common_top_menu.jsp"/>
 <h1>
-	<div style="width:100px;padding-top: 15px;margin: 1px 1px 1x 1px">
+	<div style="width:100px;padding-top: 15px;margin: 1px 240px 1px 240px">
 	<a href = kyobo_main.jsp>	
-	<img src='image/logo.png' width="215" height="53" align="top" align="center"/>
+	<img src='image/logo.png' width="220" height="51" align="top" align="center"/>
 	</a>
 	</div>
 	
