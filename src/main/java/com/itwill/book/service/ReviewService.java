@@ -63,12 +63,7 @@ public class ReviewService {
 		return reviewDao.reviewSelectByBookNo(review);
 	}
 	
-/*	
-	//책 번호로 리뷰 조회- 상품페이지에서
-	public List<Review> reviewSelectByBookNo(int b_no) throws Exception{
-		return reviewDao.reviewSelectByBookNo(b_no);
-	}
-*/	
+
 	
 	//회원 아이디로 리뷰 조회 - 마이페이지
 	public List<Review> reviewSelectByUserId(String u_id) throws Exception{
@@ -104,27 +99,7 @@ public class ReviewService {
 		return pageMakerReviewList;
 	}
 
-/*
-	//상품 리뷰 게시물 리스트 
-		public ReviewBookListPageMakerDto findReviewBookList(int b_no, int currentPage) throws Exception{
-			//1.전체글의 갯수
-			int totalRecordCount = reviewDao.reviewCountAll(); // 다시확인
-			//2.paging계산(PageMaker 유틸클래스)
-			
-			PageMaker pageMaker=new PageMaker(totalRecordCount,currentPage);
-			//3.게시물데이타 얻기
-			Review review = new Review();
-			List<Review> reviewList=
-					reviewDao.reviewSelectByBookNo(b_no, pageMaker.getPageBegin(), //review.getOrderDetail().getBook().getB_no()
-												pageMaker.getPageEnd());
-			
-			ReviewBookListPageMakerDto pageMakerReviewList=new ReviewBookListPageMakerDto();
-			pageMakerReviewList.totRecordCount=totalRecordCount;
-			pageMakerReviewList.itemList=reviewList;
-			pageMakerReviewList.pageMaker=pageMaker;
-			return pageMakerReviewList;
-		}
-*/		
+		
 	
 	
 	//상품 리뷰 게시물 리스트 
@@ -136,8 +111,9 @@ public class ReviewService {
 				PageMaker pageMaker=new PageMaker(totalRecordCount,currentPage);
 				//3.게시물데이타 얻기
 				List<Review> reviewList=
-						reviewDao.reviewSelectByBookNo(review, pageMaker.getPageBegin(), //review.getOrderDetail().getBook().getB_no()
+						reviewDao.reviewSelectByBookNo(review, pageMaker.getPageBegin(), 
 													pageMaker.getPageEnd());
+						reviewDao.reviewSelectReplyAll(review);
 				
 				ReviewBookListPageMakerDto pageMakerReviewList=new ReviewBookListPageMakerDto();
 				pageMakerReviewList.totRecordCount=totalRecordCount;

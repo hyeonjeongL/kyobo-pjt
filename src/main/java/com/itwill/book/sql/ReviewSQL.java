@@ -29,6 +29,14 @@ public class ReviewSQL {
 	//상품페이지에서 해당 상품의 리뷰 전체 조회
 	public static final String SELECT_REVIEW_B_NO_PAGE = "select aa.* from(select rownum idx, a.* from (select * from review r join orderdetail od on r.od_no = od.od_no where od.b_no=? order by r_groupno desc, r_step asc) a) aa where aa.idx >=? and aa.idx <=?";
 	
+	//
+	//상품페이지에서 해당 상품의 리뷰의 댓글 전체조회
+	public static final String SELECT_REVIEW_REPLY_ALL = "select ss.* from (select rownum idx, s.* from (select * from review r where r.r_groupno=? and r.r_step>1 order by r_step desc) s )ss where ss.idx >=? and ss.idx <=?";
+	
+	//1개 리뷰의 댓글 전체조회
+	public static final String SELECT_REVIEW_ONE_REPLY_ALL = "select * from review r where r.r_groupno=? and r.r_step>1 order by r_step desc";
+	
+	
 	//회원 아이디로 리뷰조회
 	public static final String SELECT_REVIEW_U_ID = "select * from review where u_id=?";
 	
@@ -38,6 +46,7 @@ public class ReviewSQL {
 	
 	//리뷰리스트 전체 정렬 조회
 	public static final String SELECT_REVIEW_ALL = "select r_no,R_NO, R_TITLE, R_DATE, R_GRADE, R_CONTENTS,U_ID, OD_NO, R_GROUPNO, R_STEP, R_DEPTH from review order by r_groupno DESC, r_step ASC";
+	
 	
 	
 	//총 리뷰 수

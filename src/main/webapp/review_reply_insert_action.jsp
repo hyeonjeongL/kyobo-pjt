@@ -49,7 +49,10 @@
 	if(request.getParameter("pageno")!=null){
 		pageno=request.getParameter("pageno");
 	}
+	/*
 	response.sendRedirect(
 			String.format("review_view.jsp?r_no=%s",pageno));
+	*/
+	response.sendRedirect("review_Id_list.jsp");
 	
 %>

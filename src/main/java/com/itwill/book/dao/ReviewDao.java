@@ -210,58 +210,6 @@ public class ReviewDao {
 		return reviewBookList;
 	}
 
-/*
-	public List<Review> reviewSelectByBookNo(int b_no) throws Exception{
-		List<Review> reviewBookList = new ArrayList<Review>();
-		Connection con = dataSource.getConnection();
-		PreparedStatement pstmt = con.prepareStatement(ReviewSQL.SELECT_REVIEW_B_NO);
-		pstmt.setInt(1, b_no);
-		ResultSet rs = pstmt.executeQuery();
-		while(rs.next()) {
-			reviewBookList.add(new Review(
-					rs.getInt("r_no"), rs.getString("r_title"), rs.getDate("r_date"), 
-					rs.getInt("r_grade"), rs.getString("r_contents"), rs.getString("u_id"),
-					new OrderDetail(rs.getInt("od_no"), 0, 0, 
-							new Book(rs.getInt("b_no"), null, null, 0, null, null, null, null)), 
-					rs.getInt("r_groupno"), 
-					rs.getInt("r_step"), 
-					rs.getInt("r_depth")));
-		}
-		rs.close();
-		pstmt.close();
-		con.close();
-		
-		return reviewBookList;
-	}
-
-	
-	//************상품페이지에서 해당 상품의 리뷰 전체 조회
-	public List<Review> reviewSelectByBookNo(int b_no,int start, int last) throws Exception{
-		List<Review> reviewBookList = new ArrayList<Review>();
-		Connection con = dataSource.getConnection();
-		PreparedStatement pstmt = con.prepareStatement(ReviewSQL.SELECT_REVIEW_B_NO_PAGE);
-		pstmt.setInt(1, b_no);
-		pstmt.setInt(2, start);
-		pstmt.setInt(3, last);
-		ResultSet rs = pstmt.executeQuery();
-		while(rs.next()) {
-			reviewBookList.add(new Review(
-					rs.getInt("r_no"), rs.getString("r_title"), rs.getDate("r_date"), 
-					rs.getInt("r_grade"), rs.getString("r_contents"), rs.getString("u_id"),
-					new OrderDetail(rs.getInt("od_no"), 0, 0, 
-							new Book(rs.getInt("b_no"), null, null, 0, null, null, null, null)), 
-					rs.getInt("r_groupno"), 
-					rs.getInt("r_step"), 
-					rs.getInt("r_depth")));
-		}
-		rs.close();
-		pstmt.close();
-		con.close();
-		
-		return reviewBookList;
-	}
-	
-*/	
 
 	//************상품페이지에서 해당 상품의 리뷰 전체 조회
 	public List<Review> reviewSelectByBookNo(Review review,int start, int last) throws Exception{
@@ -271,6 +219,58 @@ public class ReviewDao {
 		pstmt.setInt(1, review.getOrderDetail().getBook().getB_no());
 		pstmt.setInt(2, start);
 		pstmt.setInt(3, last);
+		ResultSet rs = pstmt.executeQuery();
+		while(rs.next()) {
+			reviewBookList.add(new Review(
+					rs.getInt("r_no"), rs.getString("r_title"), rs.getDate("r_date"), 
+					rs.getInt("r_grade"), rs.getString("r_contents"), rs.getString("u_id"),
+					new OrderDetail(rs.getInt("od_no"), 0, 0, 
+							new Book(rs.getInt("b_no"), null, null, 0, null, null, null, null)), 
+					rs.getInt("r_groupno"), 
+					rs.getInt("r_step"), 
+					rs.getInt("r_depth")));
+		}
+		rs.close();
+		pstmt.close();
+		con.close();
+		
+		return reviewBookList;
+	}
+	
+	//
+	//상품페이지에서 해당 상품 리뷰의 댓글 전체조회
+	public List<Review> reviewSelectReplyAll(Review review,int start, int last) throws Exception{
+		List<Review> reviewBookList = new ArrayList<Review>();
+		Connection con = dataSource.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(ReviewSQL.SELECT_REVIEW_REPLY_ALL);
+		pstmt.setInt(1, review.getR_groupno());
+		pstmt.setInt(2, start);
+		pstmt.setInt(3, last);
+		ResultSet rs = pstmt.executeQuery();
+		while(rs.next()) {
+			reviewBookList.add(new Review(
+					rs.getInt("r_no"), rs.getString("r_title"), rs.getDate("r_date"), 
+					rs.getInt("r_grade"), rs.getString("r_contents"), rs.getString("u_id"),
+					new OrderDetail(rs.getInt("od_no"), 0, 0, 
+							new Book(rs.getInt("b_no"), null, null, 0, null, null, null, null)), 
+					rs.getInt("r_groupno"), 
+					rs.getInt("r_step"), 
+					rs.getInt("r_depth")));
+		}
+		rs.close();
+		pstmt.close();
+		con.close();
+		
+		return reviewBookList;
+	}
+	//
+	//책 번호로 리뷰조회
+	
+	public List<Review> reviewSelectReplyAll(Review review) throws Exception{
+		List<Review> reviewBookList = new ArrayList<Review>();
+		Connection con = dataSource.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(ReviewSQL.SELECT_REVIEW_ONE_REPLY_ALL);
+		pstmt.setInt(1, review.getR_groupno());
 		ResultSet rs = pstmt.executeQuery();
 		while(rs.next()) {
 			reviewBookList.add(new Review(
