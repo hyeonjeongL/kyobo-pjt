@@ -61,7 +61,6 @@ List<Eorder> ebooklist = ebookService.selectById(u_id);
 									<td height="22">&nbsp;&nbsp;<b>마이페이지 - eBook보관함</b></td>
 									<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 									<td><input type="button" value="쿠키등록" onClick="setCookies();"> </td>
-									<td><input type="button" value="PC등록" onClick="setCookies();"> </td>
 									<td><input type="button" value="등록된 PC" onClick="ipregisterlist_popup_window();"> </td>
 									
 								</tr>

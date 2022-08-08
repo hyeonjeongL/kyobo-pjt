@@ -1,13 +1,16 @@
+<%@page import="com.itwill.book.service.UserInfoService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@include file="login_check.jspf"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<%
+	String u_id = (String)session.getAttribute("sUserId");
+	UserInfoService userInfoService = new UserInfoService();
+	userInfoService.remove(u_id);
+	
+	session.invalidate();
+	
+	response.sendRedirect("kyobo_main.jsp");
 
-</body>
-</html>
+
+
+
+%>

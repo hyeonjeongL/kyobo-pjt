@@ -147,4 +147,9 @@ insert into cart values(cart_c_no_seq.nextval, 5, 'jihun', 3);
 insert into cart values(cart_c_no_seq.nextval, 1, 'hunjeong', 9);
 insert into cart values(cart_c_no_seq.nextval, 3, 'hunjeong', 4);
 insert into cart values(cart_c_no_seq.nextval, 2, 'jeonghun', 7);
-insert into cart values(cart_c_no_seq.nextval, 1, 'eunbi', 6);
+insert into cart values(cart_c_no_seq.nextval, 1, 'enbi', 6);
+
+--IPREGISTER
+INSERT INTO IPREGISTER VALUES(ipregister_i_no_SEQ.nextval, '테스트1', '192.168.15.55', 'seongmin', sysdate);
+INSERT INTO IPREGISTER VALUES(ipregister_i_no_SEQ.nextval, '테스트2', '192.168.15.43', 'enbi', sysdate);
+INSERT INTO IPREGISTER VALUES(ipregister_i_no_SEQ.nextval, '테스트3', '192.168.15.58', 'seongmin', sysdate);

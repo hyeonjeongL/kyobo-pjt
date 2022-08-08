@@ -18,11 +18,11 @@ public class OrderSQL {
 	
 	//회원 주문내역 출력
 	public static final String ORDER_SELECT_ALL_BY_U_ID =
-			"select * from orders where u_id = ?";
+			"select * from orders where u_id = ? order by o_no";
 	
 	//회원 주문번호로 주문내역 출력
 	public static final String ORDER_SELECT_BY_U_NO =
-			"select * from orders o join orderdetail od on o.o_no = od.o_no join book b on od.b_no = b.b_no where o.u_id = ? and o.o_no =?";
+			"select * from orders o join orderdetail od on o.o_no = od.o_no join book b on od.b_no = b.b_no where o.u_id = ? and o.o_no =? order by o.o_no";
 	
 }
  

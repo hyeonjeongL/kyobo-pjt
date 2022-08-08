@@ -14,7 +14,7 @@ public class IPRegisterService {
 	
 	public int create(IPRegister ipRegister) throws Exception{
 		List<IPRegister> ipRegistersList = ipRegisterDao.selectById(ipRegister.getU_id());
-		if(ipRegistersList.size() >5) {
+		if(ipRegistersList.size() >4) {
 			return 2;
 		}else 
 		return ipRegisterDao.insert(ipRegister);

@@ -67,7 +67,7 @@ List<Cart> cartList = cartService.getCartList(u_id);
 							<table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
-									<td bgcolor="f4f4f4" height="40">&nbsp;&nbsp;<Font size="5">장바구니보기</Font></td>
+									<td bgcolor="f4f4f4" height="35">&nbsp;&nbsp;<Font size="4">장바구니보기</Font></td>
 								</tr>
 							</table> <!--form--> <!-- 
 							<form name="f" method="post">

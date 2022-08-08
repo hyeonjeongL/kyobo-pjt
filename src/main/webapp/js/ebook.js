@@ -58,3 +58,22 @@ function ipregisterlist_popup_window(){
 	document.ebook.method = 'POST';
 	document.ebook.submit();
 }
+
+function pcregister() {
+	var a = prompt('등록하실 컴퓨터 이름을 입력해주세요');
+	if(a == null || a == ""){
+		return;
+	}
+	sessionStorage.setItem("i_name",a);
+	document.ebook.action = 'IPregister_insert_action.jsp';
+	document.ebook.method = 'POST';
+	document.ebook.submit();
+	
+}
+
+function pcdelete() {
+	document.ebook.action = 'IPregister_delete_action.jsp';
+	document.ebook.method = 'POST';
+	document.ebook.submit();
+	
+}

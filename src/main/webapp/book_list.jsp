@@ -59,7 +59,7 @@ PageMakerDto<Book> bookList = new BookService().getBookList(Integer.parseInt(pag
 							<table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
-									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>도서 목록</b></td>
+									<td bgcolor="f4f4f4" height="35">&nbsp;&nbsp;<Font size="4">도서 목록</td>
 								</tr>
 							</table>
 							</table>

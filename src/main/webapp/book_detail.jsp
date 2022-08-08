@@ -57,7 +57,7 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 			console.log(left);
 			console.log(top);
 			var cartWin = window.open("about:blank","cartForm","width=420,height=200,top="+top+",left="+left+",location=no, directories=no, status=no, menubar=no, scrollbars=no,copyhistory=no");
-			document.add_cart_form.action = 'cart_insert_action.jsp';
+			document.add_cart_form.action = 'cart_add_action_popup_window.jsp';
 			document.add_cart_form.target = 'cartForm';
 			document.add_cart_form.method = 'POST';
 			document.add_cart_form.submit();
@@ -128,7 +128,7 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 <table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
-									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>상세 정보</b></td>
+									<td bgcolor="f4f4f4" height="35">&nbsp;&nbsp;<Font size="4">상세 정보</td>
 								</tr>
 							</table> <!-- 
 							<form name="f" method="post">
@@ -166,6 +166,7 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 												<option value="10">10
 											</select> 권<br><br> 
 												<a href="javascript:cart_insert_action('add_cart_from');">장바구니 담기</a>
+												<input type=button onclick="add_cart_popup_window();" value="장바구니에담기[계속쇼핑팝업]" />
 												<input type="hidden" name=b_no value="<%=book.getB_no()%>">
 										</form>
 									</td>
@@ -190,7 +191,7 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 <table border="0" cellpadding="0" cellspacing="1">
 								<tr>
 									<td align=center>
-									<input type="button" value="주문하기[주문폼]" onClick="order_create_form();"> &nbsp; 
+									<input type="button" value="주문하기" onClick="order_create_form();"> &nbsp; 
 										<input type="button" value="상품리스트" onClick="bookList();">&nbsp; 
 										<input type="button" value="ebook 90일 대여하기" onClick="ebookBuy()">&nbsp;
 										<input type="button" value="도서 리뷰" onClick="reviewGo()">								

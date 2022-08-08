@@ -67,7 +67,7 @@ private String b_publisher;
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>쇼핑몰 관리</title>
+<title>교보문고 - 주문</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel=stylesheet href="css/styles.css" type="text/css">
 <link rel=stylesheet href="css/shop.css" type="text/css">
@@ -124,8 +124,8 @@ form > table tr td{
 							<table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
-									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>쇼핑몰 -
-											주문/결제폼</b></td>
+									<td bgcolor="f4f4f4" height="35">&nbsp;&nbsp;<Font size="4">
+											주문</td>
 								</tr>
 							</table> <!--form-->
 							<form>
@@ -136,19 +136,30 @@ form > table tr td{
 										<td width=290 height=25 align=center bgcolor="E6ECDE" class=t1>아이디</td>
 										<td width=112 height=25 align=center bgcolor="E6ECDE" class=t1>이름</td>
 										<td width=166 height=25 align=center bgcolor="E6ECDE" class=t1>이메일</td>
-										<td width=50 height=25 align=center bgcolor="E6ECDE" class=t1>비
-											고</td>
+										<td width=50 height=25 align=center bgcolor="E6ECDE" class=t1>비 고</td>
 									</tr>
 									<tr>
 										<td width=290 height=26 align=center bgcolor="ffffff" class=t1><%=userInfo.getU_id()%></td>
 										<td width=112 height=26 align=center bgcolor="ffffff" class=t1><%=userInfo.getU_name()%></td>
 										<td width=166 height=26 align=center bgcolor="ffffff" class=t1><%=userInfo.getU_email()%></td>
 										<td width=50 height=26 align=center bgcolor="ffffff" class=t1></td>
+										
 									</tr>
 								</table>
-
-								<br />
-
+								<!--  주소지 작성
+								<table align=center width=80% border="0" cellpadding="0"
+									cellspacing="1" bgcolor="BBBBBB">
+									<caption style="text-align: left;">구매자정보</caption>
+									<tr>
+										<td width=290 height=25 align=center bgcolor="E6ECDE" class=t1>아이디</td>
+									</tr>
+										<tr>
+										<td width=290 height=26 align=center bgcolor="ffffff" class=t1><%=userInfo.getU_id()%></td>
+									</tr>
+									</table>
+								
+								<br/>
+									-->
 								<table align=center width=80% border="0" cellpadding="0"
 									cellspacing="1" bgcolor="BBBBBB">
 									<caption style="text-align: left;">주문제품목록</caption>
@@ -161,6 +172,7 @@ form > table tr td{
 											격</td>
 										<td width=50 height=25 bgcolor="E6ECDE" align=center class=t1>비
 											고</td>
+											
 									</tr>
 									<%
 									int tot_price = 0;
