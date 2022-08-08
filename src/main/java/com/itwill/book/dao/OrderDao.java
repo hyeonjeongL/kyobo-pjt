@@ -30,7 +30,7 @@ public class OrderDao {
 		basicDataSource.setUsername(properties.getProperty("username"));
 		basicDataSource.setPassword(properties.getProperty("password"));
 		dataSource = basicDataSource;
-	}
+	} 
 	
 	// 주문 insert
 	public int create(Orders orders)throws Exception {
