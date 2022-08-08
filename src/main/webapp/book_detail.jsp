@@ -137,11 +137,11 @@ Ebook ebook = ebookService.selectByNo(Integer.parseInt(b_noStr));
 								align=center>
 								<tr valign=bottom>
 									<td width=10% align=center class=t1><font size=2
-										color=#0000FF><b>주문 권수</b></font></td>
+										color=#800000><b>주문 권수</b></font></td>
 									<td width=30% align=center class=t1><font size=2
-										color=#0000FF><b>&nbsp;&nbsp;&nbsp;&nbsp;</b></font></td>
+										color=#800000><b>&nbsp;&nbsp;&nbsp;&nbsp;</b></font></td>
 									<td width=60% align=center class=t1><font size=2
-										color=#0000FF><b>도서 정보</b></font></td>
+										color=#800000><b>도서 정보</b></font></td>
 								</tr>
 								<tr width=100%>
 									<td colspan=3 height=5><hr color=#556b2f></td>
